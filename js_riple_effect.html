@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ripple Animation</title>
+    <style>
+ *{
+     padding: 0;
+     margin: 0;
+ }
+
+ body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #03afd1;
+    }
+
+    header{
+     width: 100%;
+    }
+
+    header img{
+    width: 2.3%;
+    height: 2.3%;
+    padding: 10px;
+    }
+
+    .box-content{
+        width: 98.2%;
+        padding: 10px;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    /*inset: per fare l'ombra all'esterno */
+
+    .ripple{
+        box-shadow: inset 0px 0px 10px 6px black;
+        position: absolute;
+        animation-name: ripple-expansion;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        border-radius: 100%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    @keyframes ripple-expansion {
+        0%{
+            opacity: 1;
+            width: 10%;
+            height: 10%;
+        }
+
+        100%{
+            opacity: 0;
+            width: 60%;
+            height: 70%;
+        }
+    }
+
+    .ripple:nth-of-type(1){
+        animation-delay: 500ms;
+    }
+
+    .ripple:nth-of-type(2){
+        animation-delay: 1000ms;
+    }
+
+    .ripple:nth-of-type(3){
+        animation-delay: 1500ms;
+    }
+
+    .ripple:nth-of-type(4){
+        animation-delay: 2000ms;
+    }
+    .ripple:nth-of-type(5){
+        animation-delay: 2500ms;
+    }
+
+    .ripple.noclick{
+        animation: none;
+        box-shadow: none;
+        position: absolute;
+        border-radius: none;
+        transition: all 0.3s ease-in-out;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div class="box-content" id="box-click">
+        <div class="noclick"></div>
+        <div class="noclick"></div>
+        <div class="noclick"></div>
+        <div class="noclick"></div>
+        <div class="noclick"></div>
+    </div>
+    <script>
+        var box_click = document.getElementById('box-click');
+        var ripples = document.getElementsByClassName('noclick');
+
+    box_click.addEventListener('click', function(){
+        for (i = 0; i < ripples.length; i++) {
+            //var counter = 0;
+            var cond = ripples[i].getAttribute('class') !== 'noclick';
+            if (!cond) {
+                ripples[i].className = 'ripple';
+            } else {
+                ripples[i].className = 'noclick';
+            }
+        }
+    })
+    </script>
+</body>
+</html>

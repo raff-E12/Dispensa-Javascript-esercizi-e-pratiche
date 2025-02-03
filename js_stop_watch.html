@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronometro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jersey+20+Charted&family=Jost:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            width: 100%;
+            background-color: #F2C230;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            background-color: #FDFCEC;
+        }
+
+        .clock{
+            width: 60%;
+            padding: 10px;
+            background-color: #8FA69D;
+            margin: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            border-radius: 20px;
+            border: 10px solid #808C8B;
+            outline: 10px solid #303A40;
+            box-shadow: inset 10px -20px 0px 10px #0000005b;
+            position: relative;
+            overflow: hidden;
+            z-index: 4;
+        }
+
+        .clock::after{
+            position: absolute;
+            content: '';
+            padding: 21px;
+            background-color: #FDFCEC;
+            width: 100%;
+            border-radius: 100%;
+            top: -9%;
+            right: -1%;
+        }
+
+        .screen{
+            width: 70%;
+            outline: 10px solid #303A40;
+            border: 6px solid #0D0D0D;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #cfcfcf;
+            border-radius: 10px;
+            z-index: 1;
+            height: 210px;
+            box-shadow: inset 0px 0px 10px 1px #6e6e6e;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rifle{
+            width: 80px;
+            height: 600px;
+            background-color: rgba(255, 255, 255, 0.281);
+            padding: 10px;
+            position: absolute;
+            transform: rotate(60deg);
+        }
+
+        .rifle.first{
+            top: -140%;
+            left: 0;
+        }
+
+        .rifle.second{
+            top: -130%;
+            left: 40%;
+        }
+
+        .rifle.bottom{
+            top: -40%;
+            left: 80%;
+        }
+
+        .digit{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 500px;
+            text-align: center;
+            font-size: 3em;
+            font-family: "Orbitron", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 714;
+            font-style: normal;
+            padding: 10px;
+            color: #525252;
+        }
+
+        .foot{
+            width: 110px;
+            height: 50px;
+            background: rgb(33,38,38);
+            background: linear-gradient(164deg, rgba(33,38,38,1) 46%, rgba(72,86,115,1) 46%);
+            padding: 13px;
+            border: 6px solid #303A40;
+            border-radius: 10px;
+        }
+
+        .box-hidden{
+            width: 56%;
+            position: absolute;
+            z-index: -1;
+            display: flex;
+            justify-content: space-between;
+            top: 104%;
+        }
+
+        .btns{
+            position: absolute;
+            width: 100px;
+            height: 200px;
+            z-index: 1;
+            transform: translate(401%, 29px);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .btn{
+            width: 20px;
+            height: 100px;
+            padding: 20px;
+            background-color: #F2C230;
+            border: 6px solid #303A40;
+            border-radius: 10px;
+        }
+
+        .btn.play{
+            background: rgb(27,97,28);
+            background: linear-gradient(90deg, rgba(27,97,28,1) 57%, rgba(15,163,17,1) 57%);
+        }
+
+        .btn.pause{
+            background: rgb(149,43,29);
+            background: linear-gradient(90deg, rgba(149,43,29,1) 57%, rgba(255,67,42,1) 57%);
+        }
+
+        .btn.stop{
+            background: rgb(12,70,107);
+            background: linear-gradient(90deg, rgba(12,70,107,1) 57%, rgba(2,117,191,1) 57%);
+        }
+
+        .btn:hover{
+            transform: translate(-9px, 0px);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .btn:not(hover){
+            transform: translate(0px, 0px);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn:active{
+            transform: translate(-16px, 0px);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .shadow{
+            width: 60%;
+            height: 50px;
+            position: absolute;
+            padding: 10px;
+            z-index: -2;
+            transform: translate(0px, 220px);
+            background: #0d0d0da9;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div class="clock">
+      <div class="screen">
+        <div class="rifle first"></div>
+        <div class="rifle second"></div>
+        <div class="rifle bottom"></div>
+        <h2 class="digit" id="clock-temp">00:00:00:000</h2>
+      </div>
+    </div>
+    <div class="box-hidden">
+        <div class="foot"></div>
+        <div class="foot"></div>
+    </div>
+    <div class="btns">
+        <div class="btn play" id="play"></div>  
+        <div class="btn pause" id="clear"></div>
+        <div class="btn stop" id="stop"></div>
+     </div>
+     <div class="shadow"></div>
+     <script>
+        const play_btn = document.getElementById('play');
+        const stop_btn = document.getElementById('stop');
+        const clear_btn = document.getElementById('clear');
+        var clock_temp = document.getElementById('clock-temp');
+        var Interval = null;
+        var hours = 0;
+        var second = 0;
+        var minute = 0;
+        var millisecond = 0;
+
+        function Clock_Function(){
+
+            millisecond += 10;
+
+            if (millisecond == 100) {
+                millisecond = 0;
+                second++;
+            }
+
+            if(second == 60){
+                second = 0
+                minute++;
+            }
+
+            if(minute == 60){
+                minute = 0;
+                hours++;
+            }
+
+            var h = String(hours).padStart('2', '0');
+            var s = String(second).padStart('2', '0');
+            var m = String(minute).padStart('2', '0');
+            var ms = String(millisecond).padStart('3', '00');
+
+            var Interval_set = h + ':' + m + ':' + s + ':' + ms;
+            clock_temp.innerHTML = Interval_set;
+        }
+
+        function Interval_Memory(intervallo){
+            return clearInterval(intervallo);
+        }
+
+        play_btn.addEventListener('click', ()=>{
+            Interval_Memory(Interval);
+            Interval = setInterval(Clock_Function, 10);
+        });
+
+        stop_btn.addEventListener('click', ()=>{
+            clearInterval(Interval);
+            Interval = null;
+        });
+
+        clear_btn.addEventListener('click', ()=>{
+            clearInterval(Interval);
+            clock_temp.innerHTML = '00:00:00:000';
+        })
+     </script>
+</body>
+</html>

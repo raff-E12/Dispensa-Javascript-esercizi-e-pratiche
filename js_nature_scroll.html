@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Scroll</title>
+    <link rel="stylesheet" href="js-css/css_reset.css">
+    <link rel="stylesheet" href="style_nature.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header-sc">
+        <h4>Logo.</h4>
+        <button class="btn lg">Login</button>
+    </header>
+ <div class="hero-sc">
+    <div class="video-hero">
+        <video autoplay loop preload="auto" muted id="video-hero">
+            <source src="immagini/video/Bg_small.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="aside-box">
+        <p class="par-box">Project Website</p>
+       <div class="text-box">
+        <h4>Generatore di Password.</h4>
+        <p>Benvenuto nel generatore di passoword, clicca il pulsante per andare nella sezione per generare la password</p>
+        <div class="btn-aside"><a href="#section-pass" class="btn bottom">Cliccami</a></div>
+       </div>
+    </div>
+ </div>
+ <main class="main-sc">
+    <div class="top-box"></div>
+    <div class="passoword-box">
+        <section class="box-pass" id="section-pass">
+            <h1>Genera la tua Password</h1>
+            <p>genera la tua password per utilizzarla quando vuoi.</p>
+            <section class="input-box">
+                <input type="text" name="text" id="input-txt" readonly placeholder="Genera...">
+                <div class="box-parm">
+                 <div class="boxes-ranges">
+                    <div class="range-box">
+                        <div class="line"></div>
+                        <input type="range" name="range" id="slider-length" min="5" max="19">
+                    </div>
+                    <p class="value-num" id="value-slide">0</p>
+                 </div>
+                    <div class="check-box">
+                        <div class="row">
+                            <p>Includi lettere Maiuscole</p>
+                            <input type="checkbox" name="Uppercase" id="uppercase-check">
+                        </div>
+                        <div class="row">
+                            <p>Includi lettere Minuscole</p>
+                            <input type="checkbox" name="Lowercase" id="lowercase-check">
+                        </div>
+                        <div class="row">
+                            <p>Includi Numeri</p>
+                            <input type="checkbox" name="Number" id="number-check">
+                        </div>
+                        <div class="row">
+                            <p>Includi Simboli</p>
+                            <input type="checkbox" name="Symbol" id="symbols-check">
+                        </div>
+                    </div>
+                    <button id="btn-gen">Genera</button>
+                </div>
+            </section>
+        </section>
+    </div>
+ </main>
+ <script>
+    const slider_length = document.getElementById('slider-length');
+    let slider_value_par = document.getElementById('value-slide');
+    let text_input = document.getElementById('input-txt');
+    let uppercase_check = document.getElementById('uppercase-check');
+    let lowercase_check = document.getElementById('lowercase-check');
+    let number_check = document.getElementById('number-check');
+    let symbols_check = document.getElementById('symbols-check');
+    const btn_gen = document.getElementById('btn-gen');
+
+    slider_length.addEventListener('input', ()=>{
+        let value_slider = slider_length.value;
+        slider_value_par.textContent = value_slider;
+    });
+
+    btn_gen.addEventListener('click', ()=>{
+        text_input.value = Gen_Password();
+    })
+
+    function Gen_Password(){
+    const letter_max = 'ABCDEFGHILMNOPQRSTUVZWYKJ';
+    const letter_min = 'abcdefghilkjmnopqrstuvzwyx';
+    const number = '1234567890';
+    const letter_sp = '@#[]+_*=&%$£!|§ç-:.,;^?';
+    let length = Number(slider_length.value);
+
+    let Text_password = '';
+    let AllSelected = '';
+
+    AllSelected += uppercase_check.checked ? letter_max :'';
+    AllSelected += lowercase_check.checked ? letter_min : '';
+    AllSelected += number_check.checked ? number : '';
+    AllSelected += symbols_check.checked ? letter_sp : '';
+
+    console.log(AllSelected);
+
+    let index = 0;
+     for (index = 0; index < length; index++) {
+        Text_password += AllSelected.charAt(Math.floor(Math.random() * AllSelected.length));
+        console.log(Text_password)
+    }
+    return Text_password;
+    }
+
+    /*     //   let number_cont = 2;
+        let new_value = [];
+
+    while (number_cont < Number(slider_length.value)) {
+        new_value.push(number[Math.floor(Math.random() * number.length)]);
+        number_cont++;
+    }
+    return new_value.join(''); //
+    
+    // let passoword_gen = [];
+        let text_gen = [];
+        let length = Number(slider_length.value);
+        const letter_max = ['A', 'B','C','D','E','F','G','H','I','L','M','N','O','P','Q','R','S','T','U','V','Z','W','Y','K','J'];
+        const letter_min = ['a', 'b','c','d','e','f','g','h','i','l','m','n','o','p','q','r','s','t','u','v','z','w','y','k','j'];
+        const number = ['0','1','2','3','4','5','6','7','8','9'];
+        const letter_sy = ['@', ',','_','$','£','!','|','+','#','§','=','&','%',':','>','<','*','?','#',')','/','.',';'];
+
+        if (uppercase_check.checked) {
+            text_gen = text_gen.concat(letter_max);
+        }
+         if (lowercase_check.checked) {
+            text_gen = text_gen.concat(letter_min);
+        } 
+        if (number_check.checked) {
+            text_gen = text_gen.concat(number);
+        }
+        if (symbols_check.checked) {
+            text_gen = text_gen.concat(letter_sy);
+        } 
+
+        if (uppercase_check.checked) {
+            passoword_gen.push(letter_max[Math.floor(Math.random()*letter_max.length)]);
+        } 
+        if (lowercase_check.checked) {
+            passoword_gen.push(letter_min[Math.floor(Math.random()*letter_min.length)]);
+        } 
+        if (number_check.checked) {
+            passoword_gen.push(number[Math.floor(Math.random()* number.length)])
+        }
+        if (symbols_check.checked) {
+            passoword_gen.push(letter_sp[Math.floor(Math.random()*letter_sp.length)])
+        } 
+
+        while (passoword_gen.length < length) {
+            let Random_Chars = text_gen[Math.floor(Math.random()*text_gen.length)];
+            passoword_gen.push(Random_Chars);
+        }
+
+        passoword_gen.sort(()=> Math.random());
+        console.log('Prima Lista:'+ text_gen);
+        console.log('Seconda Lista:'+passoword_gen)
+        return passoword_gen.join('');
+    */
+ </script>
+</body>
+</html>

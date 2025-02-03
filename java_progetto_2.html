@@ -1,0 +1,134 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Progetto#2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="immagini/favjs/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="immagini/favjs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="immagini/favjs/favicon-16x16.png">
+    <link rel="manifest" href="immagini/favjs/site.webmanifest">
+    <link rel="mask-icon" href="immagini/favjs/safari-pinned-tab.svg" color="#dfe300">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        *{
+            font-size: 1.1em;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body{
+            background-image: url(immagini/Grid\ 1.jpg);
+            backdrop-filter: blur(2px);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .box-1{
+            background-color: antiquewhite;
+            width: 700px;
+            margin: 20% 10%;
+            box-shadow: 1px 3px 10px 8px black;
+            border: 10px solid rgb(255, 226, 188);
+            text-align: center;
+        }
+        .box-1 ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box-1 ul li{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        footer{
+            background-color: rgb(255, 250, 184);
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+        header{
+            width: 100%;
+            background-color: antiquewhite;
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+            border: 10px solid rgb(255, 226, 188);
+        }
+        button{
+            background-color: white;
+            border: 2px solid gray;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 200px;
+        }
+        button:hover{
+            background-color: rgb(168, 168, 168);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gioco dell' Lotto</h1>
+    </header>
+    <div class="box-1">
+        <ul>
+            <li><span id="storia_gen">-</span></li>
+            <li><span id="res_gen">-</span></li>
+            <li><span id="num_gen">-</span></li>
+            <li><button id="button">Genera</button></li>
+        </ul>
+    </div>
+    <script>
+       addEventListener('DOMContentLoaded', function(){
+        const btn = document.getElementById('button');
+        btn.addEventListener('click', function(){
+        const fattore_1 = [1, 2 , 3, 4 , 5 , 6, 7, 8, 9, 0];
+        const fattore_2 = [1, 2 , 3, 4 , 5 , 6, 7, 8, 9, 0];
+        const risultato_int = [1, 2 , 3, 4 , 5 , 6, 7, 8, 9, 0];
+        const risultato_dec = [1, 2 , 3, 4 , 5 , 6, 7, 8, 9, 0];
+        function op_gen (){
+            const op1_list = fattore_1[Math.floor(Math.random()*fattore_1.length)] + fattore_2[Math.floor(Math.random()*fattore_2.length)];
+            const op2_list = fattore_2[Math.floor(Math.random()*fattore_2.length)] + fattore_1[Math.floor(Math.random()*fattore_1.length)];
+            const op3_list = risultato_int[Math.floor(Math.random()*risultato_int.length)] + risultato_dec[Math.floor(Math.random()*risultato_dec.length)];
+            const op_gen = 'Primo numero =' + op1_list + '<br>' +  'Secondo numero =' + op2_list + '<br>'+ 'Terzo numero =' + op3_list ;
+            return op_gen;
+        };
+
+        function window_gen(){
+            const win_or_lose = ['Hai vinto', 'Hai perso'];
+            const calc_op =  win_or_lose[Math.floor(Math.random() * win_or_lose.length)];
+            return calc_op;
+        };
+        const text_box = document.getElementById('storia_gen');
+        text_box.innerHTML = op_gen();
+        const res_box = document.getElementById('res_gen');
+        res_box.innerHTML = window_gen();
+        const number_win = Math.floor(Math.random()*10) + 2;
+        const num_box = document.getElementById('num_gen');
+        num_box.innerHTML = '<h1>Numero Speciale</h1>'+ number_win;
+        })
+       })
+    </script>
+    <footer>
+        <p>Tabella &copy; - valori espressi in <a href="index.html">Javascript</a></p>
+    </footer>
+</body>
+</html>

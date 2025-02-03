@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Button</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            width: 100%;
+            background-color: #F2C230;
+        }
+
+        h1{
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 30px;
+            padding: 10px;
+        }
+
+        p{
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: baseline;
+            background-color: #8C7161;
+        }
+
+        #bg-color{
+        width: 900vh;
+        padding: 10px;
+        height: 1900px;
+         background-image: repeating-conic-gradient(
+		from 45deg at 50% 50%,
+		rgb(223, 0, 0) 0deg 10deg,
+		rgb(247, 242, 0) 10deg 20deg,
+		rgb(0, 133, 167) 20deg 30deg,
+        rgb(167, 0, 153) 30deg 40deg);
+        filter: blur(3px);
+        z-index: -1;
+        position: fixed;
+        top: -90%;
+        opacity: 0;
+        transition: all 0.1s ease-in-out;
+        }
+
+        #bg-color.active{
+           animation: rotate-bg 5s linear infinite;
+           opacity: 100%;
+        }
+
+        #bg-color:not(.active){
+           animation: none;
+           opacity: 0;
+           transition: all 0.1s ease-in-out;
+        }
+
+        .switch{
+            width: 19%;
+            height: 110px;
+            border: 10px solid white;
+            position: absolute;
+            margin: 24%;
+            top: 0;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 0px 10px 3px rgb(87, 87, 87);
+        }
+
+        .switch.active{
+            border: 10px solid rgb(75, 253, 75);
+            background-color: rgb(0, 141, 0);
+            box-shadow:inset 0px 30px 50px 10px rgb(2, 48, 2);
+        }
+
+        .switch:not(.active){
+            border: 10px solid white;
+            background-color: transparent;
+            box-shadow: 0px 0px 10px 3px rgb(87, 87, 87);
+        }
+
+        .circle{
+            width: 80px;
+            height: 80px;
+            border-radius: 100px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .circle.left{
+            margin-left: 61%;
+            transition: all 0.3s ease-in-out;
+            outline: 10px solid rgb(0, 70, 0);
+            box-shadow: inset 0px 0px 10px 3px rgb(87, 87, 87);
+        }
+
+        .circle:not(.left){
+            margin-left: 0;
+            transition: all 0.3s ease-in-out;
+            box-shadow: none;
+        }
+        
+        @keyframes rotate-bg {
+            to{transform: rotate(0deg);}
+            from{transform: rotate(360deg);}
+        }
+
+        @keyframes btn-move {
+            to{transform: rotate(0deg);}
+            from{transform: rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div class="switch" id="switch-lg">
+        <div class="circle" id="circle"></div>
+    </div>
+    <div id="bg-color"></div>
+    <script>
+        const Switch = document.getElementById('switch-lg');
+        const circle = document.getElementById('circle');
+        const bg = document.getElementById('bg-color');
+
+        circle.addEventListener('click', function(){
+            var condition = this.className === 'left';
+            if (!condition) {
+                this.classList.toggle('left');
+                bg.classList.toggle('active');
+                Switch.classList.toggle('active');
+            } else {
+                this.classList.add('circle');
+                bg.classList.remove('active');
+                Switch.classList.toggle('active');
+            }
+        })
+    </script>
+</body>
+</html>

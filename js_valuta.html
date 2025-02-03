@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertitore di Valuta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,787;1,787&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            width: 100%;
+            background-color: #F2C230;
+        }
+
+        h3{
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 43px;
+        }
+
+        p{
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #012626;
+        }
+
+        .box{
+            background-color: #8C031C;
+            width: 80%;
+            margin: 13%;
+            padding: 40px;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            gap: 20%;
+            border: 10px solid #44000d;
+        }
+
+        .form-box{
+            width: 23%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10%;
+            height: 30vh;
+        }
+
+        #nubindex{
+            width: 100%;
+            height: 60px;
+            font-size: 30px;
+            text-align: center;
+            border-radius: 0px;
+            border: 2px solid #A69281;
+            padding: 10px;
+        }
+
+        #nubindex:focus{
+            outline: none;
+        }
+
+        .selected-list{
+            width: 80%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 12px;
+            border: 2px solid #A69281;
+        }
+
+        .selected-list p{
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            gap: 30px;
+        }
+
+        #Eur-cbox, #Usd-cbox{
+            cursor: pointer;
+        }
+
+        .btn{
+            padding: 10px;
+            width: 100%;
+            color: white;
+            background-color: #BF5E66;
+            font-family: "Poppins", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+            color: white;
+            text-transform: uppercase;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .btn:active{
+            background-color: #380005;
+        }
+
+        .result-txt{
+            position: absolute;
+            width: 30%;
+            background-color: #44000d;
+            text-align: center;
+            padding: 10px;
+            font-size: 30px;
+            padding-top: 50px;
+            border-radius: 10px;
+            z-index: -1;
+            transform: translate(0px, 190px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div class="box">
+       <div class="text">
+        <h3>Convertitore Di valuta</h3>
+        <p>Scrivi il numero e convertilo in valuta!!</p>
+       </div>
+     <div class="form-box">
+            <input type="number" name="number" id="nubindex">
+        <div class="selected-list">
+            <p>USD a EUR<input type="radio" name="money" id="Eur-cbox"></p>
+            <p>EUR a USD<input type="radio" name="money" id="Usd-cbox"></p>
+            </div>
+        <button class="btn" id="btn">Converti</button>
+     </div>
+    </div>
+     <p class="result-txt" id="result">0$</p>
+     <script>
+        const nb_Text = document.getElementById('nubindex');
+        const eur_rd = document.getElementById('Eur-cbox');
+        const usd_rd = document.getElementById('Usd-cbox');
+        const btn = document.getElementById('btn');
+        const result = document.getElementById('result');
+
+        function Eur_to_Usd() {
+            var op = 0;
+            const value_nb = nb_Text.value;
+            if (eur_rd.checked) {
+                op = value_nb * 1.10;
+                result.textContent = Math.ceil(op) + '€';
+            } else if(usd_rd.checked) {
+                op = value_nb / 1.10;
+                result.textContent = Math.ceil(op) + '$';
+            }
+            else{
+                result.textContent = '0$';
+            }
+        }
+
+        btn.addEventListener('click', Eur_to_Usd);
+     </script>
+</body>
+</html>

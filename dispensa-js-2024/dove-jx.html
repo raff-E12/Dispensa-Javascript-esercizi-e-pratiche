@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guida Javascript / jQuery</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="js/main.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#525fd6">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+	
+	<header id="pinco">
+		<h1>Guida Javascript / jQuery<br> Dove posizionare Javascript</h1>
+		<nav id="mainMenu">
+			<ul>
+				<li><a href="index.html" title="javascript">Home</a></li>
+				<li><a href="dove-jx.html" title="Dove posizionare Javascript">Dove posizionare Javascript</a></li>
+				<li><a href="sintassi-jx.html" title="La sintassi">Sintassi js</a></li>
+				<li><a href="condizionali-e-cicli.html" title="Condizionali e cicli">Condizioni e cicli</a></li>
+				<li><a href="funzioni.html" title="Le funzioni">Le funzioni</a></li>
+				<li><a href="jQuery.html" title="jQuery">jquery</a></li>
+				<li><a href="integrareJQ.html" title="Integrare jQuery nei progetti">Integrare jquery</a></li>
+				<li><a href="sintassiJquery.html" title="Sintassi jQuery ">Sintassi jquery</a></li>
+				<li><a href="selezioneJquery.html" title="La selezione degli elementi in jQuery ">La selezione degli elementi in jQuery</a></li>
+				<li><a href="gestione_eventiJq.html" title="La gestione degli eventi in jQuery ">La gestione degli eventi in jQuery</a></li>
+				<li><a href="metodi-jQ.html" title="Metodi jQuery ">La gestione degli eventi in jQuery</a></li>
+				
+			</ul>
+
+		</nav>
+		
+	</header>
+	
+	<main>
+		<section>
+			<h2>Dove posizionare Javascript</h2>
+			<p>Il codice Jx viene eseguito nel punto in cui viene posizionato all'interno del documento HTML. Il codice pu&ograve; essere posizionato all'interno della pagina in pi&ugrave; punti oppure collocato esternamente in un documento con estensione &quot;.js&quot;</p>
+			
+			<h2>All'interno del tag &lt;script&gt;, all'interno del documento html</h2>
+			<p>Il codice viene scritto all'interno del tag script, posizionato nel tag body o nel tag head e viene eseguito in quel preciso punto.<br>
+			Quando eseguiamo un output il risultato verr&agrave; posizionato e scritto in quel preciso punto della pagina.</p>
+			
+			<script>
+				document.write('<strong>Ciao, questo testo è scritto con jx in questo punto.</strong>');
+			</script>
+			
+			<h2>All'interno del tag che fa partire lo script</h2>
+			<p>Es. il bottone di seguito fa comparire un popup al suo click.</p>
+			<button onClick="window.alert('Good Morning Vietnam!')">Apri popup</button>
+			<div id="cambia" style="width:300px; height:300px; background-color: red;" 
+				 onMouseOver="this.style.backgroundColor='yellow'"
+				 onMouseOut="this.style.backgroundColor='blue'">
+			</div>
+			<h2>All'interno di un documento esterno</h2>
+			<p>Dentro un documento esterno con estensione &quot;.js&quot; dove possiamo inserire le nostre istruzioni senza il tag script</p>
+			<!-- guarda nel tag head il link al documento js esterno -->
+			<button onClick="cambiaColore()">Clicca per cambiare colore</button>
+		</section>
+	</main>
+	
+	<footer>
+		&copy; Copyright 2024
+	</footer>
+	
+</body>
+</html>

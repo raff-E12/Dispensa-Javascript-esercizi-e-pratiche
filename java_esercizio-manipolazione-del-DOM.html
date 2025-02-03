@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Selector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="immagini/favjs/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="immagini/favjs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="immagini/favjs/favicon-16x16.png">
+    <link rel="manifest" href="immagini/favjs/site.webmanifest">
+    <link rel="mask-icon" href="immagini/favjs/safari-pinned-tab.svg" color="#dfe300">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        *{
+            font-size: 1.1em;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body{
+            background-image: url(immagini/Grid\ 1.jpg);
+            backdrop-filter: blur(10px);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .box-1{
+            background-color: antiquewhite;
+            width: 700px;
+            margin: 20% 10%;
+            box-shadow: 1px 3px 10px 8px black;
+            border: 10px solid rgb(255, 226, 188);
+            text-align: center;
+        }
+        .box-1 ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box-1 ul li{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        footer{
+            background-color: rgb(255, 250, 184);
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+        header{
+            width: 100%;
+            background-color: antiquewhite;
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+            border: 10px solid rgb(255, 226, 188);
+        }
+        .valoreop{
+            text-decoration: underline;
+            font-variant: small-caps;
+        }
+        .trasformtext{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-style: italic;
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Richiamo del DOM</h1>
+        <small>Usa il panello ispeziona per scoprire il codice di ogni casella <i class="fa-solid fa-arrow-right"></i></small>
+    </header>
+    <div class="box-1">
+        <h1>Scrivere dei nomi partendo da un solo oggetto</h1>
+        <ul>
+            <li><span class="valoreop">-</span></li>
+            <li><span class="valoreop">-</span></li>
+            <li><span class="valoreop">-</span></li>
+            <li><span class="valoreop">-</span></li>
+            <li><span>-</span></li>
+            <li><span>-</span></li>
+            <li><span>-</span></li>
+            <li><span>-</span></li>
+        </ul>
+    </div>
+   <script>
+       //var valore_scri = document.getElementsByTagName('li');
+        //valore_scri[0].innerHTML = '1';
+        //valore_scri[1].innerHTML = '1';
+        //valore_scri[2].innerHTML = '1';
+        var valore_scri_2 = document.getElementsByClassName('valoreop');
+        for (i = 0; i < valore_scri_2.length; i++) {
+           var messaggio = 'il' + 'Valore'+ 'OP' + '.';
+          // valore_scri_2[i].appendChild(document.createTextNode(messaggio));
+          valore_scri_2[i].innerHTML = messaggio;
+        }
+        var valore_scri_3 = document.getElementsByTagName('li');
+        var valore_scri_1 = document.querySelector('li');
+        for (i = 3; i < valore_scri_3.length; i++) {
+           var messaggio = 'Lista Vuota!!';
+         valore_scri_3[i].innerHTML = messaggio;
+        }//ciclo vale più di una selezione singola
+        //alternare il ciclo con i selettori del DOM la ripetizione ripetuta di ogni elemento selezionato.
+        //document.getElementById() = selezione di un singolo id(metodo più veloce).
+        //document.querySelector() = selezione di un singolo elemento generale html.
+        //document.getElementsByClassName() = selezione di  più elementi di classe con lo stesso nome.
+        //document.getElementsByTagName() = selezione di più elementi con quel quel tag specificato.
+        //document.querySelectorAll() = selezione di più elementi HTML riferito a quel nodo(metodo più veloce).
+        // per ogni selezione di un elemento con i selettori multipli si utilizza [] o il metedo 'item()'.
+        // esistono due nodelist una attiva e statiche = attiva è quando lo script aggiorna la nodelist con le modiche apportate, invece quella statica non apporta modifiche alla nodelist durante l'aggiornamento della pagina, se non viene richiamata nel caso del css di classe.
+       // valore_scri_2.length.toPrecision() = per ogni selezione di una variabile si applicano proproprità e metodi.
+    </script>
+    <div class="box-1">
+        <h1>Differenza tra previous e next Sibling</h1>
+        <ul>
+            <li><span>-</span></li>
+            <li id="ullist"><span>-</span></li>
+            <li><span>-</span></li>
+        </ul>
+    </div>
+    <script>
+        var text_li = document.getElementById('ullist');
+        var text_ul = text_li.previousElementSibling;
+        var text_us = text_li.nextElementSibling;
+        text_ul.innerHTML = 'Fratello precendente';
+        text_us.innerHTML = 'Fratello successivo';
+        text_li.innerHTML = 'Elemento selezionato';
+    </script>
+    <div class="box-1">
+    <h1>Selezione multipla di un elemento per ogni elemento</h1>
+    <ul id="ul-list">
+        <li>-</li>
+        <li>-</li>
+        <li>-</li>
+    </ul>
+    </div>
+    <script>
+        var text_ul_2 = document.getElementsByTagName('ul')[2];
+        var text_li_2 = text_ul_2.getElementsByTagName('li');
+        text_li_2[0].innerHTML = 'First';
+        text_li_2[2].innerHTML = 'Last';
+        text_li_2[1].innerHTML = 'Center';
+    </script>
+     <div class="box-1">
+        <h1>Accedere a ogni elemento e modificarlo</h1>
+        <ul>
+            <li><p id="frase-p"><em>Se</em>Lascia un like se sei <em>un follower.</em></p></li>
+            <li><p id="frase-p-1"><em>Se</em>Non ti piace la pasta non sei <em>maturo.</em></p></li>
+            <li id="lista-padre">
+                <h1>Elenco:</h1>
+                <ul id="lista-ul">
+                <li>testo1</li>
+                <li>testo2</li>
+                <li>testo3</li>     
+            </ul>
+        </li>
+        <li><p id="two">pine nuts</p></li>
+        <li><p id="three"> pine <b>little</b> nuts</p></li>
+        </ul>
+        </div>
+        <script>
+            var text_id = document.getElementById('frase-p');
+            var text_paragraph = text_id.textContent;
+            //var text_paragraph_2 = text_id.textContent;
+            var text_replance = text_paragraph.replace('Lascia', 'Prendi');
+            //var text_replance_2 = text_paragraph_2.replace('un', 'qualche');
+            text_id.innerHTML = text_replance;
+            //text_id.innerHTML = text_replance_2;
+            var text_id_2 = document.getElementById('frase-p-1');
+            var text_paragraph_2 = text_id_2.textContent;
+            text_paragraph_2 = text_paragraph_2.replace('Se', 'Per');
+            text_id_2.textContent = text_paragraph_2;
+            var list_ul = document.getElementById('lista-ul');
+            var list_li = list_ul.getElementsByTagName('li');
+            list_li[0].innerHTML = list_li[0].textContent.replace('testo1', 'hello');
+            list_li[1].innerHTML = list_li[1].textContent.replace('testo2', 'oh, world!!');
+            //innerHtml = aggiorna o preleva quel contenuto html selezionato compresi i suoi figli.
+             //si può nominare la stessa variabile durante l'assegnazione.
+             var item_id = document.getElementById('two');
+             var paragraf_id = item_id.firstChild.nodeValue;
+             var text_replance = paragraf_id.replace('pine', 'find');
+             item_id.firstChild.textContent = text_replance;
+             //esempio fatto con il node value
+             var item_tree = document.getElementById('three');
+             var text_tree_node = item_tree.firstChild.nodeValue;
+             var text_rimp = text_tree_node.replace('pine', 'The');
+             item_tree.firstChild.textContent = text_rimp;
+        </script>
+          <div class="box-1">
+            <h1>Creazioni di più elementi e nodi</h1>
+            <ul>
+                <li><p id="frase-part1">Il segreto per andare avanti è iniziare.</p></li>
+                <li><p id="frase-part2">La vita è come andare in bicicletta: per mantenere l'equilibrio devi continuare a muoverti.</p></li>
+            </ul>
+            </div>
+            <script>
+                var list_li_box = document.createElement('li');
+                // Passo 1 = creazione di un elemento salvato nell variabile
+                var list_li_node = document.createTextNode('Non importa quanto lentamente si va, finché non ci si ferma.');
+                // Passo 2 = creazione di un nodo di testo per elemento creato
+                list_li_box.appendChild(list_li_node);
+                // Passo 3 = richiamare la variabile con all'interno l'elemento creato con il metodo Appendchild.
+                // il metodo AppendChild si riferisce all elemento creato da qui aggiungere la variabile con il nodo creato sotto forma di figlio appartenente all elemento padre.
+                var list_li_box_1 = document.createElement('li');
+                var list_li_node_1 = document.createTextNode('Il successo non è la chiave della felicità. La felicità è la chiave del successo. Se ami ciò che fai, avrai successo.');
+                list_li_box_1.appendChild(list_li_node_1);
+                var list_box_ul = document.getElementsByTagName('ul')[5];
+                list_box_ul.appendChild(list_li_box);
+                // Passo 4 = una volta creato elemento e il nodo adesso si richiama sempre tramite appendchild() l'elemento creato.
+                list_box_ul.appendChild(list_li_box_1);
+                var frase_part_1 = document.getElementById('frase-part1');
+                 frase_part_1.className = 'trasformtext';
+                 frase_part_1.setAttribute('class', 'trasformtext');
+            </script>
+    <footer>
+        <p>Tabella &copy; - valori espressi in <a href="index.html">Javascript</a></p>
+    </footer>
+</body>
+</html>

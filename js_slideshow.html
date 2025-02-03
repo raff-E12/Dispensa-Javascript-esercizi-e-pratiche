@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Scroll Indicator</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            width: 100%;
+            background-color: #F2C230;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        h2{
+            font-size: 0.9em;
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            text-transform: uppercase;
+        }
+
+        
+        p{
+            font-size: 1em;
+            font-family: "Roboto", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+            text-transform: capitalize;
+        }
+
+
+        .box-color-1{
+            border: 4px solid #AACCB0;
+            padding: 20px;
+            width: 68%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            gap: 14px;
+        }
+
+        .box-color-1 h2{
+            color: #AACCB0;
+        }
+
+        .box-color-1 p{
+            color: #AACCB0;
+            width: 70%;
+        }
+
+        
+        .box-color-2{
+            border: 4px solid #BBBD2D;
+            padding: 20px;
+            width: 68%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            gap: 14px;
+        }
+
+        .box-color-2 h2{
+            color: #BBBD2D;
+        }
+
+        .box-color-2 p{
+            color: #BBBD2D;
+            width: 70%;
+        }
+
+        .box-color-3{
+            border: 4px solid #E0762B;
+            padding: 20px;
+            width: 68%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            gap: 14px;
+        }
+
+        .box-color-3 h2{
+            color: #E0762B;
+        }
+
+        .box-color-3 p{
+            color: #E0762B;
+            width: 70%;
+        }
+
+        
+        .box-color-4{
+            border: 4px solid #F24444;
+            padding: 20px;
+            width: 68%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            gap: 14px;
+        }
+
+        .box-color-4 h2{
+            color: #F24444;
+        }
+
+        .box-color-4 p{
+            color: #F24444;
+            width: 70%;
+        }
+
+        .box-color-5{
+            border: 4px solid #027353;
+            padding: 20px;
+            width: 68%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            gap: 14px;
+        }
+
+        .box-color-5 h2{
+            color: #027353;
+        }
+
+        .box-color-5 p{
+            color: #027353;
+            width: 70%;
+        }
+
+        .main-box{
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        ::-webkit-scrollbar{
+            width: 20px;
+        }
+
+        ::-webkit-scrollbar-thumb{
+            background-color: #BF895A;
+            border-radius: 20px;
+            padding: 10px;
+        }
+
+        ::-webkit-scrollbar-track{
+            margin-block: 2px;
+            border-radius: 20px;
+            background-color: #92BF4E;
+            border: 3px solid #F2D5DB;
+        }
+
+        #indicator{
+            width: 0%;
+            height: 10px;
+            position: fixed;
+            background-color: #027353;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div id="indicator"></div>
+    <div class="main-box">
+        <div class="box-color-1">
+            <h2>Similar Post</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore possimus tempora et nihil 
+            fugit necessitatibus recusandae excepturi nobis nemo? Excepturi voluptate incidunt repudiandae eum doloribus 
+            cumque suscipit officia repellendus quis?</p>
+        </div>
+        <div class="box-color-2">
+            <h2>Similar Post</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore possimus tempora et nihil 
+            fugit necessitatibus recusandae excepturi nobis nemo? Excepturi voluptate incidunt repudiandae eum doloribus 
+            cumque suscipit officia repellendus quis?</p>
+        </div>
+        <div class="box-color-3">
+            <h2>Similar Post</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore possimus tempora et nihil 
+            fugit necessitatibus recusandae excepturi nobis nemo? Excepturi voluptate incidunt repudiandae eum doloribus 
+            cumque suscipit officia repellendus quis?</p>
+        </div>
+        <div class="box-color-4">
+            <h2>Similar Post</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore possimus tempora et nihil 
+            fugit necessitatibus recusandae excepturi nobis nemo? Excepturi voluptate incidunt repudiandae eum doloribus 
+            cumque suscipit officia repellendus quis?</p>
+        </div>
+        <div class="box-color-5">
+            <h2>Similar Post</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore possimus tempora et nihil 
+            fugit necessitatibus recusandae excepturi nobis nemo? Excepturi voluptate incidunt repudiandae eum doloribus 
+            cumque suscipit officia repellendus quis?</p>
+        </div>
+        <div class="box-color-1">
+            <h2>Similar Post</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore possimus tempora et nihil 
+            fugit necessitatibus recusandae excepturi nobis nemo? Excepturi voluptate incidunt repudiandae eum doloribus 
+            cumque suscipit officia repellendus quis?</p>
+        </div>
+        <div class="box-color-2">
+            <h2>Similar Post</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore possimus tempora et nihil 
+            fugit necessitatibus recusandae excepturi nobis nemo? Excepturi voluptate incidunt repudiandae eum doloribus 
+            cumque suscipit officia repellendus quis?</p>
+        </div>
+        <div class="box-color-3">
+            <h2>Similar Post</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore possimus tempora et nihil 
+            fugit necessitatibus recusandae excepturi nobis nemo? Excepturi voluptate incidunt repudiandae eum doloribus 
+            cumque suscipit officia repellendus quis?</p>
+        </div>
+        <div class="box-color-4">
+            <h2>Similar Post</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore possimus tempora et nihil 
+            fugit necessitatibus recusandae excepturi nobis nemo? Excepturi voluptate incidunt repudiandae eum doloribus 
+            cumque suscipit officia repellendus quis?</p>
+        </div>
+        <div class="box-color-5">
+            <h2>Similar Post</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore possimus tempora et nihil 
+            fugit necessitatibus recusandae excepturi nobis nemo? Excepturi voluptate incidunt repudiandae eum doloribus 
+            cumque suscipit officia repellendus quis?</p>
+        </div>
+    </div>
+    <script>
+        var indicator = document.getElementById('indicator');
+        //console.log(indicator);
+
+        window.addEventListener('scroll',() =>{
+            var scroll_Y = scrollY;
+            //trova l'altezza totale
+            var Tot_hg = document.documentElement.scrollHeight - window.innerHeight;
+            //console.log('DC' + document.documentElement.scrollHeight);
+            //console.log('VW' + window.innerHeight);
+            //console.log(Tot_hg);
+           // console.log(scroll_Y / Tot_hg * 100);
+           //conversione in percentuale
+            var Percent_hg = (scroll_Y / Tot_hg) * 100;
+           // console.log('VH.TOT' + scroll_Y);
+           // valore applicato negli stili
+            indicator.style.width = Percent_hg + '%';
+        })
+    </script>
+</body>
+</html>

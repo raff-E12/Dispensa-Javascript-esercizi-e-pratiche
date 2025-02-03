@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galleries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-size: 1.1em;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-image: url(immagini/body-img.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 300vh;
+        }
+
+        h1{
+            font-family: "Raleway", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 628;
+            font-style: normal;
+        }
+
+        .img-boxes img{
+            width: 30%;
+            border: 4px solid white;
+            box-shadow: 0px 0px 10px 2px black;
+        }
+
+        
+        .img-boxes .img1:hover{
+           width: 20%;
+           transition: all 0.3s ease-in-out;
+           cursor: pointer;
+        }
+
+        .img-boxes .img1:not(hover){
+           width: 30%;
+           transition: all 0.3s ease-in-out;
+        }
+
+        .img-boxes .img2:hover{
+           width: 20%;
+           transition: all 0.3s ease-in-out;
+           cursor: pointer;
+        }
+
+        .img-boxes .img2:not(hover){
+           width: 30%;
+           transition: all 0.3s ease-in-out;
+        }
+
+        .img-boxes .img3:hover{
+           width: 20%;
+           transition: all 0.3s ease-in-out;
+           cursor: pointer;
+        }
+
+        .img-boxes .img3:not(hover){
+           width: 30%;
+           transition: all 0.3s ease-in-out;
+        }
+
+        .img-boxes{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            padding: 10px;
+            height: 300px;
+        }
+
+        .content-box{
+            width: 100%;
+            height: 660px;
+            display: flex;
+            align-content: center;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        .content-box h1{
+            width: 100%;
+            height: 80px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            padding: 10px;
+            text-transform: uppercase;
+        }
+
+        footer{
+            background-color: bisque;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            gap: 80%;
+            border-top: 6px solid rgb(255, 174, 0);
+        }
+
+        .home{
+            color: rgb(194, 165, 4);
+            font-family: "Raleway", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 628;
+            font-style: normal;
+            text-decoration: none;
+            border: 2px solid rgb(255, 221, 67);
+            padding: 2px;
+            background: white;
+        }
+
+        .home:hover{
+            background-color: rgb(247, 172, 60);
+            color: white;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .svg-js{
+            width: 2%;
+            height: 2%;
+            padding: 2px;
+            background-color: white;
+        }
+
+        .image-review{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            backdrop-filter: blur(4px);
+            height: 715px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10%;
+            padding: 10px;
+        }
+
+        .image-review img{
+            width: 51%;
+            border: 2px solid white;
+        }
+
+        .cross-sc{
+            width: 100%;
+            height: 100px;
+            margin-top: -10%;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            padding: 10px;
+        }
+
+        .cross-sc .cross{
+            width: 2%;
+            height: 30px;
+            margin-right: -96%;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-box">
+        <h1>Galleria Imaggine</h1>
+        <div class="img-boxes" id="imgBox">
+        <img src="immagini/thumb1.png" alt="image" class="img1" id="img1">
+        <img src="immagini/thumb2.jpeg" alt="image" class="img2" id="img2">
+        <img src="immagini/thumb3.jpg" alt="image" class="img3" id="img3">
+        </div>
+    </div>
+    <footer>
+        <img src="immagini/icon/js_blank.svg" class="svg-js" alt="logo">
+        <a href="index.html" class="home" title="ritorna alla home">Home</a>
+    </footer>
+    <div class="image-review" id="imgRev">
+        <div class="cross-sc">
+            <img src="immagini/icon/cross icon.svg" alt="cross" class="cross" id="crossIcon">
+        </div>
+    </div>
+  <script>
+        var Img1 = document.getElementById('img1');
+        var Img2 = document.getElementById('img2');
+        var Img3 = document.getElementById('img3');
+        var image_rev_box = document.getElementById('imgRev');
+        var cross_icn = document.getElementById('crossIcon');
+        var img_box = document.getElementById('imgBox');
+
+        Img1.addEventListener('click', function(){
+            image_rev_box.style.display='flex';
+            image_rev_box.appendChild(Img1);
+
+            cross_icn.addEventListener('click', function(){
+                image_rev_box.style.display='none';
+                img_box.appendChild(Img1);
+            })
+        })
+
+        Img2.addEventListener('click', function(){
+            image_rev_box.style.display='flex';
+            image_rev_box.appendChild(Img2);
+
+            cross_icn.addEventListener('click', function(){
+                image_rev_box.style.display='none';
+                img_box.appendChild(Img2);
+            })
+        })
+
+        Img3.addEventListener('click', function(){
+            image_rev_box.style.display='flex';
+            image_rev_box.appendChild(Img3);
+
+            cross_icn.addEventListener('click', function(){
+                image_rev_box.style.display='none';
+                img_box.appendChild(Img3);
+            })
+   })
+    </script>
+</body>
+</html>

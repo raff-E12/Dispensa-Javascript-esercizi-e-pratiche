@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sintassi di jQuery</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#525fd6">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    
+    <header>
+        <h1>Guida jQuery<br> Sintassi di jQuery</h1>
+        <nav id="mainMenu">
+            <ul>
+                <li><a href="index.html" title="javascript">Home</a></li>
+                <li><a href="dove-jx.html" title="Dove posizionare Javascript">Dove posizionare Javascript</a></li>
+                <li><a href="sintassi-jx.html" title="La sintassi">Sintassi js</a></li>
+                <li><a href="condizionali-e-cicli.html" title="Condizionali e cicli">Condizioni e cicli</a></li>
+                <li><a href="funzioni.html" title="Le funzioni">Le funzioni</a></li>
+                <li><a href="jQuery.html" title="jQuery">jQuery</a></li>
+                <li><a href="integrareJQ.html" title="Integrare jQuery nei progetti">Integrare jQuery</a></li>
+                <li><a href="sintassiJquery.html" title="Sintassi jQuery">Sintassi jQuery</a></li>
+                <li><a href="selezioneJquery.html" title="La selezione degli elementi in jQuery">La selezione degli elementi in jQuery</a></li>
+                <li><a href="gestione_eventiJq.html" title="La gestione degli eventi in jQuery">La gestione degli eventi in jQuery</a></li>
+                <li><a href="metodi-jQ.html" title="Metodi jQuery">Metodi jQuery</a></li>
+                <li><a href="Javascript-riassunto.html" title="Riassunto Javascript">Riassunto Javascript</a></li>
+                <li><a href="eventi-js.html" title="Eventi Javascript">Eventi in Javascript</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Introduzione alla Sintassi di jQuery</h2>
+            <p>jQuery utilizza una sintassi semplice e concisa per selezionare elementi e applicare loro metodi per manipolare il DOM, gestire eventi, animare elementi, e interagire con server tramite AJAX.</p>
+            
+            <h2>Selezione degli Elementi</h2>
+            <p>Il punto di partenza della maggior parte dei comandi di jQuery è il simbolo <code>$</code>, seguito da una selezione degli elementi DOM che vuoi manipolare.</p>
+            <div class="code">
+                <pre><code>// Selezionare tutti gli elementi con tag &lt;p&gt;
+$('p');
+
+// Selezionare un elemento con id="mioElemento"
+$('#mioElemento');
+
+// Selezionare elementi con classe .miaClasse
+$('.miaClasse');</code></pre>
+            </div>
+
+            <h2>Metodi per Manipolare il DOM</h2>
+            <p>Una volta selezionati gli elementi, puoi utilizzare vari metodi di jQuery per manipolarli. Ecco alcuni esempi comuni:</p>
+            <div class="code">
+                <pre><code>// Cambiare il testo di un elemento
+$('#mioElemento').text('Nuovo testo');
+
+// Nascondere un elemento
+$('.miaClasse').hide();
+
+// Aggiungere una classe CSS a un elemento
+$('p').addClass('nuovaClasse');</code></pre>
+            </div>
+
+            <h2>Gestione degli Eventi</h2>
+            <p>jQuery semplifica l'aggiunta di eventi agli elementi. Ecco come puoi aggiungere un evento click a un pulsante:</p>
+            <div class="code">
+                <pre><code>// Aggiungere un evento click a un pulsante
+$('#mioBottone').click(function() {
+    alert('Pulsante cliccato!');
+});</code></pre>
+            </div>
+
+            <h2>Effetti e Animazioni</h2>
+            <p>La sintassi di jQuery include metodi predefiniti per applicare effetti e animazioni agli elementi:</p>
+            <div class="code">
+                <pre><code>// Effetto di fading su un elemento
+$('#mioElemento').fadeOut();
+
+// Effetto di slide su un elemento
+$('#mioElemento').slideUp();</code></pre>
+            </div>
+
+            <h2>Utilizzo di AJAX</h2>
+            <p>jQuery semplifica le richieste AJAX, permettendoti di interagire con il server senza ricaricare la pagina:</p>
+            <div class="code">
+                <pre><code>// Eseguire una richiesta GET AJAX
+$.get('https://api.example.com/dati', function(data) {
+    // Manipolare i dati ricevuti
+    $('#risultati').html(data);
+});</code></pre>
+            </div>
+
+            <h2>Conclusione</h2>
+            <p>Questi sono solo alcuni degli aspetti fondamentali della sintassi di jQuery. Con la sua semplicità e potenza, jQuery continua a essere uno strumento popolare per lo sviluppo web.</p>
+        </section>
+    </main>
+    
+    <footer>
+        &copy; Copyright 2024
+    </footer>
+    
+</body>
+</html>

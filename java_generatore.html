@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generatore di Poesie</title>
+    <link rel="stylesheet" href="js-css/generezione_css.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div class="box-gen">
+        <div class="row-btn">
+            <button class="remove-btn" id="buttonrev">x</button>
+        </div>
+        <div class="box-text"  id="boxcit">
+            <h1>Generatore di citazioni</h1>
+       <!---- <p class="text-gen">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est amet consequatur corporis sit provident distinctio dolores repellendus quasi consectetur, perspiciatis, assumenda sint. Molestias officiis corrupti aliquam? Nam autem laboriosam fugiat.<br><em class="cita-text">2023,02,11 mercoledi 20:03:40</em></p>-->
+       <p class="text-gen" id="textgen"></p>
+       <em class="cita-text" id="clockgen"></em>
+        <button class="button-gen" id="buttongen">Generatore di citazioni</button>
+        </div>
+    </div>
+<script>
+    var citazioni = ['La vita è quello che ti succede mentre sei occupato a fare altri piani. - John Lennon', 
+    'Il futuro appartiene a coloro che credono nella bellezza dei propri sogni. - Eleanor Roosevelt',
+    'Non è la specie più forte o la più intelligente a sopravvivere, ma quella che si adatta meglio al cambiamento. - Charles Darwin',
+    'Il successo è la somma di piccoli sforzi, ripetuti giorno dopo giorno. - Robert Collier',
+    'Credi in te stesso e in ciò che sei. Sii consapevole che cè qualcosa dentro di te che è più grande di qualsiasi ostacolo. - Christian D. Larson'];
+
+    var text_gen = document.getElementById('textgen');
+    var button_gen = document.getElementById('buttongen');
+    var clock_gen = document.getElementById('clockgen');
+
+    button_gen.addEventListener('click', function(){
+        var date_ogg = new Date();
+        var strig_date = date_ogg.toDateString();
+        var test_basic = 'hello';
+        var cit_random = citazioni[Math.floor(Math.random()*citazioni.length)];
+        test_basic = cit_random;
+        var text_em = clock_gen.textContent = strig_date;
+        text_gen.textContent = cit_random;
+    })
+
+</script>
+</body>
+</html>

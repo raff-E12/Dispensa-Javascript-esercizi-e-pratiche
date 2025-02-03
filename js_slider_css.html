@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider immagini</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,787;1,787&display=swap" rel="stylesheet">
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            width: 100%;
+            background-color: #F2C230;
+        }
+
+        h3{
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 43px;
+        }
+
+        p{
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: url(immagini/imagine1.jpg);
+        }
+
+        .slider-img{
+            width: 50%;
+            background-color: #D7D9D2;
+            height: 460px;
+            padding: 10px;
+            margin: 6%;
+            box-shadow: 0px 10px 20px 1px black;
+        }
+
+        .btn{
+            position: absolute;
+            padding: 10px;
+            height: 130px;
+            background-color: rgba(131, 131, 131, 0.712);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:active{
+            background-color: rgba(207, 207, 207, 0.712);
+            color: rgb(56, 56, 56);
+        }
+
+        .btn.left{
+            left: 25%;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        
+        .btn.right{
+            left: 71.79%;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .sliders{
+            width: 100%;
+            height: 380px;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        .sliders img{
+            width: 100%;
+            height: auto;
+            position: absolute;
+            left: 100%;
+        }
+
+        .sliders img.active{
+            left: 0;
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div class="slider-img">
+       <div class="sliders" id="sliders">
+        <img src="immagini/thumb1.png" alt="alt" class="active">
+        <img src="immagini/thumb2.jpeg" alt="alt">
+        <img src="immagini/thumb3.jpg" alt="alt">
+        <img src="immagini/tigre-2-scaled.jpg" alt="alt">
+       </div>
+    </div>
+    <button class="btn left" id="left"><span class="material-symbols-outlined">chevron_left</span></button>
+    <button class="btn right" id="right"><span class="material-symbols-outlined">chevron_right</span></button>
+  <script>
+        var sliders = document.getElementById('sliders');
+        var imgs = sliders.getElementsByTagName('img');
+        var btn_right = document.getElementById('right');
+        var btn_left = document.getElementById('left');
+        var currentSlide = 0;
+
+        function Src_Img(){
+            //la funzione prende tutte immagini rimuovendo la classe active impostando lo stile a -100%
+            //Controlla se il contatore è tra lo zero e l'ultima immagine
+            if(currentSlide >= 0 && currentSlide < imgs.length){
+                for (var i = 0; i < imgs.length; i++) {
+                imgs[i].removeAttribute('class');
+                imgs[i].style.left = '100%';
+            }
+             //la lista di immagini impostata dalla variabile indice aggiunge la classe e stile quando viene mostrato un immaggine
+            imgs[currentSlide].setAttribute('class', 'active');
+            imgs[currentSlide].style.left = '0';
+            }
+        }
+
+        btn_right.addEventListener('click', function(){
+            currentSlide++;
+            //limite impone che l'ultima immagine sia maggiore del totale si ritorna all'inizio.
+            if (currentSlide > imgs.length-1) {
+                currentSlide = 0;
+            }
+            Src_Img();
+        })
+
+        btn_left.addEventListener('click', function(){
+            currentSlide--;
+            //limite impone che quando si raggiunge il limite che quando il contatore e minore di zero si ritorna all'ultima immagine.
+            if (currentSlide < 0) {
+                currentSlide = imgs.length-1;
+            }
+            Src_Img();
+        })
+    </script>
+</body>
+</html>

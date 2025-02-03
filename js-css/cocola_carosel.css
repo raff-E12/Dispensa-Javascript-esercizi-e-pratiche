@@ -1,0 +1,361 @@
+.header-sc{
+    padding: 9px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+}
+
+.logo-sc{
+    width: 6%;
+}
+
+#logo-sc{
+    width: 100%;
+}
+
+h1{
+    font-size: 47.78px;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+h2{
+    font-size: 39.81px;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 719;
+    font-style: normal;
+}
+
+h3{
+    font-size: 33.18px;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 702;
+    font-style: normal;  
+}
+
+h4{
+    font-size: 27.65px;
+    font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 622;
+  font-style: normal;
+}
+
+h5{
+    font-size: 23.04px;
+    font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 532;
+  font-style: normal;
+}
+
+h6{
+    font-size: 19.2px;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 466;
+    font-style: normal;
+}
+
+p{
+    font-size: 16px;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 386;
+    font-style: normal;
+}
+
+a{
+    font-size: 16px;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 367;
+    font-style: normal;
+}
+
+.nav-link{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    flex-basis: 70%;
+}
+
+.nav-link li a{
+    font-size: 20px;
+    color: white;
+}
+
+.links{
+    flex-basis: 3%;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    font-size: 23px;
+}
+
+body{
+    background-color: #590219;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.box-int{
+    width: 100%;
+    background-color: aliceblue;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: white;
+}
+
+.side-1{
+    flex-basis: 100%;
+    height: 100vh;
+    background-color: #400601;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.side-2{
+    flex-basis: 80%;
+    background-color: #E40017;
+    padding: 20px;
+    height: 100vh;
+    transition: all 0.3s ease-in-out;
+}
+
+.text-side{
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    gap: 12px;
+    flex-direction: column;
+}
+
+.text-pr{
+    width: 60%;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    gap: 12px;
+    flex-direction: column;
+}
+
+.btn-int{
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    gap: 12px;
+    flex-direction: row;
+}
+
+.btn{
+    width: 160px;
+    padding: 10px;
+    height: 50px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.btn.buy{
+    background-color: #BF3E10;
+    color: white;
+    border: none;
+}
+
+.btn.cont{
+    background-color: transparent;
+    border: 2px solid #BF3E10;
+    color: #BF3E10;
+}
+
+.btn.buy:active{
+    background-color: #7a2101;
+    color: black;
+}
+
+.btn.cont:active{
+    border:2px solid #7a2101;
+    color: white;
+}
+
+.nav-link a:hover{
+    color: #FFDD3B;
+    cursor: pointer;
+}
+
+.link-read:hover{
+    color: #FFDD3B;
+    cursor: pointer;
+}
+
+.links i:hover{
+    color: #FFDD3B;
+    cursor: pointer;
+}
+
+.sliders{
+    position: absolute;
+    right: 0;
+    width: 520px;
+    height: 490px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-img{
+    filter: drop-shadow(20px 0px 4px black);
+    width: 52%;
+    position: absolute;
+    right: -100%;   
+    transition: all 0.1s ease-in-out;
+    padding: 2px;
+}
+
+.slide-img.active{
+    left: 10%;
+    transition: all 0.1s ease-in-out;
+}
+
+.slide-box{
+    width: 100%;
+    overflow: hidden;
+    height: 480px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btns-slide{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 120px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.btn.slide{
+    padding: 0;
+    width: 34px;
+    height: 34px;
+    background-color: white;
+    border: none;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn.slide:active{
+    background-color: gray;
+    color: white;
+}
+
+.circle-animation{
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #590219;
+    position: fixed;
+    border-radius: 100px;
+    opacity: 100;
+    left: 0;
+    top: 100%;
+}
+
+@keyframes circle-scale {
+    0%{transform: scale(0,0);opacity: 90;}
+    100%{transform: scale(400,400); opacity: 0;}
+}
+
+.circle-animation.active{
+    animation-name: circle-scale;
+    animation-duration: 320ms;
+    animation-timing-function: linear;
+    z-index: 20;
+    opacity: 100;
+}
+
+.circle-animation:not(.active){
+    animation: none;
+    opacity: 100;
+}
+
+.dots-box{
+    position: fixed;
+    right: 0;
+    width: 90px;
+    height: 400px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.vertical-line{
+    background-color: white;
+    padding: 2px;
+    width: 3px;
+    height: 80px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.dots{
+    width: 50%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.dot{
+    background-color: white;
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.dot.active{
+    outline: 4px solid gray;
+    transition: all 0.3s ease-in-out;
+}

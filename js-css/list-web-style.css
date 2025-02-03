@@ -1,0 +1,325 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1{
+    font-size: 30.41px;
+}
+
+h2{
+    font-size: 27.03px;
+}
+
+h3{
+    font-size: 24.03px;
+}
+
+h4{
+    font-size: 21.36px;
+}
+
+h5{
+    font-size: 18.98px;
+}
+
+h6{
+    font-size: 16.88px;
+}
+
+p{
+    font-size: 15px;
+}
+
+.headerlist{
+    background-color: #91B221;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    gap: 36%;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 10px solid #025908;
+    width: auto;
+    box-shadow: 0px 0px 10px 0px black;
+}
+
+.headerlist h1{
+    font-weight: 900;
+    text-transform: uppercase;
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2%;
+}
+
+.navlist{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 10%;
+    padding: 10px;
+}
+
+.inputtext{
+    width: 900%;
+    text-align: left;
+    font-size: 19px;
+    border-radius: 12px;
+    padding: 3px;
+    border: none;
+}
+
+.buttonadd{
+    font-size: 19px;
+    padding: 6px;
+    border: none;
+    text-transform: uppercase;
+    background-color: #BBBD2D;
+    color: white;
+}
+
+.buttonadd:hover{
+    background-color: #739600;
+    transition: all 0.3s ease;
+}
+
+body{
+    background-color: #f1f1f1;
+}
+
+.mainlist{
+    padding: 20px;
+}
+
+.boxlist{
+    background-color: #aaaaaa;
+    width: auto;
+    padding: 10px;
+    list-style-type: none;
+    border: 6px solid #888888;
+    border-radius: 10px;
+}
+
+.infolist{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    background-color: #d6d6d6;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+.logo{
+    width: 6%;
+    height: 6%;
+    padding: 2px;
+    border: 2px solid white;
+    background-color: white;
+}
+
+.listbox{
+    background-color: #7c7c7c;
+    display: flex;
+    flex-direction: row;
+    gap: auto;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    border:2px solid #646464;
+    width: 97%;
+}
+
+.listcontent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    font-size: 20px;
+}
+
+.buttonclear{
+    padding: 7px;
+    text-transform: uppercase;
+    color: white;
+    background-color: #B13A07;
+    border: none;
+}
+
+.buttonclear:hover{
+    transition: all 0.3s ease;
+    background-color: #882a02;
+}
+
+.valuelist{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    text-transform: capitalize;
+}
+
+.footermain{
+    width: auto;
+    background-color: #025908;
+    margin-top: 30%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color: white;
+}
+
+.completed{
+    text-decoration: line-through;
+    color: #b4b4b4;
+    transition: all 0.3s ease;
+}
+
+@media screen and (min-width:375px) {
+    .headerlist{
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .inputtext{
+        width: 300%;
+        font-size: 13px;
+    }
+
+    .buttonadd{
+        font-size: 13px;
+    }
+
+    .navlist{
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .footermain{
+        margin-top: 100%;
+    }
+}
+
+@media screen and (min-width:576px) {
+    .headerlist{
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .inputtext{
+        width: 300%;
+        font-size: 13px;
+    }
+
+    .buttonadd{
+        font-size: 13px;
+    }
+
+    .navlist{
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .footermain{
+        margin-top: 100%;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .headerlist{
+        display: flex;
+        flex-direction: row;
+        gap: 10%;
+    }
+
+    .inputtext{
+        width: 300%;
+        font-size: 16px;
+    }
+
+    .buttonadd{
+        font-size: 16px;
+    }
+
+    .navlist{
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .footermain{
+        margin-top: 100%;
+    }
+}
+
+@media screen and (min-width:992px) { 
+    .headerlist{
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .inputtext{
+        width: 300%;
+        font-size: 17px;
+    }
+
+    .buttonadd{
+        font-size: 17px;
+    }
+
+    .navlist{
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .footermain{
+        margin-top: 100%;
+    }
+}
+
+@media screen and (min-width:1200px){
+    .headerlist{
+        display: flex;
+        flex-direction: row;
+        gap: 10%;
+    }
+
+    .inputtext{
+        width: 300%;
+        font-size: 19px;
+    }
+
+    .buttonadd{
+        font-size: 19px;
+    }
+
+    .navlist{
+        width: 100%;
+        gap: 19px;
+    }
+    
+    .footermain{
+        margin-top: 100%;
+    }
+}

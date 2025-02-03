@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gli Eventi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="immagini/favjs/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="immagini/favjs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="immagini/favjs/favicon-16x16.png">
+    <link rel="manifest" href="immagini/favjs/site.webmanifest">
+    <link rel="mask-icon" href="immagini/favjs/safari-pinned-tab.svg" color="#dfe300">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        *{
+            font-size: 1.1em;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body{
+            background-image: url(immagini/Grid\ 1.jpg);
+            backdrop-filter: blur(10px);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .box-1{
+            background-color: antiquewhite;
+            width: 60%;
+            margin: 20% 10%;
+            box-shadow: 1px 3px 10px 8px black;
+            border: 10px solid rgb(255, 226, 188);
+            text-align: center;
+        }
+        .box-1 ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box-1 ul li{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        footer{
+            background-color: rgb(255, 250, 184);
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+        header{
+            width: 100%;
+            background-color: antiquewhite;
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+            border: 10px solid rgb(255, 226, 188);
+        }
+        button{
+            background-color: white;
+            border: 2px solid gray;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 200px;
+        }
+        button:hover{
+            background-color: rgb(168, 168, 168);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Esercizi con gli Eventi</h1>
+        <small>Usa il panello ispeziona per scoprire il codice di ogni casella <i class="fa-solid fa-arrow-right"></i></small>
+    </header>
+    <div class="box-1">
+        <h1>scrivi il box</h1>
+        <ul>
+            <li><span id="msg-btn">-</span></li>
+            <li><button id="bottone">Cliccami</button></li>
+        </ul>
+    </div>
+    <script>
+        function text_White(){
+            var selection_Text = document.getElementById('msg-btn');
+            selection_Text.textContent = 'Hello World!!';
+            return selection_Text;
+        }
+        var btn_Text = document.getElementById('bottone');
+        btn_Text.onclick = text_White;
+    </script>
+     <div class="box-1">
+        <h1>Clicca per Selezionare un frutto</h1>
+        <ul>
+            <li><span id="msg-btn-1">-</span></li>
+            <li><button id="bottone-1">Cliccami</button></li>
+        </ul>
+    </div>
+    <script>
+        function selection_Fruit(){
+            var text_id_Msg = document.getElementById('msg-btn-1');
+            if (text_id_Msg.textContent === '-') {
+                text_id_Msg.textContent = 'Fragola';
+            } 
+            else if(text_id_Msg.textContent === 'Fragola'){
+                text_id_Msg.textContent = 'Limone';
+            }
+            else if(text_id_Msg.textContent === 'Limone'){
+                text_id_Msg.textContent = 'Arancia';
+            }
+            else {
+                text_id_Msg.textContent = '-';
+            }
+        }
+        var btn = document.getElementById('bottone-1');
+        btn.onclick = selection_Fruit;
+    </script>
+     <div class="box-1">
+        <h1>Digita nel testo</h1>
+        <ul>
+            <li><span id="msg-btn-2">-</span></li>
+            <li><input type="text" id="text-inner" placeholder="Digita" style="text-align: center; border-radius: 10px;"></li>
+        </ul>
+    </div>
+    <script>
+        const msg_btn_value = document.getElementById('msg-btn-2');
+        const input_text = document.getElementById('text-inner');
+        input_text.oninput = function (){
+            msg_btn_value.textContent = input_text.value;
+        };
+    </script>
+      <div class="box-1">
+        <h1>Hamburger Menu Icona (Esercizio fatto in classe), Utilizzando la DOMTokenList.</h1>
+        <br>
+        <ul>
+            <li><div id="div-box"> 
+            <span></span>
+            <span></span>
+            <span></span>
+            </div></li>
+        </ul>
+        <br>
+    </div>
+    <style>
+        #div-box{
+            width: 50px;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            gap: 10px;
+            cursor: pointer;
+        }
+        #div-box span{
+            width: 100%;
+            background-color: black;
+            height: 10px;
+            position: absolute;
+            transition: all 0.5s ease;
+        }
+        #div-box span:nth-of-type(2){
+            width: 100%;
+            background-color: black;
+            height: 10px;
+            position: absolute;
+            top: 18px;
+            transition: all 0.1s ease;
+        }
+        #div-box span:nth-of-type(3){
+            width: 100%;
+            background-color: black;
+            height: 10px;
+            position: absolute;
+            top: 36px;
+        }
+        #div-box.open span:nth-of-type(1){
+            transform: rotate(50deg);
+            top: 18px;
+        }
+        #div-box.open span:nth-of-type(2){
+            opacity: 0%;
+        }
+        #div-box.open span:nth-of-type(3){
+            transform: rotate(-50deg);
+            top: 18px;
+        }
+    </style>
+    <script>
+        var ham_box = document.getElementById('div-box');
+        ham_box.addEventListener('click', function(){
+               //this.classList.toggle('open');
+                //this.className = 'open';
+            if (this.className === '') {
+                this.setAttribute('class', 'open');
+            } else {
+                this.removeAttribute('class');
+            }
+        });
+        // DOMTokenList = 'Classlist' accesso alla lista di classi per il css
+    </script>
+     <div class="box-1">
+        <h1>Scopri sei il Benvenuto!!</h1>
+        <ul>
+            <li>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;"> 
+                <p id="pargraph-input">-</p>
+                <input type="text" name="testo" id="input-text" placeholder="Accedi" style="text-align: center;">
+                <button id="input-button" style="width: 100%;">Scopri se sei il benvenuto</button>
+            </div>
+        </li>
+        </ul>
+    </div>
+    <script>
+        const input_risult = document.getElementById('pargraph-input');
+        const input_bartext = document.getElementById('input-text');
+        const input_button = document.getElementById('input-button');
+        input_button.onclick = function(){
+            const name_user = input_bartext.value;
+            if (input_bartext.value.trim()) {
+                input_risult.textContent = 'Benvenuto'+ ',' + name_user;
+                input_risult.style.color = 'green';
+            } else {
+                input_risult.textContent = 'Riprova!!';
+                input_risult.style.color = 'red';
+            }
+        };
+    </script>
+    <div class="box-1">
+        <h1>Quanto riesci ad arrivare</h1>
+        <ul>
+            <li>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;"> 
+                <p id="result-msg">-</p>
+                <p id="count-click">Clicca Per Iniziare</p>
+                <button id="input-click" style="width: 100%;">Clicca</button>
+            </div>
+        </li>
+        </ul>
+    </div>
+    <script>
+        var input_button_click = document.getElementById('input-click');
+        var count_click = document.getElementById('count-click');
+        var result_msg = document.getElementById('result-msg');
+        var count_index = 0;
+        input_button_click.onclick = function(){
+            if (true) {
+                count_index += 1;
+                count_click.textContent = 'Numero di click:' + count_index;
+            }
+        }
+        function Game_End(){
+                input_button_click.disabled = true;
+                //disabled = proprietà utilizzata sui form
+                result_msg.textContent = 'Totale:' + count_index;
+        }
+        setTimeout(Game_End, 10000);
+        //numero calcolato in millisecondi
+    </script>
+      <div class="box-1">
+        <h1>Aggiungi qualcosa alla lista</h1>
+        <br>
+        <ul>
+            <li>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;"> 
+               <input type="text" id="input_list" placeholder="Aggiungi" style="text-align: center;">
+                <button id="input-list-add" style="width: 100%;">Aggiungi</button>
+                <ul id="localStorage">
+                </ul>
+            </div>
+        </li>
+        </ul>
+    </div>
+    <script>
+        var list_input_add = document.getElementById('input_list');
+        var button_add = document.getElementById('input-list-add');
+        var local_storage_list = document.getElementById('localStorage');
+        button_add.onclick = function (){
+            var text_value_add = list_input_add.value.trim();
+            if (text_value_add !== '') {
+                var box_add = document.createElement('li');
+                box_add.className = 'box-list';
+                var txt_list = document.createElement('p');
+                var box_text = document.createTextNode(text_value_add);
+                var btn_Delete = document.createElement('button');
+                btn_Delete.textContent = 'Elimina';
+                btn_Delete.classList = 'delete-button';
+                btn_Delete.onclick = function (){
+                    local_storage_list.removeChild(box_add);
+                };
+                txt_list.appendChild(box_text);
+                txt_list.appendChild(btn_Delete);
+                box_add.appendChild(txt_list);
+                local_storage_list.appendChild(box_add);
+            }
+        };
+    </script>
+    <style>
+        #localStorage{
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+        }
+        .box-list{
+            background-color: rgb(255, 203, 136);
+            padding: 5px;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 10px solid rgb(255, 226, 188);
+        }
+        .box-list p{
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            gap: 59%;
+            padding: 2px;
+            font-size: 25px;
+        }
+        .delete-button{
+            font-size: 23px;
+            width: 30%;
+            padding: 2px;
+            display: block;
+            margin: 2px;
+            background-color: #D9043D;
+            color: white;
+            border: 2px solid #8C031C;
+        }
+        .delete-button:hover{
+            background-color: #BF0426;
+        }
+    </style>
+    <div class="box-1">
+        <h1>Incrementa o Decrementa il valore</h1>
+        <br>
+        <ul>
+            <li>
+            <div style="display: flex; flex-direction: row; align-items: center; gap: 20px;"> 
+                <button id="max-button">max</button>
+                <p id="index-number">0</p>
+                <button id="min-button">min</button>
+                <button id="reset-button">Reset</button>
+            </div>
+        </li>
+        </ul>
+    </div>
+    <script>
+        var max_button = document.getElementById('max-button');
+        var min_button = document.getElementById('min-button');
+        var reset_button = document.getElementById('reset-button');
+        var index_number = document.getElementById('index-number');
+        var index_default = 0;
+         max_button.onclick = function(){
+                index_default += 1;
+                index_number.textContent = index_default;
+                index_number.style.color = 'green';
+            };
+         min_button.onclick = function(){
+                index_default -= 1;
+                index_number.textContent = index_default;
+                index_number.style.color = 'red';
+            };
+            reset_button.onclick = function(){
+                index_default = 0;
+                index_number.textContent = index_default;
+                index_number.style.color = 'black';
+            };
+    </script>
+     <div class="box-1">
+        <h1>Cambia Colore</h1>
+        <br>
+        <ul>
+            <li>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;"> 
+                <p id="index-color">-</p>
+               <div style="width: 100px; height: 100px; background-color: white;" id="cube-color"></div>
+                <button id="switch-color">Cambia Colore</button>
+            </div>
+        </li>
+        <br>
+        </ul>
+    </div>
+    <script>
+        var box_color = document.getElementById('cube-color');
+        var index_color = document.getElementById('index-color');
+        var switch_color = document.getElementById('switch-color');
+        switch_color.onclick = function (){
+            var color_start = index_color.textContent;
+           if (color_start === '-') {
+            index_color.textContent = 'Blu';
+            box_color.style.backgroundColor = 'blue'; 
+           }
+           else if (color_start === 'Blu') {
+            index_color.textContent = 'Verde';
+            box_color.style.backgroundColor = 'green'; 
+           }
+           else if (color_start === 'Verde') {
+            index_color.textContent = 'Nero';
+            box_color.style.backgroundColor = 'black'; 
+           }
+           else if (color_start === 'Nero') {
+            index_color.textContent = 'Viola';
+            box_color.style.backgroundColor = 'violet'; 
+           }
+           else if (color_start === 'Viola') {
+            index_color.textContent = 'Giallo';
+            box_color.style.backgroundColor = 'yellow'; 
+           }
+           else{
+            index_color.textContent = '-';
+            box_color.style.backgroundColor = 'White';
+           }
+        };
+    </script>
+      <div class="box-1">
+        <h1>Clicca per Sapere che evento si tratta.</h1>
+        <br>
+        <ul>
+            <li>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;"> 
+                <button id="event-promt">Info</button>
+               <div id="info-event">-</div>
+            </div>
+        </li>
+        <br>
+        </ul>
+    </div>
+    <script>
+        const event_Button = document.getElementById('event-promt');
+        const event_info = document.getElementById('info-event');
+        event_Button.addEventListener('click', function(e){
+            //e.stopPropagation(); : fa si che l'elemento applicato a quel evento non si propaghi su altri elementi contenitori che appartengono al elemento padre o andando in conflitto con altri elementi risalenti in quel momento, quindi grazie a questo metodo si stoppa la propagazione di quel evento sugli altri elementi.
+            //e.preventDefault(); : annulla il comportamento di un evento standard di un elemento quando si verifica, visto che al posto del div abbiamo inserito il form.
+            var target_element = e.target.tagName;
+            var type_element = e.type;
+            var spiegazione = "l'oggetto evento (e) serve a comunicare informazioni all'evento che si sta svolgendo e in che modo si verifica." + '<br>' + 'e.preventDefault(); : annulla il comportamento di un evento standard di un elemento quando si verifica, visto che al posto del div abbiamo inserito il form';
+            event_info.style.padding = '10px';
+            event_info.innerHTML = target_element + ',' + type_element + '<br>' + spiegazione;
+        });
+    </script>
+    <footer>
+        <p>Tabella &copy; - valori espressi in <a href="index.html">Javascript</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Funzioni</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="immagini/favjs/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="immagini/favjs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="immagini/favjs/favicon-16x16.png">
+    <link rel="manifest" href="immagini/favjs/site.webmanifest">
+    <link rel="mask-icon" href="immagini/favjs/safari-pinned-tab.svg" color="#dfe300">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        *{
+            font-size: 1.1em;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body{
+            background-image: url(immagini/Grid\ 1.jpg);
+            backdrop-filter: blur(10px);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .box-1{
+            background-color: antiquewhite;
+            width: 700px;
+            margin: 20% 10%;
+            box-shadow: 1px 3px 10px 8px black;
+            border: 10px solid rgb(255, 226, 188);
+            text-align: center;
+        }
+        .box-1 ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box-1 ul li{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        footer{
+            background-color: rgb(255, 250, 184);
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+        header{
+            width: 100%;
+            background-color: antiquewhite;
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+            border: 10px solid rgb(255, 226, 188);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Esercizi con le funzioni e combinazioni</h1>
+        <small>Usa il panello ispeziona per scoprire il codice di ogni casella <i class="fa-solid fa-arrow-right"></i></small>
+    </header>
+    <div class="box-1">
+        <h1>Scrivere una frase partendo da un solo oggetto</h1>
+        <ul>
+            <li><span id="valore1">-</span><span id="valore2">-</span><span id="valore3">-</span></li>
+        </ul>
+    </div>
+    <script>
+        var testo_1 = 'Luigi';
+        var testo_2 = 'Mangia una';
+        var testo_3 = 'Mela.';
+        var parola_1 = document.getElementById('valore1');
+        var parola_2 = document.getElementById('valore2');
+        var parola_3 = document.getElementById('valore3');
+
+        parola_1.textContent = testo_1;
+        parola_2.textContent = testo_2;
+        parola_3.textContent = testo_3;
+    </script> 
+        <div class="box-1">
+            <h1>Scrivi una frase partendo solo dalla funzione</h1>
+            <ul>
+                <li><span id="valore4">-</span><span id="valore5">-</span><span id="valore6">-</span></li>
+            </ul>
+        </div>
+        <script>
+            function box2(){
+                var par1 = 'Maria';
+                var test1 = document.getElementById('valore4');
+                test1.textContent = par1;
+                var par2 = 'non mangia';
+                var test2 = document.getElementById('valore5');
+                test2.textContent = par2;
+                var par3 = 'la carne';
+                var test3 = document.getElementById('valore6');
+                test3.textContent = par3;
+                return test1 + test2 + test3;
+            }
+            box2();
+        </script>
+        <div class="box-1">
+            <h1>Scrivi una frase partendo dall oggetto</h1>
+            <ul>
+                <li><span id="valore8">-</span></li>
+            </ul>
+        </div>
+        <script>
+            var box3 = {
+                p1text:'Mario',
+                p2text:' Ha perso un orologio',
+                p3text:' molto costo.',
+                frase_completa : function () {
+                  var complete = this.p1text + this.p2text + this.p3text;
+                  return complete;
+                }
+            };
+            var textbox = document.getElementById('valore8');
+            textbox.textContent = box3.frase_completa();
+        </script>
+        <div class="box-1">
+            <h1>Scrivi una frase replicando lo stesso procedimento nell oggetto </h1>
+            <ul>
+                <li><span id="valore11">-</span></li>
+            </ul>
+        </div>
+        <script>
+            var box4 = {
+                prima : 'Gulia e Romero',
+                spaziatura : '-',
+                secondo : 'si amarono cosi tanto',
+                terza : 'che diventarono sposi.',
+                composizione: function() {
+                    var completa = this.prima + this.spaziatura + this.secondo + this.spaziatura + this.terza;
+                    return completa;
+                }
+            }
+            //variabile = oggetto
+            //oggetto = raccolta dati
+            var frase_box = document.getElementById('valore11');
+            frase_box.textContent = box4.composizione();
+        </script>
+        <div class="box-1">
+            <h1>Spiega il procidemento che hai ottenuto</h1>
+            <ul>
+                <li><span id="valore12">-</span></li>
+            </ul>
+            </div>
+            <script>
+                const spiegazione = 'creare una funzione all interno di oggetto che genera la frase corrispondente che viene richiamata da un altro oggetto in funzione tramite la dot.notetion';
+                const testo_sp = document.getElementById('valore12');
+                testo_sp.textContent = spiegazione;
+            </script>
+                <div class="box-1">
+                    <h1>Crea un Titolo con l'h1</h1>
+                    <ul>
+                        <li><span id="valore13">-</span></li>
+                    </ul>
+            </div>
+            <script>
+                var titolo_h1 = document.createElement('h1');
+                 titolo_h1 = 'Hello World!!';
+                var testo_h1 = document.getElementById('valore13');
+                testo_h1.innerHTML = titolo_h1;
+            </script>
+              <div class="box-1">
+                <h1>Trova l'area del triangolo con le funzioni</h1>
+                <ul>
+                    <li><p>Base = 12cm</p></li>
+                    <li><p>Altezza = 15cm</p></li>
+                    <li><p>Totale:</p></li>
+                    <li><span id="valore14">-</span></li>
+                </ul>
+                </div>
+                <script>
+                    function formula_del_triangolo(){
+                        var Base = 12;
+                        var Altezza = 15;
+                        var totale = (12 * 15) /2;
+                        var formula_risultato = document.getElementById('valore14');
+                        formula_risultato.textContent = totale;
+                        return totale;
+                    }
+                    formula_del_triangolo();
+                </script>
+              <div class="box-1">
+                <h1>Crea tre schede di oggetti che comprendono le varie caratteristiche di persone a piacere <br> elencando il Nome e il genere</h1>
+                <ul>
+                    <li><span id="persona1">-</span></li>
+                    <li><span id="persona2">-</span></li>
+                    <li><span id="persona3">-</span></li>
+                </ul>
+                </div>
+                <script>
+                    var persone = [
+                        {
+                            nome: 'Armando',
+                            anni: 19,
+                            hobby: 'Pattinaggio',
+                            sesso:'Maschio',
+                        },
+                        {
+                            nome: 'Annarita',
+                            anni: 22,
+                            hobby: 'Nuoto',
+                            sesso:'femmina',
+                        },
+                        {
+                            nome: 'Giuseppe',
+                            anni: 26,
+                            hobby: 'Musica',
+                            sesso:'Maschio',
+                        }
+                    ];
+                    //array di oggetti con proprietà e funzioni
+                    var prima_persona = document.getElementById('persona1');
+                    prima_persona.innerHTML = persone[0].nome + ',' + persone[0].sesso;
+                    var seconda_persona = document.getElementById('persona2');
+                    seconda_persona.innerHTML = persone[1].nome + ',' + persone[1].sesso;
+                    var terza_persona = document.getElementById('persona3');
+                    terza_persona.innerHTML = persone[2].nome + ',' + persone[2].sesso;
+                </script>
+                   <div class="box-1">
+                    <h1>Trasforma questa parola in un numero</h1>
+                    <ul>
+                        <li><span id="parola">-</span></li>
+                    </ul>
+                    </div>
+                    <script>
+                        var par_num = 'diciasette';
+                        var numero_parola = document.getElementById('parola');
+                        numero_parola.innerHTML = par_num;
+                        numero_parola.innerHTML = par_num.replace('diciasette', 17);
+                    </script>
+                    <div class="box-1">
+                        <h1>Risolvi questa espressione utilizzando i parametri di una funzione</h1>
+                        <ul>
+                            <li><p>(12+39) + (45+90)</p></li>
+                            <li><p>Risultato</p></li>
+                            <li><span id="risultato">-</span></li>
+                        </ul>
+                    </div>
+                    <script>
+                        function box_risult(parent_1, parent_2){
+                            this.parent_1 =  'somma1'; 
+                            this.parent_2 =  'somma2';
+                            return parent_1 + parent_2;
+                        }
+                        var comb = box_risult (12+39, 45+90);
+                        var codice = document.getElementById('risultato');
+                        codice.innerHTML = comb;
+                    </script>
+                        <div class="box-1">
+                            <h1>Risolvi questa operazione con le funzioni</h1>
+                            <ul>
+                                <li><p>(12+34)-(12-56)</p></li>
+                                <li><p>Risultato</p></li>
+                                <li><span id="box-risultato">-</span></li>
+                            </ul>
+                        </div>
+                        <script>
+                            const riso_op = function(){
+                                const parents_1 = 12+34;
+                                const parents_2 = 12-56;
+                                const risult_op = parents_1 + parents_2;
+                                return risult_op;
+                            };
+                            const test_op = document.getElementById('box-risultato');
+                            test_op.textContent = riso_op();
+                        </script>
+                        <div class="box-1">
+                            <h1>Carica la data di oggi con Anno, giorno e Mese</h1>
+                            <ul>
+                                <li><p>Risultato</p></li>
+                                <li><span id="data">-</span></li>
+                            </ul>
+                        </div>
+                        <script>
+                            var date = new Date();
+                            var oggi = date.toString();
+                            var anno = date.getFullYear();
+                            var mese = date.getDate();
+                            var giorno = date.getDay();
+                            var somma = anno + ',' + giorno + '/' + mese;
+                            const text_date = document.getElementById('data');
+                            text_date.innerHTML = somma;
+                        </script>
+                        <div class="box-1">
+                            <h1>Crea un oggetto "Tigre" con tutte le caratteristiche generali, e nomina le caretteristiche segnate</h1>
+                            <img src="immagini/tigre-2-scaled.jpg" alt="Immagine" style="width: 40%; border: 10px solid orange;">
+                            <ul>
+                                <li><p>Animale:</p><span id="animale">-</span></li>
+                                <li><p>Sesso:</p><span id="sesso">-</span></li>
+                                <li><p>Colore:</p><span id="colore">-</span></li>
+                                <li><p>Categoria:</p><span id="categoria">-</span></li>
+                                <li><p>Peso:</p><span id="peso">-</span></li>
+                                <li><p>Habitat:</p><span id="habitat">-</span></li>
+                            </ul>
+                        </div>
+                        <script>
+                            const tigre = {
+                                animale:'tigre',
+                                sesso:'maschio',
+                                colore:'arancio e bianco',
+                                categoria:'mamifero',
+                                peso:90,
+                                habitat:'india',
+                            };
+                            const get_ani = document.getElementById('animale');
+                            get_ani.innerHTML = tigre.animale;
+                            const get_sess = document.getElementById('sesso');
+                            get_sess.innerHTML = tigre.sesso;
+                            const get_col = document.getElementById('colore');
+                            get_col.innerHTML = tigre.colore;
+                            const get_cat = document.getElementById('categoria');
+                            get_cat.innerHTML = tigre.animale;
+                            const get_pes = document.getElementById('peso');
+                            get_pes.innerHTML = tigre.peso;
+                            const get_hab = document.getElementById('habitat');
+                            get_hab.innerHTML = tigre.habitat;
+                        </script>
+                         <div class="box-1">
+                            <h1>Crea un espressione con un numero casuale nella prima parentesi e calcola il risultato</h1>
+                            <ul>
+                                <li><p>Risultato:</p><span id="risult-calc">-</span></li>
+                            </ul>
+                        </div>
+                        <script>
+                            const numero_1 = Math.random();
+                            const number = (numero_1 + 13) + (90/6);
+                            const text_result = document.getElementById('risult-calc');
+                            text_result.innerHTML = Math.floor(number);
+                        </script>
+                         <div class="box-1">
+                            <h1>Crea una finestra pop-up con un messaggio di "Hello World!!", per completare questa sezione.</h1>
+                        </div>
+                        <script>
+                           const window_text = 'Hello World!!';
+                           const pop_up = window.alert(window_text);
+                        </script>
+                        <header>
+                            <h1>Risolvi i problemi matematici con Javascript</h1>
+                        </header>
+                         <div class="box-1">
+                            <h1>Aurora ha trovato sulla spiaggia 12 conchiglie rosa e 11
+                                conchiglie bianche, le ha messe tutte nel secchiello per
+                                portarle a casa. Quante conchiglie ha raccolto in tutto?</h1>
+                            <ul>
+                                <li><p>Risultato:</p><span id="problem-result-1">-</span></li>
+                            </ul>
+                        </div>
+                        <script>
+                            function Problema1(conchiglie_rosa, conchiglie_bianche){
+                                this.conchiglie_rosa = conchiglie_rosa;
+                                this.conchiglie_bianche = conchiglie_bianche;
+                                this.calcolo_pr_1 = function() { 
+                                    return this.conchiglie_rosa + this.conchiglie_bianche;
+                                };
+                            }
+                            var text_result_1 = new Problema1(12, 11);
+                            const pr_text = document.getElementById('problem-result-1');
+                            pr_text.innerHTML = text_result_1.calcolo_pr_1();
+                        </script>
+                        <div class="box-1">
+                            <h1>Italo partecipa spesso alle gare studentesche, quest’anno
+                                ha vinto 8 medaglie, gli anni precedenti ne aveva vinte 13.
+                                Quante medaglie ha ora in tutto?</h1>
+                            <ul>
+                                <li><p>Risultato:</p><span id="problem-result-2">-</span></li>
+                            </ul>
+                        </div>
+                        <script>
+                               const op_1 = 8;
+                               const op_2 = 13;
+                            function somma_pr_2(op_1, op_2){
+                                const operation_op = op_1 + op_2;
+                                const text_op = document.querySelector('#problem-result-2');
+                                text_op.innerHTML = operation_op;
+                                return operation_op;
+                            }
+                            somma_pr_2(op_1, op_2);
+                        </script>
+                        <div class="box-1">
+                            <h1>Sofia gioca a figurine con Giulia; durante il gioco ne perde
+                                12 ma gliene restano ancora 42. Quante figurine aveva
+                                all’inizio prima di giocare?</h1>
+                            <ul>
+                                <li><p>Risultato:</p><span id="problem-result-3">-</span></li>
+                            </ul>
+                        </div>
+                        <script>
+                            const carte_perse = 12;
+                            const carte_rimaste = 42;
+                            const carte_somma = carte_perse + carte_rimaste;
+                            const text_card = document.getElementById('problem-result-3');
+                            text_card.innerHTML = carte_somma;
+                        </script>
+                        <div class="box-1">
+                            <h1>Carla ha ricevuto un fascio di 13 rose. Dopo due giorni 3
+                                rose sono appassite perciò le butta. Di quanti fiori è costituito
+                                ora il fascio?</h1>
+                            <ul>
+                                <li><p>Risultato:</p><span id="problem-result-4">-</span></li>
+                            </ul>
+                        </div>
+                        <script>
+                            const Problema_3 = function (){
+                                const tot_rose = 13;
+                                const min_rose = 3;
+                                return tot_rose - min_rose;
+                            };
+                            const text_tot = document.getElementById('problem-result-4');
+                            text_tot.innerHTML = Problema_3();
+                        </script>
+                        <div class="box-1">
+                            <h1>Una lumaca si arrampica lungo la parete di un pozzo umido, 
+                                buio e profondo 5 m. Ogni giorno sale di 3 m ed ogni notte, mentre dorme, 
+                                scivola verso il basso di 2 m. 
+                                Dopo quanti giorni la lumaca potrà uscire dal pozzo?</h1>
+                            <ul>
+                                <li><p>Risultato:</p><span id="problem-result-5">-</span></li>
+                            </ul>
+                        </div>
+                        <script>
+                            const Problema_4 = function (){
+                                const mt_pozzo = 5;
+                                const mt_salita = 3;
+                                const mt_caduta = 2;
+                                const op_pr4 = mt_salita * mt_caduta - mt_pozzo;
+                                const tot_pr4 = op_pr4 * mt_pozzo;
+                                return tot_pr4;
+                            };
+                            const text_op4 = document.getElementById('problem-result-5');
+                            text_op4.innerHTML = Problema_4();
+                        </script>
+                         <div class="box-1">
+                            <h1>Simone, il panettiere, ha preparato 1200 panini all’olio e
+                                400 panini integrali. Quanti panini ha preparato in tutto? Se
+                                vende 680 panini, quanti panini gli restano da vendere?</h1>
+                            <ul>
+                                <li><p>Risultato:</p><span id="problem-result-6">-</span></li>
+                            </ul>
+                        </div>
+                        <script>
+                            const Problema_5 = function (){
+                                const tot_panini_oil = 1200;
+                                const tot_panini_int = 400;
+                                const tot_panini_sell = 680;
+                                const somma_panini = tot_panini_int + tot_panini_oil;
+                                const diff_panini = somma_panini - tot_panini_sell;
+                                const tot_pr_5 = [somma_panini, diff_panini];
+                                return tot_pr_5;
+                            };
+                            const function_pr = Problema_5();
+                            const text_pr_5 = document.getElementById('problem-result-6');
+                            text_pr_5.innerHTML = function_pr;
+                        </script>
+                        <div class="box-1">
+                            <h1>Gabriele deve calcolare con l’aiuto della calcolatrice
+                                46+12. Sbaglia e invece dell’operazione di addizione digita il
+                                tasto della sottrazione. Ottiene così 34. Quanto deve
+                                aggiungere al numero trovato per ottenere il risultato
+                                corretto dell’addizione?</h1>
+                            <ul>
+                                <li><p>Risultato:</p><span id="problem-result-7">-</span></li>
+                            </ul>
+                        </div>
+                        <script>
+                            const calcolo = new Object();
+                            calcolo.primo = 46;
+                            calcolo.secondo = 36;
+                            calcolo.terzo = 34;
+                            calcolo.function = function(){
+                                const tot_pr7 = this.primo - this.secondo;
+                                const tot_pr8 = tot_pr7 + this.terzo;
+                                return tot_pr8;
+                            };
+                            const text_pr7 = document.getElementById('problem-result-7');
+                            text_pr7.innerHTML = calcolo.function();
+                        </script>
+                        <div class="box-1">
+                            <h1> Un barbone raccoglie mozziconi di sigaretta e 
+                                mettendone assieme 4 si costruisce una sigaretta (quasi) nuova. 
+                                Se riesce a fumare 7 sigarette (quasi) nuove, qual è il numero minimo 
+                                di mozziconi che deve aver trovato e quanti gliene rimangono alla fine?</h1>
+                            <ul>
+                                <li><p>Risultato:</p><span id="problem-result-8">-</span></li>
+                            </ul>
+                        </div>
+                        <script>
+                            const tot_moz = 4;
+                            const tot_fum_sig = 7;
+                            function Min_Sig(){
+                                const tot_risult_sig = tot_fum_sig - tot_moz;
+                                const tot_sig = tot_moz - tot_risult_sig;
+                                return tot_sig;
+                            };
+                            const text_pr8 = document.getElementById('problem-result-8');
+                            text_pr8.innerHTML = Min_Sig();
+                        </script>
+                          <div class="box-1">
+                            <h1>Elisa sta leggendo un libro di 184 pagine. Se è arrivata a
+                                pagina 112, quante pagine le restano ancora da leggere?</h1>
+                            <ul>
+                                <li><p>Risultato:</p><span id="problem-result-9">-</span></li>
+                            </ul>
+                        </div>
+                        <script>
+                            const pr_vol_1 = 184;
+                            const pr_vol_2 = 112;
+                            const tot_vol_1 = pr_vol_1 - pr_vol_2;
+                            const text_pr9 = document.getElementById('problem-result-9');
+                            text_pr9.innerHTML = tot_vol_1;
+                        </script>
+                        <div class="box-1">
+                            <h1>In una stalla vi sono oche e coniglietti. 
+                                Contando le teste queste sono 32, le zampe sono 100. 
+                                Quante sono le oche e quanti i conigli?</h1>
+                            <ul>
+                                <li><p>Risultato:</p><span id="problem-result-10">-</span></li>
+                            </ul>
+                        </div>
+                        <script>
+                            const vol_1 = 32;
+                            const vol_2 = 100;
+                            const op_vol = function (){
+                                const calc_op_1 = vol_1 - vol_2;
+                                const calc_op_2 =  calc_op_1 - vol_1;
+                                const calc_op_3 =  calc_op_2 / 2;
+                                const calc_op_4 = calc_op_1 - vol_1;
+                                const list_tot = [calc_op_3, calc_op_4];
+                                return list_tot;
+                            };
+                            const tot_pr10 = document.getElementById('problem-result-10');
+                            tot_pr10.innerHTML = op_vol();
+                        </script>
+    <footer>
+        <p>Tabella &copy; - valori espressi in <a href="index.html">Javascript</a></p>
+    </footer>
+</body>
+</html>

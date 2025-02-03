@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JQuery Esercizi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="immagini/favjs/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="immagini/favjs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="immagini/favjs/favicon-16x16.png">
+    <link rel="manifest" href="immagini/favjs/site.webmanifest">
+    <link rel="mask-icon" href="immagini/favjs/safari-pinned-tab.svg" color="#dfe300">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+    <script src="menu-scroll-jquery/js/jquery-3.7.1.min.js"></script>
+    <style>
+        *{
+            font-size: 1.1em;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+        }
+
+        body{
+            background-image: url(immagini/Grid\ 1.jpg);
+            backdrop-filter: blur(10px);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .box-1{
+            background-color: antiquewhite;
+            width: 700px;
+            margin: 20% 10%;
+            box-shadow: 1px 3px 10px 8px black;
+            border: 10px solid #53CCA7;
+            text-align: center;
+            padding: 10px;
+        }
+        .box-1 ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box-1 ul li{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        footer{
+            background-color: #53CCA7;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+        header{
+            width: 100%;
+            background-color: antiquewhite;
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+            border: 10px solid #53CCA7;
+        }
+
+        .par1{
+            color:rgb(94, 94, 94);
+        }
+
+        .red{
+            color: rgb(247, 0, 0);
+            text-decoration: overline;
+        }
+
+        .verde{
+            color: green;
+            text-decoration: none;
+        }
+
+        .blue{
+            color: blue;
+            text-decoration: line-through;
+        }
+        
+        .italic{
+            font-style: italic;
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Il Jquery</h1>
+        <small>Usa il panello ispeziona per scoprire il codice di ogni casella <i class="fa-solid fa-arrow-right"></i></small>
+    </header>
+    <div class="box-1">
+        <h1>Tabella jQuery 1#</h1>
+        <ul class="list1">
+            <li><p class="par1">Luca Gioca</p></li>
+            <li class="ul1"><p class="par2">Luca Gioca</p></li>
+        </ul>
+    </div>
+    <script>
+        $('p.par1').addClass('red');// selezione classe jquery
+        var par2 = document.getElementsByClassName('par2');// selezione classe js
+        par2[0].className = 'red';
+        $(document).ready(function(){// è un metodo che consiste nel far partire il codice in maniera preventiva solo quando il browser ha caricato e verificato il DOM.
+            console.log('il DOM è completo.');
+        });
+        // differenze tra i due è : che il primo parte con la consapevolezza che il codice deve essere eseguito in prima possibile dopo che il DOM è caricato,
+        //il secondo invece fa si che il codice vanga eseguito dopo che tutte le risore vengano caricate dopo la lettura del DOM.
+        document.addEventListener('DOMContentLoaded', function(){
+            console.log('Il Contenuto del DOM è ancora incompleto, quindi deve essere caricato.')
+            console.log( $('li').html());//questo restituisce l'elemento html
+            console.log($('p.par1').text());// questo invecce restituisce l'elemento di testo di un elemento
+            var list1 = $('ul.list1').html();// Questo metodo senza un valore all'interno restituisce gli elementi html di un determinato nodo
+            $('ul.list1').append(list1);
+            var list22 = $('li.ul1').text();//Questo metodo senza un valore all'interno restituisce il testo di un determinato nodo di elementi
+            $('ul.list1').append('<li>'+ '<p class="red">' + list22 + '</p>'+ '</li>');
+        })
+    </script>
+     <div class="box-1">
+        <h1>Tabella jQuery 2#</h1>
+        <ul class="list2">
+            <li><p class="par3">Luca compra un vaso</p></li>
+            <li><p class="par4">Mario non gioca</p></li>
+            <li><p class="par4">Mario non gioca</p></li>
+            <li class="plist3"><p class="par5">Mario non gioca</p></li>
+            <li class="plist3"><p class="par5">Mario non gioca</p></li>
+            <li><p class="par6">Mario non gioca</p></li>
+        </ul>
+    </div>
+    <script>
+        $('p.par3').text('Maria regala un fiore.'); // questa funzione accede al testo di un elemento
+        $('p.par4').html(function(){ // questa funzione invece aggiunge nuovi elementi html e nodi di testo sullo stesso contenuto
+            return '<i class="red">' + 'Mario viene squalificato' + '</i>';
+        });
+        $('li p.par5').remove();// rimuove tutti gli elementi di un a determinata selezione o nodo di quello stesso elemento.
+        $('li.plist3').text('hello World !!');
+        $('p.par6').replaceWith('<p class="verde">'+ 'hello World!!' + '</p>');// sostituisce un elemento selezionato con uno nuovo
+    </script>
+      <div class="box-1">
+        <h1>Tabella jQuery 3#</h1>
+        <ul class="list3">
+            <li><p class="notp1">Luca va in giro con il monopattino</p></li>
+            <li><p class="notp2">Lucia porta passeggio il cane</p></li>
+            <li><p class="notp3">Matteo non ha le caramelle</p></li>
+        </ul>
+    </div>
+    <script>
+        $('p.notp1').prepend('<i class="verde">'+ '1)' + '</i>'); // aggiunge un elemento prima del tag di apertura
+        $('p.notp2').before('<i class="verde">'+ '2)'+ '</i>') // aggiunge un elemento prima del altro
+        $('p.notp3').append(', ma il suo amico giovanni gli regala una caramella a limone.'); // aggiunge un elemento prima del tag di chiusura
+        $('p.notp3').after('<i class="verde">'+ 'è vissero felici e contenti.' + '</i>'); // aggiunge un elemento dopo del altro
+    </script>
+         <div class="box-1">
+            <h1>Tabella jQuery 4#</h1>
+            <ul class="list4">
+                <li><p class="red">Luca va in giro con il monopattino</p></li>
+                <li><p class="verde">Lucia porta passeggio il cane</p></li>
+                <li><p class="blue">Lucia porta passeggio il cane</p></li>
+            </ul>
+        </div>
+        <script>
+            $('p.red').attr('class', 'red');// aggiunge o cambia un valore di un attributo di un elemento
+            $('ul .list4 p.verde').removeAttr('class').addClass('blue'); // rimuove un attributo e aggiunge una classe
+            $('ul .list4 p.blue').removeClass('blue').addClass('verde'); // rimuove una classe e aggiunge una classe
+        </script>
+           <div class="box-1">
+            <h1>Tabella jQuery 5#</h1>
+            <ul class="list5">
+                <li><p class="red">Text12</p></li>
+                <li><p class="verde">Text13</p></li>
+            </ul>
+        </div>
+        <script>
+            $('ul.list5 p.red').css('font-size', '20px'); // cambia la singola proprietà css di un determinato
+            $('ul.list5 p.verde').css({ // cambia più proprietà css di un determinaton
+                'font-size': '14px',
+                'color':'yellow',
+                'text-decoration':'none',
+            });
+        </script>
+         <div class="box-1">
+            <h1>Tabella jQuery 6#</h1>
+            <ul class="list6">
+                <li class="list7"><p>Text1</p></li>
+                <li><p class="lol">Text2</p></li>
+                <li><p class="lol">Text3</p></li>
+                <li><p class="lol">Text4</p></li>
+                <li><p class="lol">Text5</p></li>
+            </ul>
+        </div>
+        <script>
+            $('li.list7').addClass('verde').removeClass('red');
+            $('p.lol').each(function(){ //il ciclo .each() fa si che il singolo elemento selezionato si crei un ciclo per quel determinato elemento
+                $(this).addClass('red');//this fa riferimento al elemento selezionato.
+            });
+        </script>
+          <div class="box-1">
+            <h1>Tabella jQuery 7#</h1>
+            <ul class="list8">
+                <li><p class="praph1">Passa sul mouse</p></li>
+                <li><p class="praph2">Cambia Colore</p></li>
+                <li><p class="praph2">Cambia colore</p></li>
+                <li><p class="praph2">Cambia colore</p></li>
+            </ul>
+        </div>
+        <script>
+            $('p.praph1').on('mouseover', function(e){
+                $(this).text('Hello World!!').addClass('red');
+                $(this).css('cursor', 'pointer');
+                console.log('testo in entrata    ' + e.type);
+                var data1 = new Date(e.timeStamp);
+                console.log('Data di Aggiornamento del evento in entrata  '+ data1);
+            });
+
+            $('p.praph1').on('mouseout', function(e){// si può nominare l'oggetto evento ('e') proprio come in js
+                $(this).text('Passa sul Mouse').addClass('verde').removeClass('red');
+                $(this).css('cursor', 'pointer');
+                console.log('Testo in uscita   ' + e.type);
+                var data2 = new Date(e.timeStamp);
+                console.log('Data di Aggiornamento del evento in uscita  '+ data2);
+            });
+
+            $('p.praph2').on('mouseover', function(){
+                $(this).each(function(){
+                    $(this).addClass('verde').css('cursor', 'pointer');
+                });
+            });
+
+            //il metedo .on() serve a richiamare un evento da un elemento selezionato.
+            //la maggior parte degli eventi sono simili  agli eventi di js quando si richiamano da un listner di eventi o dal tradizionale.
+            
+            $('p.praph2').on('mouseout', function(){
+                $(this).each(function(){
+                    $(this).removeClass('verde').css('cursor', 'pointer');
+                });
+            });
+        </script>
+             <div class="box-1">
+                <h1>Tabella jQuery 8#</h1>
+                <ul class="list9">
+                    <li><p class="praph3" style="cursor: pointer;">clicca con il mouse</p></li>
+                    <li><p class="praph4">Passa sul mouse</p></li>
+                    <li><p class="praph4">Passa sul mouse</p></li>
+                    <li><p class="praph4">Passa sul mouse</p></li>
+                    <li><p class="praph5" style="cursor: pointer;">clicca con il mouse</p></li>
+                </ul>
+            </div>
+        <script>
+            $('p.praph3').on('click', function(){
+                $(this).fadeToggle(200).delay(100);
+            });
+            // questi esempi sono delle transizioni che si verificano ad ogni elemento impostato.
+            $('p.praph4').hide().delay(900).fadeIn(800).addClass('red').slideDown();
+            //nasconde elem.dissolvenza in ingresso.aggiunge una classe.scorrimento verso il basso.
+            $('p.praph5').show().on('click', function(){
+                $(this).delay(600).fadeOut(800);
+            });
+        </script>
+        <div class="box-1">
+            <h1>Tabella jQuery 9#</h1>
+            <ul class="list10">
+                <li class="praph6" style="cursor: pointer;"><p>clicca con il mouse</p></li>
+                <li><p class="praph7">Fratello</p><p>corrente</p></li>
+                <li><p>Adiacente</p><p class="praph8">Fratello</p></li>
+                <li><p class="praph9">Parente</p><p>figlio</p><p>figlio</p></li>
+                <li class="praph10"><p>figlio</p><p>figlio</p><p>figlio</p></li>
+            </ul>
+        </div>
+        <script>
+            $('li.praph6').on('click', function(){
+                $(this).animate({ // il metodo animate serve a creare animazioni con il css dal js con aggiunta di particolari animazioni
+                    fontSize: '10px',
+                }, 60, function(){ // qui sotto si mettono si impostano la durata in millisecondi, la velocità e il call back dell' animazione di fine
+                    $(this).fadeOut(700);
+                });
+            });
+            $('li.praph6').on('mouseover', function(){
+                $(this).addClass('red');
+            });
+
+            $('li.praph6').on('mouseout', function(){
+                $(this).removeClass('red');
+            });
+
+            $('p.praph7').next().addClass('red'); //prende il fratello corrente
+            $('p.praph8').prev().addClass('red'); // prende il fratello adiacente
+            $('p.praph9').parent().addClass('italic').children().text('direttamente Figlio'); // prende il parente con i figli discendenti
+            $('li.praph10').children().addClass('blue'); // prende i figli discendenti
+        </script>
+         <div class="box-1">
+            <h1>Tabella jQuery 10#</h1>
+            <ul class="list11">
+                <li><p class="praph11">Text1</p><br><p class="praph12">Text3</p><br><p class="praph13">Text4</p></li>
+                <li><p class="text1">Tex1</p><p class="text1">Text2</p><p class="text1">Text3</p></li>
+                <li class="liston1"><p>Tex1</p><p class="text2">Text2</p><p>Text3</p></li>
+            </ul>
+        </div>
+        <script>
+            var text = $('p.praph12');
+            var text1 = $('p.praph13');
+            var combined = $('p.praph11').add(text).add(text1).append('  Text2'); // il metodo add() aggiunge nuovi contenuti a più selezioni multiple nominate nello script.
+            combined.css('color', 'red');
+
+           var text3 =  $('p.text1');
+           var text3_comb = text3.filter(':even'); //il metodo filter() crea un filtro a una collezione di elementi nominati è fasi che attraverso una selezione si applicano quelle determinate modifiche.
+           text3_comb.addClass('red'); // il not() corrisponde agli elementi esclusi dalla selezione mulitpla dell' elemento.
+
+           var text4 =  $('li.liston1');
+           var text4_comb = text4.find('.text2'); // il find() trova tutti gli elementi discendenti da un determinato elemento.
+           text4_comb.addClass('red');
+        </script>
+    <footer>
+        <p>Tabella &copy; - valori espressi in <a href="index.html">Javascript</a></p>
+    </footer>
+</body>
+</html>

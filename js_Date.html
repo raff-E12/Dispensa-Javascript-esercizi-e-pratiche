@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore di Anni 1°</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,787;1,787&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            width: 100%;
+            background-color: #F2C230;
+        }
+
+        h2{
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 30px;
+        }
+
+        p{
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+            font-size: 17px;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: url(immagini/imagine1.jpg);
+        }
+
+        .box-form{
+            margin: 9%;
+            width: 930px;
+            height: 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 15px;
+            padding: 14px;
+        }
+
+        #input-date{
+            width: 500px;
+            height: 50px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            text-transform: uppercase;
+        }
+
+        #input-date:focus{
+            outline: none;
+            border: 2px solid rgb(255, 145, 0);
+        }
+
+        #Btn-date{
+            width: 220px;
+            height:50px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            cursor: pointer;
+            border: none;
+            border-radius: 16px;
+            font-size: 19px;
+            background-color: #F23D6D;
+            color: white;
+        }
+
+        #Btn-date:active{
+            background-color: #730912;
+        }
+
+        .text-box{
+            width: 100%;
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div class="box-form">
+        <h2 style="color: #F2C230;">Calcolatore di Anni <br><p>In javascript in seconda versione</p></h2>
+        <input type="date" name="date" id="input-date">
+        <button id="Btn-date">Calcola</button>
+      <nav class="text-box"><p id="text-value"></p></nav>
+    </div>
+    <script>
+        const input_btn = document.getElementById('Btn-date');
+        var input_rs = document.getElementById('text-value');
+        const input_date = document.getElementById('input-date');
+        //console.log(input_date);
+
+        function Calc_Age(){
+            var Currect_Date = new Date();
+            var Input_Date_User = new Date(input_date.value);
+
+            var Date_In = Input_Date_User.getDate();
+            var Mouth_In = Input_Date_User.getMonth()+1;
+            var Year_In = Input_Date_User.getFullYear();
+
+            var Date_Cor = Currect_Date.getDate();
+            var Mouth_Cor = Currect_Date.getMonth()+1;
+            var Year_Cor = Currect_Date.getFullYear();
+
+            var Anni = Year_Cor - Year_In;
+            var Mesi = 0;
+            var Giorno = 0;
+
+            //applicato nel caso se il mese attuale è precedente al mese di nascita allora si aggiunge i 12 mesi al mese attuale 
+            // per avere la differnza accurata dei mesi rimasti.
+            if (Mouth_Cor >= Mouth_In) {
+               Mesi = Mouth_Cor - Mouth_In;
+            } else {
+                //questo serve a prendere in prestito quando si aggiunge un mese 
+                Year_In--;
+                Mesi = Mouth_Cor + 12 - Mouth_In;
+             if (Mouth_In < 0) {
+                Year_In--;
+                Mouth_In = 12;
+            }
+            }
+            //applicato se il giorno attuale è precedente al giorno di nascita allora si aggiunge l'ultimo giorno del mese precedente al giormo attuale 
+            //per ottenere l'attuale corrispondenza a giorni rimasti prima del giorno di nascita.
+            if (Date_Cor >= Date_In) {
+                Giorno = Date_Cor - Date_In;
+            } else {
+                Mouth_In--;
+                //Questo metodo è molto utile per trovare rapidamente l'ultimo giorno del mese precedente.
+                var mouth_prev = new Date(Year_Cor, Mouth_Cor,0); 
+                Giorno = mouth_prev.getDate() + Date_Cor - Date_In;
+            }
+
+            if (Input_Date_User < Currect_Date && !Input_Date_User < 1999 && Input_Date_User > 2000) {
+                input_rs.textContent = 'Hai  ' + Anni + '    anni' + '    Mesi  ' +  Mesi + ' Giorni  '+ Giorno + '.';
+            } else {
+                input_rs.textContent = 'La data impostata non è valida';
+            }
+
+            //console.log('Anni'+ Anni);
+            console.log('Mesi'+  Mouth_In);
+            //console.log('Giorni'+ Giorno);
+            console.log(mouth_prev);
+        }
+
+        input_btn.addEventListener('click', ()=>{
+            if (input_date.value !== '') {
+                Calc_Age();
+            }
+            else{
+                input_rs.textContent = 'Imposta la data.';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Selezione degli Elementi in jQuery</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#525fd6">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    
+    <header>
+        <h1>Guida jQuery<br> Selezione degli Elementi in jQuery</h1>
+        <nav id="mainMenu">
+            <ul>
+                <li><a href="index.html" title="javascript">Home</a></li>
+                <li><a href="dove-jx.html" title="Dove posizionare Javascript">Dove posizionare Javascript</a></li>
+                <li><a href="sintassi-jx.html" title="La sintassi">Sintassi js</a></li>
+                <li><a href="condizionali-e-cicli.html" title="Condizionali e cicli">Condizioni e cicli</a></li>
+                <li><a href="funzioni.html" title="Le funzioni">Le funzioni</a></li>
+                <li><a href="jQuery.html" title="jQuery">jQuery</a></li>
+                <li><a href="integrareJQ.html" title="Integrare jQuery nei progetti">Integrare jQuery</a></li>
+                <li><a href="sintassiJquery.html" title="Sintassi jQuery">Sintassi jQuery</a></li>
+                <li><a href="selezioneJquery.html" title="La selezione degli elementi in jQuery">La selezione degli elementi in jQuery</a></li>
+                <li><a href="gestione_eventiJq.html" title="La gestione degli eventi in jQuery">La gestione degli eventi in jQuery</a></li>
+                <li><a href="metodi-jQ.html" title="Metodi jQuery">Metodi jQuery</a></li>
+                <li><a href="Javascript-riassunto.html" title="Riassunto Javascript">Riassunto Javascript</a></li>
+                <li><a href="eventi-js.html" title="Eventi Javascript">Eventi in Javascript</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Introduzione alla Selezione degli Elementi in jQuery</h2>
+            <p>Una delle funzionalità principali di jQuery è la capacità di selezionare facilmente e rapidamente gli elementi del DOM. jQuery utilizza una sintassi simile a quella dei selettori CSS, permettendo di lavorare con ID, classi, tag, attributi e molto altro.</p>
+            
+            <h2>Selezione per ID</h2>
+            <p>Per selezionare un elemento tramite il suo ID, usa il simbolo <code>#</code> seguito dall'ID dell'elemento.</p>
+            <div class="code">
+                <pre><code>// Selezionare un elemento con id="mioElemento"
+$('#mioElemento');</code></pre>
+            </div>
+
+            <h2>Selezione per Classe</h2>
+            <p>Per selezionare elementi che condividono una stessa classe, utilizza il simbolo <code>.</code> seguito dal nome della classe.</p>
+            <div class="code">
+                <pre><code>// Selezionare tutti gli elementi con classe .miaClasse
+$('.miaClasse');</code></pre>
+            </div>
+
+            <h2>Selezione per Tag</h2>
+            <p>Puoi selezionare tutti gli elementi di un determinato tipo di tag semplicemente usando il nome del tag.</p>
+            <div class="code">
+                <pre><code>// Selezionare tutti gli elementi &lt;p&gt;
+$('p');</code></pre>
+            </div>
+
+            <h2>Selezione per Attributo</h2>
+            <p>jQuery permette anche di selezionare elementi in base ai loro attributi, usando una sintassi simile a quella dei selettori CSS.</p>
+            <div class="code">
+                <pre><code>// Selezionare tutti gli input di tipo "text"
+$('input[type="text"]');</code></pre>
+            </div>
+
+            <h2>Selezione Combinata</h2>
+            <p>Puoi combinare più selettori per ottenere risultati più specifici. Ad esempio, puoi selezionare tutti gli elementi di un determinato tag che hanno una certa classe.</p>
+            <div class="code">
+                <pre><code>// Selezionare tutti i &lt;div&gt; con classe .speciale
+$('div.speciale');</code></pre>
+            </div>
+
+            <h2>Filtri Avanzati</h2>
+            <p>jQuery offre diversi metodi di filtraggio per affinare ulteriormente la selezione degli elementi. Ecco alcuni esempi:</p>
+            <div class="code">
+                <pre><code>// Selezionare il primo elemento di una lista
+$('ul li:first');
+
+// Selezionare tutti gli elementi pari di una tabella
+$('tr:even');</code></pre>
+            </div>
+
+            <h2>Conclusione</h2>
+            <p>La selezione degli elementi è una delle funzionalità chiave di jQuery, rendendo facile e veloce manipolare il DOM con poche righe di codice. Usando la sintassi dei selettori, è possibile targetizzare specifici elementi per modificarli o aggiungere interazioni dinamiche.</p>
+        </section>
+    </main>
+    
+    <footer>
+        &copy; Copyright 2024
+    </footer>
+    
+</body>
+</html>

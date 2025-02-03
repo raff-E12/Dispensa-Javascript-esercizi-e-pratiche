@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cicli e Condizioni</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="immagini/favjs/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="immagini/favjs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="immagini/favjs/favicon-16x16.png">
+    <link rel="manifest" href="immagini/favjs/site.webmanifest">
+    <link rel="mask-icon" href="immagini/favjs/safari-pinned-tab.svg" color="#dfe300">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        *{
+            font-size: 1.1em;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body{
+            background-image: url(immagini/Grid\ 1.jpg);
+            backdrop-filter: blur(10px);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .box-1{
+            background-color: antiquewhite;
+            width: 700px;
+            margin: 20% 10%;
+            box-shadow: 1px 3px 10px 8px black;
+            border: 10px solid rgb(255, 226, 188);
+            text-align: center;
+        }
+        .box-1 ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box-1 ul li{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        footer{
+            background-color: rgb(255, 250, 184);
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+        header{
+            width: 100%;
+            background-color: antiquewhite;
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+            border: 10px solid rgb(255, 226, 188);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Esercizi con l'Oggetto Date, Cicli e Condizioni</h1>
+        <small>Usa il panello ispeziona per scoprire il codice di ogni casella <i class="fa-solid fa-arrow-right"></i></small>
+    </header>
+    <div class="box-1">
+        <h1>Rispondi alla domanda</h1>
+        <ul>
+            <li><span id="messaggio_prom">-</span></li>
+        </ul>
+    </div>
+    <script>
+    var prom_win = window.prompt('Quanti anni hai?');
+      var limit_num = 18;
+     if(prom_win > limit_num){
+     var risultato = 'Bravo hai vinto';
+     var prom = window.alert(risultato);
+     var text_prom = document.getElementById('messaggio_prom');
+     text_prom.innerHTML = risultato;
+      //console.log(risultato);
+     }
+     else if(prom_win !== undefined){
+    var risultato_er = 'Risutato nullo';
+     var prom = window.alert(risultato_er);
+     var text_prom_3 = document.getElementById('messaggio_prom');
+     text_prom_3.innerHTML = risultato_er;
+     }
+    else{
+     var risultato_p = 'Hai perso';
+     var prom_1 = window.alert(risultato);
+     var text_prom_2 = document.getElementById('messaggio_prom');
+     text_prom_2.innerHTML = risultato_p;
+     //console.log(risultato_p);
+    }
+    </script>
+    <div class="box-1">
+        <h1>Creare una funzione che calcoli i giorni rimanenti fino a una determinata data futura.</h1>
+        <ul>
+            <li>Obbiettivi: 1:Ottenere la data odierna.<br>
+             2:Creare una data futura.<br>
+             3:Calcolare la differenza in giorni tra la data odierna e la data futura.</li>
+            <li><span id="valore1">-</span></li>
+        </ul>
+    </div>
+    <script>
+        function person_years(){
+           const data_instance = new Date();
+           const data_instance_2 = new Date('2027-07-10');
+           const calc_date = data_instance / data_instance_2;
+           const calc_diff = Math.ceil(calc_date / 1000  * 60 * 60 *24);
+           // differenza con più il calcolo in millisecondi '1000  * 60 * 60 *24'
+           return calc_diff;
+        }
+        //YY-MM-DD = Anno - Mese - Giorno
+        const data_odierna = '2024-07-09';
+        const data_futura = person_years();
+        const data_text = document.getElementById('valore1');
+        data_text.innerHTML = data_odierna + ' - ' + 'Giorni Rimasti' + ':' + data_futura;
+    </script>
+     <div class="box-1">
+        <h1>Confronta i due numeri</h1>
+        <pre>31 maggiore di 29</pre>
+        <ul>
+            <li><span id="valore2">-</span></li>
+        </ul>
+    </div>
+    <script>
+        const num_1 = 31;
+        const num_2 = 29;
+        const num_conf = num_1 > num_2;
+        const text_num = document.getElementById('valore2');
+        text_num.innerHTML = num_conf;
+    </script>
+     <div class="box-1">
+        <h1>Confronta i due numeri</h1>
+        <pre>20 minore di 60</pre>
+        <ul>
+            <li><span id="valore3">-</span></li>
+        </ul>
+    </div>
+    <script>
+        const numb_1 = 20;
+        const numb_2 = 60;
+        const numb_conf = numb_1 < numb_2;
+        const text_numb = document.getElementById('valore3');
+        text_numb.innerHTML = numb_conf;
+    </script>
+       <div class="box-1">
+        <h1>Confronta i due numeri</h1>
+        <pre>40 uguale a (random)</pre>
+        <ul>
+            <li><span id="valore4">-</span></li>
+        </ul>
+    </div>
+    <script>
+        const number_1 = 40;
+        const number_2 = Math.random();
+        const number_conf = number_1 == number_2;
+        //uguale al altro
+        const text_number = document.getElementById('valore4');
+        text_number.innerHTML = number_conf;
+    </script>
+     <div class="box-1">
+        <h1>Confronta i due numeri</h1>
+        <pre>40 uguale strettamente a 40</pre>
+        <ul>
+            <li><span id="valore5">-</span></li>
+        </ul>
+    </div>
+    <script>
+        const nu_1 = 40;
+        const nu_2 = 40;
+        const nu_conf = nu_1 === nu_2;
+        //strettamente uguale al altro
+        const text_nu = document.getElementById('valore5');
+        text_nu.innerHTML = nu_conf;
+    </script>
+       <div class="box-1">
+        <h1>Confronta i due numeri</h1>
+        <pre>40 uguale a '40'</pre>
+        <ul>
+            <li><span id="valore6">-</span></li>
+        </ul>
+    </div>
+    <script>
+        const n_1 = 40;
+        const n_2 = '40';
+        const n_conf = n_1 == n_2;
+        const text_n = document.getElementById('valore6');
+        text_n.innerHTML = n_conf;
+    </script>
+      <div class="box-1">
+        <h1>Confronta le due numeri</h1>
+        <pre>40 non uguale a 50</pre>
+        <ul>
+            <li><span id="valore7">-</span></li>
+        </ul>
+    </div>
+    <script>
+        const nb_1 = 40;
+        const nb_2 = 50;
+        const nb_conf = nb_1 !== nb_2;
+        //non uguale altro
+        const nb_text = document.getElementById('valore7');
+        nb_text.innerHTML = nb_conf;
+    </script>
+    <div class="box-1">
+        <h1>Confronta le due espressioni</h1>
+        <pre>((90+70) >= (100-80)) o ((170+10) >= (30-20))</pre>
+        <ul>
+            <li><span id="valore8">-</span></li>
+        </ul>
+    </div>
+    <script>
+        const en_1 = 90;
+        const en_2 = 70;
+        const en_3 = 100;
+        const en_4 = 80;
+        const en_5 = 170;
+        const en_6 = 10;
+        const en_7 = 30;
+        const en_8 = 20;
+        const e_conf = ((en_1+en_2) >= (en_3-en_4))  &&  ((en_5+en_6) >= (en_7-en_8));
+        const e_text = document.getElementById('valore8');
+        e_text.innerHTML = e_conf;
+    </script>
+    <div class="box-1">
+        <h1>Confronta le due espressioni</h1>
+        <pre>( 10 >= 10 ) o (170 <= 30)</pre>
+        <ul>
+            <li><span id="valore9">-</span></li>
+        </ul>
+    </div>
+    <script>
+        const ep_n1 = 10;
+        const ep_n2 = 10;
+        const ep_n3 = 170;
+        const ep_n4 = 30;
+        const ep_ris = (ep_n1 >= ep_n2) && (ep_n3 <= ep_n4);
+        const ep_text = document.getElementById('valore9');
+        ep_text.innerHTML = ep_ris + '<br>' + '<h1> Schema: True - False = False </h1>';
+    </script>
+    <div class="box-1">
+        <h1>Confronta le due espressioni</h1>
+        <pre>( 20 >= 12 ) o (400 <= 900)</pre>
+        <ul>
+            <li><span id="valore10">-</span></li>
+        </ul>
+    </div>
+    <script>
+        const e_n1 = 20;
+        const e_n2 = 12;
+        const e_n3 = 400;
+        const e_n4 = 900;
+        const e_ris = (e_n1 >= e_n2) && (e_n3 <= e_n4);
+        //and controlla più condizioni
+        const text_ris = document.getElementById('valore10');
+        text_ris.innerHTML = e_ris + '<br>' + '<h1>Schema: True - True = True </h1>';
+    </script>
+     <div class="box-1">
+        <h1>Confronta le due espressioni</h1>
+        <pre>( 100 + 30 ) o (400 + 600)</pre>
+        <ul>
+            <li><span id="valore11">-</span></li>
+        </ul>
+    </div>
+    <script>
+        const es_n1 = 100;
+        const es_n2 = 30;
+        const es_n3 = 400;
+        const es_n4 = 600;
+        const es_ris = (es_n1 + es_n2) && (es_n3+es_n4);
+        const es_text = document.getElementById('valore11');
+        es_text.innerHTML = es_ris + '<br>'+ '<h1>Schema: Controllo = Confronto';
+    </script>
+    <div class="box-1">
+        <h1>Confronta le due espressioni</h1>
+        <pre>( 200 > 130 ) o (300 < 200)</pre>
+        <ul>
+            <li><span id="valore12">-</span></li>
+        </ul>
+    </div>
+    <script>
+         const esp_n1 = 200;
+        const esp_n2 = 130;
+        const esp_n3 = 300;
+        const esp_n4 = 200;
+        const esp_ris_01 = (esp_n1 > esp_n2) || (ep_n3 < esp_n4);
+        //or controlla solo una condizione
+        const esp_text = document.getElementById('valore12');
+        esp_text.innerHTML = esp_ris_01;
+        // '!' converte il valore booleano da vero a falso o il viceversa di un espressione
+    </script>
+    <div class="box-1">
+        <h1>Crea un messaggio con un if</h1>
+        <ul>
+            <li><span id="valore13">-</span></li>
+        </ul>
+    </div>
+    <script>
+        var limit_1 = 75;
+        var mg = '';
+        if (limit_1 > 50) {
+            mg = 'Mario ha rotto il vaso.';
+        }
+        var text_cod = document.getElementById('valore13');
+        text_cod.innerHTML = mg;
+    </script>
+      <div class="box-1">
+        <h1>Crea un messaggio con un if</h1>
+        <ul>
+            <li><span id="valore14">-</span></li>
+        </ul>
+    </div>
+    <script>
+        var limit_2 = 90;
+        function message(){
+         var text_less = '';
+            if (limit_2 == 90){
+                text_less = 'Mario non ha rotto il vaso.';
+            }
+            return text_less;
+        }
+        var text_cod_1 = document.getElementById('valore14');
+        text_cod_1.innerHTML = message();
+    </script>
+    <div class="box-1">
+        <h1>Crea un messaggio con un if</h1>
+        <ul>
+            <li><span id="valore15">-</span></li>
+        </ul>
+    </div>
+    <script>
+        var limit_3 = 500;
+        var msg = '';
+        if (limit_3 >= 300) {
+            msg = 'Mario ha preparato la pizza.';
+        }
+        const text_cod_2 = document.getElementById('valore15');
+        text_cod_2.innerHTML = msg;
+    </script>
+    <div class="box-1">
+        <h1>Crea un messaggio con un if e else</h1>
+        <ul>
+            <li><span id="valore16">-</span></li>
+        </ul>
+    </div>
+    <script>
+        var limit_4 = 10;
+        var msg_text = '';
+        if (limit_4 > 40){
+            msg_text = 'Hai Vinto!!';
+        }
+        else{
+            msg_text = 'Hai Perso!!';
+        }
+        const text_cod_3 = document.getElementById('valore16');
+        text_cod_3.innerHTML = this.msg_text;
+    </script>
+    <div class="box-1">
+        <h1>Crea un messaggio con un if e else:</h1>
+        <pre>Scrivi una funzione che prende un numero come input <br> e stampa se il numero è positivo, negativo o zero.</pre>
+        <ul>
+            <li><span id="valore17">-</span></li>
+        </ul>
+    </div>
+    <script>
+    var numero = -100;
+    function verifica_numero(){
+        var text_v = '';
+        if(this.numero > 0){
+         text_v = 'Numero Positivo';
+        }
+        else if (this.numero < 0){
+             text_v = 'Numero Negativo'
+        }
+        else{
+           text_v = 'Nullo';
+        }
+        return text_v;
+    }
+    var text_v90 = verifica_numero();
+    const text_cod_4 = document.getElementById('valore17');
+    text_cod_4.innerHTML = text_v90;
+    </script>
+     <div class="box-1">
+        <h1>Crea un messaggio con un if e else:</h1>
+        <pre>Scrivi una funzione che verifica se un numero è pari o dispari.</pre>
+        <ul>
+            <li><span id="valore18">-</span></li>
+        </ul>
+    </div>
+    <script>
+        var index_num = 4;
+        function verifica_pari_o_dispari(){
+            var text_info = 'inserisci il numero';
+            if (this.index_num % 2 === 0) {
+                text_info = 'numero pari';
+            } else {
+                text_info = 'numero dispari';
+            }
+            return text_info;
+        }
+        var info_text = verifica_pari_o_dispari();
+        const text_di = document.getElementById('valore18');
+        text_di.innerHTML = info_text;
+    </script>
+     <div class="box-1">
+        <h1>Crea un messaggio con un if e else:</h1>
+        <pre>Scrivi una funzione che prende due numeri come input e stampa <br> quale dei due è più grande, oppure se sono uguali.</pre>
+        <ul>
+            <li><span id="valore19">-</span></li>
+        </ul>
+    </div>
+    <script>
+        var primo_numero = 90
+        var secondo_numero = 100;
+        var testo_info_1 = '';
+        function confronto(){
+            if (primo_numero > secondo_numero) {
+                this.testo_info_1 = 'il numero' + '  ' + primo_numero  + '  ' + 'è più grande di' + '  ' + secondo_numero;
+            } else if (primo_numero < secondo_numero) {
+                this.testo_info_1 = 'il numero' + '  ' + secondo_numero  + '  ' + 'è più grande di' + '  ' + primo_numero;
+            }
+            else{
+                this.testo_info_1 = 'sono numeri uguali';
+            }
+            return this.testo_info_1;
+        }
+        var info_text_1 = confronto();
+        const text_con = document.getElementById('valore19');
+        text_con.innerHTML = info_text_1;
+    </script>
+      <div class="box-1">
+        <h1>Crea un messaggio con un if e else:</h1>
+        <pre>Scrivi una funzione che prende l'età di una persona come <br> input e stampa se la persona è abbastanza grande per votare (18 anni o più).</pre>
+        <ul>
+            <li><span id="valore20">-</span></li>
+        </ul>
+    </div>
+    <script>
+    var età = 29;
+    function età_di_voto(){
+        var testo = 'votare';
+        if (this.età <= 40) {
+            testo = 'Può votare';
+        } else {
+            testo = 'Non può votare';
+        }
+        return testo;
+    }
+        var info_text_2 = età_di_voto();
+        const text_età = document.getElementById('valore20');
+        text_età.innerHTML = info_text_2;
+    </script>
+     <div class="box-1">
+        <h1>Crea un messaggio con un if e else:</h1>
+        <pre>Scrivi una funzione che prende un anno come input e determina se è un anno bisestile.</pre>
+        <ul>
+            <li><span id="valore21">-</span></li>
+        </ul>
+    </div>
+    <script>
+        var numero = 2020;
+        function calcolo_bisestile(){
+            var testo = 'Calcola';
+            if (this.numero % 4 === 0) {
+                testo = "L'anno è bisestile";
+            } else if (this.numero % 400 === 0) {
+                testo = "L'anno è bisestile";
+            } else if (this.numero % 100 === 0) {
+                testo = "L'anno non è bisestile";
+            }
+            else{
+                testo = "Valore non adatto";
+            }
+            return testo;
+        }
+        var info_text_3 = calcolo_bisestile();
+        const text_mese = document.getElementById('valore21');
+        text_mese.innerHTML = info_text_3;
+    </script>
+    <div class="box-1">
+        <h1>Crea un messaggio con un if e else:</h1>
+        <pre>Scrivere un programma che controlla se <br> una persona può entrare in una discoteca in base alla sua età.</pre>
+        <ul>
+            <li><span id="valore22">-</span></li>
+        </ul>
+    </div>
+    <script>
+        var età_partecipante = 29;
+        function disco_verfica_età(){
+            var testo_funtion = 'Entra';
+            if (this.età_partecipante > 18 && this.età_partecipante < 30) {
+                testo_funtion = 'Puoi entrare';
+            } else {
+                testo_funtion = 'Non puoi entrare';
+            }
+            return testo_funtion;
+        }
+        var info_text_4 = disco_verfica_età();
+        const text_disco = document.getElementById('valore22');
+        text_disco.innerHTML = info_text_4;
+    </script>
+     </script>
+     <div class="box-1">
+         <h1>Crea un messaggio con un if e else:</h1>
+         <pre>L'obiettivo di questo esercizio è scrivere<br> un programma che legga l'età di una persona e determini <br> a quale categoria di età appartiene,<br> stampando il risultato corrispondente.<br> Le categorie di età sono le seguenti:</pre>
+         <ul>
+            <li><p>Bambino: 0-12 anni</p></li>
+                <li><p>Adolescente: 13-17 anni</p></li>
+                <li><p>Adulto: 18-64 anni</p></li>
+                <li><p>Anziano: 65 anni e oltre</p></li>
+             <li><span id="valore23">-</span></li>
+         </ul>
+     </div>
+     <script>
+        var età_ind = 19;
+        function verificaEtà(){
+            var testo_2 = 'testo zero';
+            if (this.età_ind < 12){
+                testo_2 = 'Sei un Bambino';
+            }
+            else if (this.età_ind < 17){
+                testo_2 = 'Sei un Adolescente';
+            }
+            else if (this.età_ind < 64){
+                testo_2 = 'Sei un Adulto';
+            }
+            else if (this.età_ind < 90){
+                testo_2 = 'Sei un Anziano';
+            }
+            else{
+                testo_2 = 'Limite Raggiunto';
+            }
+            return testo_2;
+        }
+        var info_text_5 = verificaEtà();
+        const text_eta = document.getElementById('valore23');
+        text_eta.innerHTML = info_text_5;
+     </script>
+      <div class="box-1">
+        <h1>Crea un messaggio con un if e else:</h1>
+        <pre>L'obiettivo di questo esercizio è scrivere <br> un programma che legga tre voti inseriti dall'utente,<br> calcoli la media dei voti e determini<br> la fascia del voto medio in base alle seguenti categorie:</pre>
+        <ul>
+        <li><p>Eccellente: 90-100</p></li>
+        <li><p>Buono: 80-89</p></li>
+        <li><p>Sufficiente: 70-79</p></li>
+        <li><p>Insufficiente: 0-69</p></li>
+        <li><span id="valore24">-</span></li>
+        </ul>
+    </div>
+    <script>
+        var voto_1 = 140;
+        var voto_2 = 100;
+        var voto_3 = 18;
+        function verificaVoto(){
+            var testo_3 = 'testo zero';
+            if (((this.voto_1 + this.voto_2 + this.voto_3)/3) < 69){
+                testo_2 = 'Insufficiente';
+            }
+            else if (((this.voto_1 + this.voto_2 + this.voto_3)/3) < 79){
+                testo_2 = 'Sufficiente';
+            }
+            else if (((this.voto_1 + this.voto_2 + this.voto_3)/3) < 89){
+                testo_2 = 'Buono';
+            }
+            else if (((this.voto_1 + this.voto_2 + this.voto_3)/3) < 100){
+                testo_2 = 'Eccellente';
+            }
+            else{
+                testo_2 = 'Valore Massimo';
+            }
+            return testo_2;
+        }
+        var info_text_6 = verificaVoto();
+        const text_voto = document.getElementById('valore24');
+        text_voto.innerHTML = info_text_6;
+    </script>
+    <div class="box-1">
+        <h1>Crea un messaggio con un if e else:</h1>
+        <pre>L'obiettivo di questo esercizio è scrivere un programma che <br> richieda all'utente di inserire un nome utente e una password, <br> e verifichi se le credenziali corrispondono a quelle predefinite. <br> Se entrambe le credenziali sono corrette,<br> il programma deve consentire l'accesso; altrimenti, deve negarlo.</pre>
+        <ul>
+        <li><span id="valore25">-</span></li>
+        </ul>
+    </div>
+    <script>
+        var Nome_Utente = 'Mario';
+        var Password = 'lol1290';
+        function Required_form(){
+            var testo_4 = 'Registrati';
+            var admin_form = 'Mario';
+            var password_form = 'lol1290';
+            if (this.Nome_Utente == admin_form && this.Password == password_form) {
+                testo_4 = 'Acesso consentito';
+            } else {
+                testo_4 = 'Acesso non consentito';
+            }
+            return testo_4;
+        }
+        //script utilizzato all'interno di un form per compilare il login
+        var info_text_7 = Required_form();
+        const text_form = document.getElementById('valore25');
+        text_form.innerHTML = info_text_7;
+    </script>
+      <div class="box-1">
+        <h1>Crea un messaggio con un if e else:</h1>
+        <pre>L'obiettivo di questo esercizio è scrivere un programma che richieda all'utente <br>di inserire una password e verifichi se la password soddisfa i <br> seguenti criteri di validità:</pre>
+        <ul>
+        <li><p>Deve essere lunga almeno 8 caratteri.</p></li>
+        <li><p>Deve contenere almeno una lettera maiuscola.</p></li>
+        <li><p>Deve contenere almeno una lettera minuscola.</p></li>
+        <li><p>Deve contenere almeno un numero.</p></li>
+        <li><span id="valore26">-</span></li>
+        </ul>
+    </div>
+    <script>
+        var password_ver = 'Mariolol1290';
+        function verifica_password(){
+            var text_agg = 'Verifica Password';
+            var maiscuola_ver = /[A-Z]/.test(this.password_ver);
+            var minuscuola_ver = /[a-z]/.test(this.password_ver);
+            var numeri_ver_1 = /[1-2]/.test(this.password_ver);
+            var valid = true;
+            if (this.password_ver.length < 8) {
+                valid = false;
+                text_agg = 'La password deve essere lunga almeno 8 caratteri.';
+            } 
+            else if (!maiscuola_ver) {
+                valid = false;
+                text_agg = 'La password deve contenere almeno una lettera maiuscola';
+            }
+            else if (!minuscuola_ver) {
+                valid = false;
+                text_agg = 'La password deve contenere almeno una lettera minuscola';
+            }
+            else if (!numeri_ver_1) {
+                valid = false;
+                text_agg = 'La password deve contenere almeno un numero';
+            }
+            else {
+                text_agg = 'Corretto!!';
+            }
+            return text_agg;
+        }
+        var info_text_8 = verifica_password();
+        const text_ps = document.getElementById('valore26');
+        text_ps.innerHTML = info_text_8;
+    </script>
+    <div class="box-1">
+        <h1>Crea un messaggio con un if e else:</h1>
+        <pre>L'obiettivo di questo esercizio è scrivere un <br>programma che richieda all'utente di inserire il proprio nome,<br> età e indirizzo email, e verifichi se le informazioni<br>inserite soddisfano i seguenti criteri:</pre>
+        <ul>
+        <li><p>Il nome deve essere lungo almeno 2 caratteri.</p></li>
+        <li><p>L'età deve essere un numero compreso tra 18 e 100 (inclusi).</p></li>
+        <li><p>L'indirizzo email deve contenere una "@" e un ".".</p></li>
+        <li><span id="valore27">-</span></li>
+        </ul>
+    </div>
+    <script>
+        var nome_lg = 'Mario';
+        var età_lg = 18;
+        var email_lg = 'rosso@libero.it';
+       function verifica_login(){
+            var messaggio_ver = 'Inserisci i dati';
+            var valid_lg = true;
+            if (this.nome_lg.length < 2) {
+                valid_lg= false;
+                messaggio_vr = 'Il nome deve essere lungo almeno 2 caratteri.';
+            }
+            else if (isNaN(this.età_lg) || this.età_lg < 18 || this.età_lg > 100){
+                valid_lg= false;
+                messaggio_vr = "L'età deve essere un numero compreso tra 18 e 100.";
+            }
+            else if (this.email_lg.indexOf('@') === -1 || this.email_lg.indexOf('.') === -1 ){
+                valid_lg = false;
+                messaggio_vr = "L'indirizzo email deve contenere una '@' e un '.'.";
+            }
+            else {
+                messaggio_vr = 'Le informazioni di contatto sono valide';
+            }
+            return messaggio_vr;
+        }
+        var info_text_9 = verifica_login();
+        const text_lg = document.getElementById('valore27');
+        text_lg.innerHTML = info_text_9;
+    </script>
+    <div class="box-1">
+    <h1>Crea un messaggio con un if e else:</h1>
+    <ul>
+    <li style="display: flex; flex-direction: column; padding: 10px;">
+      <p>L'obiettivo di questo esercizio è scrivere un programma che chieda all'utente di inserire una password e verifichi che la password soddisfi determinati criteri di sicurezza. Il programma deve chiedere all'utente di inserire una password, quindi verificare che la password soddisfi i seguenti criteri:</p>
+       <ul style="display: flex; flex-direction: column; text-align: center;">
+       <li>La password deve essere lunga almeno 8 caratteri.<li>
+       <li>La password deve contenere almeno una lettera maiuscola.</li>
+        <li>La password deve contenere almeno una lettera minuscola.</li>
+        <li>La password deve contenere almeno un numero.</li>
+        <li>La password deve contenere almeno un carattere speciale (ad esempio, !, @, #, $, %, ^, &, *).</li>
+        <li>Il programma deve fornire un messaggio che indica se la password è valida o meno. Se la password non è valida, il programma deve specificare quali criteri non sono stati soddisfatti.</li>
+        </ul>
+    </li>
+    <li><span id="valore28">-</span></li>
+    </ul>
+    </div>
+    <script>
+        var password_reg = 'H#$^o!Wo&%d1290@!m*lo';
+        function verifica_password_reg(){
+            var text_msg = '';
+            var validit = true;
+            var maiscuola_ver_1 = /[A-Z]/.test(this.password_ver);
+            var minuscuola_ver_1 = /[a-z]/.test(this.password_ver);
+            var numeri_ver_1 = /[1-2]/.test(this.password_ver);
+            if (this.password_reg.length < 8) {
+                validit = false;
+                text_msg = 'La password deve essere lunga almeno 8 caratteri.';
+            } 
+            else if (!maiscuola_ver_1){
+                validit = false;
+                text_msg = 'La password deve almeno avere un carattere maiuscolo.';
+            }
+            else if (!minuscuola_ver_1){
+                validit = false;
+                text_msg = 'La password deve almeno avere un carattere minuscolo.';
+            }
+            else if (!numeri_ver_1){
+                validit = false;
+                text_msg = 'La password deve almeno avere un numero.';
+            }
+            else if ((this.password_reg.indexOf('@') === -1 || this.password_reg.indexOf('!') === -1 || this.password_reg.indexOf('$') === -1) || (this.password_reg.indexOf('%') === -1 || this.password_reg.indexOf('^') === -1 || this.password_reg.indexOf('&') === -1 || this.password_reg.indexOf('*') === -1)){
+                validit = false;
+                text_msg = 'La password deve almeno avere un carattere speciale.';
+            }
+            else {
+                text_msg = 'Accesso Riuscito';
+            }
+            return text_msg;
+        }
+        var info_text_10 = verifica_password_reg();
+        const text_msg = document.getElementById('valore28');
+        text_msg.innerHTML = info_text_10;
+    </script>
+     <div class="box-1">
+        <h1>Crea un messaggio con lo switch:</h1>
+        <pre>L'obiettivo di questo esercizio è <br>scrivere un programma<br> che funzioni come una calcolatrice semplice, <br>in grado di eseguire operazioni di base (addizione, sottrazione, <br> moltiplicazione e divisione)<br> tra due numeri.<br>Il programma deve chiedere all'utente di inserire due numeri<br> e un'operazione da eseguire tra questi numeri.<br> Utilizza l'istruzione switch per determinare quale operazione eseguire in base<br> all'input dell'utente.</pre>
+        <ul>
+        <li><span id="valore29">-</span></li>
+        </ul>
+    </div>
+    <script>
+        var numero_op_1 = 12;
+        var numero_op_2 = 2;
+        var operatori_num = '/';
+        function op_num(){
+            var text_risultato = '';
+            switch (operatori_num){
+                case '+':
+                 text_risultato = this.numero_op_1 + this.numero_op_2;
+                 break;
+                case '-':
+                 text_risultato = this.numero_op_1 - this.numero_op_2;
+                 break;
+                case '*':
+                text_risultato = this.numero_op_1 * this.numero_op_2;
+                break;
+                case '*':
+                text_risultato = this.numero_op_1 * this.numero_op_2;
+                break;
+                case '/':
+                if (numero_op_1 !== 0 && numero_op_2 !== 0) {
+                    text_risultato = this.numero_op_1 / this.numero_op_2;
+                } else {
+                    text_risultato = 'Errore!!';
+                }
+                break;
+                default:
+                text_risultato = 'Operazione non valida';   
+                break; 
+            }
+            return text_risultato;
+        }
+        var info_text_11 = op_num();
+        const msg_num = document.getElementById('valore29');
+        msg_num.innerHTML = info_text_11;
+    </script>
+    <div class="box-1">
+        <h1>Crea un messaggio con lo switch:</h1>
+        <ul>
+        <li><p>Crea un programma che riceva un numero da 1 a 7 dall'utente e utilizzi un'istruzione switch per stampare il giorno corrispondente della settimana.</p></li>
+        <li><span id="valore30">-</span></li>
+        </ul>
+    </div>
+    <script>
+        var mese_cor = '3';
+        function op_mese(){
+            var text_mese = '';
+            switch (mese_cor){
+                case '1':
+                 text_mese = 'Lunedì';
+                 break;
+                case '2':
+                text_mese = 'Martedì';
+                break;
+                case '3':
+                text_mese = 'Mercoledi';
+                break;
+                case '4':
+                text_mese ='Giovedì';
+                break;
+                case '5':
+                text_mese ='Venerdì'; 
+                break;
+                case '6':
+                text_mese ='Sabato'; 
+                break;
+                case '7':
+                text_mese ='Domenica'; 
+                break;
+                default:
+                text_mese = 'Giorno non trovato';   
+                break; 
+            }
+            return text_mese;
+        }
+        var info_text_12 = op_mese();
+        const msg_mese = document.getElementById('valore30');
+        msg_mese.innerHTML = 'Mese Selezionato:' + '   '+info_text_12;
+    </script>
+     <div class="box-1">
+        <h1>Crea un messaggio con i cicli:</h1>
+        <ul>
+        <li><p>Crea un programma che mostri la tabellina di un numero scelto dall'utente.</p></li>
+        <li><span id="valore31">-</span></li>
+        </ul>
+    </div>
+    <script>
+        var inserisci_num = 4;
+        function ciclo_num(){
+            var messagio_num ='';
+            for (i = 0; i < 10; i++) {
+                //var num_random = Math.floor(Math.random()*10);
+                var messagio_num_risult = inserisci_num * i;
+                messagio_num += inserisci_num + 'x' + i + '=' + messagio_num_risult + '<br>';
+            }
+            return messagio_num;
+        }
+        var info_text_13 = ciclo_num();
+        const msg_num_1 = document.getElementById('valore31');
+        msg_num_1.innerHTML =  info_text_13;
+    </script>
+     <div class="box-1">
+        <h1>Crea un messaggio con i cicli:</h1>
+        <ul>
+        <li><p>Scrivi un programma in JavaScript che stampi tutti i numeri pari da 1 a 100. Utilizza un ciclo per iterare attraverso i numeri e controlla se il numero è pari.</p></li>
+        <li><span id="valore32">-</span></li>
+        </ul>
+    </div>
+    <script>
+        function creazione_triangolo(){
+            var testo_mes = '';
+            for ( i = 1; i < 10 ; i++) {
+                var calc_text =  i / 2;
+                testo_mes += calc_text + '<br>';
+            }
+            return testo_mes;
+        }
+        var info_text_14 = creazione_triangolo();
+        const msg_tria = document.getElementById('valore32');
+        msg_tria.innerHTML =  info_text_14;
+    </script>
+    <div class="box-1">
+        <h1>Crea un messaggio con i cicli:</h1>
+        <ul>
+        <li><p>Scrivi un programma in JavaScript che stampi tutti i numeri che sono multipli di 5 utilizzando i cicli.</p></li>
+        <li><span id="valore33">-</span></li>
+        </ul>
+    </div>
+    <script>
+        function multipli_di_cinque(){
+            var testo_msg = '';
+            var i;
+            for (i=0;  i<10;  i++) {
+                var calcolo_num = i * 5;
+                testo_msg += 5 + 'x' + i + '='+ calcolo_num + '<br>';
+            }
+            return testo_msg;
+        }
+        // i = variabile di indice
+        var info_text_15 = multipli_di_cinque();
+        const msg_ml = document.getElementById('valore33');
+        msg_ml.innerHTML =  info_text_15;
+    </script>
+    <div class="box-1">
+        <h1>Crea un messaggio con i cicli:</h1>
+        <ul>
+        <li><p>Scrivi un programma in JavaScript che calcoli la somma di un numero a scelta utilizzando la l'indice di un ciclo.</p></li>
+        <li><span id="valore34">-</span></li>
+        </ul>
+    </div>
+    <script>
+        var numero_ad = 10;
+        function somma_pos(){
+            var msg = '';
+            for ( i = 1; i < 10; i++) {
+                var calc_add = this.numero_ad + i;
+                msg += numero_ad + '+' + i + '=' + calc_add + '<br>';
+            }
+            return msg;
+        }
+        var info_text_16 = somma_pos();
+        const msg_add = document.getElementById('valore34');
+        msg_add.innerHTML =  info_text_16;
+    </script>
+    <div class="box-1">
+        <h1>Crea un messaggio con i cicli:</h1>
+        <ul>
+        <li><p>Scrivi un programma in JavaScript che calcoli dei numeri interi positivi da 1 a 20, includendo solo i numeri dispari. Utilizza un ciclo per iterare attraverso i numeri, verifica se il numero è dispari e accumula la somma solo per i numeri dispari.</p></li>
+        <li><span id="valore35">-</span></li>
+        </ul>
+    </div>
+    <script>
+         function num_disp(){
+            var msg = '';
+            for (i = 0; i < 20; i++) {
+                if (i % 2 !== 0) {
+                    msg += i + '<br>';
+                }
+            }
+            return msg;
+        }
+        // += operatore di assegnazione, in sintesi 1+2
+        var info_text_17 = num_disp();
+        const msg_disp_1 = document.getElementById('valore35');
+        msg_disp_1.innerHTML =  info_text_17;
+    </script>
+     <div class="box-1">
+        <h1>Crea un messaggio con i cicli:</h1>
+        <ul>
+        <li><p>Scrivi una funzione chiamata <b style="color: red;">'contaNumeriPari'</b> che accetta un numero intero positivo come parametro. 
+            La funzione deve contare e restituire quanti numeri pari ci sono compresi tra 1 e il numero fornito come parametro.</p></li>
+        <li><span id="valore36">-</span></li>
+        </ul>
+    </div>
+    <script>
+         function contaNumeriPari(){
+            var msg_fun = '';
+            var indice_nu = 1;
+            var i = 1;
+         if (indice_nu % 2 == 0) {
+                var valid = false;
+                msg_fun = 'NaN';
+            }
+            else {
+             for (indice_nu = 1; indice_nu < 30; indice_nu++) {
+            if (indice_nu % 2 == 0) {
+              msg_fun += indice_nu + '<br>';
+            } 
+            }
+        }
+            return msg_fun;
+        } 
+        var info_text_18 = contaNumeriPari();
+        const msg_disp_2 = document.getElementById('valore36');
+        msg_disp_2.innerHTML =  info_text_18;
+    </script>
+      <div class="box-1">
+        <h1>Crea un messaggio con i cicli:</h1>
+        <ul>
+        <li><p>Scrivi una funzione chiamata <b style="color: red;">'calcolaMediaPariDispari'</b> che accetta un array di numeri interi come parametro. 
+            La funzione deve restituire un oggetto con due proprietà: mediaPari e mediaDispari, che rappresentano rispettivamente la media dei numeri pari e la media dei numeri dispari presenti nell'array.</p></li>
+        <li><span id="valore37">-</span></li>
+        </ul>
+    </div>
+    <script>
+  var numeri_interi = [1,2,3,4,5,6,7,8,9,10];
+     function calcolaMediaPariDispari(){
+               var calcolo_pari = 0;
+               for (i = 0; i < numeri_interi.length; i++) {
+                if (numeri_interi[i] % 2 == 0) {
+                    calcolo_pari += numeri_interi[i] ;
+                }
+                } 
+                var calcolo_disp = 0;
+                for (i = 0; i < numeri_interi.length; i++) {
+                if (numeri_interi[i] % 2 !== 0) {
+                    calcolo_disp += numeri_interi[i];
+                }
+                } 
+            var mediaPari = calcolo_pari / calcolo_pari;
+            var mediaDispari = calcolo_disp / calcolo_disp;
+            var calcolo_funzion = Math.floor(mediaPari) + '/' + mediaDispari;
+           return calcolo_funzion;
+        } 
+         var info_text_19 = calcolaMediaPariDispari();
+        const msg_disp_par = document.getElementById('valore37');
+        msg_disp_par.innerHTML =  info_text_19;
+    </script>
+    <footer>
+        <p>Tabella &copy; - valori espressi in <a href="index.html">Javascript</a></p>
+    </footer>
+</body>
+</html>

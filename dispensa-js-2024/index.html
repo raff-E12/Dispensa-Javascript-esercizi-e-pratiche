@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guida Javascript / jQuery</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#525fd6">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+	
+	<header id="pinco">
+		<h1>Guida Javascript / jQuery<br> Dove posizionare Javascript</h1>
+		<nav id="mainMenu">
+			<ul>
+				<li><a href="index.html" title="javascript">Home</a></li>
+				<li><a href="dove-jx.html" title="Dove posizionare Javascript">Dove posizionare Javascript</a></li>
+				<li><a href="sintassi-jx.html" title="La sintassi">Sintassi js</a></li>
+				<li><a href="condizionali-e-cicli.html" title="Condizionali e cicli">Condizioni e cicli</a></li>
+				<li><a href="funzioni.html" title="Le funzioni">Le funzioni</a></li>
+				<li><a href="jQuery.html" title="jQuery">jquery</a></li>
+				<li><a href="integrareJQ.html" title="Integrare jQuery nei progetti">Integrare jquery</a></li>
+				<li><a href="sintassiJquery.html" title="Sintassi jQuery ">Sintassi jquery</a></li>
+				<li><a href="selezioneJquery.html" title="La selezione degli elementi in jQuery ">La selezione degli elementi in jQuery</a></li>
+				<li><a href="gestione_eventiJq.html" title="La gestione degli eventi in jQuery ">La gestione degli eventi in jQuery</a></li>
+				<li><a href="metodi-jQ.html" title="Metodi jQuery ">La gestione degli eventi in jQuery</a></li>
+				<li><a href="Javascript-riassunto.html" title="Riassunto Javascript ">Riassunto Javascript</a></li>
+				<li><a href="eventi-js.html" title="Eventi Javascript ">Eventi in Javascript</a></li>
+			</ul>
+
+
+		</nav>
+		
+	</header>
+	
+	<main>
+		<section>
+			<h2>Javascript</h2>
+			<h3>Cos'&egrave;</h3>
+			<p>Javascript &egrave; il linguaggio di programmazione del web, &egrave; nativo come Css e Html. Nasce nel 1995 per netscape navigator, &egrave; anche detto ECMASCRIPT. Nel 1997 diventa subito uno standard.</p>
+			<h2>Cos'&egrave; uno script.</h2>
+			<p>Uno script &egrave; una serie di istruzioni che un computer esegue in successione.</p>
+			<h2>Cosa ci permette di fare Jx</h2> <!-- Jx abbreviazione di Javascript-->
+			<p>Jx ci permette di modificare e navigare gli elementi all'interno del DOM, ed intercettare gli eventi che l'utente scatena sulla pagina, dandoci la possibilit&agrave; di &quot;reagire&quot;.<br>
+			Per eventi intendiamo &quot;cose&quot; che accadono sulla pagina (mouseover, click del mouse, pressione di un tasto, caricamento della pagina) e possiamo intercettare con Jx.</p>
+			<p>L'html crea la struttura della nostra pagina e ne definisce i contenuti con i suoi marcatori (tag).<br>
+			Il Css migliora l'aspetto delle nostre pagine rendendole &quot;particolari&quot; in modo da poter presentare il contenuto diversamente da come farebbe solo l'html. Il Css da muta l'aspetto della struttura html dando stile ai bordi, agli sfondi, ai testi, ai contenitori e cos&igrave; via.<br>
+			Jx aggiunge interattivit&agrave; alle pagine gestendo i comportamenti di queste. Ci permette di rispondere con delle istruzioni precise agli eventi che accadono sulla pagina.</p>
+			<p>Jx viene inserito all'interno della pagina html nel tag &lt;script&gt; &lt;/script&gt;<br>
+			Il tag pu&ograve; essere posizionato all'interno della nostra pagina in qualsiasi punto.
+			Jx pu&ograve; anche essere inserito in linea (direttamente all'interno del tag).<br>
+			Jx, come il css, pu&ograve; essere esternalizzato in una pagina con estensione &quot;.js&quot;</p>
+			<p>Note:</p>
+			<ul>
+				<li>Jx &egrave; case sensitive;</li>
+				<li> &egrave; nativo come css e html e non ha bisogno di nessun software o libreria in particolare;</li>
+				<li>i commenti in Jx : //singola riga, /* commento multiriga */</li>
+			</ul>
+			<script>
+				alert('ciao');
+				document.write('contenuto inserito tramite javascript');
+				console.log('ciao');
+			</script>
+			<button onClick="document.getElementById('esempio').innerHTML='Cambio il contenuto del paragrafo'">cambia contenuto</button>
+			
+			<p id="esempio">Paragrafo da cambiare</p>
+		</section>
+	</main>
+	
+	<footer>
+		&copy; Copyright 2024
+	</footer>
+	
+</body>
+</html>

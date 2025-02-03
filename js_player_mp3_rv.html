@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player 1°</title>
+    <link rel="stylesheet" href="js-css/css_reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,787;1,787&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            width: 100%;
+            background-color: #F2C230;
+        }
+
+        h2{
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 19px;
+        }
+
+        p{
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+            font-size: 17px;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        body{
+            background: #E8EAEE;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column
+        }
+
+        .music-player{
+            background: #dde1e7;
+            box-shadow: inset -3px -3px 7px #ffffff73,
+            inset  3px 3px 5px rgba(94,104,121,0.288), 3px -3px 7px #0e0e0e73,
+            3px 3px 5px rgba(94,104,121,0.288);
+            width: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border: 3px solid #C6C8D4;
+            border-radius: 10px;
+            padding: 10px;
+            gap: 10px;
+            position: fixed;
+            top: 80px;
+        }
+
+        .btn-player{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            width: 80%;
+            gap: 30px;
+            padding: 10px;
+        }
+
+        .btn-first{
+            width: 42px;
+            height: 42px;
+            background-color: #C6C8D4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 100px;
+            box-shadow: inset -3px -3px 7px #ffffff73,
+            inset 3px 3px 5px rgba(94,104,121,0.288);
+            border: 2px solid #C6C8D4;
+            color: #5c5c5c;
+            cursor: pointer;
+        }
+
+        .btn-first:active{
+            box-shadow: inset -3px -3px 7px #9b9b9b73,
+            inset 3px 3px 5px rgba(19, 21, 24, 0.288);
+            color: #E8EAEE;
+        }
+
+        .btn-seconds{
+            width: 35px;
+            height: 35px;
+            background-color: #C6C8D4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 100px;
+            box-shadow: inset -3px -3px 7px #ffffff73,
+            inset 3px 3px 5px rgba(94,104,121,0.288);
+            border: 2px solid #C6C8D4;
+            color: #5c5c5c;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .btn-seconds:active{
+            box-shadow: inset -3px -3px 7px #9b9b9b73,
+            inset 3px 3px 5px rgba(19, 21, 24, 0.288);
+            color: #E8EAEE;
+        }
+
+        .btn-thirds{
+            width: 29px;
+            height: 29px;
+            background-color: #C6C8D4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 100px;
+            box-shadow: inset -3px -3px 7px #ffffff73,
+            inset 3px 3px 5px rgba(94,104,121,0.288);
+            border: 2px solid #C6C8D4;
+            color: #5c5c5c;
+            cursor: pointer;
+            font-size: 10px;
+        }
+
+        .btn-thirds:active{
+            box-shadow: inset -3px -3px 7px #9b9b9b73,
+            inset 3px 3px 5px rgba(19, 21, 24, 0.288);
+            color: #E8EAEE;
+        }
+
+        .title-music{
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            background-color: #C6C8D4;
+            border-radius: 10px;
+            color: #5c5c5c;
+            box-shadow: inset -3px -3px 7px #ffffff73,
+            inset 3px 3px 5px rgba(94,104,121,0.288);
+            border: 2px solid #E8EAEE;
+        }
+        
+        .title-music h2{
+            width: 240px;
+        }
+
+        .title-music p{
+            width: 240px;
+        }
+
+        .slider{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 28px;
+            position: relative;
+        }
+
+        #slider-mp3{
+            position: absolute;
+            width: 100%;
+            appearance: none;
+            pointer-events: none;
+            background-color: transparent;
+        }
+
+        #slider-mp3::-webkit-slider-runnable-track{
+            appearance: none;
+            pointer-events: none;
+        }
+
+        #slider-mp3::-webkit-slider-thumb{
+            pointer-events: auto;
+            width: 20px;
+            height: 20px;
+            appearance: none;
+            background-color: #C7CFD9;
+            border-radius: 100px;
+            padding: 12px;
+            cursor: pointer;
+            border: 5px solid #88898C;
+            box-shadow: inset -3px -3px 7px #ffffff73,
+            inset 3px 3px 5px rgba(94,104,121,0.288);
+        }
+
+        .line{
+            width: 100%;
+            height: 10px;
+            background-color: #C7CFD9;
+            border-radius: 10px;
+            border: 2px solid #E8EAEE;
+        }
+
+        .second-increment{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80%;
+            padding: 12px;
+        }
+
+        #audio-sc{
+            display: block;
+            position: absolute;
+        }
+
+        .fa-play{
+            display: block;
+        }
+
+        .fa-pause{
+            display: none;
+        }
+
+        #begin-value{
+            width: 50px;
+            height: 30px;
+        }
+
+        #end-value{
+            width: 50px;
+            height: 30px;
+        }
+
+        .playlist{
+            width: 300px;
+            position: absolute;
+            height: 220px;
+            left: 50px;
+            top: 100px;
+            display: none;
+            align-items: center;
+            justify-content: first baseline;
+            border: 8px solid #dde1e7;
+            background-color: #C7CFD9;
+            border-radius: 20px;
+            box-shadow: inset -3px -3px 7px #ffffff73,
+            inset 3px 3px 5px rgba(94,104,121,0.288), -3px -3px 7px #ffffff73,
+            3px 3px 5px rgba(94,104,121,0.288);
+            flex-direction: column;
+            padding: 10px;
+            gap: 10px;
+        }
+
+        .top-bar-pl{
+            width: 100%;
+            height: 40px;
+            border: 2px solid #dde1e7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            gap: 20px;
+            background-color: #C7CFD9;
+            border-radius: 10px;
+            box-shadow: inset -3px -3px 7px #ffffff73,
+            inset 3px 3px 5px rgba(94,104,121,0.288);
+            color: #5c5c5c;
+            padding: 10px;
+        }
+
+        .content-music{
+            width: 100%;
+            background-color: #C7CFD9;
+            border: 2px solid #dde1e7;
+            padding: 6px;
+            height: 500px;
+            box-shadow: inset -3px -3px 7px #ffffff73,
+            inset 3px 3px 5px rgba(94,104,121,0.288);
+            overflow: scroll;
+            gap: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+
+        .content-music::-webkit-scrollbar{
+            width: 10px;
+            background-color: #C7CFD9;
+            box-shadow: inset -3px -3px 7px #ffffff73,
+            inset 3px 3px 5px rgba(94,104,121,0.288);
+        }
+
+        .content-music::-webkit-scrollbar:horizontal{
+            display: none;
+        }
+
+        .content-music::-webkit-scrollbar-thumb{
+            background-color: #88898C;
+            box-shadow: inset -3px -3px 7px #ffffff73,
+            inset 3px 3px 5px rgba(94,104,121,0.288);
+            cursor: pointer;
+        }
+
+        .songs{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: row;
+            gap: 50px;
+            background-color: #C7CFD9;
+            border: 2px solid #E8EAEE;
+            box-shadow: inset -3px -3px 7px #ffffff73,
+            inset 3px 3px 5px rgba(94,104,121,0.288);
+            border-radius: 4px;
+            padding: 4px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .title-music-pl h2{
+            font-size: 14px;
+        }
+
+        .title-music-pl p{
+            font-size: 14px;
+        }
+
+        .music-icon{
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset -3px -3px 7px #ffffff73,
+            inset 3px 3px 5px rgba(94,104,121,0.288);
+            background-color: #C7CFD9;
+            color: #5c5c5c;
+        }
+
+        .playlist.open{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div class="music-player">
+        <div class="btn-player">
+            <div class="btn-thirds" id="playlist-btn">
+                <i class="fa-solid fa-list"></i>
+            </div>
+            <div class="btn-seconds" id="prev">
+                <i class="fa-solid fa-backward"></i>
+            </div>
+            <div class="btn-first" id="play-btn">
+                <i class="fa-solid fa-play"></i>
+                <i class="fa-solid fa-pause"></i>
+            </div>
+            <div class="btn-seconds" id="next">
+                <i class="fa-solid fa-forward"></i>
+            </div>
+            <div class="btn-thirds" id="repeat-btn">
+                <i class="fa-solid fa-repeat"></i>
+            </div>
+        </div>
+        <div class="title-music">
+            <h2 id="title-music"></h2>
+            <p id="artist-music"></p>
+        </div>
+        <audio src="immagini/video/sakura-meditate-beat-138298.mp3" id="audio-sc" preload="metadata"></audio>
+        <div class="slider">
+            <div class="line"></div>
+            <input type="range" id="slider-mp3">
+        </div>
+        <div class="second-increment">
+            <p id="begin-value">00:00</p>
+            <p id="end-value">00:00</p>
+        </div>
+    </div>
+    <div class="playlist" id="playlist">
+        <div class="top-bar-pl">
+            <div class="icon-list">
+                <i class="fa-solid fa-list"></i>
+            </div>
+            <h2>Playlist Player</h2>
+        </div>
+      <div class="content-music">
+        <div class="songs">
+            <div class="music-icon">
+                <i class="fa-solid fa-music"></i>
+            </div>
+            <div class="title-music-pl">
+                <h2>Title Music</h2>
+                <p>artist Name</p>
+            </div>
+        </div>
+        <div class="songs">
+            <div class="music-icon">
+                <i class="fa-solid fa-music"></i>
+            </div>
+            <div class="title-music-pl">
+                <h2>Title Music</h2>
+                <p>artist Name</p>
+            </div>
+        </div>
+        <div class="songs">
+            <div class="music-icon">
+                <i class="fa-solid fa-music"></i>
+            </div>
+            <div class="title-music-pl">
+                <h2>Title Music</h2>
+                <p>artist Name</p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script>
+        let list_music = [
+        {
+            name: 'Lazy Day',
+            artist: 'Mike White',
+            src: 'immagini/video/lazy-day-stylish-futuristic.mp3',
+        },
+
+        {
+            name: 'Nigth Dective',
+            artist: 'Dj. Cell',
+            src: 'immagini/video/night-detective.mp3',
+        },
+
+        {
+            name: 'Sakura Type Beat',
+            artist: 'Chriss Designer',
+            src: 'immagini/video/sakura-meditate-beat-138298.mp3',
+        }
+    ]
+    let index_music = 1;
+    let next_btn = document.getElementById('next');
+    let prev_btn = document.getElementById('prev');
+    let title_music = document.getElementById('title-music');
+    let artist_title = document.getElementById('artist-music');
+    let audio = document.getElementById('audio-sc');
+    let play_btn = document.getElementById('play-btn');
+    let reapt_btn = document.getElementById('repeat-btn');
+    let slider_player = document.getElementById('slider-mp3');
+    let text_now = document.getElementById('begin-value');
+    let text_end = document.getElementById('end-value');
+    let play_list = document.getElementById('playlist');
+    let play_list_btn = document.getElementById('playlist-btn');
+
+    play_list_btn.addEventListener('click', ()=>{
+    if (!play_list.classList.contains('open')) {
+        play_list.classList.add('open')
+    } else {
+        play_list.classList.remove('open');
+    }
+    })
+
+    function Call_playlist(){
+    let songs_playlist = document.querySelectorAll('div.songs');
+    let title_pl = document.querySelectorAll('div.title-music-pl');
+
+    songs_playlist.forEach((song, index)=>{
+        song.addEventListener('click', ()=>{
+        audio.setAttribute('src', list_music[index].src);
+        Play_btn();
+        slider_work();
+        })
+    })
+
+    for (i = 0; i < songs_playlist.length; i++) {
+    let title_music_pl = title_pl[i].getElementsByTagName('h2');
+    let artist_music_pl = title_pl[i].getElementsByTagName('p');
+    title_music_pl[0].textContent = list_music[i].name;
+    artist_music_pl[0].textContent = list_music[i].artist;
+    }
+    }
+
+    function Conversion_Duration(time){
+        let format = 0;
+        let hours = Math.floor(time / 3600);
+        let minute = Math.floor(time / 60) % 60;
+        let second = Math.floor(time % 60);
+        let covert_h = String(hours).padStart('2', '0');
+        let convert_m = String(minute).padStart('2', '0');
+        let convert_s = String(second).padStart('2', '0');
+        if (covert_h === 0) {
+            format = covert_h + ':' + convert_m + ':' + convert_s;
+        }
+        else{
+               format = convert_m + ':' + convert_s;
+        }
+        return format;
+    }
+
+    function Update_text(){
+        setInterval(()=>{
+        let lenght = audio.duration;
+        let riproduction = audio.currentTime;
+        text_now.textContent = Conversion_Duration(riproduction);
+        text_end.textContent = Conversion_Duration(lenght);
+        }, 200)
+    }
+
+    function load_music(){
+        title_music.textContent = list_music[index_music - 1].name;
+        artist_title.textContent = list_music[index_music - 1].artist;
+        audio.setAttribute('src', list_music[index_music - 1].src);
+    };
+
+    window.addEventListener('load', ()=>{
+        load_music();
+        Update_text();
+        Call_playlist();
+    })
+
+    audio.addEventListener('loadedmetadata', ()=>{
+        slider_player.max = audio.duration;
+        slider_player.value = audio.currentTime;
+        Update_text();
+    })
+
+    next_btn.addEventListener('click', ()=>{
+       if(index_music < list_music.length){
+        index_music++;
+       }
+       else{
+        index_music = 1;
+       }
+       load_music();
+       Play_btn();
+    })
+
+    prev_btn.addEventListener('click', ()=>{
+        if (index_music > 1){
+            index_music--;
+        }
+        else{
+            index_music = list_music.length;
+        }    
+        load_music();
+        Play_btn();
+    })
+
+    let icon_play = document.querySelector('i.fa-solid.fa-play');
+    let icon_pause = document.querySelector('i.fa-solid.fa-pause');
+
+    function Play_btn(){
+        icon_play.style.display = 'none';
+        icon_pause.style.display = 'block';
+        audio.play();
+        slider_work();
+    }
+
+    function Pause_btn(){
+        icon_play.style.display = 'block';
+        icon_pause.style.display = 'none';
+        audio.pause();
+    }
+
+    play_btn.addEventListener('click', ()=>{
+        if (!icon_play.style.display !== 'none' && icon_pause.style.display !== 'block') {
+            Play_btn();
+        } else {
+             Pause_btn();
+        }
+    })
+
+    slider_player.addEventListener('change', ()=>{
+        audio.currentTime = slider_player.value;
+    })
+
+    function slider_work(){
+        setInterval(()=>{
+            slider_player.value = audio.currentTime;
+        },500)
+    }
+
+    function Loop_Player(){
+      audio.addEventListener('ended', ()=>{
+        if(index_music < list_music.length){
+        index_music++;
+       }
+       else{
+        index_music = 1;
+       }
+       load_music();
+       audio.play();
+       Play_btn();
+      })
+    }
+
+    reapt_btn.addEventListener('click', ()=>{
+        Loop_Player();
+    })
+
+    let cursor_value = {
+        x: null,
+        y: null
+    }
+
+    let object_value = {
+        obj: null,
+        x: null,
+        y: null
+    }
+
+    document.addEventListener('mousedown', (e)=>{
+        if(e.target.classList.contains('music-player')){
+            cursor_value.x = e.clientX;
+            cursor_value.y = e.clientY;
+            object_value.obj = e.target;
+            object_value.x = e.target.offsetLeft;
+            object_value.y = e.target.offsetTop;
+        }
+    })
+
+    document.addEventListener('mousemove', (e)=>{
+        if (object_value.obj !== null) {
+            let correct_mouse = {
+            x: e.clientX,
+            y: e.clientY
+        }
+        let distance_obj = {
+            x: correct_mouse.x - cursor_value.x,
+            y: correct_mouse.y - cursor_value.y
+        }
+        object_value.obj.style.left = (object_value.x + distance_obj.x)  + 'px';
+        object_value.obj.style.top = (object_value.y + distance_obj.y) + 'px';
+        object_value.obj.style.cursor = 'grab';
+        }
+    })
+
+    document.addEventListener('mouseup', ()=>{
+        if (object_value.obj !== null) {
+            object_value.obj = null;
+        }
+    })
+    </script>
+</body>
+</html>

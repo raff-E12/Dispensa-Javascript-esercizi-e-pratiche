@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pannelli Flessibili</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,356;1,356&display=swap" rel="stylesheet">
+    <style>
+    *{
+     padding: 0;
+     margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 567;
+    font-style: normal;
+    }
+
+    h1{
+        font-weight: 600;
+    }
+
+    body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    }
+
+    header{
+     width: 100%;
+     background-color: #F2B705;
+    }
+
+    header img{
+    width: 2.3%;
+    height: 2.3%;
+    padding: 10px;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        overflow: hidden;
+    }
+
+   #sc-js #p1{
+        position: relative;
+        top: -100%;
+        transition: all 0.3s ease-in-out;
+        font-weight: 600;
+        padding: 10px;
+        background-color: #ffffff;
+        border: 2px solid #919191;
+    }
+
+   #sc-js #p2{
+        position: relative;
+        top: 100%;
+        transition: all 0.3s ease-in-out;
+        font-weight: 600;
+        padding: 10px;
+        background-color: #ffffff;
+        border: 2px solid #919191;
+    }
+
+    #sc-js.open{
+        width: 50%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #sc-js.close{
+        width: 20%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #sc-js{
+        background-color: #F2CB05;
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 99vh;
+        font-size: 20px;
+        font-weight: 300;
+        overflow: hidden;
+        cursor: pointer;
+        gap: 20px;
+    }
+
+    #sc-html #p4{
+        position: relative;
+        top: -100%;
+        transition: all 0.3s ease-in-out;
+        font-weight: 600;
+        padding: 10px;
+        background-color: #ffffff;
+        border: 2px solid #919191;
+    }
+
+   #sc-html #p3{
+        position: relative;
+        top: 100%;
+        transition: all 0.3s ease-in-out;
+        font-weight: 600;
+        padding: 10px;
+        background-color: #ffffff;
+        border: 2px solid #919191;
+    }
+
+    #sc-html.open{
+        width: 50%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #sc-html.close{
+        width: 20%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #sc-html{
+        background-color: #E0762B;
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 99vh;
+        font-size: 20px;
+        font-weight: 300;
+        overflow: hidden;
+        gap: 20px;
+        cursor: pointer;
+    }
+
+    #sc-css #p6{
+        position: relative;
+        top: -100%;
+        transition: all 0.3s ease-in-out;
+        font-weight: 600;
+        padding: 10px;
+        background-color: #ffffff;
+        border: 2px solid #919191;
+    }
+
+   #sc-css #p5{
+        position: relative;
+        top: 100%;
+        transition: all 0.3s ease-in-out;
+        font-weight: 600;
+        padding: 10px;
+        background-color: #ffffff;
+        border: 2px solid #919191;
+    }
+
+    #sc-css.open{
+        width: 50%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #sc-css.close{
+        width: 20%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #sc-css{
+        background-color: #AACCB0;
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 99vh;
+        font-size: 20px;
+        font-weight: 300;
+        overflow: hidden;
+        gap: 20px;
+        cursor: pointer;
+    }
+
+    #sc-java #p7{
+        position: relative;
+        top: -100%;
+        transition: all 0.3s ease-in-out;
+        font-weight: 600;
+        padding: 10px;
+        background-color: #ffffff;
+        border: 2px solid #919191;
+    }
+
+   #sc-java #p8{
+        position: relative;
+        top: 100%;
+        transition: all 0.3s ease-in-out;
+        font-weight: 600;
+        padding: 10px;
+        background-color: #ffffff;
+        border: 2px solid #919191;
+    }
+
+    #sc-java.open{
+        width: 50%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #sc-java.close{
+        width: 20%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #sc-java{
+        background-color: #BF0426;
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 99vh;
+        font-size: 20px;
+        font-weight: 300;
+        overflow: hidden;
+        gap: 20px;
+        cursor: pointer;
+    }
+
+    #sc-php{
+        background-color: #BF3F86;
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 99vh;
+        font-size: 20px;
+        font-weight: 300;
+        overflow: hidden;
+        gap: 20px;
+        cursor: pointer;
+    }
+
+    #sc-php #p9{
+        position: relative;
+        top: -100%;
+        transition: all 0.3s ease-in-out;
+        font-weight: 600;
+        padding: 10px;
+        background-color: #ffffff;
+        border: 2px solid #919191;
+    }
+
+   #sc-php #p10{
+        position: relative;
+        top: 100%;
+        transition: all 0.3s ease-in-out;
+        font-weight: 600;
+        padding: 10px;
+        background-color: #ffffff;
+        border: 2px solid #919191;
+    }
+
+    #sc-php.open{
+        width: 50%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #sc-php.close{
+        width: 20%;
+        transition: all 0.3s ease-in-out;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+<div class="container">
+    <div class="close" id="sc-js">
+        <p id="p1">Pratica</p>
+        <h1>JS</h1>
+        <p id="p2">Scrivi</p>
+    </div>
+    <div class="close" id="sc-html">
+        <p id="p3">Pratica</p>
+        <h1>HTML</h1>
+        <p id="p4">Scrivi</p>
+    </div>
+    <div class="close" id="sc-css">
+        <p id="p5">Pratica</p>
+        <h1>CSS</h1>
+        <p id="p6">Scrivi</p>
+    </div>
+    <div class="close" id="sc-java">
+        <p id="p7">Pratica</p>
+        <h1>JAVA</h1>
+        <p id="p8">Scrivi</p>
+    </div>
+    <div class="close" id="sc-php">
+        <p id="p9">Pratica</p>
+        <h1>PHP</h1>
+        <p id="p10">Scrivi</p>
+    </div>
+</div>
+<script>
+    const js_box = document.getElementById('sc-js');
+   /* const par = js_box.getElementsByTagName('p')
+    for (i = 0; i < par.length; i++) {
+        par[i].setAttribute('close');
+    } */
+    js_box.addEventListener('click', function(){
+    const par_1 = document.getElementById('p1');
+    const par_2 = document.getElementById('p2');
+        if (this.className !== 'open') {
+            this.setAttribute('class', 'open');
+            par_1.style.top = '0%';
+            par_2.style.top = '0%';
+        } else {
+            this.setAttribute('class', 'close');
+            par_1.style.top = '-100%';
+            par_2.style.top = '100%';
+        }
+    })
+    
+    const html_box = document.getElementById('sc-html');
+    html_box.addEventListener('click', function(){
+    const par_3 = document.getElementById('p3');
+    const par_4 = document.getElementById('p4');
+        if (this.className !== 'open') {
+            this.setAttribute('class', 'open');
+            par_3.style.top = '0%';
+            par_4.style.top = '0%';
+        } else {
+            this.setAttribute('class', 'close');
+            par_3.style.top = '-100%';
+            par_4.style.top = '100%';
+        }
+    })
+
+    const css_box = document.getElementById('sc-css');
+    css_box.addEventListener('click', function(){
+    const par_5 = document.getElementById('p5');
+    const par_6 = document.getElementById('p6');
+        if (this.className !== 'open') {
+            this.setAttribute('class', 'open');
+            par_5.style.top = '0%';
+            par_6.style.top = '0%';
+        } else {
+            this.setAttribute('class', 'close');
+            par_5.style.top = '-100%';
+            par_6.style.top = '100%';
+        }
+    })
+
+    const java_box = document.getElementById('sc-java');
+    java_box.addEventListener('click', function(){
+    const par_7 = document.getElementById('p7');
+    const par_8 = document.getElementById('p8');
+        if (this.className !== 'open') {
+            this.setAttribute('class', 'open');
+            par_7.style.top = '0%';
+            par_8.style.top = '0%';
+        } else {
+            this.setAttribute('class', 'close');
+            par_7.style.top = '-100%';
+            par_8.style.top = '100%';
+        }
+    })
+
+    const php_box = document.getElementById('sc-php');
+    php_box.addEventListener('click', function(){
+    const par_9 = document.getElementById('p9');
+    const par_10 = document.getElementById('p10');
+        if (this.className !== 'open') {
+            this.setAttribute('class', 'open');
+            par_9.style.top = '0%';
+            par_10.style.top = '0%';
+        } else {
+            this.setAttribute('class', 'close');
+            par_9.style.top = '-100%';
+            par_10.style.top = '100%';
+        }
+    })
+</script>
+</body>
+</html>

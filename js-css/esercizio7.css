@@ -1,0 +1,336 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+h1 {
+    font-size: 23.61px;
+  }
+  
+  h2 {
+    font-size: 22.13px;
+  }
+  
+  h3 {
+    font-size: 20.74px;
+  }
+  
+  h4 {
+    font-size: 19.44px; 
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  
+ header a{
+    font-size: 13px; 
+ }
+
+ .header-top{
+    background-color: #107373;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    height: 60px;
+ }
+  
+.nav-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: auto;
+}
+
+#logo-header{
+    width:  40px;
+    height: 40px;
+}
+
+.section3 ul{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    width: auto;
+    margin-left: 6%;
+    margin-right: 0;
+}
+
+.section3{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.section3 li a{
+    color: white;
+    text-decoration: none;
+    padding: 9px;
+}
+
+.section3 li a:hover{
+    color: rgb(214, 214, 214);
+    text-decoration: underline;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.button1{
+    background-color: #0029b1;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 12px;
+    border-radius: 10px;
+    width: 100px;
+}
+
+.button1:hover{
+    background-color: #6480dd;
+}
+
+.hambox{
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    padding: 10px;
+}
+
+.hambox i{
+    color: white;
+    display: none;
+}
+
+#cross{
+    display: none;
+    cursor: pointer;
+}
+
+#ham{
+    display: none;
+    cursor: pointer;
+}
+
+#MenuMobile{
+    background-color: #107373;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 100%;
+    transition: all 0.3s ease;
+    padding: 20px;
+}
+
+#Menunav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+}
+
+.nav-list li{
+    font-size: 40px;
+    text-align: center;
+    list-style-type: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-list li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.nav-list li a:hover{
+    color: black;
+    background-color: white;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    padding: 10px;
+} 
+
+@media screen and (min-width:375px) {
+    .section3{
+        display: none;
+    }
+
+    .hambox i{
+        display: block;
+        font-size: 30px;
+    }
+
+    #ham{
+        display: block;
+    }
+
+    .hambox{
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button1{
+        width: 120px;
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (min-width:576px) {
+    .section3{
+        display: none;
+    }
+
+
+    .hambox i{
+        display: block;
+        font-size: 30px;
+    }
+
+    #ham{
+        display: block;
+    }
+
+    .hambox{
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button1{
+        width: 120px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .section3{
+        display: none;
+    }
+
+    .hambox i{
+        display: block;
+        font-size: 30px;
+    }
+
+    .hambox{
+        width: auto;
+    }
+
+    #ham{
+        display: block;
+    }
+
+    .hambox{
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button1{
+        width: 120px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width:992px) { 
+    .section3{
+        display: none;
+    }
+
+    .hambox i{
+        display: block;
+        font-size: 30px;
+    }
+
+    .hambox{
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #ham{
+        display: block;
+    }
+
+    .button1{
+        width: 120px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width:1200px){
+    .section3{
+        display: flex;
+    }
+
+    .hambox i{
+        display: none;
+    }
+
+    .hambox{
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #ham{
+        display: none;
+    }
+
+    .button1{
+        width: 100px;
+    }
+}

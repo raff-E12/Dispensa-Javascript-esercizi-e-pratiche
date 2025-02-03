@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: sans-serif;
+        }
+
+        #boxShowHideToggle{
+            margin-left: 50px;
+            margin-top: 50px;
+            width: 400px;
+            height: 400px;
+            background-color: blue;
+        }
+        #boxFade{
+            margin-left: 50px;
+            margin-top: 50px;
+            width: 400px;
+            height: 400px;
+            background-color: rgb(197, 169, 26);
+        }
+        #boxSlide{
+            margin-left: 50px;
+            margin-top: 50px;
+            width: 400px;
+            height: 400px;
+            background-color: rgb(26, 183, 197);
+        }
+
+        #boxAnimate{
+            margin-left: 50px;
+            margin-top: 50px;
+            width: 400px;
+            height: 400px;
+            background-color: rgb(25, 73, 77);
+        }
+
+    </style>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> link alla libreria jquery online fornita da google -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        // $(document).ready(function(){
+        //     //alert('ciao');
+
+        // });
+        $(function(){ /* forma abbreviata del $(document).ready(function(){}) utilizzato per controllare se il nostro documento html è pronto*/
+            console.log('pronto')
+            $('p').on('click',function(){
+                //$(this).css("background-color","red");
+                if($(this).css('font-size')>'15px'){
+                    $(this).css({
+                        fontSize:'12px',
+                        color:'red',
+                    })
+                }else{
+                    console.log($(this).css([
+    "width", "height", "color", "background-color"]))
+                    $(this).css({
+                        
+                        fontSize:'20px',
+                    })
+                }
+                
+                 console.log('ciao')
+                
+            })
+            /*------ metodi show/hide/toggle -------*/
+            $('#show').on('click',function(){
+                $('#boxShowHideToggle').show(500)
+            })
+            $('#hide').on('click',function(){
+                $('#boxShowHideToggle').hide(500)
+            })
+            $('#toggle').on('click',function(){
+                $('#boxShowHideToggle').stop().toggle(500)
+            })
+
+            /*------ metodi fade -------*/
+            $('#fadein').on('click',function(){
+                $('#boxFade').fadeIn(600)
+            })
+            $('#fadeout').on('click',function(){
+                $('#boxFade').fadeOut(600)
+            })
+            $('#fadetoggle').on('click',function(){
+                $('#boxFade').fadeToggle(600)
+            })
+            $('#fadeto').on('click',function(){
+                $('#boxFade').fadeTo(600,0.5)
+            })
+
+            /*----- metodi slide -----*/
+
+            $('#slideup').on('click',function(){
+                $('#boxSlide').slideUp(500)
+            })
+            $('#slidedown').on('click',function(){
+                $('#boxSlide').slideDown(500)
+            })
+            $('#slidetoggle').on('click',function(){
+                $('#boxSlide').slideToggle(500)
+            })
+
+            /*----- metodi slide -----*/
+            $('#animate').on('click',function(){
+                $('#boxAnimate').animate({
+                    height:'100px',
+                    width:'150px',
+                    marginLeft: '200px'
+                },500)
+            })
+
+            $('#animateConc').on('click',function(){
+                let el= $('#boxAnimate')
+                el.animate({height:'200px'},500)
+                el.animate({width:'100px'},500)
+                el.animate({marginTop:'200px'},500)
+            })
+
+            //$('#hoverAnimate').hover(function(){},function(){})
+
+            $('#hoverAnimate').on({
+                mouseenter: function(){
+                    alert('il mouse è sull\'elemento')
+                },
+                mouseleave: function(){
+                    alert('il mouse è fuori dall\'elemento')
+                }
+            })
+            
+
+
+           
+        })
+    </script>
+
+</head>
+<body>
+    <h1>jquery test ed esercizi</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum consectetur temporibus dolor ullam, officiis tempore repudiandae quibusdam eaque velit ducimus delectus nostrum quod, consequatur, et magni id laudantium voluptatem cupiditate!</p>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt dicta at magnam corrupti odit asperiores laboriosam porro, dolore doloremque delectus qui placeat optio unde saepe? Quae maiores tempora ducimus optio.</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat sequi ullam asperiores natus a! Non, cupiditate. Ipsum ipsa vero impedit quis doloribus nulla culpa, dignissimos, deserunt vel a ullam ex!</p>
+
+    <h2>titolo h2 molto bello</h2>
+
+    <h3>titolo h3 meno bello</h3>
+
+    <p>paragrafo bellissimo</p>
+
+    <br><br>
+
+    <button id="show">Mostra box</button>
+    <button id="hide">Nascondi box</button>
+    <button id="toggle">Mostra/Nascondi box</button>
+
+    <div id="boxShowHideToggle">
+        Box Show Hide Toggle
+    </div>
+
+    <br><br>
+
+    <button id="fadein">FadeIn box</button>
+    <button id="fadeout">FadeOut box</button>
+    <button id="fadetoggle">FadeToggle box</button>
+    <button id="fadeto">FadeTo box</button>
+
+    <div id="boxFade">
+        Box Fade
+    </div>
+
+
+    <button id="slideup">SlideUp box</button>

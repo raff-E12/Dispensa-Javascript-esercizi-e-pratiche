@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CocaCola Carosel</title>
+    <link rel="stylesheet" href="js-css/cocola_carosel.css">
+    <link rel="stylesheet" href="js-css/css_reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header-sc">
+        <div class="logo-sc">
+            <img src="immagini/logo_cocacola.png" alt="logo_sc" id="logo-sc">
+        </div>
+        <ul class="nav-link">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Our Production</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+        <div class="links">
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-solid fa-shop"></i>
+            <i class="fa-brands fa-facebook"></i>
+        </div>
+    </header>
+  <main class="box-int">
+    <aside class="side-1">
+        <div class="text-side">
+            <h2 class="title-img" id="txt-img">Coca-Cola Classic</h2>
+            <div class="text-pr">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quis, dolores illo.</p>
+                <a href="index.html" class="link-read">Read more...>></a>
+                <div class="btn-int">
+                    <button class="btn buy">Buy Now</button>
+                    <button class=" btn cont">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <aside class="side-2"></aside>
+    <div class="sliders">
+        <div class="slide-box">
+            <img src="immagini/cococola-img.png" alt="classic" class="slide-img active">
+            <img src="immagini/cocacola-zero-img.png" alt="zero" class="slide-img">
+            <img src="immagini/sprite-img.png" alt="sprite" class="slide-img">
+            <img src="immagini/fanta-img.png" alt="fanta" class="slide-img">
+        </div>
+        </div>
+    </div>
+    <div class="btns-slide">
+        <button class="btn slide" id="left"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="btn slide" id="right"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+    <div class="dots-box">
+        <div class="vertical-line first"></div>
+        <div class="dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="vertical-line"></div>
+    </div>
+  </main>
+  <div class="circle-animation"></div>
+  <script>
+    let slide_box = document.querySelector('div.slide-box');
+    let sliders_img = document.getElementsByClassName('slide-img');
+    const btn_left = document.getElementById('left');
+    const btn_right = document.getElementById('right');
+    let circle_ani = document.querySelector('div.circle-animation');
+    let text_img = document.getElementById('txt-img');
+    let img_txt_list = ['Coca-Cola Classic','Coca-Cola Zero', 'Sprite', 'Fanta'];
+    let bg_list = ['#E40017', '#162415', '#023859', '#FF6301'];
+    let side_bg = document.querySelector('aside.side-2');
+    let cont = 0;
+    const dots = document.querySelectorAll('div.dot');
+
+    function slider_motion(){   
+        for (i = 0; i < sliders_img.length; i++) {
+            sliders_img[i].style.left = '100%';
+            sliders_img[i].classList.remove('active');
+           clearInterval(circle_ani.classList.remove('active'));
+        }
+        sliders_img[cont].style.left = '10%';
+        sliders_img[cont].classList.add('active');
+        setTimeout(()=>{
+            circle_ani.classList.add('active');
+            circle_ani.style.opacity = '100';
+            text_img.textContent = img_txt_list[cont];
+            side_bg.style.backgroundColor = bg_list[cont];
+        }, 10);
+        dots_click();
+    }
+
+    function dots_click(){
+        for (i = 0; i < dots.length; i++) {
+         dots[i].classList.remove('active');
+        }
+        dots[cont].classList.add('active');
+    }
+
+    dots.forEach((items, index)=>{
+        items.addEventListener('click', ()=>{
+            cont = index;
+            slider_motion();
+        })
+    });
+
+    btn_right.addEventListener('click', ()=>{
+        cont++;
+        if (cont > sliders_img.length-1) {
+            cont = 0;
+            
+        }
+        slider_motion();
+    })
+
+    btn_left.addEventListener('click', ()=>{
+        cont--;
+        if (cont < 0) {
+            cont = sliders_img.length-1;
+        }
+        slider_motion();
+    })
+  </script>
+</body>
+</html>

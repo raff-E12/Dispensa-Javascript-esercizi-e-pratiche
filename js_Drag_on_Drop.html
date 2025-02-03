@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,787;1,787&display=swap" rel="stylesheet">
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            width: 100%;
+            background-color: #F2C230;
+        }
+
+        h2{
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 30px;
+        }
+
+        p{
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+            font-size: 17px;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: url(immagini/Bg_Pixel.png);
+        }
+
+        .option-note{
+            position: absolute;
+            left: 0;
+            top: 15%;
+            padding: 10px;
+        }
+        
+        .option-list{
+            background-color: white;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 17px;
+            padding: 9px;
+            width: 120px;
+            height: 60px;
+            border-radius: 10px;
+            margin-left: 20px; 
+        }
+
+        #input-color{
+            width: 40px;
+            height: 40px;
+            border-radius: 200px;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        #input-color::-webkit-color-swatch-wrapper{
+            padding: 0;
+        }
+
+        #input-color::-webkit-color-swatch{
+            border-radius: 200px;
+        }
+
+        #btn-add{
+            width: 38px;
+            height: 38px;
+            padding: 6px;
+            border-radius: 20px;
+            font-size: 20px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(247, 247, 247);
+            border: 2px solid black;
+            cursor: pointer;
+        }
+
+        #btn-add:active{
+            background-color: rgb(168, 168, 168);
+            color:rgb(255, 255, 255);
+        }
+
+        .box-note{
+            position: absolute;
+            top: 10%;
+            width: 430px;
+            height: 189px;
+            border-radius: 14px;
+            box-shadow: 0px 0px 10px 1px black;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            background-color: #F2C230;
+        }
+
+        .note-area{
+            resize: none;
+            width: 100%;
+            height: 162px;
+            position: relative;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border: none;
+            padding: 10px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 14px;
+            overflow: hidden;
+        }
+
+        .btn-rv{
+            padding: 8px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .note-area:focus{
+            outline: none;
+        }
+
+        .box-note.grab{
+            cursor: grab;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div class="option-note">
+        <div class="option-list">
+            <input type="color" name="color-Pl" id="input-color">
+            <button id="btn-add">+</button>
+        </div>
+    </div>
+    <script>
+        let btn_add = document.getElementById('btn-add');
+        let body = document.querySelector('body');
+        let color_input = document.getElementById('input-color');
+
+        function AddNote(){
+            let box_con = document.createElement('div');
+            box_con.className = 'box-note';
+            //let bar_top = document.createElement('div');
+            //bar_top.className = 'box-top';
+            let btn_rv = document.createElement('p');
+            btn_rv.className = 'btn-rv';
+            let cross_ic = document.createTextNode('x');
+            let text_area = document.createElement('textarea');
+            text_area.classList = 'note-area';
+            text_area.setAttribute('placeholder', 'Write a note..');
+            btn_rv.appendChild(cross_ic);
+            box_con.appendChild(btn_rv);
+            //box_con.appendChild(bar_top);
+            box_con.appendChild(text_area);
+            body.appendChild(box_con);
+            btn_rv.onclick = ()=>{
+                body.removeChild(box_con);
+            };
+            color_input.addEventListener('change', ()=>{
+                 let value_color = color_input.value;
+                box_con.style.backgroundColor = value_color;
+            })
+        }
+
+        btn_add.addEventListener('click', AddNote);
+
+        let OffCord_X = 0;
+        let OffCord_Y = 0;
+        let select_note = null;
+
+        document.addEventListener('click', (e)=>{
+            let x = e.clientX;
+            let y = e.clientY;
+            if (e.target.classList.contains('box-note')) {
+                select_note = e.target;
+                OffCord_X = x - selected_note.offsetLeft;
+                OffCord_Y = y - selected_note.offsetTop;
+                select_note.classList.add('grab');
+            }
+            //console.log(select_note);
+        })
+
+        document.addEventListener('mousemove', (e)=>{
+            if (select_note) {
+                select_note.style.left = (e.clientX + OffCord_X) - 120 + 'px';
+                select_note.style.top = (e.clientY + OffCord_Y)  + 1 + 'px';
+                select_note.classList.add('grab');
+            }
+            //console.log(select_note);
+        })
+
+        document.addEventListener('mouseup', ()=>{
+            select_note = null;
+            select_note.classList.remove('grab');
+        })
+    </script>
+</body>
+</html>

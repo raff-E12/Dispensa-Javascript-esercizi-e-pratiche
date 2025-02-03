@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guida agli Eventi in JavaScript</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#525fd6">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header>
+        <h1>Guida agli Eventi in JavaScript</h1>
+        <nav id="mainMenu">
+            <ul>
+                <li><a href="index.html" title="javascript">Home</a></li>
+				<li><a href="dove-jx.html" title="Dove posizionare Javascript">Dove posizionare Javascript</a></li>
+				<li><a href="sintassi-jx.html" title="La sintassi">Sintassi js</a></li>
+				<li><a href="condizionali-e-cicli.html" title="Condizionali e cicli">Condizioni e cicli</a></li>
+				<li><a href="funzioni.html" title="Le funzioni">Le funzioni</a></li>
+				<li><a href="jQuery.html" title="jQuery">jquery</a></li>
+				<li><a href="integrareJQ.html" title="Integrare jQuery nei progetti">Integrare jquery</a></li>
+				<li><a href="sintassiJquery.html" title="Sintassi jQuery ">Sintassi jquery</a></li>
+				<li><a href="selezioneJquery.html" title="La selezione degli elementi in jQuery ">La selezione degli elementi in jQuery</a></li>
+				<li><a href="gestione_eventiJq.html" title="La gestione degli eventi in jQuery ">La gestione degli eventi in jQuery</a></li>
+				<li><a href="metodi-jQ.html" title="Metodi jQuery ">La gestione degli eventi in jQuery</a></li>
+				<li><a href="Javascript-riassunto.html" title="Riassunto Javascript ">Riassunto Javascript</a></li>
+                <li><a href="eventi-js.html" title="Eventi Javascript ">eventi in Javascript</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Introduzione agli Eventi in JavaScript</h2>
+            <p>Gli eventi in JavaScript sono azioni o occorrenze che accadono nel browser, come un clic del mouse, una pressione di tasti, il caricamento di una pagina, il ridimensionamento di una finestra, e così via. JavaScript può essere usato per ascoltare questi eventi e rispondere in modo appropriato, creando interfacce utente interattive e dinamiche.</p>
+        </section>
+        <section>
+            <h2>Tipi di Eventi Comuni</h2>
+            <p>JavaScript supporta una vasta gamma di eventi. Ecco alcuni dei più comuni:</p>
+            <ul>
+                <li><strong>Eventi del Mouse:</strong> click, dblclick, mouseover, mouseout, mousedown, mouseup, mousemove</li>
+                <li><strong>Eventi della Tastiera:</strong> keydown, keyup, keypress</li>
+                <li><strong>Eventi di Form:</strong> submit, change, focus, blur</li>
+                <li><strong>Eventi del Documento/Window:</strong> load, resize, scroll, unload</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Aggiungere Event Listener</h2>
+            <p>Per ascoltare un evento, si utilizza il metodo <code>addEventListener</code>, che permette di assegnare un gestore di eventi a un elemento del DOM. Il gestore di eventi è una funzione che viene eseguita quando l'evento specificato si verifica.</p>
+            <pre class="code">
+                <code>
+                    const bottone = document.getElementById('mioBottone');
+                    bottone.addEventListener('click', function() {
+                        alert('Bottone cliccato!');
+                    });
+                </code>
+            </pre>
+            <button id="mioBottone">Cliccami</button>
+            <script>
+                document.getElementById('mioBottone').addEventListener('click', function() {
+                    alert('Bottone cliccato!');
+                });
+            </script>
+        </section>
+        <section>
+            <h2>Rimuovere Event Listener</h2>
+            <p>Puoi rimuovere un event listener utilizzando il metodo <code>removeEventListener</code>. È importante che la funzione del gestore di eventi sia dichiarata separatamente, in modo da poterla passare a <code>removeEventListener</code>.</p>
+            <pre class="code">
+                <code>
+                    const bottone = document.getElementById('mioBottone');
+                    
+                    function mostraMessaggio() {
+                        alert('Bottone cliccato!');
+                    }
+                    
+                    bottone.addEventListener('click', mostraMessaggio);
+                    bottone.removeEventListener('click', mostraMessaggio);
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h2>Event Object</h2>
+            <p>Quando un evento si verifica, il browser crea un oggetto evento che contiene informazioni sull'evento. Questo oggetto è passato come argomento alla funzione del gestore dell'evento. L'oggetto evento contiene proprietà e metodi che possono essere utilizzati per ottenere ulteriori informazioni sull'evento e per controllare il comportamento dell'evento.</p>
+            <pre class="code">
+                <code>
+                    const bottone = document.getElementById('mioBottone');
+                    
+                    bottone.addEventListener('click', function(event) {
+                        console.log('Tipo di evento:', event.type);
+                        console.log('Elemento target:', event.target);
+                    });
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h2>Event Delegation</h2>
+            <p>Event delegation è una tecnica per gestire eventi in modo efficiente. Consiste nell'assegnare un gestore di eventi a un elemento padre e sfruttare il bubbling degli eventi per catturare gli eventi degli elementi figli. Questo è particolarmente utile quando si gestiscono eventi per elementi dinamici o numerosi.</p>
+            <pre class="code">
+                <code>
+                    const lista = document.getElementById('lista');
+                    
+                    lista.addEventListener('click', function(event) {
+                        if (event.target.tagName === 'LI') {
+                            alert('Elemento cliccato: ' + event.target.textContent);
+                        }
+                    });
+                </code>
+            </pre>
+            <ul id="lista">
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Prevent Default e Stop Propagation</h2>
+            <p>In alcuni casi, potresti voler impedire il comportamento predefinito di un evento o interrompere la propagazione dell'evento. Questo può essere fatto utilizzando i metodi <code>preventDefault</code> e <code>stopPropagation</code> dell'oggetto evento.</p>
+            <h3>Prevent Default</h3>
+            <p>Il metodo <code>preventDefault</code> impedisce il comportamento predefinito dell'evento. Ad esempio, puoi impedire che un link venga seguito o che un modulo venga inviato:</p>
+            <pre class="code">
+                <code>
+                    const link = document.getElementById('mioLink');
+                    
+                    link.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        alert('Link cliccato, ma non seguito!');
+                    });
+                </code>
+            </pre>
+            <a href="https://www.example.com" id="mioLink">Cliccami</a>
+            <h3>Stop Propagation</h3>
+            <p>Il metodo <code>stopPropagation</code> impedisce la propagazione dell'evento agli elementi parenti. Questo è utile quando si vuole gestire un evento in modo specifico senza che interferisca con altri gestori di eventi sugli elementi parenti:</p>
+            <pre class="code">
+                <code>
+                    const contenitore = document.getElementById('contenitore');
+                    const bottone = document.getElementById('mioBottone');
+                    
+                    contenitore.addEventListener('click', function() {
+                        alert('Contenitore cliccato!');
+                    });
+                    
+                    bottone.addEventListener('click', function(event) {
+                        event.stopPropagation();
+                        alert('Bottone cliccato!');
+                    });
+                </code>
+            </pre>
+            <div id="contenitore" style="border: 1px solid black; padding: 20px;">
+                <button id="mioBottone">Cliccami</button>
+            </div>
+        </section>
+        <section>
+            <h2>Lista di eventi utilizzati</h2>
+            <h3>Eventi dell'interfaccia utente</h3>
+            <ul>
+                <li><strong>load</strong>: utilizzato principalmente quando un elemento di una pagina web ha terminato il caricamento dei contenuti.</li>
+                <li><strong>unload</strong>: utilizzato principalmente quando l'elemento di una pagina web prima che la finestra venga chiusa, l'elemento continua la sua operazione prima che si chiuda del tutto.</li>
+                <li><strong>error</strong>: utilizzato principalmente dal browser quando lo script incontra un errore.</li>
+                <li><strong>resize</strong>: utilzzato quando un elemento si comporta in modo diverso quando la finestra del browser viene ridimensionata.</li>
+                <li><strong>scroll</strong>: utilizzato quando la pagina web viene scrollata verso il basso o alto.</li>
+            </ul>
+            <h3>Eventi di un modulo</h3>
+            <ul>
+                <li><strong>focus</strong>: utilizzato per mettere a fuoco un elemento quando si utilizza.</li>
+                <li><strong>blur</strong>: utilizzato per rilasciare l'elemento messo a fuoco quando non si utilizza.</li>
+                <li><strong>value</strong>: utilizzato per prendere il valore di un elemento generale in campo di testo ad esempio.</li>
+                <li><strong>submit</strong>: utilizzato principalmente per controllare i valori messi dall utente prima di essere inviati al server.</li>
+                <li><strong>change</strong>: utilizzato principalmente per cambiare gli elementi selezionati da un nodo per varie condizioni.</li>
+                <li><strong>input</strong>: utilizzato principalmente per i campi input e textarea a seconda delle varie situzioni.</li>
+            </ul>
+            <h3>Eventi di tastiera e mouse</h3>
+            <ul>
+                <li><strong>click</strong>: utilizzato per cliccare una volta sola su quel elemento.</li>
+                <li><strong>dblclick</strong>: utilizzato per cliccare due vole su quel elemento.</li>
+                <li><strong>mousedown</strong>: utilizzato principalmente quando l'utente clicca su qualsiasi tasto del mouse</li>
+                <li><strong>mouseup</strong>: utilizzato quando l'utente rilascia il tasto del mouse.</li>
+                <li><strong>mouseover e mouseout</strong>: queste proprietà sono riassumibili con la pseudoclasse :hover del css.</li>
+                <li><strong>oggetto evento per il mouse</strong>: tramite l'oggetto evento possiamo sapere dove si trova il mouse dallo schermo del pc alla finestra del browser: 'Screen', 'Page' e 'Client' con le cordinate X e Y.</li>
+                <li><strong>keydown</strong>: utilizzato quando l'utente preme un tasto della tastiera.</li>
+                <li><strong>keypress</strong>: utilizzato quando l'utente premendo un tasto della tastiera provaca la visualizzazione del carattere in quel momento.</li>
+                <li><strong>keyup</strong>: utilizzato quando l'utente rilascia il tasto della tastiera.</li>
+            </ul>
+            <h3>Eventi di mutazione e di HTML5</h3>
+            <ul>
+                <li><strong>DOMNodeInserted</strong>: utilizzato principalmente per inserire un nodo al interno del albero DOM.</li>
+                <li><strong>DOMNodeRemoved</strong>: utilizzato principalmente per eliminare un nodo dal DOM</li>
+                <li><strong>DOMSubtreeModified</strong>: utilizzato principalmente per camabiare la struttura del DOM.</li>
+                <li><strong>DOMNodeInsertedIntoDocument</strong>: utilizzato principalmente per inserire un nodo all'interno di un altro nodo come discendente del documento.</li>
+                <li><strong>DOMNodeRemovedIntoDocument</strong>: utilizzato principalmente per rimuovere un nodo all'interno di un altro nodo come discendente del documento.</li>
+                <li><strong>DOMContentLoaded</strong>: utilizzato principalmente per anticipare il caricamento di un elemento del DOM che sia uno script o un risorsa.</li>
+                <li><strong>hashchange</strong>: utilizzato principalmente per verificare se url della pagina cambia.</li>
+                <li><strong>beforeunload</strong>: utilizzato principalmente tramite l'oggetto <i>Window</i> prima che la pagina venga scaricata attraverso delle condizioni.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        &copy; Copyright 2024
+    </footer>
+</body>
+</html>

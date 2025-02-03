@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal; 
+    background-color: #ffc379;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+  header{
+    width: 100%;
+   }
+
+   header img{
+   width: 4%;
+   height: 4%;
+   padding: 10px;
+   }
+
+.box-gen{
+    width: 40%;
+    height: 400px;
+    background-color: #D9B855;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 8%;
+    border: 10px solid #af8300;
+    gap: 20px;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px 0px black;
+}
+
+.button-gen{
+    color: white;
+    background-color: #8C1B2F;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.box-gen h1{
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.text-gen{
+    text-align: center;
+    width: 80%;
+    display: flex;
+}
+
+.cita-text{
+    text-transform: uppercase;
+    text-decoration: solid;
+    font-weight: 300;
+    color: #292929;
+}
+
+.box-text{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    padding: 10px;
+    justify-content: center;
+    height: 300px;
+}
+
+.remove-btn{
+    padding: 6px;
+    position: relative;
+    left: 1100%;
+    background-color: #8C1B2F;
+    color: white;
+    border: none;
+    width: 200%;
+}
+
+.row-btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

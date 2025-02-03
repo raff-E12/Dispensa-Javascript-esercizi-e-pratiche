@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon card Genetor</title>
+    <link rel="stylesheet" href="js-css/css_reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,787;1,787&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            width: 100%;
+            background-color: #F2C230;
+        }
+
+        
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        h2{
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 19px;
+        }
+
+        p{
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 17px;
+        }
+
+        body{
+            background-color: bisque;
+        }
+
+        .box-sc{
+            width: 30%;
+            position: relative;
+            top: 40px;
+            left: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 10px;
+            gap: 20px;
+        }
+
+        .card{
+            border: 6px solid #565656;
+            background-color: white;
+            width: 100%;
+            height: 547px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px black;
+        }
+
+        .card-front{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 19px;
+            gap: 20px;
+            z-index: 10;
+            width: 100%;
+        }
+
+        .img-sc{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            height: 200px;
+            width: 200px;
+        }
+
+        .img-sc img{
+            width: 70%;
+        }
+
+        .Hp-sc{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 3px;
+        }
+
+        .Hp-sc .parm{
+            background-color: #d0d0d0;
+            color: white;
+            padding: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            flex-direction: row;
+            border-radius: 10px;
+            height: 50px;
+            width: 80px;
+        }
+
+        .circle{
+            padding: 12px;
+            background-color: #F2C230;
+            position: absolute;
+            right: 0;
+            width: 500px;
+            height: 700px;
+            top: -400px;
+            border-radius: 940px;
+            transform: rotate(90deg);
+        }
+
+        .info-sc{
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .info{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .btn-gen{
+            width: 70%;
+            height: 60px;
+            font-size: 30px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .btn-gen:active{
+            background-color: #565656;
+            color: white;
+        }
+
+        .name-sc{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .name-sc h2{
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        #type2 .none{
+            display: none;
+        }
+
+        #type2 .block{
+            display: block;
+        }
+
+        #type-sc{
+            width: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            text-transform: capitalize;
+        }
+
+        #type-sc.gap{
+            gap: 10px;
+        }
+
+        #type-sc.nogap{
+            gap: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div class="box-sc">
+        <div class="card">
+            <div class="card-front">
+                <div class="Hp-sc">
+                    <div class="parm"><p>HP<h2 id="hp">90</h2></p></div>
+                </div>
+                <div class="img-sc">
+                    <img src="immagini/demo-image.svg" alt="pokemon_alt" id="img-card">
+                </div>
+                <div class="name-sc"><h2 id="name">Simple name</h2></div>
+                <div id="type-sc">
+                <div class="type"><h2 id="type1"></h2></div>
+                <div class="type"><h2 id="type2"></h2></div>
+                </div>
+                <div class="info-sc">
+                    <div class="info"><h2 id="attack">60</h2><p>Attack</p></div>
+                    <div class="info"><h2 id="defense">60</h2><p>Defense</p></div>
+                    <div class="info"><h2 id="speed">60</h2><p>Speed</p></div>
+                </div>
+            </div>
+        <div class="circle" id="circle"></div>
+        </div>
+        <button class="btn-gen" id="btn-gen">Genera</button>
+    </div>
+    <script>
+        const url = "https://pokeapi.co/api/v2/pokemon/";
+        const btn_gen = document.getElementById('btn-gen');
+        let poke_ogg = {
+            hp:0,
+            pokename:"",
+            img:"",
+            attack:"",
+            defense:"",
+            speed:""
+        }
+
+const typeColor = {
+  bug: "#26de81",
+  dragon: "#ffeaa7",
+  electric: "#fed330",
+  fairy: "#FF0069",
+  fighting: "#30336b",
+  fire: "#f0932b",
+  flying: "#81ecec",
+  grass: "#00b894",
+  ground: "#EFB549",
+  ghost: "#a55eea",
+  ice: "#74b9ff",
+  normal: "#95afc0",
+  poison: "#6c5ce7",
+  psychic: "#a29bfe",
+  rock: "#2d3436",
+  water: "#0190FF",
+};
+
+        btn_gen.addEventListener('click', getPokeData);
+        window.addEventListener('load', getPokeData)
+
+       async function getPokeData(){
+            let id = Math.floor(Math.random() * 150) + 1;
+            const final_url = url + String(id);
+            fetch(final_url).then((response)=>response.json()).then((data)=>generate_Card(data));
+        }
+
+        let generate_Card = (data)=>{
+            //console.log(data);
+            let hp = data.stats[0].base_stat;
+            let img_sprite = data.sprites.other.dream_world.front_default;
+            let Name_Pk = data.name;
+            let st_attack = data.stats[1].base_stat;
+            let st_defense = data.stats[2].base_stat;
+            let st_speed = data.stats[5].base_stat;
+            poke_ogg.defense = st_defense;
+            poke_ogg.speed = st_speed;
+            poke_ogg.attack = st_attack;
+            poke_ogg.hp = hp;
+            poke_ogg.img = img_sprite;
+            poke_ogg.pokename = Name_Pk;
+            Card_component();
+            Types(data);
+        }
+
+        function Card_component(){
+            let HP_card = document.getElementById('hp');
+            let Img_card = document.getElementById('img-card');
+            let Name_Card = document.getElementById('name');
+            let Attack_st = document.getElementById('attack');
+            let Defense_st = document.getElementById('defense');
+            let Speed_st = document.getElementById('speed');
+            HP_card.textContent = poke_ogg.hp;
+            Img_card.setAttribute('src', poke_ogg.img);
+            Name_Card.textContent = poke_ogg.pokename;
+            Attack_st.textContent = poke_ogg.attack;
+            Defense_st.textContent = poke_ogg.defense;
+            Speed_st.textContent = poke_ogg.speed;
+        }
+
+        function Types(item){
+        let Data_types = document.getElementById('type-sc');
+        let Type_st_1 = document.getElementById('type1');
+        let Type_st_2 = document.getElementById('type2');
+        let types_sc_1 = item.types[0].type.name;
+        let circle = document.getElementById('circle');
+        Type_st_1.textContent = types_sc_1;
+        let bg_color_circle = typeColor[types_sc_1];
+        //console.log(bg_color_circle);
+        circle.style.backgroundColor = bg_color_circle;
+        if (item.types.length > 1){
+        Type_st_2.className = "block";
+        let types_sc_2 = item.types[1].type.name;
+        Type_st_2.textContent = types_sc_2;
+        Data_types.className = "gap";
+        }
+        else{
+        Type_st_2.textContent = "";
+        Type_st_2.className = "none";
+        Data_types.className = "nogap";
+        }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player Js</title>
+    <link rel="stylesheet" href="js-css/css_reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,787;1,787&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            width: 100%;
+            background-color: #F2C230;
+        }
+
+        h2{
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 19px;
+        }
+
+        p{
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+            font-size: 17px;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        body{
+            background-color: #CC896C;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column
+        }
+
+        .player-box{
+            width: 460px;
+            background-color: #F285A2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 19%;
+            padding: 20px;
+            gap: 17px;
+            border: 10px solid #030526;
+        }
+
+        .top-icon{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 79%;
+            padding: 12px;
+        }
+
+        .icon{
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4D7373;
+            border-radius: 100px;
+        }
+
+        .img-icon{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .front-img{
+            width: 270px;
+            height: 260px;
+            border: 4px solid white;
+            background-image: url(immagini/Bg_Pixel.png);
+            border-radius: 600px;
+        }
+
+        .title-music{
+            text-align: center;
+        }
+
+        .range-sc{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .range{
+            width: 80%;
+            display: flex;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        #slider-player{
+            width: 100%;
+            appearance: none;
+            pointer-events: none;
+            background-color: transparent;
+            position: absolute;
+        }
+
+        .line{
+            width: 100%;
+            height: 9px;
+            background-color: #8437A6;
+            border-radius: 10px;
+            padding: 3px;
+        }
+
+        #slider-player::-webkit-slider-runnable-track{
+            pointer-events: none;
+        }
+
+        #slider-player::-webkit-slider-thumb{
+            pointer-events: auto;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background-color: #8437A6;
+            border-radius: 100px;
+            outline: 8px solid white;
+            cursor: pointer;
+        }
+
+        .player-icon{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            gap: 30px;
+            padding: 10px;
+        }
+
+        .player-prev{
+            background-color: white;
+            padding: 10px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            cursor: pointer;
+            border-radius: 100px;
+        }
+
+        .player-prev i{
+            transform: rotate(180deg);
+            color: #8437A6;
+        }
+
+        .player-next{
+            background-color: white;
+            padding: 10px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            border-radius: 100px;
+            color: #8437A6;
+            cursor: pointer;
+        }
+
+        
+        .player-play{
+            background-color: white;
+            padding: 10px;
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            border-radius: 100px;
+            color: #8437A6;
+            cursor: pointer;
+        }
+
+        .player-play i{
+            color: #8437A6;
+            font-size: 30px;
+        }
+
+        .fa-play{
+            display: block;
+        }
+
+        .fa-pause{
+            display: none;
+        }
+
+        #song-play{
+         position: absolute; 
+         top: 119%;
+         display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+
+    <div class="player-box">
+        <div class="top-icon">
+            <div class="icon">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+            <div class="icon">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="img-icon">
+            <div class="front-img"></div>
+            <div class="title-music">
+                <h2>Sakura Mediate Beat.</h2>
+                <p>Dj.Cooler Joes</p>
+            </div>
+        </div>
+        <div class="range-sc">
+            <audio src="immagini/video/sakura-meditate-beat-138298.mp3" preload="auto" id="song-play"></audio>
+            <div class="range">
+                <div class="line"></div>
+                <input type="range" name="range" id="slider-player">
+            </div>
+        </div>
+        <div class="player-icon">
+            <div class="player-prev">
+                <i class="fa-solid fa-forward-fast"></i>
+            </div>
+            <div class="player-play" id="play-btn">
+                <i class="fa-solid fa-pause" id="stop"></i>
+                <i class="fa-solid fa-play" id="play"></i>
+            </div>
+            <div class="player-next">
+                <i class="fa-solid fa-forward-fast"></i>
+            </div>
+        </div>
+    </div>
+    <script>
+        let song = document.getElementById('song-play');
+        let play_btn = document.getElementById('play-btn');
+        let slider_index = document.getElementById('slider-player');
+
+        song.addEventListener('loadedmetadata', ()=>{
+            slider_index.max = song.duration;
+            slider_index.value = song.currentTime;
+        })
+        
+        play_btn.addEventListener('click', ()=>{
+            let play_icon = document.getElementById('play');
+            let pause_icon = document.getElementById('stop');
+            if (pause_icon.style.display !== 'block') {
+                pause_icon.style.display = 'block';
+                play_icon.style.display = 'none';
+                song.play();
+                slider_condition();
+            } else {
+                pause_icon.style.display = 'none';
+                play_icon.style.display = 'block';
+                song.pause();
+            }
+        })
+
+        function slider_condition(){
+            if (song.play()) {
+                setInterval(()=>{
+                slider_index.value = song.currentTime;
+                },500);
+            }
+        }
+
+        song.addEventListener('ended', () => {
+            slider_index.value = song.currentTime;
+            play_icon.style.display = 'block'; 
+            pause_icon.style.display = 'none';
+        });
+
+        slider_index.addEventListener('change', ()=>{
+            song.currentTime = slider_index.value;
+        })
+    </script>
+</body>
+</html>

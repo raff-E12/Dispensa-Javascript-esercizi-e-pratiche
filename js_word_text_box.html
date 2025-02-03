@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@598&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Text Editor</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        p{
+            font-size: 13px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        h2{
+            font-size: 39.81px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        header{
+            width: 100%;
+            background-color: #F2C230;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            background-color: #107373;
+        }
+
+        .text-editor{
+            width: 70%;
+            background-color: white;
+            margin: 20%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px 2px #111111;
+        }
+
+        .btn{
+            width: 60px;
+            border: none;
+            padding: 10px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .btn:active{
+            background-color: #CAC9AB;
+            color: white;
+        }
+
+        .btn span{
+            font-size: 18px;
+        }
+
+        .btn.second{
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .option{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 2%;
+            width: 100%;
+            position: relative;
+            padding: 2px;
+        }
+
+        .option.second{
+            width: 70%;
+            flex-wrap: wrap;
+            padding: 10px;
+            gap: 10px;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .block-sc{
+            width: 20%;
+            height: 30px;
+            font-size: 16px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+            border: 2px solid #CAC9AB;
+            cursor: pointer;
+        }
+
+        .block-sc:focus{
+            outline: none;
+        }
+
+        .btn.toggle{
+            background-color: #292929;
+            color: white;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .color-sc{
+            width: 30%;
+            display: flex;
+            gap: 12px;
+            text-align: center;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px;
+        }
+
+        .highlist-sc{
+            width: 40%;
+            display: flex;
+            gap: 12px;
+            text-align: center;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px;
+        }
+
+        #Color-Block, #Color-Highlist-Block{
+            cursor: pointer;
+            padding: 2px;
+            border: 2px solid #CAC9AB;
+            border-radius: 2px;
+        }
+
+        #text-input{
+            width: 100%;
+            height: 440px;
+            padding: 10px;
+            border: 2px solid #CAC9AB;
+            border-radius: 10px;
+            resize: none;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 16px;
+        }
+
+        #text-input ul{
+            padding: 20px;
+        }
+
+        #text-input ol{
+            padding: 20px;
+        }
+
+
+        #text-input:focus{
+            border: 2px solid #4d4d4d;
+            outline: none;
+        }
+
+        .link-Add{
+            width: 100%;
+            position: absolute;
+            height: 206.7vh;
+            display: none;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #cac9ab63;
+            backdrop-filter: blur(4px);
+        }
+
+        .box-link{
+            background-color: white;
+            align-items: center;
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+            width: 70%;
+        }
+
+        .btn-cross{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 8px;
+        }
+
+        .cross{
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .cross:active{
+            background-color: #b4b4b4;
+            color: white;
+        }
+
+        .text-add{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .text-add #value-link{
+            width: 50%;
+            height: 40px;
+            border: 2px solid #4d4d4d;
+            padding: 10px;
+            font-size: 16px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .text-add #value-link:focus{
+            outline: none;
+            border: 2px solid #111111;
+        }
+
+        .btn-link-add{
+            width: 12%;
+            height: 40px;
+            font-size: 16px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            border: none;
+            text-transform: uppercase;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .btn-link-add:active{
+            background-color: #b4b4b4;
+            color: white;
+        }
+
+        @keyframes opacity-box {
+            0%{opacity: 100%; display: flex;}
+            100%{opacity: 0; display: none;}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div class="text-editor">
+        <div class="option first">
+            <button class="btn" id="bold-btn"><span class="material-symbols-outlined">format_bold</span></button>
+            <button class="btn" id="italic-btn"><span class="material-symbols-outlined">format_italic</span></button>
+            <button class="btn" id="underline-btn"><span class="material-symbols-outlined"> format_underlined</span></button>
+            <button class="btn" id="line-trought-btn"><span class="material-symbols-outlined">strikethrough_s</span></button>
+            <button class="btn" id="supscript-btn"><span class="material-symbols-outlined">superscript</span></button>
+            <button class="btn" id="subscript-btn"><span class="material-symbols-outlined">subscript</span></button>
+            <button class="btn" id="list-bulleted-btn"><span class="material-symbols-outlined">format_list_bulleted</span></button>
+            <button class="btn" id="list-numbered-btn"><span class="material-symbols-outlined">format_list_numbered</span></button>
+            <button class="btn" id="undo-btn"><span class="material-symbols-outlined">undo</span></button>
+            <button class="btn" id="redo-btn"><span class="material-symbols-outlined">redo</span></button>
+            <button class="btn" id="link-btn"><span class="material-symbols-outlined">link</span></button>
+            <button class="btn" id="link-off-btn"><span class="material-symbols-outlined">link_off</span></button>
+            <button class="btn" id="align-btn-left"><span class="material-symbols-outlined">format_align_left</span></button>
+            <button class="btn" id="align-btn-center"><span class="material-symbols-outlined">format_align_center</span></button>
+            <button class="btn" id="align-btn-right"><span class="material-symbols-outlined">format_align_right</span></button>
+        </div>
+        <div class="option second">
+            <button class="btn second" id="align-btn-justify"><span class="material-symbols-outlined">format_align_justify</span></button>
+            <button class="btn second" id="align-btn-increase"><span class="material-symbols-outlined">format_indent_increase</span></button>
+            <button class="btn second" id="align-btn-decrease"><span class="material-symbols-outlined">format_indent_decrease</span></button>
+            <select name="heading-sc" id="Heading-Block" class="block-sc">
+                <option value="H1">H1</option>
+                <option value="H2">H2</option>
+                <option value="H3">H3</option>
+                <option value="H4">H4</option>
+                <option value="H5">H5</option>
+                <option value="H6">H6</option>
+            </select>
+            <select name="font-sc" id="Font-Block" class="block-sc">
+            </select>
+            <select name="font-size-sc" id="Font-Size-Block" class="block-sc">
+            </select>
+            <div class="color-sc">
+                <input type="color" id="Color-Block">
+                <p>Font Color</p>
+            </div>
+            <div class="highlist-sc">
+                <input type="color" id="Color-Highlist-Block">
+                <p>Highlist Color</p>
+            </div>
+        </div>
+        <div id="text-input" contenteditable="true"></div>
+    </div>
+    <div class="link-Add">
+        <div class="box-link">
+            <div class="btn-cross"><button class="cross" id="cross"><span class="material-symbols-outlined">close</span></button></div>
+            <div class="text-add">
+                <h2>Inserisci il link</h2>
+                <input type="text" name="text" id="value-link" placeholder="https://www.example.com">
+                <button class="btn-link-add" id="btn-true">inserisci</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('DOMContentLoaded', ()=>{
+        console.log('script avviato');
+        const bolder_btn = document.getElementById('bold-btn');
+        const italic_btn = document.getElementById('italic-btn');
+        const underline_btn = document.getElementById('underline-btn');
+        const line_trought_btn = document.getElementById('line-trought-btn');
+        const supscript_btn = document.getElementById('supscript-btn');
+        const subscript_btn = document.getElementById('subscript-btn');
+        const list_numered_btn = document.getElementById('list-numbered-btn');
+        const list_bulleted_btn = document.getElementById('list-bulleted-btn');
+        const undo_btn = document.getElementById('undo-btn');
+        const redo_btn = document.getElementById('redo-btn');
+        const link_btn = document.getElementById('link-btn');
+        const link_off_btn = document.getElementById('link-off-btn');
+        const align_btn_left = document.getElementById('align-btn-left');
+        const align_btn_center = document.getElementById('align-btn-center');
+        const align_btn_right = document.getElementById('align-btn-right');
+        const align_btn_justify = document.getElementById('align-btn-justify');
+        const align_btn_increase = document.getElementById('align-btn-increase');
+        const align_btn_decrease = document.getElementById('align-btn-decrease');
+        var Heading_Block = document.getElementById('Heading-Block');
+        var Font_Block = document.getElementById('Font-Block');
+        var Font_Size_Block = document.getElementById('Font-Size-Block');
+        const Color_Block = document.getElementById('Color-Block');
+        const Color_Highlist_Block = document.getElementById('Color-Highlist-Block');
+        var text_area = document.getElementById('text-input');
+        var list_font = ['Gotham Black', 'Arial', 'Poppins'];
+        
+        //style='riferito a comandi editabili'  aShowDefaultUI='valore booleano' aValueArgument='valori input da aggiungere'
+        function Section_Style(style, aShowDefaultUI) {
+            document.execCommand(style, false, null);
+        }
+
+       list_font.forEach( (value)=>{
+            var option = document.createElement('option');//creazione di un elemento
+            option.value = value; // valore di imposta 
+            option.textContent = value; // testo di imposta
+            Font_Block.appendChild(option); // collegarlo al elemento padre
+        })
+
+       Font_Block.addEventListener('change', ()=>{
+          var value_op = Font_Block.value;
+          text_area.style.fontFamily = value_op;
+       })
+
+       for (i = 0; i < 20; i++) {
+            var option_size = document.createElement('option');
+            option_size.value = i;
+            option_size.textContent = i;
+            Font_Size_Block.appendChild(option_size);
+        }
+
+       Font_Size_Block.addEventListener('change', ()=>{
+        var value_op_size = Font_Size_Block.value;
+        text_area.style.fontSize = value_op_size + 'px';
+       })
+
+       Heading_Block.addEventListener('change', ()=>{
+        var var_heading = Heading_Block.value;
+        document.execCommand('formatBlock', false, var_heading);
+       })
+        
+        bolder_btn.addEventListener('click', ()=>{
+            var cond_switch = bolder_btn.classList.contains('toggle');
+            if (!cond_switch) {
+                //console.log('on');
+                bolder_btn.classList.toggle('toggle');
+                Section_Style('bold', cond_switch);
+            } else {
+                //console.log('off');
+                bolder_btn.classList.remove('toggle');
+                Section_Style('bold', cond_switch);
+            }
+        });
+
+        italic_btn.addEventListener('click', ()=>{
+            var cond_switch1 = italic_btn.classList.contains('toggle');
+            if (!cond_switch1) {
+                //console.log('on');
+                italic_btn.classList.toggle('toggle');
+                Section_Style('italic', cond_switch1);
+            } else {
+                //console.log('off');
+                italic_btn.classList.remove('toggle');
+                Section_Style('italic', cond_switch1);
+            }
+        })
+
+        underline_btn.addEventListener('click', ()=>{
+            var cond_switch2 = underline_btn.classList.contains('toggle');
+            if (!cond_switch2) {
+                //console.log('on');
+                underline_btn.classList.toggle('toggle');
+                Section_Style('underline', cond_switch2);
+            } else {
+                //console.log('off');
+                underline_btn.classList.remove('toggle');
+                Section_Style('underline', cond_switch2);
+            }
+        })
+
+        
+        line_trought_btn.addEventListener('click', ()=>{
+            var cond_switch3 = line_trought_btn.classList.contains('toggle');
+            if (!cond_switch3) {
+                //console.log('on');
+                line_trought_btn.classList.toggle('toggle');
+                Section_Style('strikeThrough', cond_switch3);
+            } else {
+                //console.log('off');
+                line_trought_btn.classList.remove('toggle');
+                Section_Style('strikeThrough', cond_switch3);
+            }
+        })
+
+        subscript_btn.addEventListener('click', ()=>{
+            var cond_switch4 = subscript_btn.classList.contains('toggle');
+            if (!cond_switch4) {
+                //console.log('on');
+                subscript_btn.classList.toggle('toggle');
+                Section_Style('subscript', cond_switch4);
+            } else {
+                //console.log('off');
+                subscript_btn.classList.remove('toggle');
+                Section_Style('subscript', cond_switch4);
+            }
+        })
+
+        
+       supscript_btn.addEventListener('click', ()=>{
+            var cond_switch5 = supscript_btn.classList.contains('toggle');
+            if (!cond_switch5) {
+                //console.log('on');
+                supscript_btn.classList.toggle('toggle');
+                document.execCommand('superscript', cond_switch5, null);
+            } else {
+                //console.log('off');
+                supscript_btn.classList.remove('toggle');
+                document.execCommand('superscript', cond_switch5, null);
+            }
+        })
+
+        list_numered_btn.addEventListener('click', ()=>{
+            var cond_switch6 = list_numered_btn.classList.contains('toggle');
+            if (!cond_switch6) {
+                //console.log('on');
+                list_numered_btn.classList.toggle('toggle');
+                Section_Style('insertOrderedList', cond_switch6);
+            } else {
+                //console.log('off');
+                list_numered_btn.classList.remove('toggle');
+                Section_Style('insertOrderedList', cond_switch6);
+            }
+        })
+
+        list_bulleted_btn.addEventListener('click', ()=>{
+            var cond_switch7 = list_bulleted_btn.classList.contains('toggle');
+            if (!cond_switch7) {
+                //console.log('on');
+                list_bulleted_btn.classList.toggle('toggle');
+                Section_Style('insertUnorderedList', cond_switch7);
+            } else {
+                //console.log('off');
+                list_bulleted_btn.classList.remove('toggle');
+                Section_Style('insertUnorderedList', cond_switch7);
+            }
+        })
+
+        
+        undo_btn.addEventListener('click', ()=>{
+            Section_Style('undo', false);
+        })
+
+        redo_btn.addEventListener('click', ()=>{
+            Section_Style('redo', false);
+        })
+
+        align_btn_left.addEventListener('click', ()=>{
+            Section_Style('justifyLeft', false);
+        })
+
+        align_btn_right.addEventListener('click', ()=>{
+            Section_Style('justifyRight', false);
+        })
+
+        align_btn_center.addEventListener('click', ()=>{
+            Section_Style('justifyCenter', false);
+        })
+
+        align_btn_justify.addEventListener('click', ()=>{
+            Section_Style('justifyFull', false);
+        })
+
+        align_btn_decrease.addEventListener('click', ()=>{
+            Section_Style('indent', false);
+            //console.log('attivo');
+        })
+
+        align_btn_decrease.addEventListener('click', ()=>{
+            Section_Style('outdent', false);
+            //console.log('attivo');
+        })
+
+        link_btn.addEventListener('click', ()=>{
+            const box_link = document.querySelector('.link-Add');
+            const btn_cross = document.querySelector('.cross');
+            var btn_add_link = document.getElementById('btn-true');
+            var text_link_value = document.getElementById('value-link');
+            var url = text_link_value.value.trim();
+            var form_link = document.querySelector('div.box-link');
+
+            box_link.style.display = 'flex';
+            btn_cross.onclick = ()=>{
+            box_link.style.display = 'none';
+            form_link.style.animation = ' opacity-box 0.2s ease-in-out 100ms ';
+            };
+
+            btn_add_link.onclick = () =>{
+                var condition = url !== '';
+                //espressione regolare
+               if (condition && /https/i.test(url)) {
+                document.execCommand('createLink', false, url);
+               }
+               else{
+                url = 'http://' + url;
+                document.execCommand('createLink', false, url);
+               }
+            }
+        })
+
+        link_off_btn.addEventListener('click', ()=>{
+            Section_Style('unlink', false);
+        })
+
+        Color_Block.addEventListener('input', ()=>{
+            var value_color = Color_Block.value;
+            document.execCommand('foreColor', false, value_color);
+        })
+
+        
+        Color_Highlist_Block.addEventListener('input', ()=>{
+            var value_color_bg = Color_Highlist_Block.value;
+            document.execCommand('backColor', false, value_color_bg);
+        })
+        })
+    </script>
+</body>
+</html>

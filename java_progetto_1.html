@@ -1,0 +1,146 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Progetto#1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="immagini/favjs/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="immagini/favjs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="immagini/favjs/favicon-16x16.png">
+    <link rel="manifest" href="immagini/favjs/site.webmanifest">
+    <link rel="mask-icon" href="immagini/favjs/safari-pinned-tab.svg" color="#dfe300">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        *{
+            font-size: 1.1em;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body{
+            background-image: url(immagini/Grid\ 1.jpg);
+            backdrop-filter: blur(2px);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .box-1{
+            background-color: antiquewhite;
+            width: 50%;
+            margin: 20% 10%;
+            box-shadow: 1px 3px 10px 8px black;
+            border: 10px solid rgb(255, 226, 188);
+            text-align: center;
+            padding: 20px;
+        }
+        .box-1 ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+        }
+        .box-1 ul li{
+            display: flex;
+            flex-direction: row;
+            gap: 80px;
+        }
+
+        footer{
+            background-color: rgb(255, 250, 184);
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+
+        header{
+            width: 100%;
+            background-color: antiquewhite;
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+            border: 10px solid rgb(255, 226, 188);
+        }
+
+        button{
+            background-color: white;
+            border: 2px solid gray;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 200px;
+        }
+
+        button:hover{
+            background-color: rgb(168, 168, 168);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Genera una poesia casuale con funzioni e variabili</h1>
+    </header>
+    <div class="box-1">
+        <ul>
+            <li><span id="poesia_gen">-</span></li>
+            <li><button id="button">Genera</button></li>
+        </ul>
+    </div>
+    <script>
+    addEventListener('DOMContentLoaded', function(){
+    const btn = document.getElementById('button');
+    btn.addEventListener('click', function(){
+    const soggetti = ['Il sole', 'La luna', 'Il vento', 'La pioggia', 'Il mare'];
+    const verbi = ['brilla', 'sorge', 'soffia', 'cade', 'ondeggia'];
+    const oggetti = ['nel cielo', 'sul mare', 'tra le foglie', 'sul campo', 'nel bosco'];
+    const avverbi = ['dolcemente', 'silenziosamente', 'furiosamente', 'allegramente', 'lentamente'];
+
+      function list_frasi (array){
+        return array[Math.floor(Math.random()*array.length)];
+       };
+       
+       function verse_gen (){
+            const sog_list = list_frasi(soggetti);
+            const verb_list = list_frasi(verbi);
+            const ogg_list = list_frasi(oggetti);
+            const avverb_list = list_frasi(avverbi); 
+           const tot_vers = sog_list  + ' ' + verb_list + ' ' + ogg_list + ' ' + avverb_list;
+            return tot_vers;
+       };
+       function gen_poem (){
+        const strofa_1 = verse_gen();
+        const strofa_2 = verse_gen();
+        const strofa_3 = verse_gen();
+        const strofa_tot = strofa_1 + '<br>' + strofa_2 + '<br>' + strofa_3 + '.';
+        return strofa_tot;
+       };
+        const testo_poesia = document.getElementById('poesia_gen');
+        testo_poesia.style.padding = '10px';
+        testo_poesia.innerHTML = gen_poem();
+        })
+    })
+    </script>
+    <div class="box-1">
+        <h1> Descrizione:
+            Il progetto consiste nel creare un generatore di poesie casuali che genera un numero fisso di versi senza utilizzare cicli. 
+            Ogni verso sarà creato combinando parole prese da insiemi predefiniti. 
+            Useremo funzioni individuali per generare ogni verso.</h1>
+    </div>
+    <footer>
+        <p>Tabella &copy; - valori espressi in <a href="index.html">Javascript</a></p>
+    </footer>
+</body>
+</html>

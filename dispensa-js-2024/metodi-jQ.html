@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Metodi in jQuery</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#525fd6">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    
+    <header>
+        <h1>Guida jQuery<br>Metodi di jQuery</h1>
+        <nav id="mainMenu">
+            <ul>
+                <li><a href="index.html" title="javascript">Home</a></li>
+                <li><a href="dove-jx.html" title="Dove posizionare Javascript">Dove posizionare Javascript</a></li>
+                <li><a href="sintassi-jx.html" title="La sintassi">Sintassi js</a></li>
+                <li><a href="condizionali-e-cicli.html" title="Condizionali e cicli">Condizioni e cicli</a></li>
+                <li><a href="funzioni.html" title="Le funzioni">Le funzioni</a></li>
+                <li><a href="jQuery.html" title="jQuery">jQuery</a></li>
+                <li><a href="integrareJQ.html" title="Integrare jQuery nei progetti">Integrare jQuery</a></li>
+                <li><a href="sintassiJquery.html" title="Sintassi jQuery">Sintassi jQuery</a></li>
+                <li><a href="selezioneJquery.html" title="La selezione degli elementi in jQuery">La selezione degli elementi in jQuery</a></li>
+                <li><a href="gestione_eventiJq.html" title="La gestione degli eventi in jQuery">La gestione degli eventi in jQuery</a></li>
+                <li><a href="metodi-jQ.html" title="Metodi jQuery">Metodi jQuery</a></li>
+                <li><a href="Javascript-riassunto.html" title="Riassunto Javascript">Riassunto Javascript</a></li>
+                <li><a href="eventi-js.html" title="Eventi Javascript">Eventi in Javascript</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Introduzione ai Metodi di jQuery</h2>
+            <p>jQuery offre una vasta gamma di metodi per manipolare il DOM, gestire eventi, effettuare animazioni e molto altro. I metodi di jQuery rendono il codice JavaScript più conciso e leggibile, facilitando l'interazione con gli elementi della pagina.</p>
+            
+            <h2>Manipolazione del DOM</h2>
+            <p>Una delle funzionalità principali di jQuery è la manipolazione del DOM. Puoi aggiungere, rimuovere, modificare o spostare elementi nella pagina con metodi semplici e intuitivi.</p>
+            <div class="code">
+                <pre><code>// Aggiungere un nuovo elemento alla fine di un div
+$('#mioDiv').append('&lt;p&gt;Nuovo paragrafo&lt;/p&gt;');
+
+// Rimuovere un elemento
+$('#elementoDaRimuovere').remove();
+
+// Modificare il contenuto HTML di un elemento
+$('#mioElemento').html('&lt;strong&gt;Contenuto aggiornato&lt;/strong&gt;');</code></pre>
+            </div>
+
+            <h2>Gestione degli Attributi</h2>
+            <p>jQuery facilita la gestione degli attributi degli elementi, come `src`, `href`, `id`, `class`, e molto altro.</p>
+            <div class="code">
+                <pre><code>// Cambiare l'attributo src di un'immagine
+$('#miaImmagine').attr('src', 'nuova_immagine.jpg');
+
+// Aggiungere una classe a un elemento
+$('#mioElemento').addClass('nuovaClasse');
+
+// Rimuovere una classe da un elemento
+$('#mioElemento').removeClass('vecchiaClasse');</code></pre>
+            </div>
+
+            <h2>Effetti e Animazioni</h2>
+            <p>jQuery include una serie di metodi per creare effetti e animazioni, rendendo le pagine web più interattive e dinamiche.</p>
+            <div class="code">
+                <pre><code>// Nascondere un elemento lentamente
+$('#mioElemento').hide('slow');
+
+// Mostrare un elemento rapidamente
+$('#mioElemento').show('fast');
+
+// Fare scorrere un elemento su/giù
+$('#mioElemento').slideUp();
+$('#mioElemento').slideDown();</code></pre>
+            </div>
+
+            <h2>Metodi di Traversing</h2>
+            <p>Il traversing in jQuery permette di navigare tra gli elementi del DOM, selezionando quelli che soddisfano determinati criteri.</p>
+            <div class="code">
+                <pre><code>// Selezionare il primo elemento figlio
+$('#mioElemento').children().first();
+
+// Selezionare l'elemento padre
+$('#mioElemento').parent();
+
+// Trovare tutti gli elementi discendenti che corrispondono a un selettore
+$('#mioDiv').find('p');</code></pre>
+            </div>
+
+            <h2>Ajax con jQuery</h2>
+            <p>jQuery semplifica le richieste Ajax, permettendo di caricare dati in modo asincrono senza dover ricaricare la pagina.</p>
+            <div class="code">
+                <pre><code>// Effettuare una richiesta GET e gestire la risposta
+$.get('pagina.php', function(data) {
+    $('#risultato').html(data);
+});
+
+// Effettuare una richiesta POST con dati inviati
+$.post('pagina.php', { nome: 'Mario', cognome: 'Rossi' }, function(response) {
+    $('#risultato').html(response);
+});</code></pre>
+            </div>
+
+            <h2>Conclusione</h2>
+            <p>jQuery mette a disposizione una vasta gamma di metodi per semplificare la manipolazione del DOM, la gestione degli eventi e le richieste Ajax. Questi metodi rendono lo sviluppo web più rapido ed efficiente, mantenendo il codice pulito e leggibile.</p>
+        </section>
+    </main>
+    
+    <footer>
+        &copy; Copyright 2024
+    </footer>
+    
+</body>
+</html>

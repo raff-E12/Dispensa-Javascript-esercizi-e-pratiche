@@ -1,0 +1,501 @@
+#header-sc{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    border-top:2px solid #025908;
+    border-bottom:2px solid #025908;
+    z-index: 10;
+    transition: all 0.3s ease-in;
+    text-transform: uppercase;
+}
+
+.sections-sc{
+    display: flex;
+    gap: 8%;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 64%;
+    color: #2E8C35;
+}
+
+.logo-sc{
+    width: 210px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-sc img{
+    width: 100%;
+}
+
+.hero-sc{
+    width: 100%;
+    overflow: hidden;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-bg img{
+    width: 100%;
+}
+
+.row-sc1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: relative;
+}
+
+.rows:hover{
+    color: #025908;
+    transition: all 0.3s ease-in-out;
+}
+
+/* lettering scale */
+
+h1{
+    font-size: 47.78px;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2{
+    font-size: 39.81px;
+    font-family: "Roboto", serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+h3{
+    font-size: 33.18px;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h4{
+    font-size: 27.65px;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h5{
+    font-size: 23.04px;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h6{
+    font-size: 19.2px;
+    font-family: "Roboto", serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+p{
+    font-size: 16px;
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* fine lettering */
+
+.sc-btn{
+    flex-basis: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+    padding: 6px;
+}
+
+.btn-contact{
+    width: 60%;
+    height: 50px;
+    font-size: 19.2px;
+    font-family: "Roboto", serif;
+    font-weight: 900;
+    font-style: normal;
+    background-color: #2E8C35;
+    color: white;
+    border-radius: 12px;
+}
+
+.rows{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    color:#2E8C35;
+    cursor: pointer;
+}
+
+.search-btn{
+    width: 30px;
+    height: 30px;
+}
+
+.search-btn span{
+    color: #2E8C35;
+    cursor: pointer;
+}
+
+.search-btn span:hover{
+    color: #025908;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-contact:hover{
+    color: #fff;
+    background-color: #3BBF44;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.submenu-hovering{
+    position: absolute;
+    bottom: -150px;
+    z-index: -1;
+    background-color: white;
+    width: 160px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-top: 6px solid #025908;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.submenu-hovering ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.submenu-hovering ul li{
+    width: 100%;
+    height: 40px;
+    text-align: left;
+    display: flex;
+    padding: 6px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.submenu-hovering ul li:hover{
+    background-color: #2E8C35;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.submenu-hovering.active{
+    display: flex;
+    transition: all 0.3s ease-in-out;
+}
+
+.hero-int{
+    width: 57%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 12px;
+    overflow: hidden;
+}
+.hero-text{
+    width: 90%;
+    text-transform: capitalize;
+}
+
+.hero-text h2{
+    font-size: 70px;
+    color: #fff;
+}
+
+.hero-text h6{
+    font-weight: 400;
+    color: #fff;
+}
+
+.hero-text h4{
+    color: #025908;
+    text-transform: uppercase;
+}
+
+.btn-sc{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.btn-1-sc{
+    flex-basis: 30%;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: "Roboto", serif;
+    font-weight: 600;
+    font-style: normal;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+#btn-1-txt{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #2E8C35;
+    border: none;
+}
+
+#btn-1-txt:hover{
+    background-color: #fff;
+    color: #025908;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#btn-2-txt:hover{
+    background-color: #fff;
+    color: #025908;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.side-network{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    height: 500px;
+}
+
+.social-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 20px;
+    gap: 20px;
+    color: white;
+}
+
+#line{
+    width: 1.3px;
+    height: 90px;
+    padding: 1px;
+    background-color: #fff;
+}
+
+#text-side{
+    margin-top: 50px;
+    transform: rotate(-90deg);
+    color: white;
+    text-transform: uppercase;
+    width: 140%;
+}
+
+.text-sc{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.social-link i:hover{
+    color: #025908;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.sliders{
+    background-color: #025908;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.component-slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: white;
+}
+
+.component-slide i{
+    font-size: 40px;
+}
+
+.component-slide h3{
+    font-weight: 700;
+    width: 280px;
+    text-align: center;
+}
+
+@keyframes Slider-animation {
+    from{transform: translateX(0);}
+    to{transform: translateX(-100%);}
+}
+
+.slide-p1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: white;
+    animation-name: Slider-animation;
+    animation-iteration-count: infinite;
+    animation-duration: 18s;
+    animation-timing-function: linear;
+}
+
+#service-sub{
+    width: 200px;
+    display: none;
+    top: 28px;
+    height: 130px;
+}
+
+#service-sub.active{
+    display: flex;
+}
+
+#pages-sub{
+    display: none;
+    top: 30px;
+    height: 296px;
+    width: 220px;
+}
+
+#pages-sub.active{
+    display: flex;
+}
+
+#blog-sub{
+    display: none;
+    top: 30px;
+    height: 190px;
+}
+
+#blog-sub.active{
+    display: flex;
+}
+
+#header-sc.active{
+    background-color: #002E37;
+    transition: all 0.3s ease-in;
+    border-bottom:2px solid #fff;
+    border-top:2px solid #002E37;
+}
+
+#header-sc.active h6{
+    color: #fff;
+}
+
+.box-2-img{
+    background-image: url('../immagini/green_pr1.jpg');
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.box-1-img{
+    background-image: url('../immagini/green_pr1.jpg');
+    width: 100%;
+    display: flex;
+    height: 700px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.box-2-img .hero-int{
+    display: none;
+}
+
+.box-2-img.active{
+    width: 100%;
+    height: 700px;
+    opacity: 100;
+    transition: all 0.3s ease-in-out;
+}
+
+.box-2-img.active .hero-int{
+    display: flex;
+}
+
+/*selection style button */
+
+.section-selected{
+    border: 2px solid red;
+    position: absolute;
+    right: 10px;
+    padding: 10px;
+}
+
+.circles{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+    position: relative;
+    width: 60px;
+    height: 70px;
+}
+
+.circle{
+    padding: 5px;
+    border-radius: 100px;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border: 2px solid transparent;
+}
+
+#circle-2.active{
+    border: 2px solid #2E8C35;
+}
+
+.internal{
+    background-color: #2E8C35;
+    padding: 9px;
+    border-radius: 100px;
+}

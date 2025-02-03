@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript Dispensa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="immagini/favjs/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="immagini/favjs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="immagini/favjs/favicon-16x16.png">
+    <link rel="manifest" href="immagini/favjs/site.webmanifest">
+    <link rel="mask-icon" href="immagini/favjs/safari-pinned-tab.svg" color="#dfe300">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        *{
+            font-size: 1.1em;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body{
+            background-image: url(immagini/Grid\ 1.jpg);
+            backdrop-filter: blur(2px);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .box-1{
+            background-color: antiquewhite;
+            width: 700px;
+            margin: 15% 10%;
+            box-shadow: 1px 3px 10px 8px black;
+            border: 10px solid rgb(255, 226, 188);
+            text-align: center;
+            padding: 10px;
+        }
+        .box-1 ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box-1 ul li{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        footer{
+            background-color: rgb(255, 250, 184);
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+        header{
+            width: 100%;
+            background-color: antiquewhite;
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+            border: 10px solid rgb(255, 226, 188);
+        }
+        .img-logo{
+            width: 16%;
+            padding: 20px;
+        }
+        nav{
+            font-size: 22px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            width: auto;
+            margin-left: 28%;
+            margin-right: 28%;
+            background-color: rgb(255, 215, 162);
+            padding: 10px;
+            border: 2px solid  rgb(245, 183, 103);
+        }
+        nav a{
+            color: black;
+            text-decoration: none;
+        }
+        nav a:hover{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Javascript Dispensa.</h1>
+        <nav>
+            <a href="https://youtu.be/lfmg-EJ8gm4?si=eUtisIUkvDkDr-TU">Javascript tutorial</a>
+            <a href="dispensa-js-2024/index.html">Dispensa Jquery/JS</a>
+            <a href="c:\Users\Raffyuniverse\Desktop\Raffaele-Coppola gol03 web\Dispensa 03\dispensa-gol03\index.html">Dispensa Html/CSS</a> 
+        </nav>
+    </header>
+    <div class="box-1">
+        <img src="immagini/JavaScript-logo.png" class="img-logo">
+        <h1>Benvenuto nella pagina della dispensa di Javascript</h1>
+        <p>Seleziona la cronologia delle pagine che ti servono per ripassare o imparare il codice!!</p>
+        <br>
+        <h1>Esercizi - Per Argomenti</h1>
+        <ul>
+            <li><a href="java_esercizio-variabili.html"> Esercizi sulle Variabili</a></li>
+            <li><a href="java_esercizio-funzioni.html"> Esercizi sulle Funzioni</a></li>
+            <li><a href="java_esercizio-con-il-date-e-cicli-e-condizioni.html"> Esercizi con i Cicli e Condizioni</a></li>
+            <li><a href="java_esercizio-manipolazione-del-DOM.html"> Esercizi sul DOM</a></li>
+            <li><a href="java_esercizio-gli-eventi.html">Esercizi sugli Eventi</a></li>
+            <li><a href="js_ripasso.html">Ripasso degli argomenti</a></li>
+            <li><a href="js_jquery.html">Esercizi con il Jquery</a></li>
+            <li><a href="js_extra_1.html">Esercizi Extra</a></li>
+        </ul>
+        <h1>Piccoli Progetti</h1>
+        <ul>
+            <li><a href="java_progetto_1.html">#Generatore di Poesia</a></li>
+            <li><a href="java_progetto_2.html">#Gioco dell'lotto</a></li>
+            <li><a href="es_mediaquery-breakpoint.html">#Esempio di HamManu (Fatto nel corso)</a></li>
+            <li><a href="menu-scroll-jquery/menu-scroll-jquery.html">#Esempio di layout con Jquery (fatto nel corso)</a></li>
+            <li><a href="java_lista_web.html">#Compilatore di liste</a></li>
+            <li><a href="java_generatore.html">#Generatore di citazioni</a></li>
+            <li><a href="java_progetto_3.html">#Calcolatore di anni(Oggetto Date)</a></li>
+            <li><a href="esercizio7.html">#Ham menu (DOMTokenList)</a></li>
+            <li><a href="ham_da_me.html">#HamMenu Esercizio</a></li>
+            <li><a href="cambio_colore_js.html">#Cambio Colore Sfondo Sito</a></li>
+            <li><a href="min_max_js.html">#Incrementatore di valori</a></li>
+            <li><a href="text_hovering.html">#Correttore parola</a></li>
+            <li><a href="galleries_js.html">#Galleria di Immagini</a></li>
+            <li><a href="btn_js.html">#Bottone di Cambio Sfondo</a></li>
+            <li><a href="java_calcolatrice.html">#Calcolatore Semplice</a></li>
+            <li><a href="js_random.html">#Scopri la domanda</a></li>
+            <li><a href="js_coment.html">#Contatore di parole</a></li>
+            <li><a href="js_random1.html">#Nike Switch Color</a></li>
+            <li><a href="js_random2.html">#Swich Panel</a></li>
+            <li><a href="js_random3.html">#Panelli Flessibili</a></li>
+            <li><a href="js_riple_effect.html">#Effetto Goccia in CSS</a></li>
+            <li><a href="js_list_red.html">#Lista di cose da fare (Rifatta)</a></li>
+            <li><a href="js_password.html">#Generatore di Password</a></li>
+            <li><a href="js_slide_img.html">#Slider di Immagini (Array)</a></li>
+            <li><a href="js_galleries_img.html">#Convertitore di Temperatura</a></li>
+            <li><a href="js_valuta.html">#Convertitore di Valuta</a></li>
+            <li><a href="js_slider_css.html">#Slider di Immagini (CSS)</a></li>
+            <li><a href="js_switch_btn.html">#Switch Normale</a></li>
+            <li><a href="js_construction_site.html">#Sito di Costruzione (Progetto fine-corso)</a></li>
+            <li><a href="js_slideshow.html">#Page Scroll Indicator</a></li>
+            <li><a href="js_Number_cont.html">#Slider di imaggini 1°</a></li>
+            <li><a href="js_calc_2.html">#Calcolatrice 2°</a></li>
+            <li><a href="js_word_text_box.html">#Editore di Testo</a></li>
+            <li><a href="js_stop_watch.html">#Cronometro Digitale</a></li>
+            <li><a href="js_clock.html">#Orologio in Js</a></li>
+            <li><a href="js_Date.html">#Calcolatore di anni 1°</a></li>
+            <li><a href="js_fiverr_clone.html">#Fiverr Clone</a></li>
+            <li><a href="js_Drag_on_Drop.html">#Drag And Drop Site</a></li>
+            <li><a href="js_form.html">#Form Prototipo</a></li>
+            <li><a href="js_form_compil.html">#Form Landing Page Sito</a></li>
+            <li><a href="js_chat_api.html">#Cocacola Caroselo Sito</a></li>
+            <li><a href="js_nature_scroll.html">#Password Gen 1°</a></li>
+            <li><a href="js_set_counting_card.html">#Card Number Count</a></li>
+            <li><a href="js_set_range.html">#Range Slider (CSS)</a></li>
+            <li><a href="js_music_player.html">#Music Player Clone</a></li>
+            <li><a href="js_dashboard.html">#Video Player Clone</a></li>
+            <li><a href="js_player_mp3_rv.html">#Music Player 1°</a></li>
+            <li><a href="js_chat_bot.html">#Chat Bot Ai(Gemini Clone API)</a></li>
+            <li><a href="js_search_text.html">#Ricerca Testo</a></li>
+            <li><a href="js_Drag_on_Drop_img.html">#Drag & Drop IMG</a></li>
+            <li><a href="js_pokemon_card.html">#Generatore di Carte Pokemon</a></li>
+            <li><a href="landing_page_green.html">#Landing Page 1°</a></li>
+            <li><a href="js_login_page.html">#Componenti di pagina 1°</a></li>
+            <li><a href="js_api_and_fetch.html">#API e Funzione Asincrona (Incompleto)</a></li>
+        </ul>
+    </div>
+    <footer>
+        <p>Tabella &copy; - valori espressi in Javascript</p>
+    </footer>
+</body>
+</html>

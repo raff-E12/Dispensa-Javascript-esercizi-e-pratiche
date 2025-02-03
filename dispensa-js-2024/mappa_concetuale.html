@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#525fd6">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+    <title>Appunti di JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .box-1 {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #f9f9f9;
+        }
+        .box-1 h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .box-1 ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .box-1 ul li {
+            margin: 10px 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .box-1 ul li:last-child {
+            border-bottom: none;
+        }
+        .box-1 ul li h2 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        .box-1 ul li p, .box-1 ul li pre, .box-1 ul li code {
+            margin: 0;
+            margin-top: 5px;
+        }
+        .box-1 ul li pre {
+            background-color: #eee;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        .box-1 ul li code {
+            background-color: #eee;
+            padding: 2px 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-1">
+        <h1>Appunti di JavaScript</h1>
+        <ul>
+            <li>
+                <h2>Variabili</h2>
+                <p>Le variabili in JavaScript sono utilizzate per memorizzare dati. Puoi usare <code>var</code>, <code>let</code>, o <code>const</code>.</p>
+                <h3>Esempio:</h3>
+                <pre><code>var nome = 'Mario'; // Variabile globale o di funzione
+let eta = 30; // Variabile a blocco
+const città = 'Roma'; // Variabile costante</code></pre>
+                <h3>Proprietà e Metodi:</h3>
+                <p>Le variabili di per sé non hanno proprietà o metodi, ma i valori che contengono possono essere di diversi tipi con i loro metodi.</p>
+            </li>
+            <li>
+                <h2>Tipi di Dati</h2>
+                <p>JavaScript supporta diversi tipi di dati come stringhe, numeri, booleani, oggetti, array, e <code>null</code>.</p>
+                <h3>Esempio:</h3>
+                <pre><code>let nome = 'Mario'; // Stringa
+let eta = 30; // Numero
+let isStudente = true; // Booleano
+let persona = { nome: 'Mario', eta: 30 }; // Oggetto
+let numeri = [1, 2, 3, 4, 5]; // Array
+let valoreNull = null; // Null</code></pre>
+                <h3>Proprietà e Metodi:</h3>
+                <p>Ogni tipo di dato ha proprie proprietà e metodi. Ad esempio, le stringhe hanno metodi come <code>length</code> e <code>toUpperCase()</code>.</p>
+                <h4>Stringhe</h4>
+                <pre><code>let testo = 'Ciao, mondo!';
+console.log(testo.length); // Output: 12
+console.log(testo.toUpperCase()); // Output: 'CIAO, MONDO!'
+console.log(testo.substring(0, 4)); // Output: 'Ciao'</code></pre>
+                <h4>Numeri</h4>
+                <pre><code>let numero = 123.456;
+console.log(numero.toFixed(2)); // Output: '123.46'
+console.log(Number.isInteger(numero)); // Output: false</code></pre>
+                <h4>Array</h4>
+                <pre><code>let numeri = [1, 2, 3, 4, 5];
+console.log(numeri.length); // Output: 5
+numeri.push(6);
+console.log(numeri); // Output: [1, 2, 3, 4, 5, 6]
+let nuoviNumeri = numeri.map(n => n * 2);
+console.log(nuoviNumeri); // Output: [2, 4, 6, 8, 10, 12]</code></pre>
+            </li>
+            <li>
+                <h2>Funzioni</h2>
+                <p>Le funzioni sono blocchi di codice che possono essere definiti una volta e eseguiti molte volte.</p>
+                <h3>Esempio:</h3>
+                <pre><code>function saluta(nome) {
+    return 'Ciao ' + nome + '!';
+}
+
+console.log(saluta('Mario')); // Output: Ciao Mario!</code></pre>
+                <h3>Proprietà e Metodi:</h3>
+                <p>Le funzioni possono avere proprietà come <code>name</code> e <code>length</code>. Possono anche essere assegnate a variabili o passate come argomenti.</p>
+                <h4>Proprietà delle Funzioni</h4>
+                <pre><code>function esempio(a, b) {
+    return a + b;
+}
+console.log(esempio.name); // Output: 'esempio'
+console.log(esempio.length); // Output: 2</code></pre>
+                <h4>Funzioni Anonime e Arrow Functions</h4>
+                <pre><code>let somma = function(a, b) {
+    return a + b;
+};
+console.log(somma(1, 2)); // Output: 3
+
+let moltiplica = (a, b) => a * b;
+console.log(moltiplica(2, 3)); // Output: 6</code></pre>
+            </li>
+            <li>
+                <h2>Oggetti</h2>
+                <p>Gli oggetti sono collezioni di proprietà e metodi. Sono utilizzati per rappresentare entità più complesse.</p>
+                <h3>Esempio:</h3>
+                <pre><code>let persona = {
+    nome: 'Mario',
+    eta: 30,
+    saluta: function() {
+        return 'Ciao, sono ' + this.nome;
+    }
+};
+
+console.log(persona.saluta()); // Output: Ciao, sono Mario</code></pre>
+                <h3>Proprietà e Metodi:</h3>
+                <p>Gli oggetti possono avere proprietà (chiave: valore) e metodi (funzioni). Si possono accedere usando la notazione del punto o delle parentesi quadre.</p>
+                <h4>Proprietà degli Oggetti</h4>
+                <pre><code>let libro = {
+    titolo: 'Il Nome della Rosa',
+    autore: 'Umberto Eco',
+    anno: 1980
+};
+console.log(libro.titolo); // Output: 'Il Nome della Rosa'
+console.log(libro['autore']); // Output: 'Umberto Eco'</code></pre>
+                <h4>Metodi degli Oggetti</h4>
+                <pre><code>let calcolatrice = {
+    somma: function(a, b) {
+        return a + b;
+    },
+    sottrai: function(a, b) {
+        return a - b;
+    }
+};
+console.log(calcolatrice.somma(5, 3)); // Output: 8
+console.log(calcolatrice.sottrai(5, 3)); // Output: 2</code></pre>
+            </li>
+            <li>
+                <h2>Array</h2>
+                <p>Gli array sono usati per memorizzare liste ordinate di valori.</p>
+                <h3>Esempio:</h3>
+                <pre><code>let numeri = [1, 2, 3, 4, 5];
+
+console.log(numeri[0]); // Output: 1
+numeri.push(6); // Aggiunge un elemento alla fine dell'array
+console.log(numeri); // Output: [1, 2, 3, 4, 5, 6]</code></pre>
+                <h3>Proprietà e Metodi:</h3>
+                <p>Gli array hanno proprietà come <code>length</code> e metodi come <code>push()</code>, <code>pop()</code>, <code>shift()</code>, <code>unshift()</code>, <code>map()</code>, <code>filter()</code>, e molti altri.</p>
+                    <li>
+                        <h2>Modello DOM</h2>
+                        <p>Il Document Object Model (DOM) è una rappresentazione strutturata del documento HTML. Permette di manipolare il contenuto e la struttura della pagina web.</p>
+                        <h3>Esempio:</h3>
+                        <pre><code>&lt;div id="contenitore"&gt;
+            &lt;p id="paragrafo"&gt;Testo originale&lt;/p&gt;
+        &lt;/div&gt;
+        
+        &lt;script&gt;
+        document.getElementById('paragrafo').textContent = 'Testo modificato';
+        document.getElementById('contenitore').style.backgroundColor = 'lightblue';
+        &lt;/script&gt;</code></pre>
+                        <h3>Proprietà e Metodi:</h3>
+                        <p>Il DOM fornisce metodi e proprietà per interagire con gli elementi HTML.</p>
+                        <h4>Proprietà del DOM</h4>
+                        <pre><code>let paragrafo = document.getElementById('paragrafo');
+        console.log(paragrafo.textContent); // Output: 'Testo modificato'
+        console.log(paragrafo.innerHTML); // Output: 'Testo modificato'
+        console.log(paragrafo.className); // Output: (classe dell'elemento, se presente)
+        console.log(paragrafo.id); // Output: 'paragrafo'</code></pre>
+                        <h4>Metodi del DOM</h4>
+                        <pre><code>let nuovoParagrafo = document.createElement('p');
+        nuovoParagrafo.textContent = 'Nuovo paragrafo';
+        document.body.appendChild(nuovoParagrafo); // Aggiunge il nuovo paragrafo al body
+        
+        let elemento = document.getElementById('contenitore');
+        elemento.removeChild(nuovoParagrafo); // Rimuove il nuovo paragrafo dal contenitore
+        
+        let paragrafoEsistente = document.getElementById('paragrafo');
+        paragrafoEsistente.replaceWith(nuovoParagrafo); // Sostituisce il paragrafo esistente con il nuovo</code></pre>
+                        <h4>Manipolazione del DOM</h4>
+                        <pre><code>let contenitore = document.getElementById('contenitore');
+        let nuovoElemento = document.createElement('span');
+        nuovoElemento.textContent = 'Elemento aggiunto';
+        contenitore.appendChild(nuovoElemento); // Aggiunge un elemento all'interno del contenitore
+        
+        let paragrafo = document.getElementById('paragrafo');
+        paragrafo.style.color = 'red'; // Cambia il colore del testo del paragrafo
+        
+        let paragrafo2 = document.createElement('p');
+        paragrafo2.textContent = 'Un altro paragrafo';
+        document.querySelector('div').insertBefore(paragrafo2, document.querySelector('p')); // Inserisce un nuovo paragrafo prima del primo paragrafo esistente
+        </code></pre>
+        <li>
+            <h2>Eventi</h2>
+            <p>Gli eventi sono azioni che accadono nel browser, come il click di un bottone o il caricamento di una pagina.</p>
+            <h3>Esempio:</h3>
+            <pre><code>&lt;button onclick="mostraMessaggio()"&gt;Cliccami&lt;/button&gt;
+
+&lt;script&gt;
+function mostraMessaggio() {
+alert('Bottone cliccato!');
+}
+&lt;/script&gt;</code></pre>
+            <h3>Proprietà e Metodi:</h3>
+            <p>Gli eventi possono essere gestiti con proprietà come <code>type</code> e <code>target</code>. I metodi comuni includono <code>addEventListener()</code> per aggiungere gestori di eventi.</p>
+        </li>
+                    </li>
+                    <li>
+                        <h2>Responsive Design con MediaQueryList</h2>
+                        <p>Il metodo <code>matchMedia()</code> di JavaScript permette di verificare se la finestra del browser corrisponde a una determinata media query, utile per creare design responsive.</p>
+                        <h3>Esempio:</h3>
+                        <pre><code>const mediaQuery = window.matchMedia('(max-width: 1200px)');
+                    
+                    function handleResize(e) {
+                        if (e.matches) {
+                            console.log('La finestra è sotto i 1200px di larghezza.');
+                            // Aggiungi qui il codice per il design mobile
+                        } else {
+                            console.log('La finestra è sopra i 1200px di larghezza.');
+                            // Aggiungi qui il codice per il design desktop
+                        }
+                    }
+                    
+                    // Aggiunge un listener per i cambiamenti della media query
+                    mediaQuery.addEventListener('change', handleResize);
+                    
+                    // Esegui la funzione subito per gestire lo stato iniziale
+                    handleResize(mediaQuery);
+                    </code></pre>
+                        <h3>Proprietà e Metodi:</h3>
+                        <p>L'oggetto <code>MediaQueryList</code> restituito da <code>matchMedia()</code> ha diverse proprietà e metodi per gestire le media query.</p>
+                        <h4>Proprietà</h4>
+                        <pre><code>mediaQuery.matches // Ritorna true se la media query corrisponde alle condizioni attuali
+                    mediaQuery.media // Contiene la stringa della media query (es. '(max-width: 1200px)')</code></pre>
+                        <h4>Metodi</h4>
+                        <pre><code>mediaQuery.addEventListener('change', listenerFunction); // Aggiunge un gestore di eventi per i cambiamenti della media query
+                    mediaQuery.removeEventListener('change', listenerFunction); // Rimuove un gestore di eventi precedentemente aggiunto</code></pre>
+                    </li>
+                    
+                </ul>
+            </div>
+        </body>
+        </html>
+        

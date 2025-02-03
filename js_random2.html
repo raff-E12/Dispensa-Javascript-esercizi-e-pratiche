@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Switch Interaction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu&display=swap" rel="stylesheet">
+    <style>
+    *{
+     padding: 0;
+     margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    }
+
+    body{
+     background-color: #002E37;
+    display: flex;
+     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    }
+
+    header{
+     width: 100%;
+    }
+
+    header img{
+    width: 4%;
+    height: 4%;
+    padding: 10px;
+    }
+
+    .box-content{
+        width: 80%;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 3%;
+        height: 90vh;
+        overflow: hidden;
+    }
+
+    .bg-btn{
+        background-color: #107373;
+        width: 600px;
+        display: flex;
+        align-items: last baseline;
+        justify-content: center;
+        height: 90vh;
+        padding: 50px;
+        z-index: 2;
+    }
+
+    #btn{
+       width: 60%; 
+       height: 40px;
+       font-size: 20px;
+       padding: 4px;
+       background-color: #14a0a0;
+       border: none;
+    }
+    
+   .material-symbols-outlined{
+    font-size: 30px;
+    color: white;
+   }
+
+   #btn:hover{
+    background-color: #025f5f;
+    cursor: pointer;
+   }
+
+   #box-txt{
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 900%;
+    height: 90vh;
+   }
+
+   #box-txt p{
+    width: 70%;
+   }
+
+   #box-txt-1{
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+   }
+
+   #box-txt-1 p{
+    width: 70%;
+    text-align: right;
+   }
+
+   #box-txt-1.open{
+    width: 200%;
+    display: flex;
+    transition: all 0.3s ease-out;
+   }
+
+   #box-txt-1.open h2{
+     display: block;
+   }
+
+   #box-txt-1.open p{
+     display: block;
+   }
+
+   #box-txt-1.close{
+    display: flex;
+    width: 0%;
+    padding: 0px;
+    transition: all 0.3s ease-out;
+   }
+
+   #box-txt-1.close h2{
+     display: none;
+   }
+
+   #box-txt-1.close p{
+     display: none;
+   }
+
+   #box-txt.open{
+    width: 200%;
+    display: flex;
+    transition: all 0.3s ease-out;
+   }
+
+   #box-txt.open h2{
+     display: block;
+   }
+
+   #box-txt.open p{
+     display: block;
+   }
+
+   #box-txt.close{
+    display: flex;
+    width: 0%;
+    padding: 0px;
+    transition: all 0.3s ease-out;
+   }
+
+   #box-txt.close h2{
+     display: none;
+   }
+
+   #box-txt.close p{
+     display: none;
+   }
+
+    /*transform: rotate(-900deg);*/
+    /*transform: rotate(0deg); */
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div class="box-content">
+        <div id="box-txt" class="open">
+            <h2>Benvenuto,</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Provident fugit aperiam eveniet optio amet incidunt voluptate quas at facilis sapiente nam 
+                perspiciatis asperiores dolor necessitatibus consectetur qui, modi reiciendis praesentium.</p>
+        </div>
+        <div class="bg-btn">
+            <button id="btn"><div class="material-symbols-outlined" id="arrow">arrow_right_alt</div></button>
+        </div>
+        <div id="box-txt-1" class="close">
+            <h2>Benvenuto,</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Provident fugit aperiam eveniet optio amet incidunt voluptate quas at facilis sapiente nam 
+                perspiciatis asperiores dolor necessitatibus consectetur qui, modi reiciendis praesentium.</p>
+        </div>
+    </div>
+    <script>
+        var btn = document.getElementById('btn');
+        var box_2 = document.getElementById('box-txt-1');
+        var box_1 = document.getElementById('box-txt');
+        var arrow = document.getElementById('arrow');
+
+        btn.onclick = function(){
+           // box_1.className = 'open';
+            //box_2.style.display = 'none';
+            var validation = box_1.className !== 'close';
+            if (validation) {
+            box_2.setAttribute('class', 'open');
+            box_1.setAttribute('class', 'close');
+            arrow.style.transform = 'rotate(-900deg)';
+            arrow.style.transition = 'all 0.3s ease-out';
+            box_1.style.transition = 'all 0.3s ease-out';
+            box_2.style.transition = 'all 0.3s ease-out';
+            } else {
+            box_1.setAttribute('class', 'open');
+            box_2.setAttribute('class', 'close');
+            arrow.style.transform = 'rotate(0deg)';
+            arrow.style.transition = 'all 0.3s ease-out';
+            box_1.style.transition = 'all 0.3s ease-out';
+            box_2.style.transition = 'all 0.3s ease-out';
+            }
+        }
+    </script>
+</body>
+</html>

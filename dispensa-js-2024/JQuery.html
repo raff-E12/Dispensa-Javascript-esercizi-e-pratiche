@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guida JavaScript e jQuery</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#525fd6">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header>
+        <h1>Guida Completa: JavaScript e jQuery</h1>
+        <nav id="mainMenu">
+            <ul>
+                <li><a href="index.html" title="javascript">Home</a></li>
+				<li><a href="dove-jx.html" title="Dove posizionare Javascript">Dove posizionare Javascript</a></li>
+				<li><a href="sintassi-jx.html" title="La sintassi">Sintassi js</a></li>
+				<li><a href="condizionali-e-cicli.html" title="Condizionali e cicli">Condizioni e cicli</a></li>
+				<li><a href="funzioni.html" title="Le funzioni">Le funzioni</a></li>
+				<li><a href="jQuery.html" title="jQuery">jquery</a></li>
+				<li><a href="integrareJQ.html" title="Integrare jQuery nei progetti">Integrare jquery</a></li>
+				<li><a href="sintassiJquery.html" title="Sintassi jQuery ">Sintassi jquery</a></li>
+				<li><a href="selezioneJquery.html" title="La selezione degli elementi in jQuery ">La selezione degli elementi in jQuery</a></li>
+				<li><a href="gestione_eventiJq.html" title="La gestione degli eventi in jQuery ">La gestione degli eventi in jQuery</a></li>
+				<li><a href="metodi-jQ.html" title="Metodi jQuery ">La gestione degli eventi in jQuery</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>JavaScript</h2>
+            <h3>Introduzione</h3>
+            <p>JavaScript è un linguaggio di programmazione nativo del web, nato nel 1995 per Netscape Navigator e noto anche come ECMAScript. È uno standard dal 1997.</p>
+            <h3>Utilizzi Comuni</h3>
+            <ul>
+                <li>Manipolazione del DOM: Aggiunta, rimozione e modifica di elementi HTML.</li>
+                <li>Gestione degli eventi: Risposta a eventi come clic, mouseover e caricamento della pagina.</li>
+                <li>Validazione dei moduli: Controllo dei dati inseriti nei moduli prima dell'invio.</li>
+                <li>Comunicazione con il server: Richieste asincrone tramite AJAX.</li>
+            </ul>
+            <h3>Esempio di JavaScript</h3>
+            <pre class="code">
+                <code>
+                    // Cambio del contenuto di un paragrafo al clic di un bottone
+                    document.getElementById('myButton').addEventListener('click', function() {
+                        document.getElementById('myParagraph').innerText = 'Contenuto cambiato!';
+                    });
+                </code>
+            </pre>
+            <button id="myButton">Cambia Contenuto</button>
+            <p id="myParagraph">Questo è un paragrafo.</p>
+        </section>
+        <section>
+            <h2>jQuery</h2>
+            <h3>Introduzione</h3>
+            <p>jQuery è una libreria JavaScript veloce e concisa creata nel 2006. Facilita la scrittura di JavaScript fornendo un'interfaccia semplice per selezionare elementi, gestire eventi, animare e gestire AJAX.</p>
+            <h3>Utilizzi Comuni</h3>
+            <ul>
+                <li>Selezione degli elementi del DOM: Selezione rapida e semplice degli elementi HTML.</li>
+                <li>Animazioni: Creazione di effetti visivi complessi con poche righe di codice.</li>
+                <li>Gestione degli eventi: Gestione degli eventi del DOM in modo semplificato.</li>
+                <li>Manipolazione del DOM: Modifica e interazione con gli elementi HTML in modo più conciso rispetto a JavaScript puro.</li>
+            </ul>
+            <h3>Esempio di jQuery</h3>
+            <pre class="code">
+                <code>
+                    // Cambio del contenuto di un paragrafo al clic di un bottone usando jQuery
+                    $('#myButton').click(function() {
+                        $('#myParagraph').text('Contenuto cambiato!');
+                    });
+                </code>
+            </pre>
+            <button id="myButton">Cambia Contenuto</button>
+            <p id="myParagraph">Questo è un paragrafo.</p>
+        </section>
+        <section>
+            <h2>JavaScript vs jQuery</h2>
+            <h3>Differenze Principali</h3>
+            <ul>
+                <li><strong>Complessità del Codice:</strong> JavaScript richiede più codice per le operazioni rispetto a jQuery, che offre metodi pronti all'uso.</li>
+                <li><strong>Compatibilità:</strong> jQuery gestisce automaticamente le differenze di implementazione tra i vari browser.</li>
+                <li><strong>Performance:</strong> JavaScript puro può essere più performante poiché jQuery introduce un sovraccarico.</li>
+                <li><strong>Uso delle Librerie:</strong> jQuery è una libreria che semplifica JavaScript, mentre JavaScript è un linguaggio di programmazione completo.</li>
+            </ul>
+            <h3>Quando Usare JavaScript</h3>
+            <p>Utilizzare JavaScript quando si necessita di massima performance, controllo completo del codice o quando si lavora su progetti moderni che utilizzano framework come React o Angular.</p>
+            <h3>Quando Usare jQuery</h3>
+            <p>Utilizzare jQuery quando si necessita di velocità di sviluppo, compatibilità cross-browser senza problemi o quando si lavora su progetti legacy che già utilizzano jQuery.</p>
+        </section>
+    </main>
+    <footer>
+        &copy; Copyright 2024
+    </footer>
+</body>
+</html>

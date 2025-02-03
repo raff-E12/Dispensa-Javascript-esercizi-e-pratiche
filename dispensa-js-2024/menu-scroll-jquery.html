@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/menu-scrollpage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@600" rel="stylesheet" />
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script>
+        $(function(){
+
+            $('body').niceScroll({
+                scrollspeed: 60,
+                mousescrollstep: 40,
+                smoothscroll: true
+            })
+            /*---------------- Script per apertura/chiusura menu + animazione list item del menu -------------------*/
+            $('#hamMenu').on('click', function(){
+                if($('#hamMenu').hasClass('open')){ /* controlliamo se l'icona hamMenu ha la classe open */
+                    $('#hamMenu').removeClass('open')
+                    $('#wrapperFullMenu nav ul li').removeClass('animMenu')
+                    $('#fullMenu').stop().delay(1800).fadeOut('800')
+                   
+
+                }else{
+                    $('#hamMenu').addClass('open')
+                    $('#fullMenu').stop().fadeIn('800')
+                    $('#wrapperFullMenu nav ul li').addClass('animMenu')
+                }
+            })
+            /* ------------ fine script apertura/chiusura menu-----------------*/
+
+            /* -------------- mostra/nascondi pulsante backtotop -------------*/
+
+            $(window).on('scroll',function(){
+                if($(document).scrollTop()>900){
+                    $('#backToTop').fadeIn(600)
+                    console.log($(document).scrollTop())
+                }else{
+                    $('#backToTop').fadeOut(600)
+                    console.log($(document).scrollTop())
+                }
+            })
+
+            /* --------- fine mostra/nascondi pulsante backtotop -------------*/
+
+            /* ---------------- scroll to id ------------------*/
+            $('#menuDesk nav ul li a, #backToTop, #wrapperFullMenu nav ul li a').on('click', function(){
+                let target=$(this).attr('href')
+                //console.log(target)
+                //console.log($(target).offset().top)
+
+                $('html,body').stop().animate({scrollTop:($(target).offset().top)},1200,'easeOutBack') // prendere i valori da inserire dopo il tempo, al posto di 'easeOutBack' dal seguente link, precisamente dove c'è il clicker https://gsgd.co.uk/sandbox/jquery/easing/
+            })
+            /* --------------- fine scroll to id ------------------------------ */
+        })
+    </script>
+</head>
+<body>
+    <header id="mainHeader">
+        <div id="logo">
+            <a href="#">M&amp;L</a>
+        </div>
+        <div id="menuDesk">
+            <nav>
+                <ul>
+                    <li><a href="#home">home</a></li>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#portfolio">portfolio</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="hamMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <div id="fullMenu">
+        <div id="wrapperFullMenu">
+            <nav>
+                <ul>
+                    <li><a href="#home">home</a></li>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#portfolio">portfolio</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <main>
+
+        <section id="home" class="contenitoreConAltezza">
+            <h2>Home</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, cupiditate nobis. Fugiat rem provident deserunt harum explicabo facere ducimus, doloremque quis dignissimos dolores recusandae omnis possimus nobis sed quibusdam. Reprehenderit!</p>
+        </section>
+
+        <section id="about" class="contenitoreConAltezza">
+            <h2>About</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, cupiditate nobis. Fugiat rem provident deserunt harum explicabo facere ducimus, doloremque quis dignissimos dolores recusandae omnis possimus nobis sed quibusdam. Reprehenderit!</p>
+        </section>
+        
+        <section id="portfolio" class="contenitoreConAltezza">
+            <h2>Portfolio</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, cupiditate nobis. Fugiat rem provident deserunt harum explicabo facere ducimus, doloremque quis dignissimos dolores recusandae omnis possimus nobis sed quibusdam. Reprehenderit!</p>
+        </section>
+        <section id="contact" class="contenitoreConAltezza">
+            <h2>Contact</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, cupiditate nobis. Fugiat rem provident deserunt harum explicabo facere ducimus, doloremque quis dignissimos dolores recusandae omnis possimus nobis sed quibusdam. Reprehenderit!</p>
+        </section>
+    </main>
+    <footer></footer>
+    <a href="#home" id="backToTop"><span class="material-symbols-outlined">
+        arrow_drop_up
+        </span>
+    </a>
+</body>
+</html>

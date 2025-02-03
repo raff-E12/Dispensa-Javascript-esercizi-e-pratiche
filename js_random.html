@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button click</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu&display=swap" rel="stylesheet">
+    <style>
+       *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+        }
+
+          header{
+            width: 100%;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            background-color: #91B221;
+        }
+
+        .box-dm{
+            background-color: white;
+            width: 70%;
+            text-align: center;
+            padding: 40px;
+            margin: 8%;
+        }
+
+        .box-dm ul{
+            list-style: none;
+            text-transform: uppercase;
+        }
+
+        .box-dm ul li p{
+            font-style: italic;
+            font-weight: 200;
+        }
+
+        .pine-tree{
+            width: 10%;
+            position: absolute;
+            left: 79%;
+            top: 19%;
+            transform: rotate(20deg);
+        }
+
+        .pine-tree-1{
+            width: 10%;
+            position: absolute;
+            left: 12%;
+            top: 51%;
+            transform: rotate(20deg);
+        }
+
+        .box-btn{
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn{
+            width: 20%;
+            height: 80px;
+            background-color: transparent;
+            color: white;
+            font-size: 30px;
+            padding: 10px;
+        }
+
+        .btn.green{
+            border: 5px solid #637e0a;
+            text-align: left;
+            flex-basis: 90%;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        
+        .btn.red{
+            border: 5px solid #7e0a0a;
+            text-align: right;
+            flex-basis: 40%;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        
+        .btn.green:hover{
+            flex-basis: 110%;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .btn.red:hover{
+            flex-basis: 90%;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        
+        .btn.green:not(hover){
+            flex-basis: 90%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn.red:not(hover){
+            flex-basis: 40%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        
+        .btn.green:active{
+            background-color: #637e0a;
+        }
+
+        .btn.red:active{
+            background-color: #7e0a0a;
+        }
+
+        .box-w{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            margin-top: -30px;
+        }
+
+        .msg{
+            margin-top: 4%;
+            width: 100%;
+            padding: 50px;
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <img src="immagini/pine-tree.png" alt="pine-tree" class="pine-tree">
+    <img src="immagini/tree.png" alt="pine-tree" class="pine-tree-1">
+    <div class="box-dm">
+        <ul>
+            <li><h1>Quali sono le principali sfide che i Paesi stanno affrontando nella transizione verso l'energia rinnovabile?</h1></li>
+            <li><p>scopri la domanda.</p></li>
+        </ul>
+    </div>
+    <div class="box-w">
+        <div class="box-btn">
+            <button class="btn green" id="yes-btn">Yes</button>
+            <button class="btn red" id="no-btn">No</button>
+        </div>
+    </div>
+    <div class="msg"><h1 id="text-result"></h1></div>
+    <script>
+        var yes = document.getElementById('yes-btn');
+        var no = document.getElementById('no-btn');
+        var text = document.getElementById('text-result');
+        function Text_Present(){
+            text.textContent = "Le principali sfide nella transizione verso l'energia rinnovabile includono l'alta dipendenza dalle infrastrutture esistenti per i combustibili fossili, i costi iniziali elevati per la realizzazione di impianti eolici, solari e altre tecnologie verdi, la necessità di aggiornare le reti di distribuzione energetica, e le preoccupazioni legate all'intermittenza delle fonti rinnovabili. Inoltre, molti Paesi devono affrontare ostacoli politici e normativi, nonché la resistenza da parte di settori economici tradizionali che temono perdite economiche.";
+            text.style.fontSize = '17px';
+            text.style.color = 'white';
+            text.style.transition = 'all 0.3s ease-in-out';
+            no.setAttribute('disabled', 'disabled')
+        }
+        yes.addEventListener('click', Text_Present);
+
+        function Not_Text(){
+            text.textContent = "A Presto";
+            text.style.fontSize = '17px';
+            text.style.color = 'white';
+            text.style.transition = 'all 0.3s ease-in-out';
+            yes.setAttribute('disabled', 'disabled')
+        }
+
+        no.addEventListener('click', Not_Text);
+    </script>
+</body>
+</html>

@@ -1,0 +1,2030 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+/***** Impostazione di Body *****/ 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+h1{
+    font-size: 44.79px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+h2{
+    font-size: 37.32px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+h3{
+    font-size: 31.1px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+h4{
+    font-size: 25.92px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+h5{
+    font-size: 21.6px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+p{
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a{
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: hsl(0, 0%, 100%);
+}
+
+/***** Fine Impostazione di body *****/
+
+
+/***** Header *****/
+
+#logo-img{
+    width: 20px;
+    height: 20px;
+}
+
+.header-sc{
+    background-color: hsl(255, 20%, 10%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 6px;
+    position: fixed;
+    top: 0;
+    z-index: 6;
+}
+
+.logo-section{
+    width: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    color: white;
+    padding: 10px;
+    font-weight: 400;
+}
+
+.nav-sc ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-sc ul li a{
+    color: hsl(255, 6%, 90%);
+    cursor: pointer;
+}
+
+.nav-sc ul li a:active{
+    color: hsl(0, 0%, 100%);
+}
+
+
+.nav-sc{
+    width: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 6px;
+}
+
+.btn.scHome{
+    width: 200px;
+    height: 50px;
+    font-size: 15px;
+    color: hsl(0, 0%, 100%);
+}
+
+/***** Fine Header *****/
+
+
+/***** Sezione Home *****/
+
+.home-sc{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(255, 20%, 10%);
+    padding: 15px;
+    overflow: hidden;
+    position: relative;
+    gap: 50px;
+    height: 100vh;
+}
+
+.btn{
+    background: linear-gradient(90deg,
+    hsl(18, 95%, 55%),
+    hsl(18, 98%, 64%));
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+}
+
+.img-box img:nth-of-type(1){
+    width: 80%;
+    height: 300px;
+    position: absolute;
+}
+
+.img-box img:nth-of-type(2){
+    width: 50%;
+    height: 190px;
+    position: absolute;
+    left: 0;
+    top: 60%;
+    border: 5px solid hsl(255, 20%, 10%);
+}
+
+.block-top{
+    width: 100%;
+    height: 74px;
+    background-color: hsl(255, 20%, 10%);
+}
+
+.home-box{
+    width: 50%;
+    flex-basis: 46%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+    gap: 20px;
+}
+
+.text-box-home{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.text-box-home h1{
+    color: hsl(0, 0%, 100%);
+    font-weight: 700;
+    width: 70%;
+}
+
+.text-box-home p{
+    color: hsl(255, 6%, 90%);
+    text-transform: capitalize;
+    width: 70%;
+}
+
+.img-sc{
+    width: 30%;
+    flex-basis: 40%;
+    z-index: 1;
+}
+
+.img-box{
+    position: relative;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#img-line{
+    width: 100%;
+    position: absolute;
+}
+
+.btn-int{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10%;
+}
+
+#link-click{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    font-size: 20px;
+    color: hsl(18, 95%, 55%);
+    text-decoration: none;
+    text-transform: capitalize;
+    gap: 4%;
+}
+
+.btn.scHero{
+    width: 300px;
+    height: 50px;
+}
+
+.percent-sc{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+}
+
+.ex-sc{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    text-align: center;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+    color: hsl(42, 98%, 52%);;
+}
+
+.pr-sc{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    color: hsl(42, 98%, 52%);;
+}
+
+.pr-sc p{
+    text-align: left;
+    width: 40%;
+    color: hsl(0, 0%, 100%);
+    text-transform: capitalize;
+}
+
+.ex-sc p{
+    text-align: left;
+    width: 40%;
+    color: hsl(0, 0%, 100%);
+    text-transform: capitalize;
+}
+
+/***** Fine Sezione Home *****/
+
+
+/***** Sezione Main *****/
+
+.main-sc{
+    width: 100%;
+    background-color: hsl(255, 20%, 10%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+/***** Fine Sezione Main *****/
+
+
+
+/***** Sezione About *****/
+
+.about-sc{
+    width: 100%;
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 10px;
+    gap: 20px;
+    height: 110vh;
+}
+
+.img-sc-ab{
+    position: relative;
+    width: 50%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-sc-ab img:nth-of-type(1){
+    width: 49%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    border: 10px solid hsl(0, 0%, 100%);
+}
+
+.img-sc-ab img:nth-of-type(2){
+    width: 60%;
+    position: absolute;
+}
+
+.info-ab{
+    width: 60%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.text-ab{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 10px;
+}
+
+.text-ab p:nth-of-type(1){
+    text-transform: uppercase;
+    color: hsl(42, 98%, 52%);
+}
+
+.text-ab h3{
+    width: 60%;
+    text-transform: capitalize;
+}
+
+.text-ab p:nth-of-type(2){
+    text-transform: capitalize;
+}
+
+.list-info{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    gap: 10px;
+}
+
+.list-info li{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    list-style: none;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-transform: capitalize;
+    gap: 14px;
+    padding: 10px;
+}
+
+.icon-true{
+    color: hsl(18, 98%, 64%);
+}
+
+.btn.ab{
+    width: 30%;
+    height: 50px;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 10px;
+}
+
+/***** Fine Sezione About *****/
+
+/***** Sezione Services *****/
+
+.services-sc{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: first baseline;
+    height: 100vh;
+    position: relative;
+}
+
+.box-sev{
+    width: 100%;
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    align-items: first baseline;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    padding: 10px;
+    gap: 18px;
+    height: 44vh;
+    z-index: 1;
+}
+
+.text-sev-sc{
+    width: 40%;
+    padding: 12px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.text-sev-sc p{
+    text-transform: uppercase;
+    color: hsl(42, 98%, 52%);
+}
+
+.text-sev-sc h3{
+    text-transform: capitalize;
+    width: 80%;
+}
+
+.sev-btn{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 120px;
+    text-transform: capitalize;
+    padding: 10px;
+}
+
+.btn.Sev{
+    width: 29%;
+    height: 44px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sev-btn p{
+    width: 50%;
+}
+
+.swap-box{
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    z-index: 1;
+}
+
+.panel-info.swiper{
+    width: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 26%;
+}
+
+.panel-box.swiper-slide{
+    background-color: hsl(0, 0%, 100%);
+    width: 300px;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    height: 260px;
+    border: 2px solid hsl(225, 12%, 24%);
+}
+
+#icon-box{
+    background-color: hsl(255, 20%, 10%);
+    padding: 9px;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 50px;
+    border-radius: 100%;
+}
+
+#icon-box span{
+    color: hsl(0, 0%, 100%);
+}
+
+.scroll-panel.swiper-wrapper{
+    margin-inline: initial;
+}
+
+.panel-box h5{
+    width: 40%;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+.panel-box p{
+    text-transform: capitalize;
+}
+
+.arrows-sc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    height: 70px;
+    position: relative;
+}
+
+.arrow.swiper-button-next{
+    padding: 4px;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border: none;
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(255, 20%, 10%);
+    cursor: pointer;
+    position: relative;
+    top: 12px;
+}
+
+.arrow.swiper-button-prev{
+    padding: 4px;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border: none;
+    background-color: hsl(0, 0%, 100%);
+    cursor: pointer;
+    position: relative;
+    top: 12px;
+    color: hsl(255, 20%, 10%);
+}
+
+.arrow.swiper-button-prev::after{
+    content: '';
+}
+
+.arrow.swiper-button-next::after{
+    content: '';
+}
+
+.arrow:active{
+    background-color: hsl(255, 6%, 90%);
+}
+
+.arrow span{
+    font-size: 17px;
+}
+
+/***** Fine Sezione Services *****/
+
+/***** Sezione Projects *****/
+
+.project-sc{
+    width: 100%;
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 200px;
+    height: 200vh;
+}
+
+.pr-text-sc{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+}
+
+.pr-text-sc p{
+    color: hsl(42, 98%, 52%);
+    text-transform: uppercase;
+}
+
+.pr-text-sc h1{
+    width: 40%;
+}
+
+.projects{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    height: 2500px;
+}
+
+.pro-box{
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.pro-box img{
+    width: 100%;
+}
+
+.info-box{
+    background-color: hsl(0, 0%, 100%);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 260px;
+}
+
+
+.pro-box:hover{
+    box-shadow: 0px 0px 0px 2px hsl(18, 95%, 55%);
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+
+.pro-box:not(hover){
+    box-shadow: none;
+    transition: all 0.4s ease-in-out;
+}
+
+/***** Fine Sezione Projects *****/
+
+/***** Sezione Contact *****/
+
+.contact-sc{
+    width: 100%;
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.info-con img{
+    width: 500px;
+}
+
+.text-con-sc{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    text-transform: capitalize;
+    padding: 10px;
+}
+
+.text-con-sc p{
+    color: hsl(42, 98%, 52%);
+    text-transform: uppercase;
+}
+
+.info-con{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    gap: 20px;
+}
+
+.box-info{
+    border: 3px solid hsl(255, 6%, 90%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contain-box{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 30px;
+    padding: 10px;
+}
+
+.box-info h3 span{
+    font-size: 40px;
+    background-color: hsl(255, 20%, 10%);
+    padding: 10px;
+    color: hsl(0, 0%, 100%);
+    border-radius: 100%;
+}
+
+#social-link{
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: row;
+    color: hsl(18, 95%, 55%);
+}
+
+/***** Fine Sezione Contact *****/
+
+
+/***** Sezione Footer *****/
+
+.footer-sc{
+    background-color: hsl(255, 20%, 10%);
+    width: 100%;
+    margin-top: 18%;
+    color: hsl(0, 0%, 100%);
+}
+
+.footer-main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 200px;
+    padding: 20px;
+    height: 50vh;
+}
+
+.box-1{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-basis: 50%;
+    padding: 10px;
+}
+
+.logo-sc{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+small{
+    font-size: 11px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    display: block;
+    text-transform: capitalize;
+}
+
+.box-2{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-basis: 20%;
+    padding: 10px;
+}
+
+.box-2 a{
+    color: hsl(0, 0%, 100%);
+    font-weight: 100;
+}
+
+
+.box-4{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-basis: 30%;
+    text-align: left;
+    padding: 10px;
+}
+
+.box-3{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: baseline;
+    flex-basis: 50%;
+    padding: 10px;
+}
+
+.content-box{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.credit{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/***** Fine Sezione Footer *****/
+
+/***** Hovering *****/
+
+.nav-sc a:hover{
+    color: hsl(18, 98%, 64%);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-sc a:not(hover){
+    color: hsl(255, 6%, 90%);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn.scHome:hover{
+    box-shadow: 0px 0px 10px 1px hsl(18, 98%, 64%);
+    color: hsl(0, 0%, 100%);
+}
+
+.btn:hover{
+    box-shadow: 0px 0px 10px 1px hsl(18, 98%, 64%);
+    color: hsl(0, 0%, 100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:not(hover){
+    box-shadow: none;
+    color: hsl(0, 0%, 100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn.Sev:hover{
+    box-shadow: 0px 0px 10px 1px hsl(18, 98%, 64%);
+    color: hsl(0, 0%, 100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn.Sev.hover:hover{
+    box-shadow: 0px 0px 10px 1px hsl(18, 98%, 64%);
+    color: hsl(0, 0%, 100%);
+    transition: all 0.3s ease-in-out;
+}
+
+#social-link i:hover{
+    transform: translateY(-3px);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+
+#social-link i:not(hover){
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.box-info:hover{
+    border:3px solid hsl(18, 98%, 64%);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.box-info:not(hover){
+    border: 3px solid hsl(255, 6%, 90%);
+    transition: all 0.3s ease-in-out;
+}
+
+#link-click:hover{
+    gap: 5%;
+    transition: all 0.4s ease-in-out;
+}
+
+#link-click:not(hover){
+    gap: 4%;
+    transition: all 0.4s ease-in-out;
+}
+
+.btn.Sev:not(hover){
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-sc .box-2 a:hover{
+    color:  hsl(18, 98%, 64%);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.panel-box.swiper-slide:hover{
+    border:3px solid hsl(18, 98%, 64%);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.panel-box.swiper-slide:not(hover){
+    border:3px solid hsl(225, 12%, 24%);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+
+.footer-sc .box-2 a:not(hover){
+    color:  hsl(0, 0%, 100%);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:active{
+    background: hsl(225, 12%, 24%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+}
+
+#header.activeScroll{
+    background-color: hsl(0, 0%, 100%);
+    transition: all 0.3s ease-in-out;
+}
+
+#header.activeScroll h5{
+    color: hsl(255, 20%, 10%);
+}
+
+#header.activeScroll li a{
+    color: hsl(255, 20%, 10%);
+}
+
+#header.activeScroll li a:hover{
+    color: hsl(18, 98%, 64%);
+}
+
+#header.activeScroll li a:not(hover){
+    color: hsl(255, 20%, 10%);
+}
+
+#header.activeScroll #Ham-icon span{
+    color: hsl(255, 20%, 10%);
+}
+
+.HamMenu.activeScroll{
+    color: hsl(255, 20%, 10%);
+    background-color: hsl(0, 0%, 100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.HamMenu.activeScroll li a{
+    color: hsl(255, 20%, 10%);
+}
+
+
+.HamMenu.activeScroll li a:hover{
+    color: hsl(18, 98%, 64%);
+}
+
+.HamMenu.activeScroll li a:not(hover){
+    color: hsl(255, 20%, 10%);
+}
+
+.HamMenu.activeScroll li .btn{
+    color: hsl(0, 0%, 100%);
+}
+
+.HamMenu.activeScroll #Cross-icon span{
+    color: hsl(255, 20%, 10%);
+}
+
+.HamMenu:not(.activeScroll){
+    background-color: hsl(255, 20%, 10%);
+    transition: all 0.3s ease-in-out;
+}
+
+#header:not(.activeScroll){
+    background-color: hsl(255, 20%, 10%);
+    transition: all 0.3s ease-in-out;
+}
+/***** Animation Scroll *****/
+
+.scroll-Text-Home{
+    animation-name: scroll-animation-1;
+    animation-duration: 1000ms;
+    animation-timing-function: linear;
+}
+
+.scroll-Home-Img{
+    animation-name: scroll-animation-2;
+    animation-duration: 1000ms;
+    animation-timing-function: linear;
+}
+
+@keyframes scroll-animation-1 {
+    to{opacity: 100; transform: translateX(0px);}
+    from{opacity: 0; transform: translateX(30px);}
+}
+
+
+@keyframes scroll-animation-2 {
+    to{opacity: 100; transform: translateX(0px);}
+    from{opacity: 0; transform: translatey(30px);}
+}
+
+.scroll-About-Img{
+    animation-name: scroll-animation-3;
+    animation-duration: 1000ms;
+    animation-timing-function: linear;
+}
+
+.scroll-About-Info{
+    animation-name: scroll-animation-4;
+    animation-duration: 1000ms;
+    animation-timing-function: linear;
+}
+
+
+@keyframes scroll-animation-3 {
+    to{opacity: 100; transform: translateX(0px);}
+    from{opacity: 0; transform: translateX(-30px);}
+}
+
+@keyframes scroll-animation-4 {
+    to{opacity: 100; transform: translateX(0px);}
+    from{opacity: 0; transform: translateX(30px);}
+}
+/***** Btn Top *****/
+
+/***** Loding*****/
+
+#scroll-top{
+    position: fixed;
+    background-color: hsl(0, 0%, 100%);
+    border: 3px solid hsl(18, 98%, 64%);
+    right: 30px;
+    top: 510px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    cursor: pointer;
+    z-index: 12;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+#scroll-top.active{
+    opacity: 100;
+    transition: all 0.3s ease-in-out;
+}
+
+#scroll-top:active{
+    background-color: hsl(225, 12%, 24%);
+    color: hsl(0, 0%, 100%);
+}
+/***** MediaQuery and BreakPoint *****/
+
+.HamMenu{
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: hsl(225, 12%, 24%);
+    width: 50%;
+    flex-direction: column;
+    z-index: 13;
+    align-items: center;
+    height: 300vh;
+    backdrop-filter: blur(10px);
+    right: -120%;
+    box-shadow: 0px 0px 20px 10px hsl(255, 20%, 10%);
+    transition: all 0.3s ease-in-out;
+}
+
+#Ham-icon{
+    cursor: pointer;
+}
+
+#Cross-icon{
+    width: 100%;
+    justify-content: flex-end;
+    display: flex;
+    padding: 12px;
+}
+
+#Cross-icon span{
+    font-size: 40px;
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+}
+
+.HamMenu ul{
+    list-style: none;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    padding: 40px;
+    gap: 30px;
+}
+
+.navlinks{
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+}
+
+.navlinks:hover{
+    color: hsl(18, 95%, 55%);
+    transition: all 0.3s ease-in-out;
+}
+
+.navlinks:not(hover){
+    color: hsl(0, 0%, 100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn.Ham{
+    padding: 14px;
+}
+
+/* Tipografia mobile
+    h1{font-size: 44.79px;}
+    h2{font-size: 37.32px;}    
+    h3{font-size: 31.1px;}
+    h4{font-size: 25.92px;}
+    h5{font-size: 21.6px;}
+    p{font-size: 15px;} */
+
+#Ham-icon span{
+    font-size: 40px;
+    color: hsl(0, 0%, 100%);
+}
+
+.HamMenu.active{
+    right: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #353535;
+    height: 20vh;
+}
+
+@media screen and (min-width:420px) {
+    .header-sc{
+        width: 100%;
+    }
+
+    .contain-box{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sev-btn{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-sc ul{
+        display: none;
+    }
+
+    .btn.scHome{
+        display: none;
+    }
+
+    .home-sc{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0px;
+        margin: 0;
+        overflow: hidden;
+        height: 10vh;
+    }
+ 
+    .img-sc{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img-box{
+        width: 100%;
+        display: none;
+    }
+
+    .img-box img:nth-of-type(1){
+        width: 330px;
+        height: 230px;
+    }
+
+    .img-box img:nth-of-type(2){
+        width: 180px;
+        height: 140px;
+    }
+
+    .home-box{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        height: 10vh;
+    }
+
+    .text-box-home{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .text-box-home h1{
+        text-align: center;
+        width: 100%;
+    }
+
+    .text-box-home p{
+        text-align: center;
+    }
+
+    .home-sc{
+        width: 100%;
+        height: 700px;
+    }
+
+    .projects{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #img-line{
+        display: block;
+        transform: scale(3, 3);
+    }
+
+    .ex-sc{
+        width: 42%;
+        text-align: left;
+    }
+
+    .pr-sc{
+        width: 29%;
+        text-align: left;
+    }
+
+    .percent-sc{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+     #link-click{
+        width: 100%;
+     }
+
+     .btn.scHero{
+        width: 70%;
+     }
+
+     .btn.ab{
+        width: 60%;
+     }
+
+     .btn-int{
+        width: 80%;
+        gap: 9px;
+     }
+
+     .about-sc{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        height: 1000px;
+        gap: 40px;
+     }
+
+     .img-sc-ab{
+        width: 80%;
+        order: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     }
+
+     .img-sc-ab img:nth-of-type(1){
+        left: 0;
+     }
+
+     .info-ab{
+        width: 100%;
+        order: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+     }
+
+     .text-ab{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+     }
+
+     .text-ab h3{
+        width: 100%;
+        text-align: center;
+     }
+
+     .text-ab p{
+        width: 100%;
+        text-align: center;
+     }
+
+     .box-sev{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 700px;
+     }
+
+     #icon-box span{
+        font-size: 15px;
+     }
+
+     #icon-box{
+        width: 36px;
+        height: 36px;
+     }
+
+     .btn.Sev{
+        width: 60%;
+     }
+
+     .services-sc{
+        height: 400px;
+     }
+
+     .text-sev-sc{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+     }
+
+     .text-sev-sc h3{
+        width: 100%;
+        text-align: center;
+     }
+
+     .sev-btn{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+     }
+
+     .sev-btn p{
+        width: 100%;
+        text-align: center;
+     }
+
+     .project-sc{
+        width: 400px;
+        height: 2500px;
+        padding-top: 70%;
+        gap: 60px;
+        overflow: visible;
+     }
+
+     .pr-text-sc{
+        width: 100%;
+     }
+
+     .pr-text-sc h1{
+        width: 100%;
+     }
+
+     .pro-box{
+        width: 100%;
+     }
+
+     .info-con{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+     }
+
+     .info-con img{
+        display: none;
+     }
+
+     .scroll-Home-Img{
+        display: none;
+     }
+
+     .text-con-sc{
+        width: 100%;
+        text-align: center;
+     }
+
+     .box-info{
+        height: 300px;
+     }
+
+     .footer-main{
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        height: 700px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+    }
+
+    .box-1{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box-2{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box-4{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .list-info{
+        width: 400px;
+    }
+
+    .swap-box{
+        top: 94%;
+    }
+
+    .panel-info.swiper{
+        width: 400px;
+    }
+
+    .HamMenu{
+        display: flex;
+    }   
+    
+    #scroll-top{
+        top: 90%;
+        bottom: 0;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    #scroll-top span{
+        font-size: 20px;
+    }
+} 
+
+
+@media screen and (min-width:568px) {
+    .btn-int{
+        width: 100%;
+    }
+
+    .img-box img:nth-of-type(1){
+        width: 400px;
+        height: 320px;
+    }
+
+    .img-box img:nth-of-type(2){
+        width: 220px;
+        height: 170px;
+    }
+
+    .img-sc-ab:nth-of-type(1){
+        width: 500px;
+    }
+
+    .img-box{
+        width: 500px;
+    }
+
+    .img-sc-ab{
+        width: 100%;
+    }
+
+    .project-sc{
+        height: 2400px;
+        margin-top: 500px;
+        width: 100%;
+        gap: 0;
+        padding: 0;
+    }
+
+    .pro-box{
+        width: 90%;
+    }
+
+    .home-sc{
+        height: 560px;
+    }
+        
+    .block-top{
+        width: 100%;
+        height: 64px;
+    }
+
+    .home-box{
+        width: 400px;
+    }
+
+    .info-ab{
+        width: 520px;
+    }
+
+    .img-sc-ab{
+        width: 500px;
+    }
+    
+    .text-sev-sc{
+        width: 500px;
+    }
+
+    .sev-btn{
+        width: 500px;
+    }
+
+    .panel-info.swiper{
+        width: 100%;
+    }
+
+    .swap-box{
+        width: 100%;
+        padding: 10px;
+    }
+
+    .projects{
+        width: 560px;
+    }
+
+    .img-sc-ab{
+        width: 500px;
+    }
+
+    .footer-sc{
+        height: auto;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .img-box img:nth-of-type(1){
+        width: 360px;
+        height: 300px;
+    }
+
+    .img-box img:nth-of-type(2){
+        width: 190px;
+        height: 150px;
+    }
+
+    .img-box{
+        width: 100%;
+    }
+
+    .projects{
+        width: 900px;
+    }
+
+    .home-sc{
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+        gap: 30px;
+    }
+
+    .home-box{
+        width: 60%;
+        gap: 20px;
+    }
+
+    .text-box-home p{
+        width: 100%;
+        text-align: center;
+    }
+
+    .text-box-home h1{
+        width: 100%;
+        text-align: center;
+    }
+
+    #link-click{
+        width: 100%;
+    }
+
+    .btn-int{
+        width: 100%;
+    }
+
+    .percent-sc{
+        width: 60%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .ex-sc{
+        width: 50%;
+    }
+
+    .pr-sc{
+        width: 50%;
+    }
+
+    #img-line{
+        display: block;
+        transform: scale(2, 2);
+    }
+
+    .about-sc{
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    .text-ab{
+        width: 70%;
+    }
+
+    .img-sc-ab:nth-of-type(1){
+        width: 600px;
+    }
+
+    .box-sev{
+        flex-direction: row;
+        height: 60vh;
+    }
+
+    .text-sev-sc{
+        align-items: flex-start;
+    }
+
+    .text-sev-sc h3{
+        text-align: left;
+    }
+
+    .sev-btn{
+        gap: 10px;
+    }
+
+    .panel-info{
+        top: 48%;
+    }
+
+    .project-sc{
+        margin: 0;
+        padding-top: 300px;
+        height: 2700px;
+    }
+
+    .pro-box{
+        width: 60%;
+    }
+
+    .btn.scHero{
+        display: block;
+    }
+
+    #Ham-icon{
+        display: none;
+    }
+
+    .nav-sc ul{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    
+    .btn.scHome{
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+    }
+
+    .list-info{
+        width: 60%;
+    }
+
+    .footer-main{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row;
+        height: 340px;
+        gap: 10px;
+        width: 100%;
+        justify-content: flex-start;
+        margin: 0;
+    }
+
+    .box-1{
+        align-items: flex-start;
+    }
+
+    .box-2{
+        align-items: flex-start;
+    }
+
+    .box-4{
+        align-items: flex-start;
+    }
+
+    .box-3{
+        align-items: center;
+    }
+
+    .info-con img{
+        width: 60%;
+    }
+
+    .content-box{
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .home-sc{
+        height: 90vh;
+    }
+
+    .info-ab{
+        width: 100%;
+    }
+
+    .swap-box{
+        top: 70%;
+    }
+
+    .panel-info.swiper{
+        width: 780px;
+    }
+}
+
+
+@media screen and (min-width:1200px) {
+    .home-sc{
+        flex-direction: row;
+    }
+
+    .text-box-home h1{
+        width: 80%;
+        text-align: left;
+    }
+
+    .text-sev-sc{
+        width: 70%;
+    }
+
+    .text-box-home p{
+        width: 80%;
+        text-align: left;
+    }
+
+    .percent-sc{
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .text-box-home{
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .img-box img:nth-of-type(1){
+        width: 100%;
+        height: 340px;
+        left: 10px;
+    }
+
+    .img-box img:nth-of-type(2){
+        width: 220px;
+        height: 160px;
+        left: 0;
+    }
+
+    .img-box{
+        width: 500px;
+        display: block;
+        height: 400px;
+    }
+
+    .scroll-Home-Img{
+        display: block;
+    }
+
+    .about-sc{
+        flex-direction: row;
+        gap: 0px;
+        height: 600px;
+    }
+
+    .list-info{
+        width: 100%;
+    }
+
+    .info-ab{
+        order: 2;
+        align-items: flex-start;
+        width: 50%;
+    }
+
+    .img-sc-ab{
+        order: 1;
+        width: 300%;
+    }
+
+    .text-ab{
+        width: 100%;
+    }
+
+    .text-ab p{
+       text-align: left;
+    }
+
+    .text-ab h3{
+        text-align: left;
+     }
+
+    .sev-btn{
+        flex-direction: row;
+        width: 40%;
+    }
+
+    .sev-btn p{
+        text-align: left;
+    }
+
+    .home-sc{
+        height: 120vh;
+    }
+
+    .btn.ab{
+        width: 30%;
+     }
+
+     .box-sev{
+        display: flex;
+        flex-direction: row;
+        gap: 2px;
+        align-items: center;
+        justify-content: center;
+        height: 400px;
+     }
+
+     .projects{
+        flex-direction: row;
+        display: flex;
+        width: 98%;
+     }
+
+     .project-sc{
+        height: 1300px;
+     }
+
+     .text-con-sc{
+        align-items: flex-start;
+        width: 97%;
+     }
+
+     .info-con{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+     }
+
+     .info-con img{
+        display: block;
+        width: 40%;
+     }
+
+     .contain-box{
+        display: grid;
+        width: 50%;
+     }
+
+     .box-info{
+        height: 220px;
+     }
+
+     .content-box{
+        width: 60%;
+     }
+
+     .text-sev-sc{
+        width: 40%;
+     }
+
+     .box-sev{
+        gap: 14%;
+        height: 30vh;
+     }
+
+     .swap-box{
+        top: 40%;
+    }
+
+    .panel-info.swiper{
+        width: 980px;
+    }
+
+    .ex-sc{
+        width: 30%;
+    }
+
+    .pr-sc{
+        width: 50%;
+    }
+}
+
+@media screen and (min-width:1300px) {
+    
+}

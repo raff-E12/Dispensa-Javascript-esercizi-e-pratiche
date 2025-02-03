@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guida Javascript / jQuery</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="js/main.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#525fd6">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+	
+	<header id="pinco">
+		<h1>Guida Javascript / jQuery<br> Dove posizionare Javascript</h1>
+		<nav id="mainMenu">
+			<ul>
+				<li><a href="index.html" title="javascript">Home</a></li>
+				<li><a href="dove-jx.html" title="Dove posizionare Javascript">Dove posizionare Javascript</a></li>
+				<li><a href="sintassi-jx.html" title="La sintassi">Sintassi js</a></li>
+				<li><a href="condizionali-e-cicli.html" title="Condizionali e cicli">Condizioni e cicli</a></li>
+				<li><a href="funzioni.html" title="Le funzioni">Le funzioni</a></li>
+				<li><a href="jQuery.html" title="jQuery">jquery</a></li>
+				<li><a href="integrareJQ.html" title="Integrare jQuery nei progetti">Integrare jquery</a></li>
+				<li><a href="sintassiJquery.html" title="Sintassi jQuery ">Sintassi jquery</a></li>
+				<li><a href="selezioneJquery.html" title="La selezione degli elementi in jQuery ">La selezione degli elementi in jQuery</a></li>
+				<li><a href="gestione_eventiJq.html" title="La gestione degli eventi in jQuery ">La gestione degli eventi in jQuery</a></li>
+				<li><a href="metodi-jQ.html" title="Metodi jQuery ">La gestione degli eventi in jQuery</a></li>
+				
+			</ul>
+
+		</nav>
+		
+	</header>
+	
+	<main>
+		<section>
+			<h1>Sintassi Jx, variabili e operatori</h1>
+<h2>La sintassi</h2>
+<p>Per scrivere uno script bisogna conoscere l'insieme di regole che compongono la sintassi di Jx.</p>
+<p>document.write('Testo da visualizzare');</p>
+<p><em>document</em> &egrave; un oggetto e rappresenta l'intera pagina web</p>
+<p>&quot;.&quot; il punto rappresenta l'operatore membro che ci permette di accedere ai vari metodi e propriet&agrave; dell'oggetto in questione.</p>
+<p>&quot;write('Testo da visualizzare')&quot; rappresenta il metodo dell'oggetto document richiamato per scrivere un nuovo contenuto sulla pagina, all'interno delle parentesi troviamo i parametri del metodo, in questo caso la stringa da scrivere sulla pagina web.</p>
+<p>Per chiudere ogni istruzione si utilizza il ;</p>
+
+<h2>Variabili</h2>
+<p>Le variabili sono dei contenitori dove uno script pu&ograve; conservare temporaneamente informazioni che servono poi per svolgere il proprio lavoro.</p>
+<p>Il nome delle variabili pu&ograve; iniziare con $, _ o lettera, non pu&ograve; iniziare con un numero. Non sono ammessi i seguenti caratteri &quot;-&quot; e &quot;.&quot;</p>
+<h3>Dichiarazione di una variabile</h3>
+<p>Es. let x;</p>
+<p>let è la parola chiave per dichiarare la variabile.</p>
+<p>x è il nome assegnato a questa variabile.</p>
+<h3>Assegnare un valore alle variabili</h3>
+<p>x = 3;</p>
+<p>&quot;=&quot; è l'operatore di assegnazione.</p>
+<p>Adesso quando richiamiamo la variabile all'interno di uno script x avrà come valore 3.</p>
+<p>Vedi il codice per l'esempio</p>
+<script>
+	let x; //dichiarazione di una variabile
+	x = 3; //assegnazione di un valore di tipo integer
+    x = "ciao"; //assegnazione di un valore di tipo stringa
+	document.write('valore assegnato alla variabile x= '+ x);
+</script>
+<p>Valori contenuti da una variabile possono essere</p>
+	<ul>
+		<li>Valori stringa --&gt; "ciao" oppure 'ciao'</li>
+		<li>Valori numerici interi e  decimali --&gt; 10 , 10.25 <!--si scrivono senza apici e i decimali vanno espressi col punto --></li>
+		<li>Valori boleani --&gt; true / false valore astratto che indica uno stato di vero o falso, es. per verificare se una condizione si verifica o meno.</li>
+	</ul>
+	
+	<p>Una variabile una volte dichiarata ha un valore indefinito che cambia con l'assegnazione. (x='ciao' diventa automaticamente una varibiale con valore stringa). La variabile una volta dichiarata ed assegnata, pu&ograve; essere riassegnata.</p>
+
+	<h2>Le constanti</h2>
+	<p>Per dichiarare una costante (il valore non cambia una volta assegnato), dobbiamo utilizzare const invece di let. Una volta assegnate non possono cambiare valore.</p>
+	<br>
+	<div>
+		<span class="code">
+			const nome = 'Giorgio';
+			nome= 'Mario'; // errore non può essere riassegnata
+			<script>
+				const nome = 'Giorgio';
+				console.log('nome');
+			</script>
+		</span>
+	</div>
+	
+	<h2>Tipi di dato</h2>
+	<p>Un valore in JavaScript è sempre associato a un tipo specifico, come ad esempio string o number. Una variabile in JavaScript può contenere qualsiasi tipo di dato.</p>
+
+	<h3>Number</h3>
+	<p>Numeri vanno senza apici e sono di due tipi interi e decimali.</p>
+	<div>
+		<span class="code">
+			let x=3;
+			x=3.14;
+		</span>
+		<script>
+			console.log('Number')
+			let x = 3
+			console.log(x)
+			x=3.14
+			console.log(x)
+		</script>
+	</div>
+	<h3>String</h3>
+	<p>La stringa è un tipo di dato che va tra apici.</p>
+	<div>
+		<span class="code">
+			let str='ciaooo';
+			console.log(str)
+		</span>
+		<script>
+			console.log('String')
+			let str='ciaooo'
+			console.log(str)
+			
+		</script>
+	</div>
+
+	<h3>Boolean</h3>
+	<p>Un valore di tipo boolean ha solo due valori: true e false. Questo tipo viene usato principalmente per memorizzare valori “si/no”: true significa “Si, corretto”, e false significa “No, scorretto”, serve per verificare le condizioni logiche.</p>
+	<div>
+		<span class="code">
+			let consensoCheck = true; //  il campo è spuntato
+			consensoCheck = false; //  il campo non è spuntato
+		</span>
+		<script>
+			console.log('Boolean')
+			let consensoCheck = true; //  il campo è spuntato
+			console.log(consensoCheck)
+			consensoCheck = false; //  il campo non è spuntato
+			console.log(consensoCheck)
+			
+		</script>
+	</div>
+	<h3>Null e Undefined</h3>
+	<p>Valore speciale usato solo per indicare che il valore è nullo o vuoto</p>
+	<div>
+		<span class="code">
+			let y = null; 
+			console.log(y)
+		</span>
+		<script>
+			console.log('Null')
+			let y = null; 
+			console.log(y)
+			
+		</script>
+	</div>
+	<p>Undefined significa 'valore non assegnato'.
+		Esempio,se una variabile viene dichiarata, ma non assegnata, il suo valore è undefined</p>
+	<div>
+		<span class="code">
+			let z;
+			console.log(z)
+		</span>
+		<script>
+			console.log('undefined')
+			let z
+			console.log(z)
+			
+		</script>
+	</div>
+
+	<h3>Typeof</h3>
+	<p>L’operatore typeof ritorna di che tipo è il valore. Comodo per eseguire controlli rapidi sul tipo del valore delle variabili.</p>
+	<div>
+		<span class="code">
+			let a=3
+			console.log(typeof a)
+			
+		</span>
+		<script type="text/javascript">
+			
+			console.log('Typeofofofo')
+			let a=3
+			console.log(typeof a)
+			
+		</script>
+	</div>
+
+	
+	
+
+
+<h2>Operatori</h2>
+<h3>Operatori matematici</h3>
+<p> + - / * % ++ --</p>
+<ul>
+	<li>+ operatore di addizione</li>
+	<li>- operatore di sottrazione</li>
+	<li>/ operatore di divisione</li>
+	<li>* operatore di moltiplicazione</li>
+	<li>% operatore di resto</li>
+	<li>++ operatore di incremento</li>
+	<li>-- operatore di decremento</li>
+</ul>
+
+<h3>Operatori di comparazione</h3>
+
+<p>resituiscono un valore di tipo booleano (true o false)</p>
+<ul>
+	<li>== uguale a </li>
+	<li>=== uguale valore e tipo</li>
+	<li>!= non uguale</li>
+	<li>!== non uguale valore o non uguale di tipo</li>
+	<li>&gt; più grande di </li>
+	<li>&lt; più piccolo di </li>
+	<li>&gt;= più grande di o uguale</li>
+	<li>&lt;= più piccolo di o uguale</li>
+	
+</ul>
+<script>
+	console.log('operatori di comparazione')
+console.log( 22 > 12 )  // true 
+console.log( 6 == 5 ) // false 
+console.log( 10 != 9 ) // true 
+console.log( 0 === false ) // false, perché il tipo è differente
+
+</script>
+
+<h3>Operatori logici && || !</h3>
+<ul>
+	<li>&& operatore di congiunzione, trova il primo valore falso, altrimenti va avanti tra le condizioni</li>
+	<li>||  operatore &quot;o&quot; (or) oppure</li>
+	<li>! operatore di negazione</li>
+</ul>
+		</section>
+		<script>
+			console.log('operatori di comparazione')
+			let ora = 9;
+
+			if (ora < 10 || ora > 18) {
+				console.log( 'L\'ufficio è chiuso.' )
+			}
+			let xy;
+			if(!xy){
+				console.log('non è valorizzato')
+			}
+			
+			
+		</script>
+		</section>
+	</main>
+	
+	<footer>
+		&copy; Copyright 2024
+	</footer>
+	
+</body>
+</html>

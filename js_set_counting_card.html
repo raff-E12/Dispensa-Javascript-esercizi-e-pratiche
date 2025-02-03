@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Number Animation</title>
+    <link rel="stylesheet" href="js-css/css_reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,787;1,787&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+    <style>
+         *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            width: 100%;
+            background-color: #F2C230;
+        }
+
+        h2{
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 19px;
+        }
+
+        p{
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+            font-size: 17px;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        body{
+            background-color: #CC896C;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column
+        }
+
+        .card-count{
+            width: 70%;
+            margin: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .row{
+            width: 80%;
+            border-bottom: 10px solid #D97B29;
+            height: 200px;
+            background-color: #400601;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .row h2{
+            width: 90px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .row i{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div class="card-count">
+        <div class="row">
+            <i class="fa-brands fa-free-code-camp"></i>
+            <h2 class="num" data-target="40">0</h2>
+            <p>Meals Deliveders</p>
+        </div>
+        <div class="row">
+            <i class="fa-solid fa-face-smile"></i>
+            <h2 class="num" data-target="20">0</h2>
+            <p>Happy Costumers</p>
+        </div>
+        <div class="row">
+            <i class="fa-solid fa-bars"></i>
+            <h2 class="num" data-target="100">0</h2>
+            <p>Menu Items</p>
+        </div>
+        <div class="row">
+            <i class="fa-solid fa-star"></i>
+            <h2 class="num" data-target="80">0</h2>
+            <p>Five Star</p>
+        </div>
+    </div>
+    <script>
+     document.addEventListener('DOMContentLoaded', ()=>{
+        let num_card = document.querySelectorAll('h2.num');
+        num_card.forEach((number)=>{
+        let start_num = 0;
+        let data = number.getAttribute('data-target');
+        let end_value = Number(data);
+        let Intervall_count = setInterval(()=>{ 
+        start_num++; 
+        number.textContent = start_num;
+         if(start_num === end_value){
+        clearInterval(Intervall_count);
+        }
+        }, 90);
+        })
+     })
+    </script>
+</body>
+</html>

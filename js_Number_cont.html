@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliders 1°</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            width: 100%;
+            background-color: #F2C230;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            background-color: #80A6F2;
+        }
+
+
+        .box-img{
+            width: 40%;
+            border: 10px solid #F29441;
+            height: auto;
+            margin: 10%;
+            height: 379px;
+            box-shadow: 20px 22px 0px 10px #AB371D;
+            overflow: hidden;
+        }
+
+        img.slide{
+            width: 100%;
+            height: 361px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box-slider{
+            display: flex;
+            width: auto;
+            height: auto;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .arrow{
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            position: absolute;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .arrow.left{
+            transform: translate(-252px, 26px);
+        }
+
+        .arrow.right{
+            transform: translate(252px, 26px);
+        }
+
+        .arrow:active{
+            background-color: rgb(160, 160, 160);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+     <!-- ========== Start Section ========== -->
+    <div class="box-img">
+        <div class="box-slider" id="sliders">
+           <img src="immagini/thumb1.png" alt="img1" class="slide">
+           <img src="immagini/thumb2.jpeg" alt="img2"  class="slide">
+            <img src="immagini/thumb3.jpg" alt="img3" class="slide">
+            <img src="immagini/thumb3.jpg" alt="img3" class="slide">
+        </div>
+    </div>
+    <p class="arrow right" id="right"><span class="material-symbols-outlined"> arrow_forward_ios</span></p>
+    <p class="arrow left" id="left"><span class="material-symbols-outlined">arrow_back_ios</span></p>
+      <!-- ========== End Section ========== -->
+    <script>
+        // ========== Start Script ========== //
+
+        const arrow_left = document.getElementById('left');
+        const arrow_right = document.getElementById('right');
+        var index_imgs = 0;
+        var box_sliders = document.getElementById('sliders');
+        var imgs = box_sliders.querySelectorAll('.slide');
+        var interval;
+        //const src_list = ['immagini/thumb1.png', 'immagini/thumb2.jpeg', 'immagini/thumb3.jpg'];
+
+        function Show_function(){
+            //moltiplica il contatore * 100 = 2 * 100 = -200%
+            box_sliders.style.transform = 'translateX(' + (-index_imgs * 100) + '%)';
+        }
+
+        document.addEventListener('DOMContentLoaded', Auto_sliding);
+
+        function Auto_sliding(){
+            interval = setTimeout( ()=>{
+                index_imgs++
+                if (index_imgs > imgs.length-1) {
+                    index_imgs = 0;
+                }
+                Show_function();
+                Auto_sliding();
+            },3000);
+        }
+
+        function Stop_Scroll(){
+            clearTimeout(interval);
+            Auto_sliding();
+        }
+
+        arrow_right.addEventListener('click', function(){
+            //contatore minore del totale
+            if (index_imgs < imgs.length-1) {
+                index_imgs++;
+            }
+            else{
+                index_imgs = 0;
+            }
+            Show_function();
+            Stop_Scroll();
+        })
+
+        arrow_left.addEventListener('click', function(){
+           // Contatore maggiore di zero
+            if (index_imgs > 0) {
+                index_imgs--;
+            }
+            else{
+                index_imgs = imgs.length-1;
+            }
+            Show_function();
+            Stop_Scroll();
+        })
+        // ========== End Script========== //
+    </script>
+</body>
+</html>

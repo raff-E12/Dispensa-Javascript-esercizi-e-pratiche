@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componets</title>
+    <link rel="stylesheet" href="js-css/css_reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,787;1,787&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="js-css/login_page.css">
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+   <div class="box-inside">
+    <button id="btn-show"><h2>Show Popup!!</h2></button>
+   </div>
+   <div class="box-show">
+    <div id="pop-up" class="transparent">
+        <div class="row">
+            <h2>Important!!</h2>
+        </div>
+        <p class="par">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos mollitia impedit praesentium laborum! Amet cum expedita placeat quas dolor accusamus error earum quidem, ex quo atque odit. Repellat, saepe eius.</p>
+        <button id="btn-close"><h2>Ok</h2></button>
+    </div>
+   </div>
+   <script>
+    let btn_show = document.getElementById('btn-show');
+    let btn_close = document.getElementById('btn-close');
+    let box_show = document.querySelector('.box-show');
+    let pop_up = document.getElementById('pop-up');
+
+    function box_blur(){
+        box_show.style.display = 'flex';
+        setTimeout(() => {
+        pop_up.className = 'show';
+        }, 110);
+    };
+    btn_show.onclick = box_blur; 
+    btn_close.onclick = function(){
+        box_show.style.display = 'none';
+        pop_up.className = 'transparent';
+    }
+   </script>
+<div class="box-pass">
+    <div class="box-in-pass">
+        <div class="pass-gen">
+            <input type="text" name="text" id="password-gen" readonly placeholder="Genera...">
+            <button id="copy-btn" onclick="copy_pass()"><i class="fa-regular fa-copy"></i></button>
+        </div>
+        <div class="list-box">
+            <div class="list-ch">
+                    <p>Totale Password:</p>
+                    <input type="number" name="number" id="len-selected" min="4" max="20">
+            </div>
+            <div class="list-ch">
+                <p>Consenti Maiuscolo:</p>
+                <input type="checkbox" name="uppercase" id="up-selected">
+            </div>
+            <div class="list-ch">
+                <p>Consenti Minuscolo:</p>
+                <input type="checkbox" name="lowercase" id="low-selected">
+            </div>
+            <div class="list-ch">
+                <p>Consenti Numberi:</p>
+                <input type="checkbox" name="number" id="number-selected">
+            </div>
+            <div class="list-ch">
+                <p>Consenti Simboli:</p>
+                <input type="checkbox" name="symbols" id="symbols-selected">
+            </div>
+        </div>
+        <div class="btn-sc">
+            <button id="btn-sub"><p>Genera Password</p></button>
+        </div>
+    </div>
+</div>
+<script>
+    /* componenti principali password-box */
+
+    let pass_gen = document.getElementById('password-gen');
+    let copy_btn = document.getElementById('copy-btn');
+    let pass_btn = document.getElementById('btn-sub');
+
+    /*checkbox selezionabili */
+
+    let ch_Up = document.getElementById('up-selected');
+    let ch_Low = document.getElementById('low-selected');
+    let ch_lenght = document.getElementById('len-selected');
+    let ch_numb = document.getElementById('number-selected');
+    let ch_symb = document.getElementById('symbols-selected');
+
+    /*funzione e applicazione */
+
+    // lo scopo della funzione e estrarre le parti di funzione casuale di una stringa partendo da 
+    // un array a stringa in maniera elementare
+
+    function checked_inp(){
+         let Upper_list;
+         let Lower_list;
+         let Numb_list;
+         let Symbol_list;
+         let Select_state = [];
+         let pass_gen_txt = '';
+
+        if (ch_Up.checked) {
+            Upper_list = 'ABCDEFGHILMNOPQRSTUVZWYKJ';
+            Select_state.push(Upper_list)
+        }
+        else{
+            Upper_list = '';
+        }
+        if (ch_Low.checked) {
+            Lower_list = 'abcdefghilkjmnopqrstuvzwyx';
+            Select_state.push(Lower_list)
+        }
+        else{
+            Lower_list = '';
+        }
+        if (ch_numb.checked) {
+            Numb_list = '1234567890';
+            Select_state.push(Numb_list)
+        }
+        else{
+            Numb_list = '';
+        }
+        if (ch_symb.checked) {
+            Symbol_list = '@#[]+_*=&%$£!|§ç-:.,;^?';
+            Select_state.push(Symbol_list)
+        }
+        else{
+            Symbol_list = '';
+        }
+        let text_pss = Select_state.join('');
+        let passwd_rand = '';
+        let lenght = Number(ch_lenght.value);
+        for (let i = 0; i < lenght; i++) {
+            passwd_rand += text_pss.charAt(Math.floor(Math.random()*text_pss.length));
+            //console.log(text_pss.charAt(Math.floor(Math.random()*text_pss.length)));
+        }
+        pass_gen_txt = passwd_rand;
+        pass_gen.value = pass_gen_txt;
+        return pass_gen
+        //console.log('Risultato', pass_gen_txt);
+    }
+
+    // bottone di copia
+
+    function copy_pass(){
+        let passwd = pass_gen.value;
+        navigator.clipboard.writeText(passwd)
+    }
+    pass_btn.addEventListener('click', ()=>{
+        checked_inp();
+    });
+</script>
+<div class="box-drop">
+    <div class="drop-menu">
+        <div id="header-drop">
+            <h2>Dropdown</h2>
+            <i class="fa-solid fa-chevron-up down" id="arrow"></i>
+        </div>
+        <div class="drop-select">
+            <div class="drop-sc unshow">
+                <h2>Selection 1°</h2>
+                <div class="drop-hov drop"></div>
+            </div>
+            <div class="drop-sc unshow">
+                <h2>Selection 2°</h2>
+                <div class="drop-hov drop"></div>
+            </div>
+            <div class="drop-sc unshow">
+                <h2>Selection 2°</h2>
+                <div class="drop-hov drop"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // selezione caselle e assetti
+
+    let drop_header = document.getElementById('header-drop');
+    let drop_selection = document.querySelectorAll('.drop-sc');
+    let drop_hovering = document.querySelectorAll('.drop-hov');
+
+    // distribuzione dell'evento in meniera selettiva
+
+    drop_selection[0].addEventListener('mouseover', ()=>{
+            if (drop_hovering[0].classList.contains('drop')) {
+                drop_hovering[0].classList.add('undrop');
+                drop_hovering[0].classList.remove('drop');
+            }
+    });
+
+    drop_selection[0].addEventListener('mouseout', ()=>{
+            if (drop_hovering[0].classList.contains('undrop')) {
+                drop_hovering[0].classList.add('drop');
+                drop_hovering[0].classList.remove('undrop');
+            }
+    });
+
+    drop_selection[1].addEventListener('mouseover', ()=>{
+            if (drop_hovering[1].classList.contains('drop')) {
+                drop_hovering[1].classList.add('undrop');
+                drop_hovering[1].classList.remove('drop');
+            }
+    });
+
+    drop_selection[1].addEventListener('mouseout', ()=>{
+            if (drop_hovering[1].classList.contains('undrop')) {
+                drop_hovering[1].classList.add('drop');
+                drop_hovering[1].classList.remove('undrop');
+            }
+    });
+
+    drop_selection[2].addEventListener('mouseover', ()=>{
+            if (drop_hovering[2].classList.contains('drop')) {
+                drop_hovering[2].classList.add('undrop');
+                drop_hovering[2].classList.remove('drop');
+            }
+    });
+
+    drop_selection[2].addEventListener('mouseout', ()=>{
+            if (drop_hovering[2].classList.contains('undrop')) {
+                drop_hovering[2].classList.add('drop');
+                drop_hovering[2].classList.remove('undrop');
+            }
+    });
+
+    // funziona di apertura e chiusura dell' evento
+
+    function Open_and_Show_sc(){
+        let arrow = document.getElementById('arrow');
+    setTimeout(()=>{
+        if (drop_selection[0].classList.contains('unshow')) {
+        drop_selection[0].classList.add('show');
+        drop_selection[0].classList.remove('unshow');
+    }
+    else{
+        drop_selection[0].classList.add('unshow');
+        drop_selection[0].classList.remove('show');
+    }
+    }, 120)
+  setTimeout(()=>{
+    if (drop_selection[1].classList.contains('unshow')) {
+        drop_selection[1].classList.add('show');
+        drop_selection[1].classList.remove('unshow');
+    }
+    else{
+        drop_selection[1].classList.add('unshow');
+        drop_selection[1].classList.remove('show');
+    }
+  }, 130)
+   setTimeout(()=>{
+    if (drop_selection[2].classList.contains('unshow')) {
+        drop_selection[2].classList.add('show');
+        drop_selection[2].classList.remove('unshow');
+    }
+    else{
+        drop_selection[2].classList.add('unshow');
+        drop_selection[2].classList.remove('show');
+    }
+   }, 140)
+   if (arrow.classList.contains('down')) {
+    arrow.classList.add('up');
+    arrow.classList.remove('down');
+   } else {
+    arrow.classList.add('down');
+    arrow.classList.remove('up');
+   }
+    }
+
+    drop_header.addEventListener('click', Open_and_Show_sc);
+</script>
+<div class="box-script">
+    <div class="script-txt">
+        <h2 id="txt-ani">Coding is <b class="after-txt"></b></h2>
+    </div>
+</div>
+<script>
+    //lista di parole e componenti di indice e selezione
+    //lista di parole
+    const list_word = ['Love.', 'Like Art.', 'the Future.', 'Everything.', 'Amazing.'];
+    //indice di selezione parola in lista
+    //indice di estrazione stringa in sub-string
+    let word_index_list = 0;
+    let word_char_index = 0;
+    let dynamic_txt = document.querySelector('.after-txt');
+    let delting_txt = false;
+
+    // funzione di composizione e animazione degli elementi
+
+    function typeEffect(){
+        //cattura di indice di testo e di substring estratto
+        const currect_word_select = list_word[word_index_list];
+        const currect_slice_string = currect_word_select.slice(0, word_char_index);
+        dynamic_txt.textContent = currect_slice_string;
+        //verifica se la variabile è vera o falsa a seconda della locomozione attiva
+        //verifica se la substringa di riferimento indica se il valore è ancora minore rispetto al totale di parole scelta
+        if (!delting_txt && word_char_index < currect_word_select.length) {
+            word_char_index++;
+            setTimeout(()=>{
+                typeEffect();
+            }, 200);
+        }
+        //verifica se la substring di riferimento è e maggiore rispetto a zero allora diminuisce l'indice di valore
+        else if(delting_txt && word_char_index > 0){
+            word_char_index--;
+            setTimeout(()=>{
+                typeEffect();
+            }, 100);
+        }
+        else{
+            //conversione variabile booleana a seconda del tipo di condizione applicato dalla prima al intermezzo
+            delting_txt = !delting_txt;
+            if (!delting_txt) {
+                let increment = word_index_list + 1;
+                word_index_list = increment % list_word.length;
+                //console.log('indice lettera:', word_index_list, 'indice di lunghezza lista:', list_word.length);
+            }
+            else{
+                word_index_list = word_index_list;
+                //console.log('indice lettera:', word_index_list, 'indice di lunghezza lista:', list_word.length);
+            }
+            setTimeout(()=>{
+                typeEffect();
+            }, 100);
+        }
+        //console.log(delting_txt);
+    }    
+    typeEffect();
+</script>
+<div id="box-scroll">
+    <div class="cont-box">
+        <h2 id="feed-txt" class="nscrollX">Complimenti ben arrivato!!</h2>
+        <img src="immagini/tree (1).png" alt="tree" id="img-tree" class="imgscroll">
+    </div>
+</div>
+<script>
+    //componenti di selezione
+    let text_animation = document.getElementById('feed-txt');
+    let box_anim = document.getElementById('box-scroll');
+    //animazione di funzione
+    window.addEventListener('scroll', ()=>{
+        let top_box = window.scrollY;
+        let offset_width_box = box_anim.offsetTop;
+        let offset_height_box = box_anim.offsetHeight;
+        if (top_box >= offset_width_box && top_box < offset_width_box + offset_width_box) {
+            text_animation.classList.add('scrollX');
+            text_animation.classList.remove('nscrollX');
+        } else {
+            text_animation.classList.add('nscrollX');
+            text_animation.classList.remove('scrollX');
+        }
+    })
+</script>
+<div class="box-tabs">
+    <div class="tab">
+        <div class="title-tabs">
+            <h2>Js Tabs</h2>
+        </div>
+        <div class="section-tabs">
+            <div class="sc-tb" id="tab1">
+                <p>Blog</p>
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="sc-tb" id="tab2">
+                <p>Code</p>
+                <i class="fa-solid fa-code"></i>
+            </div>
+            <div class="sc-tb" id="tab3">
+                <p>Data</p>
+                <i class="fa-solid fa-database"></i>
+            </div>
+            <div class="sc-tb" id="tab4">
+                <p>New</p>
+                <i class="fa-regular fa-newspaper"></i>
+            </div>
+            <div class="sc-tb" id="tab5">
+                <p>About</p>
+                <i class="fa-solid fa-question"></i>
+            </div>
+            <div id="square-select" class="first"></div>
+        </div>
+        <div class="section-txt-tb">
+            <div class="tabs">
+              <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fringilla egestas turpis, eu accumsan sem egestas eget. Donec convallis leo mollis arcu auctor mollis. Fusce fermentum dui ac justo dapibus, vitae ornare lacus tempus. Nulla id molestie quam. Nunc in nisl nisi. Pellentesque et maximus tellus. Mauris finibus felis eget eros blandit varius non id mi. Nulla pellentesque nisl sit amet odio dapibus egestas. Proin nec sem sit amet ex accumsan tempor. Etiam diam lectus, vestibulum quis vestibulum in, pretium nec odio. Aenean mi lorem, porta in nibh a, ultrices aliquet purus.</p>
+            </div>
+            <div  class="tabs">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fringilla egestas turpis, eu accumsan sem egestas eget. Donec convallis leo mollis arcu auctor mollis. Fusce fermentum dui ac justo dapibus, vitae ornare lacus tempus. Nulla id molestie quam. Nunc in nisl nisi. Pellentesque et maximus tellus.</p>
+            </div>
+            <div  class="tabs">
+              <p>Aliquam eu convallis nibh. Curabitur fermentum in ligula a fringilla. In efficitur erat in nisl lobortis dignissim. Praesent dictum varius odio, ut condimentum neque. Pellentesque vitae sollicitudin purus, a lobortis sem. Sed in justo venenatis, convallis mi sed, rhoncus ante. Integer vel tortor nec erat sodales luctus nec nec eros. Fusce molestie mauris eget purus vulputate cursus.</p>
+            </div>
+            <div  class="tabs">
+               <p>Cras porta vitae libero in commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ex dolor, mollis porta ex at, feugiat pharetra nibh.</p>
+            </div>
+            <div  class="tabs">
+              <p>Praesent at tempus nisi, nec sodales odio. Donec convallis at dolor a consectetur. Duis tempus ante at blandit luctus. Pellentesque posuere id arcu in interdum.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //componenti tabs
+    let sc_Blog = document.getElementById('tab1');
+    let sc_Code = document.getElementById('tab2');
+    let sc_Data = document.getElementById('tab3');
+    let sc_New = document.getElementById('tab4');
+    let sc_About = document.getElementById('tab5');
+    //componenti per i rispettivi tabs
+    let sc_tabs = document.querySelectorAll('.tabs');
+    let index_select = document.getElementById('square-select');
+    //funzione di collegamento nei rispettive sezione
+
+    window.addEventListener('load', ()=>{
+        sc_tabs[0].style.display = 'block';
+        index_select.className = 'first';
+    })
+
+    for (let i = 0; i < sc_tabs.length; i++) {
+            sc_tabs[i].style.display = 'none';
+        }
+
+    sc_Blog.addEventListener('click', ()=>{
+        Box_1_fun();
+    })
+
+    function Box_1_fun(){
+        for (let i = 0; i < sc_tabs.length; i++) {
+            sc_tabs[i].style.display = 'none';
+        }
+        sc_tabs[0].style.display = 'block';
+        index_select.className = 'first';
+        //getBoundingClientRect() = cattura oggetto rispetto al documento.(DOMRect)
+        //let sc_vl1 = sc_tabs[0].getBoundingClientRect();
+        //console.log('cattura', sc_vl1);
+    }
+
+    sc_Code.addEventListener('click', ()=>{
+        Box_2_fun();
+    })
+
+    function Box_2_fun(){
+        for (let i = 0; i < sc_tabs.length; i++) {
+            sc_tabs[i].style.display = 'none';
+        }
+        sc_tabs[1].style.display = 'block';
+        index_select.className = 'two';
+    }
+
+    sc_Data.addEventListener('click', ()=>{
+        Box_3_fun();
+    })
+
+    function Box_3_fun(){
+        for (let i = 0; i < sc_tabs.length; i++) {
+            sc_tabs[i].style.display = 'none';
+        }
+        sc_tabs[2].style.display = 'block';
+        index_select.className = 'three';
+    }
+
+    sc_New.addEventListener('click', ()=>{
+        Box_4_fun();
+    })
+
+    function Box_4_fun(){
+        for (let i = 0; i < sc_tabs.length; i++) {
+            sc_tabs[i].style.display = 'none';
+        }
+        sc_tabs[3].style.display = 'block';
+        index_select.className = 'four';
+    }
+
+    sc_About.addEventListener('click', ()=>{
+        Box_5_fun();
+    })
+
+    function Box_5_fun(){
+        for (let i = 0; i < sc_tabs.length; i++) {
+            sc_tabs[i].style.display = 'none';
+        }
+        sc_tabs[4].style.display = 'block';
+        index_select.className = 'five';
+    }
+</script>
+<div class="box-drag-move">
+    <div class="box-drags" id="box-1">
+        <div class="box-moves" id="box-move"></div>
+    </div>
+    <div class="box-drags">
+        <div class="drag-boxs" id="box-drag"></div>
+        <div class="drop-boxs" id="box-drop" draggable="true"></div>
+    </div>
+</div>
+<script>
+    // selezione elementi dei realtivi box
+    const box_move = document.getElementById('box-move');
+    const box_drop = document.querySelector('.drop-boxs');
+    const box_drag = document.querySelector('.drag-boxs');
+    //funzione di interazione box basato sul movimento
+
+    function box_move_int(){
+    //La prima serve a creare dei contenitore che memorizzano la posizione degli elementi da cui catturare
+    const section_box_move = document.getElementById('box-1');
+        let cursor_and_obj = {
+        cursorX:0,
+        cursorY:0,
+        obj_dec:null,
+        obj_X:0,
+        obj_Y:0
+    } 
+    //Il primo evento tende a catturare le possibili cordinate e posizioni degli oggetti all'interno del documento
+    // all'interno del oggetto creato
+     section_box_move.addEventListener('mousedown', (e)=>{
+            if (e.target.classList.contains('box-moves')) {
+                cursor_and_obj.cursorX = e.clientX;
+                cursor_and_obj.cursorY = e.clientY;
+                cursor_and_obj.obj_dec = e.target;
+                cursor_and_obj.obj_X = e.target.offsetLeft;
+                cursor_and_obj.obj_Y = e.target.offsetTop;
+                cursor_and_obj.obj_dec.style.cursor = 'grab';
+            }
+    })
+    //Il secondo evento tende a calcolare le seguenti cordinate catturate in modo che le seguenti poszione degli elementi conbacino
+     section_box_move.addEventListener('mousemove', (e)=>{
+        //la condizione verifica che l'oggetto catturato non deve essere vuoto durante la cattura
+            if (cursor_and_obj.obj_dec !== null) {
+        //in questa parte si traccia il valore di evento del mouse e si calcola la distanza dal puntatore
+                const cursor_dec = {
+                    cursor_X_dec: e.clientX,
+                    cursor_Y_dec: e.clientY
+                }
+
+            const distance_calc = {
+                X: cursor_dec.cursor_X_dec - cursor_and_obj.cursorX,
+                Y: cursor_dec.cursor_Y_dec - cursor_and_obj.cursorY
+            }
+        //dopo aver calcolato la distanza si procede nel calcolare le nuove cordinate dell'oggetto
+            let newLeft = cursor_and_obj.obj_X + distance_calc.X;
+            let newTop = cursor_and_obj.obj_Y + distance_calc.Y; 
+            //console.log('calcolo posizione Left:', newLeft, 'calcolo posizione Top:', newTop);
+        //le due variabili creano un oggetto con le possibili infomazioni degli oggetti catturati rispetto al documento
+            const containerRect = section_box_move.getBoundingClientRect(); 
+            const objRect = cursor_and_obj.obj_dec.getBoundingClientRect(); 
+            //console.log('descrizione rettangolo:', containerRect, 'oggetto di spostamento:', objRect);
+        //l'addizzione insieme alla cuttura dei due oggetti fa si di intercettare le cordinate dove è possibile impostare un limite
+        //rispetto al box contenitore.
+            if (newLeft < 0) { 
+                newLeft = 0;
+            //la condizione previene che il bordo destro raggiunga il limite quando l'oggetto viene spostato a destra.
+            } 
+            else if (newLeft + objRect.width > containerRect.width) { 
+            //la seconda condizione somma la posizione ottenuta del offset con la larghezza del oggetto, facendosi che
+            //la posizione ottenuta non superi il limite di lunghezza del contenite quando l'oggetto viene spostato
+                newLeft = containerRect.width - objRect.width; 
+            }
+            //la stessa identica accade con la posizione del offset e nell'altezza del contenitore rispetto al box spostato.
+            if (newTop < 0) { 
+                newTop = 0; 
+            } else if (newTop + objRect.height > containerRect.height) { 
+                newTop = containerRect.height - objRect.height; 
+            } 
+            //console.log('limite raggiunto:', newLeft);
+            //una volta ottenuto il calcolo delle seguenti situazione si abbina il valore alla proprietà css
+            cursor_and_obj.obj_dec.style.left = newLeft + 'px'; 
+            cursor_and_obj.obj_dec.style.top = newTop + 'px'; 
+            cursor_and_obj.obj_dec.style.cursor = 'grabbing';
+            }
+        })
+
+        section_box_move.addEventListener('mouseup', () => { 
+        //la condizione verifica se la l'oggetto catturato, nella variabile d'oggetto fa si che
+        //il valore non sia vuoto, dopo che il valore è stato aggiunto ritorna vuoto
+            if (cursor_and_obj.obj_dec !== null) { 
+                cursor_and_obj.obj_dec.style.cursor = 'default'; 
+                cursor_and_obj.obj_dec = null; 
+            } 
+            });
+    }
+
+    box_move_int();
+
+    function drag_function() {
+    // Evento dragstart: inizia il trascinamento
+    box_drop.addEventListener('dragstart', (e) => {
+        box_drop.classList.add('drag');
+       // console.log('drag');
+    });
+
+    // Evento dragover: necessario per permettere il drop
+    box_drag.addEventListener('dragover', (e) => {
+        e.preventDefault(); // Preveniamo il comportamento predefinito
+    });
+
+    // Evento drop: gestisce il rilascio dell'elemento
+    box_drag.addEventListener('drop', (e) => {
+        //console.log('drop');
+        e.preventDefault(); // Preveniamo il comportamento predefinito
+
+        // Calcolare la nuova posizione relativa al contenitore
+        const containerRect = box_drag.getBoundingClientRect();
+        //console.log('box-drop:', containerRect);
+        const mouseX = e.clientX - containerRect.left;
+        const mouseY = e.clientY - containerRect.top;
+        //console.log('clientX', e.clientX, 'clientY', e.clientY);
+        //console.log('mouseX:', mouseX, 'mouseY:', mouseY);
+        // Assicurarsi che l'elemento rilasciato sia all'interno del contenitore
+        const newLeft = mouseX - box_drop.offsetWidth / 2;
+        const newTop = mouseY - box_drop.offsetHeight / 2;
+        //console.log('left:', newLeft,'top:', newTop);
+        if (newLeft >= 0 && newLeft + box_drop.offsetWidth <= containerRect.width &&
+            newTop >= 0 && newTop + box_drop.offsetHeight <= containerRect.height) {
+            box_drop.style.left = newLeft + 'px';
+            box_drop.style.top = newTop + 'px';
+            box_drag.appendChild(box_drop); // Inseriamo l'elemento trascinato nel contenitore
+            box_drop.classList.remove('drag');
+            box_drag.classList.remove('drag-over'); // Rimuovere lo stile quando l'elemento è rilasciato
+        } else {
+            box_drop.classList.remove('drag');
+            box_drag.classList.remove('drag-over');
+        }
+        //console.log('Tot-left:', newLeft + box_drop.offsetWidth,'Tot-right:', newTop + box_drop.offsetHeight);
+    });
+
+    // Evento dragenter: chiamato quando l'elemento trascinabile entra nel contenitore
+    box_drag.addEventListener('dragenter', (e) => {
+        e.preventDefault(); // Preveniamo il comportamento predefinito
+        box_drag.classList.add('drag-over');
+        box_drop.setAttribute('draggable', 'false'); // Opzionale, per cambiare stile quando l'elemento è sopra il contenitore
+    });
+
+    // Evento dragleave: chiamato quando l'elemento trascinabile lascia il contenitore
+    box_drag.addEventListener('dragleave', (e) => {
+        e.preventDefault(); // Preveniamo il comportamento predefinito
+        box_drag.classList.remove('drag-over');
+        box_drop.setAttribute('draggable', 'false'); // Rimuovere lo stile quando l'elemento lascia il contenitore
+    });
+}
+
+drag_function();
+
+//questo serve a calcolare le cordinate dele mouse rispetto al viewport quindi bisogno tenere in mente due cose
+//l'offset di un elemento = che fa riferimento al documento in questione su qui vogliamo puntare per avere l'interezione rispetto agli altri elementi.
+//le posizioni e coridinate = le posizioni e cordinate sono il punto cruciale di ogni singolo elemento su qui vogliamo calcolare le diverse posizioni sui vogliamo agire. 
+</script>
+<div class="circle-cl"></div>
+<div class="circle-cl"></div>
+<div class="circle-cl"></div>
+<div class="circle-cl"></div>
+<div class="circle-cl"></div>
+<div class="circle-cl"></div>
+<div class="circle-cl"></div>
+<div class="circle-cl"></div>
+<script>
+    //componenti
+    const circle_sc = document.querySelectorAll('.circle-cl');
+    let mouseX = 0;
+    let mouseY = 0;
+    let position = [];
+    //funzione di animazione del cerchio
+    circle_sc.forEach(()=>{
+    //aggiunge tutte le possibili cordinate ai cerchi presenti nel ciclo
+        position.push({x:0,y:0});
+        //console.log('part1:',position);
+    })
+    window.addEventListener('mousemove', (e)=>{
+    //prende le possibili cordinate del mouse
+        mouseX = e.clientX;
+        mouseY = e.clientY;  
+        circle_motion();
+    }
+   );
+   function circle_motion(){
+    //aggiunge i possibili valori nei rispettivi valori imposti nell array
+    position.unshift({x:mouseX,y:mouseY});
+    //console.log('part2:',position);
+    //rimuove le l'ultimi posizioni intercettate in modo da mantenere la stessa costante di lunghezza del trascinamento
+    position.pop();
+    //console.log('part3:',position);
+   circle_sc.forEach((circle, index)=>{
+    //aggiunge le possibili informazioni tenendo in considerazione l'array di riferimento e inoltrarle nello stile css
+    let x = position[index].x;
+    let y = position[index].y;
+    //console.log('part3:', 'x:', x, 'y:', y);
+    circle.style.left = (x - 12) + 'px';
+    circle.style.top = (y - 12) + 'px';
+   }
+)}
+</script>    
+</body>
+</html>

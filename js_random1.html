@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Card Responsive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu&display=swap" rel="stylesheet">
+    <style>
+    *{
+         padding: 0;
+         margin: 0;
+         box-sizing: border-box;
+         font-family: "Poppins", sans-serif;
+         font-weight: 900;
+         font-style: normal;
+     }
+
+      body{
+        background-color: #cccccc;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       flex-direction: column;
+      }
+
+       header{
+            width: 100%;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        #box-card{
+            margin: 10%;
+            width: auto;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bgGreen{
+            background-color: #718000;
+        }
+
+        #btn-order.bgGreen{
+            background-color: #718000;
+        }
+
+        #btn-order.bgGreen:hover{
+            background-color: #4a5300;
+            color: white;
+        }
+
+        .bgGray{
+            background-color: #969696;
+        }
+
+        
+        #btn-order.bgGray{
+            background-color: #969696;
+        }
+
+        .bgWhite{
+            background-color: #d8d8d8;
+        }
+
+        
+        #btn-order.bgWhite{
+            background-color: #d8d8d8;
+        }
+
+        .content-card{
+            display: flex;
+            align-items: flex-start;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        #shoes-sc{
+            background-color: #A6A6A6;
+            width: 140%;
+            height: 103.5vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        #shoes-sc h2{
+            font-size: 80px;
+            font-weight: 900;
+            padding: 30px;
+        }
+
+        #shoes-sc.green{
+            background-color: #b0c704;
+            color: #93a700;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #shoes-sc.white{
+            background-color: #F2F2F2;
+            transition: all 0.3s ease-in-out;
+            color: #e2e2e2;
+        }
+
+        #shoes-sc.gray{
+            background-color: #A6A6A6;
+            color: #bbbbbb;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .box-info{
+            background-color: rgb(255, 255, 255);
+            width: 140%;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: baseline;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .info-title{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: -1px;
+            padding: 1px;
+        }
+
+        .info-title p{
+            color: #807f7f;
+        }
+
+        .info{
+            color: #807f7f;
+            width: 60%;
+            padding: 2px;
+            font-size: 15px;
+            padding: 10px;
+            text-align: right;
+            font-weight: 400;
+        }
+
+        .sale{
+            width: 70%;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+            gap: 6%;
+            padding: 9px;
+        }
+
+        #btn-order{
+            width: 300px;
+            height: 50px;
+            font-size: 20px;
+            padding: 5px;
+            text-transform: uppercase;
+            color: #ffffff;
+            background-color: #cccccc;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+
+        #btn-order:hover{
+            background-color: rgb(204, 204, 204);
+            color: black;
+        }
+
+        .sale h3{
+            font-size: 50px;
+        }
+
+        .interaction{
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            gap: 30px;
+        }
+
+        .interaction p{
+            font-size: 20px;
+            font-weight: 200;
+        }
+
+        #gray{
+            width: 30px;
+            height: 30px;
+            background-color: #A6A6A6;
+            padding: 10px;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+
+        #gray.select{
+            border: 3px solid gray;
+            width: 30px;
+            height: 30px;
+            background-color: #A6A6A6;
+            padding: 10px;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+
+        #white.select{
+            border: 3px solid gray;
+            width: 30px;
+            height: 30px;
+            background-color: #F2F2F2;
+            padding: 10px;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+
+        #green.select{
+            border: 3px solid gray;
+            width: 30px;
+            height: 30px;
+            background-color: #b0c704;
+            padding: 10px;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+
+        #white{
+            width: 30px;
+            height: 30px;
+            background-color: #F2F2F2;
+            padding: 10px;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+
+        #green{
+            width: 30px;
+            height: 30px;
+            background-color: #b0c704;
+            padding: 10px;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+
+        .color-selection{
+            width: 40%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 5%;
+            padding: 10px;
+        }
+
+        .selection-sc{
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .nike-shoes1{
+            width: 50%;
+            position: absolute;
+            transform: translate(-50px, 80px);
+        }
+
+        .nike-shoes2{
+            width: 53%;
+            position: absolute;
+            transform: translate(-50px, -10px);
+        }
+
+        .nike-shoes3{
+            width: 50%;
+            position: absolute;
+            transform: translate(-50px, 20px);
+        }
+
+@media screen and (min-width:375px) {
+    .content-card{
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        margin-right: 20%;
+        margin-left: 0%;
+    }
+
+    #shoes-sc{
+        height: 70vh;
+    }
+
+     h1{font-size: 38.82px;}
+
+     h2{font-size: 32.35px;}
+
+     h3{font-size: 26.96px;}
+
+     p{font-size: 16px;}
+
+     .box-info{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+     }
+
+     /*#shoes{
+        position: absolute;
+        width: 50%;
+        transform: translate(40px, 140px);
+     } */
+
+     .info{
+        width: 100%;
+        text-align: center;
+     }
+
+     .interaction{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     }
+
+     .interaction p{
+        display: none;
+     }
+
+     .sale h3{
+        display: none;
+     }
+
+     .sale{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     }
+
+     
+     .nike-shoes1{
+            width: 40%;
+            position: absolute;
+            transform: translate(70px, 140px);
+        }
+
+        .nike-shoes2{
+            width: 40%;
+            position: absolute;
+            transform: translate(70px, 140px);
+        }
+
+        .nike-shoes3{
+            width: 40%;
+            position: absolute;
+            transform: translate(70px, 140px);
+        }
+}
+
+@media screen and (min-width:576px) {
+    .content-card{
+        width: 70%;
+        margin-right: 30%;
+        margin-left: 0%;
+    }
+
+    /*#shoes{
+        position: absolute;
+        width: 50%;
+        transform: translate(90px, 90px);
+     } */
+
+     .info-title{
+        width: 100%;
+        text-align: center;
+     }
+
+     .sale{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     }
+
+     
+     .nike-shoes1{
+            width: 40%;
+            position: absolute;
+            transform: translate(140px, 120px);
+        }
+
+        .nike-shoes2{
+            width: 40%;
+            position: absolute;
+            transform: translate(140px, 120px);
+        }
+
+        .nike-shoes3{
+            width: 40%;
+            position: absolute;
+            transform: translate(140px, 120px);
+        }
+
+}
+
+@media screen and (min-width:768px) {
+    .sale h3{
+        display: block;
+     }
+
+     
+     .interaction p{
+        display: block;
+     }
+
+    /* #shoes{
+        position: absolute;
+        width: 45%;
+        transform: translate(120px, 40px);
+     } */
+
+     
+     .nike-shoes1{
+            width: 39%;
+            position: absolute;
+            transform: translate(150px, 70px);
+        }
+
+        .nike-shoes2{
+            width: 39%;
+            position: absolute;
+            transform: translate(150px, 70px);
+        }
+
+        .nike-shoes3{
+            width: 39%;
+            position: absolute;
+            transform: translate(150px, 70px);
+        }
+
+
+}
+
+@media screen and (min-width:992px) { 
+    .content-card{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 103.5vh;
+        margin-right: 0%;
+        margin-left: 0%;
+    }
+
+    #shoes-sc{
+        width: 140%;
+        height: 103.5vh;
+    }
+
+   /* #shoes{
+        width: 38%;
+        position: absolute;
+        transform: translate(0px, 80px);
+        transition: all 0.3s ease-in-out;
+    } */
+
+    .box-info{
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 10%;
+    }
+
+    .info-title{
+        text-align: left;
+    }
+
+    .info{
+        width: 90%;
+        text-align: right;
+    }
+
+    
+    .nike-shoes1{
+            width: 47%;
+            position: absolute;
+            transform: translate(-50px, 80px);
+        }
+
+        .nike-shoes2{
+            width: 47%;
+            position: absolute;
+            transform: translate(-50px, -10px);
+        }
+
+        .nike-shoes3{
+            width: 47%;
+            position: absolute;
+            transform: translate(-50px, 20px);
+        }
+
+}
+
+@media screen and (min-width:1200px){
+
+}
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div id="box-card">
+        <div class="content-card">
+            <div id="shoes-sc" class="gray">
+                <h2>Nike</h2>
+                <img class="nike-shoes1" src="immagini/nike_airmax_1.png" id="shoes" alt="shoes">
+            </div>
+            <div class="box-info">
+                <div class="info-title">
+                    <h1>Nike Air Max Prototype</h1>
+                    <p>The Dream Collection.</p>
+                </div>
+                <p class="info">
+                    Featuring soft foam cushioning and lightweight, woven fabric in the upper, the Jordan Proto-Lyte is
+                    made for all-day, bouncy comfort.
+                    Lightweight Breathability: Lightweight woven fabric with real or synthetic leather provides
+                    breathable support.
+                    Cushioned Comfort: A full-length foam midsole delivers lightweight, plush cushioning.
+                    Secure Traction: Exaggerated herringbone-pattern outsole offers traction on a variety of surfaces.
+                </p>
+        <div class="selection-sc">              
+                <div class="interaction">
+                        <p>Available Colors:</p>
+                        <div class="color-selection">
+                            <div id="gray"></div>
+                            <div id="white"></div>
+                            <div id="green"></div>
+                        </div>
+                </div>
+            <div class="sale">
+                    <h3>$100</h3>
+                    <button id="btn-order">Buy Now</button>
+             </div>
+        </div>
+        </div>
+    </div>
+    <script>
+        const shoes_src = ['immagini/nike_airmax_1.png', 'immagini/nike_airmax_2.png', 'immagini/nike_airmax_3.png'];
+        const gray_sc = document.getElementById('gray');
+        const green_sc = document.getElementById('green');
+        const white_sc = document.getElementById('white');
+        const shoes = document.getElementById('shoes');
+        const bg_sh = document.getElementById('shoes-sc');
+        const body = document.querySelector('body');
+        const btn = document.getElementById('btn-order');
+
+
+        green_sc.addEventListener('click', function(){
+            shoes.setAttribute('src', shoes_src[2]);
+            shoes.className = 'nike-shoes3';
+            shoes.style.transition ='all 0.3s ease-in-out';
+            bg_sh.className='green';
+            body.className='bgGreen';
+            //this.style.border='3px solid rgb(94, 92, 92)';
+            btn.className='bgGreen';
+            Border_Select();
+            this.setAttribute('class', 'select');
+        })
+
+        gray_sc.addEventListener('click', function(){
+            shoes.setAttribute('src', shoes_src[0]);
+            shoes.className = 'nike-shoes1';
+            shoes.style.transition ='all 0.3s ease-in-out';
+            bg_sh.className='gray';
+            body.className='bgGray';
+            btn.className='bgGray';
+            Border_Select();
+            this.setAttribute('class', 'select');
+        })
+
+        white_sc.addEventListener('click', function(){
+            shoes.setAttribute('src', shoes_src[1]);
+            shoes.className = 'nike-shoes2';
+            shoes.style.transition ='all 0.3s ease-in-out';
+            bg_sh.className='white';
+            body.className='bgWhite';
+            btn.className='bgWhite';
+            Border_Select();
+            this.setAttribute('class', 'select');
+        })
+
+        function Border_Select(){
+            white_sc.removeAttribute('class');
+            gray_sc.removeAttribute('class');
+            green_sc.removeAttribute('class');
+        }
+    </script>
+</body>
+</html>

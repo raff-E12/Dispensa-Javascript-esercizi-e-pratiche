@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guida Javascript / jQuery</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="js/main.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#525fd6">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+	
+	<header id="pinco">
+		<h1>Guida Javascript / jQuery<br> Condizioni e cicli</h1>
+		<nav id="mainMenu">
+			<ul>
+				<li><a href="index.html" title="javascript">Home</a></li>
+				<li><a href="dove-jx.html" title="Dove posizionare Javascript">Dove posizionare Javascript</a></li>
+				<li><a href="sintassi-jx.html" title="La sintassi">Sintassi js</a></li>
+				<li><a href="condizionali-e-cicli.html" title="Condizionali e cicli">Condizioni e cicli</a></li>
+				<li><a href="funzioni.html" title="Le funzioni">Le funzioni</a></li>
+				<li><a href="jQuery.html" title="jQuery">jquery</a></li>
+				<li><a href="integrareJQ.html" title="Integrare jQuery nei progetti">Integrare jquery</a></li>
+				<li><a href="sintassiJquery.html" title="Sintassi jQuery ">Sintassi jquery</a></li>
+				<li><a href="selezioneJquery.html" title="La selezione degli elementi in jQuery ">La selezione degli elementi in jQuery</a></li>
+				<li><a href="gestione_eventiJq.html" title="La gestione degli eventi in jQuery ">La gestione degli eventi in jQuery</a></li>
+				<li><a href="metodi-jQ.html" title="Metodi jQuery ">La gestione degli eventi in jQuery</a></li>
+				
+			</ul>
+
+		</nav>
+		
+	</header>
+	
+	<main>
+		<section>
+			<h2>Le funzioni</h2>
+			<p>La funzione è una porzione di codice che può essere eseguita quando la richiamiamo all'interno del codice. Ma prima di poterla richiamare ne dobbiamo creare una. Molto spesso è necessario eseguire azioni simili in diverse parti di uno script. Ad esempio, potremmo voler mostrare un messaggio quando un utente effettua il login o il logout, oppure per altri motivi.
+				
+				Le funzioni permettono di riutilizzare il codice, evitando ripetizioni.
+				
+				Abbiamo già visto esempi di funzioni integrate  come alert(message), prompt(message, default) e confirm(question). </p>
+
+				<p>Dichiarazione di una funzione, avviene attraverso la parola function e subito dopo il nome che vogliamo assegnare alla funzione.</p>
+				<br>
+				<pre>
+					function mostraMessaggio() {
+						alert( 'Good morning!' )
+					  }
+					  mostraMessaggio() //richiamiamo la funzione per farla partire
+				</pre>
+				<script>
+					function mostraMessaggio() {
+						alert( 'Good morning!' )
+					  }
+					  mostraMessaggio();
+
+				</script>
+				<p>esempio di funzione con variabili</p>
+				<br>
+				<pre>
+					let nome = 'Giorgio'; //variabile esterna alla funzione,
+					 può essere usata all'interno della funzione
+					  e può essere anche modificata dalla funzione.
+
+					function mostraMessaggio() {
+					let messaggio = 'Ciao, ' + nome; // variabile interna, può essere usata
+					solo all'interno della funzione
+					alert(messaggio);
+					}
+
+					mostraMessaggio(); // Ciao Giorgio
+					console.log(messaggio)
+				</pre>
+				<script>
+					let nome = 'Giorgio'
+
+					function mostraMessaggio() {
+					let messaggio = 'Ciao, ' + nome
+					alert(messaggio)
+					}
+
+					mostraMessaggio() // Ciao Giorgio
+					//console.log(messaggio) //togliere commento per testare
+				</script>
+
+				<h3>passare parametri ad una funzione</h3>
+				<p>all'interno delle parentesi tonde possiamo passare dei parametri</p>
+				<script>
+					
+					function mostraMessaggio(nome,mex) {
+						alert(nome +' '+ mex)
+					}
+
+					mostraMessaggio('Enrico', 'come stai?'); 
+					</script>
+		</section>
+
+		<section>
+			<h2>Alcune funzioni interne per l'output</h2>
+			<h3>document.write()</h3>
+	
+			<p>Scrive nell'html il valore contenuto tra le parentesi, nel punto in cui si trova.</p>
+			
+			<script>
+				let x= 'testo concatenato';
+				document.write('testo scritto con il metodo write ' + x);
+			</script>
+			
+			<h3>innerHTML</h3>
+			
+			<p>Scrive o sovrascrive un valore all'interno dell'elemento html selezionato</p>
+			
+			<p id="esempio">testi da sovrascrivere</p>
+			<button onClick="document.getElementById('esempio').innerHTML='<strong>testo inserito con il metodo html</strong>'"> Sovrascrivi </button>
+			<script>
+				//document.getElementById('esempio').innerHTML="<h4>testo inserito con il metodo html</h4>";
+			</script>
+			
+			<h3>alert() o window.alert()</h3>
+			
+			<p> Crea una finestra modale o anche detta popup</p>
+			
+			<button onClick="alert('testo scritto col metodo alert')">mostra un popup</button>
+			
+			<h3>console.log()</h3>
+			
+			<p>Scrive all'interno della console javascript del tuo browser, utilizzato spesso per il debugging del codice</p>
+			
+			<button onClick="console.log('testo scritto col metodo console.log')">scrive nella console</button>
+		</section>
+	</main>
+	
+	<footer>
+		&copy; Copyright 2024
+	</footer>
+	
+</body>
+</html>

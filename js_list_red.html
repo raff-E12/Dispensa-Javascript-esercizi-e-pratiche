@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista di Cose da fare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+    *{
+     padding: 0;
+     margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    }
+
+    body{
+    display: flex;
+     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #030A8C;
+    overflow: hidden;
+    }
+
+    header{
+     width: 100%;
+     z-index: 1;
+     background-color: #f2a007;
+    }
+
+    header img{
+    width: 4%;
+    height: 4%;
+    padding: 10px;
+    }
+
+    .form-box{
+        margin: 30px;
+        width: 40%;
+        background-color: rgba(255, 255, 255, 0.233);
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        flex-direction: column;
+        backdrop-filter: blur(10px);
+        z-index: 1;
+        gap: 10px;
+        padding: 10px;
+        border: 1px solid #e7e7e7;
+        box-shadow: 0px 0px 10px 1px black;
+        border-radius: 10px;
+    }
+
+    .form-box h1{
+        font-weight: 500;
+        color: white;
+        padding: 9px;
+    }
+
+    .index-text{
+        padding: 10px;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2%;
+    }
+
+    #Textinput{
+        width: 100%;
+        height: 30px;
+        padding: 10px;
+        text-transform: capitalize;
+        font-weight: 500;
+        border: none;
+        border-radius: 8px;
+        background-color: #ececec81;
+        color: white;
+    }
+
+    #Textinput:focus{
+        outline: none;
+    }
+
+    .btn{
+        padding: 7px;
+        text-transform: capitalize;
+        background-color: white;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .circle{
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        padding: 2px;
+        background-color: aqua;
+        border-radius: 100%;
+    }
+
+    .circle.first{
+        width: 610px;
+        height: 510px;
+        top: -90px;
+        left: -120px;
+        background-color: #f2a007;
+        animation-name: circle-rotate;
+        animation-iteration-count: infinite;
+        animation-duration: 6000ms;
+        border: 10px solid #002E37;
+    }
+
+    .circle.second{
+        width: 600px;
+        height: 500px;
+        top: -200px;
+        left: -220px;
+        background-color: #0751f2;
+        animation-name: circle-rotate;
+        animation-iteration-count: infinite;
+        animation-duration: 6000ms;
+    }
+
+    
+    .circle.three{
+        width: 700px;
+        height: 500px;
+        top: 400px;
+        left: 920px;
+        background-color: #0751f2;
+        animation-name: circle-rotate;
+        animation-iteration-count: infinite;
+        animation-duration: 6000ms;
+        border: 10px solid #002E37;
+    }
+
+    .circle.four{
+        width: 700px;
+        height: 500px;
+        top: 500px;
+        left: 990px;
+        background-color: #ffd104;
+        animation-name: circle-rotate;
+        animation-iteration-count: infinite;
+        animation-duration: 6000ms;
+    }
+
+
+   @keyframes circle-rotate {
+        0%{transform: rotate(0deg) scale(1, 1.7);}
+        100%{transform: rotate(360deg) scale(1, 1.6);}
+    }
+
+    .bg-Blur{
+        width: 100%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 90vh;
+        z-index: 1;
+        backdrop-filter: blur(210px);
+    }
+
+    .add-listener{
+        width: 100%;
+        background-color: #e7e7e791;
+        box-shadow: inset 0px 0px 10px 1px black;
+        border: 1px solid #ffffff;
+        display: flex;
+        height: 200px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        overflow: scroll;
+        padding: 30px;
+    }
+
+    #parent-cont{
+        list-style: none;
+        display: flex;
+        align-items: baseline;
+        justify-content: first baselines;
+        width: 100%;
+        padding: 20px;
+        flex-direction: column;
+        gap: 16px;
+        height: 100%;
+    }
+
+    .boxlist{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        height: 40px;
+        background-color: #E9ECF2;
+        gap: 20%;
+        padding: 30px;
+        outline: 4px solid white;
+    }
+
+    .btn.del{
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #D9043D;
+        color: white ;
+    }
+
+    .parCont{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        justify-content: flex-start;
+        color: black;
+        font-weight: 300;
+        font-size: 14px;
+        text-align: center;
+        text-transform: capitalize;
+    }
+
+    .parCont input{
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+    }
+
+    .parDel{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        justify-content: flex-start;
+        color: rgb(107, 107, 107);
+        font-weight: 300;
+        font-size: 14px;
+        text-align: center;
+        text-transform: capitalize;
+        text-decoration: line-through;
+    }
+
+    .parDel input{
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+    }
+
+    .add-listener::-webkit-scrollbar{
+        width: 20px;
+        height: 40px;
+    }
+
+    .add-listener::-webkit-scrollbar-track{
+        background-color: #3b409b;
+    }
+
+    .add-listener::-webkit-scrollbar-thumb{
+        background-color: #030A8C;
+        border-radius: 10px;
+    }
+
+    .add-listener::-webkit-scrollbar:horizontal{
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div class="bg-Blur">
+        <div class="form-box">
+            <h1>Scrivi nella lista</h1>
+            <div class="index-text">
+                <input type="text" id="Textinput" placeholder="Scrivi.." name="testo_input">
+                <button class="btn" id="btn-add">Aggiungi</button>
+            </div>
+                <div class="add-listener">
+                    <ul  id="parent-cont">
+                    </ul>
+                </div>
+        </div>
+    </div>
+        <div class="circle first"></div>
+        <div class="circle second"></div>
+        <div class="circle three"></div>
+        <div class="circle four"></div>
+    <script>
+        var btn = document.getElementById('btn-add');
+        var text_input = document.getElementById('Textinput');
+        var parent_list = document.getElementById('parent-cont');
+
+        btn.addEventListener('click', function(){
+            const value = text_input.value;
+            if (value !== '' && value.length < 10) {
+            var pargraph = document.createElement('p');
+            var checkbox = document.createElement('input');
+            checkbox.setAttribute('type', 'checkbox');
+            checkbox.onclick = function(){
+                if (checkbox.checked) {
+                    pargraph.setAttribute('class', 'parDel');
+                }
+                else{
+                    pargraph.setAttribute('class', 'parCont');
+                }
+            }
+            var value_pr = document.createTextNode(value);
+            pargraph.appendChild(checkbox);
+            pargraph.appendChild(value_pr);
+            pargraph.setAttribute('class', 'parCont');
+            var list_adding = document.createElement('li');
+            list_adding.setAttribute('class', 'boxlist');
+            var btn_del = document.createElement('button');
+            var icon_del = document.createElement('span');
+            var icon_node = document.createTextNode('delete');
+            btn_del.setAttribute('class', 'btn del');
+            icon_del.appendChild(icon_node);
+            icon_del.className = 'material-symbols-outlined';
+            btn_del.appendChild(icon_del);
+            btn_del.onclick = function(){
+                parent_list.removeChild(list_adding);
+                Reload_list();
+            }
+            list_adding.appendChild(pargraph);
+            list_adding.appendChild(btn_del);
+            parent_list.appendChild(list_adding);
+            Reload_list();
+            }
+            else{
+                window.alert('Riprova ma mi raccomando scrivi almeno una cosa compresa di 10 parole non più di una.');
+            }
+        })
+
+        /*function Reload_list(){
+            localStorage.setItem('data', parent_list.innerHTML);
+        } 
+
+        function loadListFromLocalStorage() {
+       parent_list.innerHTML = localStorage.getItem('data');
+       }*/
+    </script>
+</body>
+</html>

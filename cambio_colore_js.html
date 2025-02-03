@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swictch color</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu&display=swap" rel="stylesheet">
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        
+  header{
+    width: 100%;
+   }
+
+   header img{
+   width: 4%;
+   height: 4%;
+   padding: 10px;
+   }
+
+        body{
+            background-color: #F2BFB3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content-box{
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            position: fixed;
+            top: 17%;
+            z-index: 2;
+        }
+
+        .content-box ul{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .Home{
+            width: 100%;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            margin-top: 46%;
+        }
+
+        .Home a{
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: white;
+
+        }
+
+        .Button{
+            width: 200px;
+            height: 70px;
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+            background-color: transparent;
+            font-size: 40px;
+            border:3px solid white ;
+            box-shadow: 7px 7px 0px 1px #0c0908;
+        }
+
+        .Button.red:hover{
+            background-color: #F20C1F;
+            box-shadow: 4px 4px 0px 1px #030202;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .Button:not(hover){
+            box-shadow: 7px 7px 0px 1px #0c0908;
+            transition: all 0.3s ease-in-out;
+            background-color: transparent;
+        }
+
+        .Button.green:hover{
+            background-color: #5A7302;
+            box-shadow: 4px 4px 0px 1px #030202;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .Button.orange:hover{
+            background-color: #F28705;
+            box-shadow: 4px 4px 0px 1px #030202;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .Button.yellow:hover{
+            background-color: #F2B749;
+            box-shadow: 4px 4px 0px 1px #030202;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        
+        .Button.blue:hover{
+            background-color: #202fcc;
+            box-shadow: 4px 4px 0px 1px #503c38;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .text-color{
+            width: 100%;
+            margin-top: 8%;
+            height: 600px;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 300px;
+            text-transform: uppercase;
+            padding: 40px;
+            transition: all 0.1s ease-in-out;
+        }
+
+        #body-change{
+            transition: all 0.4s ease-in-out;
+        }
+
+       .up{
+            width: 100%;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            margin-top: 16%;
+        }
+
+        .up a{
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: white;
+        }
+
+        header{
+            width: 100%;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body id="body-change">
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div id="sectionP"><p></p></div>
+    <div class="content-box"> 
+        <nav>
+            <ul>
+                <li><div class="Button red" id="red"><span></span>red</button></li>
+                <li><div class="Button blue" id="blue"><span></span>Blue</button></li>
+                <li><div class="Button yellow" id="yellow"><span></span>Yellow</button></li>
+                <li><div class="Button green" id="green"><span></span>Green</button></li>
+                <li><div class="Button orange" id="orange"><span></span>Orange</button></li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        var button_red = document.getElementById('red');
+        var color_text = document.getElementById('sectionP');
+        var body = document.getElementById('body-change');
+        var footer = document.getElementsByClassName('Home');
+        var button_blue = document.getElementById('blue');
+        var button_yellow = document.getElementById('yellow');
+        var button_green = document.getElementById('green');
+        var button_orange = document.getElementById('orange');
+
+        button_red.addEventListener('click', function(){
+            body.style.backgroundColor = '#F20C1F';
+            color_text.textContent = 'Red';
+            color_text.className = 'text-color';
+            color_text.style.color = '#85000b';
+            footer[0].setAttribute('class', 'up');
+        })
+
+        button_blue.addEventListener('click', function(){
+            body.style.backgroundColor = '#202fcc';
+            color_text.textContent = 'Blue';
+            color_text.className = 'text-color';
+            color_text.style.color = '#000b80';
+            footer[0].setAttribute('class', 'up');
+        })
+
+        button_yellow.addEventListener('click', function(){
+            body.style.backgroundColor = '#F2B749';
+            color_text.textContent = 'Yellow';
+            color_text.className = 'text-color';
+            color_text.style.color = '#f5c772';
+            footer[0].setAttribute('class', 'up');
+        })
+
+        button_green.addEventListener('click', function(){
+            body.style.backgroundColor = '#5A7302';
+            color_text.textContent = 'Green';
+            color_text.className = 'text-color';
+            color_text.style.color = '#313f00';
+            footer[0].setAttribute('class', 'up');
+        })
+
+        button_orange.addEventListener('click', function(){
+            body.style.backgroundColor = '#F28705';
+            color_text.textContent = 'Orange';
+            color_text.className = 'text-color';
+            color_text.style.color = '#aa5e00';
+            footer[0].setAttribute('class', 'up');
+        })
+
+    </script>
+</body>
+</html>

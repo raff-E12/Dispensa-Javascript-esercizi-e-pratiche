@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Hovering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #F2865E;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h2{
+            font-family: "Patua One", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        p{
+            font-family: "Patua One", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .box-text{
+            margin: 20%;
+            text-transform: uppercase;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .box-text h2{
+            font-size: 92px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .box-text p{
+            font-size: 20px;
+            color: white;
+        }
+
+        .hovering{
+            font-style: italic;
+            transform: scale(1.2,1.9);
+            transition: all 0.3s ease-in-out;
+            word-spacing: 12px;
+            letter-spacing: 10px;
+        }
+
+        .svg-js{
+            width: 2%;
+            height: 2%;
+            background-color: white;
+            padding: auto;
+        }
+
+        header{
+            width: 100%;
+            padding: 10px;
+        }
+
+        .home{
+            font-size: 20px;
+            font-family: "Patua One", serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+            text-decoration: none;
+        }
+
+        footer{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="immagini/icon/js_blank.svg" class="svg-js" alt="logo">
+    </header>
+    <div class="box-text">
+        <h2 id="paragrafo">Hello World.</h2>
+        <br>
+        <p>passa il mouse per correggere la parola</p>
+    </div>
+    <footer>
+        <a href="index.html" class="home" title="ritorna alla home">Home</a>
+    </footer>
+<script>
+    const text = document.getElementById('paragrafo');
+
+    text.addEventListener('mouseover', function (){
+        const par_inz = text.textContent;
+       if(par_inz.indexOf('Hello World.') !== 'Hello World.') {
+           var replance = par_inz.replace('Hello World.', 'Ciao Mondo.');
+           text.textContent = replance;
+           text.className = 'hovering';
+        }
+       })
+
+    text.addEventListener('mouseout', function(){
+        const par_inz = text.textContent;
+       if(par_inz.indexOf('Ciao Mondo.') !== 'Ciao Mondo.') {
+           var replance = par_inz.replace('Ciao Mondo.', 'Hello World.');
+           text.textContent = replance;
+           text.style.transition = 'all 0.3s ease-in-out';
+           text.removeAttribute('class', 'hovering');
+        }
+    })
+</script>
+</body>
+</html>

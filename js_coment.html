@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatore di Parole</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+    *{
+         padding: 0;
+         margin: 0;
+         box-sizing: border-box;
+         font-family: "Roboto", sans-serif;
+         font-weight: 400;
+         font-style: normal;
+     }
+
+     body{
+    background-color: #E8E4B1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.box-text h1{
+    font-size: 30px;
+    text-align: left;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.box-text p{
+    font-size: 13px;
+    font-weight: 200;
+    color: rgb(158, 158, 158);
+}
+
+.box-text{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 4px;
+    flex-direction: column;
+}
+
+.comment-box{
+    background-color: #FDFCEC;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    margin: 13%;
+    padding: 20px;
+    width: 40%;
+    gap: 26px;
+    border: 2px solid rgb(158, 158, 158);
+    box-shadow: 4px 2px 10px 1px black;
+}
+
+header{
+            width: 100%;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        .text-area{
+            font-size: 17px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            height: 200px;
+            border: 1px solid rgb(182, 182, 182);
+        }
+
+        .text-area:focus{
+            outline: none;
+        }
+
+        .box-1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-direction: column;
+            background-color: #FDFCEC;
+            padding: 20px;
+            width: 30%;
+            margin: 10%;
+            border: 2px solid rgb(158, 158, 158);
+            box-shadow: 4px 2px 10px 1px black;
+        }
+
+        .text-field{
+            width: 80%;
+            height: 40px;
+            border: none;
+            background-color: #f1f1f1;
+        }
+
+        .text-scripts{
+            width: 100%;
+            height: 40px;
+            border: none;
+            border-bottom: 2px solid #ac9d9d;
+            background-color: #f1f1f1;
+            margin-top: 10px;
+            font-size: 20px;
+            text-transform: capitalize;
+            color: #7e7c7c;
+            padding: 10px;
+        }
+
+        .label{
+            text-transform: capitalize;
+            color: #969696;
+            position: absolute;
+            transform: translate(8px, 17px);
+            font-size: 19px;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .focus{
+            transform: translate(8px, 2px);
+            font-size: 10px;
+            text-transform: capitalize;
+            color: #969696;
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+
+        .text-scripts:focus{
+            outline: none;
+            padding: 10px;
+        }
+
+        .text-box1 h1{
+            font-size: 21px;
+            text-align: left;
+           text-transform: capitalize;
+            font-weight: 400;
+        }
+
+    .text-box1 p{
+       font-size: 13px;
+       font-weight: 200;
+       color: rgb(158, 158, 158);
+     }
+
+     .text-box1{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-items: flex-start;
+        width: 80%;
+     }
+
+     .text-1{
+        width: 300px;
+        background-color: #ac9d9d;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        overflow: hidden;
+     }
+
+     .text-2:focus{
+        border: 2px solid #383636;
+        outline: none;
+     }
+
+     .text-2{
+        width: 89%;
+        height: 50px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        padding: 10px;
+        border: none;
+        text-transform: capitalize;
+        font-size: 14px;
+        color:#7e7c7c;
+        font-weight: 400;
+        transition: all 0.3s ease-in-out;
+        opacity: 100;
+     }
+
+     .textclose{
+        width: 0%;
+        height: 50px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        padding: 10px;
+        border: none;
+        text-transform: capitalize;
+        font-size: 14px;
+        color:#7e7c7c;
+        font-weight: 400;
+        animation-iteration-count: 3s;
+        transition: all 0.3s ease-in-out;
+        opacity: 100;
+        background-color: #383636;
+     }
+
+     .textclose:focus{
+        outline: none;
+     }
+     
+     .btn{
+        width: 19%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border: none;
+        cursor: pointer;
+     }
+
+     .circle{
+        width: 20px;
+        padding: 14px;
+        height: 20px;
+        border-radius: 80%;
+        border:2px solid rgb(187, 47, 12);
+        margin-left: 0.1%;
+     }
+
+     .circlebg{
+        width: 20px;
+        padding: 14px;
+        height: 20px;
+        border-radius: 80%;
+        border:2px solid rgb(187, 47, 12);
+        margin-left: 0.1%;
+        background-color: rgb(187, 47, 12);
+     }
+
+     .btn1{
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 49%;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        transform: translate(0%,0%);
+        transition: all 0.3s ease-in-out;
+     }
+
+     .circle2{
+        width: 20px;
+        padding: 14px;
+        height: 20px;
+        border-radius: 80%;
+        border:2px solid rgb(187, 47, 12);
+        margin-left: 0.1%;
+     }
+
+     .circlebg2{
+        width: 20px;
+        padding: 14px;
+        height: 20px;
+        border-radius: 80%;
+        border:2px solid rgb(187, 47, 12);
+        margin-left: 0.1%;
+        background-color: rgb(187, 47, 12);
+        transition: all 0.3s ease-in-out;
+     }
+
+
+     .text-3:focus{
+        border: 2px solid #383636;
+        outline: none;
+     }
+
+     .text-3{
+        width: 0%;
+        height: 50px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        padding: 10px;
+        border: none;
+        text-transform: capitalize;
+        font-size: 14px;
+        color:#7e7c7c;
+        font-weight: 400;
+        transition: all 0.3s ease-in-out;
+        border: 2px solid #383636;
+     }
+
+     .translateBox{
+        width: 50%;
+        height: 50px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        padding: 10px;
+        border: none;
+        text-transform: capitalize;
+        font-size: 14px;
+        color:#7e7c7c;
+        font-weight: 400;
+        transition: all 0.3s ease-in-out;
+        border: 2px solid #383636;
+     }
+
+     .btnTranslate{
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        border-radius: 49%;
+        transform: translate(100%,0%);
+        transition: all 0.3s ease-in-out;
+     }
+
+     .txt-focus{
+        width: 0%;
+        height: 30px;
+        padding: 1px;
+        background-color: rgb(0, 0, 0);
+        position: absolute;
+        transform: translate(-45px,0px);
+        transition: all 0.3s ease-in-out;
+        animation-name: animation-txt;
+        animation-iteration-count: infinite;
+        animation-duration: 3s;
+     }
+
+     .txt-blur{
+        width: 0%;
+        height: 0px;
+        padding: 0px;
+        background-color: rgb(0, 0, 0);
+        position: absolute;
+        transform: translate(-45px,0px);
+        transition: all 0.1s ease-in-out;
+     }
+
+     @keyframes animation-txt {
+        0%{opacity: 0;}
+        100%{opacity: 100;}
+     }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div class="comment-box">
+       <div class="box-text">
+        <h1>Scrivi un commento</h1>
+        <p id="counter-pr">Digita ogni parola è il contatore fa il resto.</p>
+       </div>
+        <textarea name="text" id="textarea" placeholder="Scrivi.." class="text-area"></textarea>
+    </div>
+    <script>
+        var par_counter = document.getElementById('counter-pr');
+        var text_area = document.getElementById('textarea');
+
+        text_area.addEventListener('keypress', function(){
+            var text_length = this.value.length;
+            if (text_length <= 180) {
+                par_counter.textContent = 'Limite di caratteri raggiungi    ' + text_length;
+            } 
+            else {
+                this.setAttribute('disabled', 'disabled');
+                par_counter.textContent = 'Spero che ti sei divertito arrivando al limite, riprova o ricarica la pagina.';
+                this.value = '';
+            }
+        })
+
+        text_area.addEventListener('blur', function(){
+            par_counter.textContent = 'Digita ogni parola è il contatore fa il resto.';
+        })
+
+        text_area.addEventListener('focus', function(){
+            par_counter.textContent = 'Pronto a scrivere!!';
+        })
+    </script>
+    <div class="box-1">
+       <div class="text-box1">
+        <h1>Scrivi per Provare.</h1>
+        <p>Digita nel testo per scoprire.</p>
+       </div>
+       <div class="text-field">
+        <label class="label" id="label">Scrivi sul testo..</label>
+        <input type="text" name="text" placeholder="" id="text-script" class="text-scripts">
+       </div>
+    </div>
+    <script>
+        var input_text = document.getElementById('text-script');
+        var text_focus = document.getElementById('label');
+
+
+        /*input_text.addEventListener('keydown', function(){
+         if(!input_text.textContent.length >= 10){
+            this.setAttribute('disabled', 'disabled');
+            }
+        else{
+            this.removeAttribute('disabled');
+        }
+          }) */
+          
+
+        input_text.addEventListener('focus', function(){
+            text_focus.setAttribute('class', 'focus');
+          })
+
+          input_text.addEventListener('blur', function(){
+            if(this.value === ''){
+            text_focus.setAttribute('class', 'label');
+            }
+           else if(this.value !== ''){
+            text_focus.setAttribute('class', 'focus');
+          }
+         })
+         
+        /*  if(input_text.value !== ''){
+          input_text.addEventListener('focus', function(){
+            text_focus.setAttribute('class', 'focus');
+            })
+          } */
+    </script>
+     <div class="box-1">
+        <div class="text-box1">
+         <h1>Clicca per Provare</h1>
+         <p>clicca per scoprire la sua interazione.</p>
+        </div>
+        <div class="text-1">
+         <input type="text" name="text" placeholder="Serch.." id="text-script1" class="textclose">
+         <button class="btn" id="btn1"><div class="circle" id="circle1"></div></button>
+        </div>
+    </div>
+        <script>
+            var txt_1 = document.getElementById('text-script1');
+            var btn_1 = document.getElementById('btn1');
+            var circle = document.getElementById('circle1');
+
+            btn_1.addEventListener('click', function(){
+                var text_open = txt_1.getAttribute('class') !== 'text-2';
+                if (!text_open) {
+                    txt_1.setAttribute('class', 'textclose');
+                    circle.setAttribute('class', 'circle');
+                    txt_1.setAttribute('disabled', 'disabled');
+                    //console.log('true');
+                } else {
+                    txt_1.setAttribute('class', 'text-2');
+                    circle.setAttribute('class', 'circlebg');
+                    txt_1.removeAttribute('disabled');
+                    //console('false');
+                }
+            })
+        </script>
+           <div class="box-1">
+            <div class="text-box1">
+             <h1>Clicca per Provare</h1>
+             <p>clicca per scoprire la sua interazione.</p>
+             <br>
+             <div class="text-1">
+                <div class="txt-blur" id="fc"></div>
+                <input type="text" name="text" placeholder="" id="text-script2" class="text-3">
+                <button class="btn1" id="btn2"><div class="circle2" id="circle2"></div></button>
+               </div>
+            </div>
+            <script>
+                var txt_2 = document.getElementById('text-script2');
+                var btn_2 = document.getElementById('btn2');
+                var circle2 = document.getElementById('circle2');
+                var txt_fc = document.getElementById('fc');
+    
+                btn_2.addEventListener('click', function(){
+                    var text_open1 = txt_2.getAttribute('class') !== 'text-3';
+                    if (!text_open1) {
+                        txt_2.setAttribute('class', 'translateBox');
+                        this.setAttribute('class', 'btnTranslate');
+                        circle2.setAttribute('class', 'circlebg2');
+                        txt_fc.style.display = 'block';
+                    } else {
+                        txt_2.setAttribute('class', 'text-3');
+                        this.setAttribute('class', 'btn1');
+                       circle2.setAttribute('class', 'circle2');
+                       txt_fc.style.display = 'none';
+                    }
+                })
+
+                txt_2.addEventListener('focus', function(){
+                    txt_fc.setAttribute('class', 'txt-blur');
+                })
+
+                txt_2.addEventListener('blur', function(){
+                    if(this.value === ''){
+                     txt_fc.setAttribute('class', 'txt-focus');
+                    }
+                    else if(this.value !== ''){
+                    txt_fc.setAttribute('class', 'txt-blur');
+                  }
+                })
+            </script>
+</body>
+</html>

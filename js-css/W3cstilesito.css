@@ -1,0 +1,398 @@
+/*css della seconda pagina di esercizio */
+
+.titolo1{
+    font-family: 'Mega drone';
+    font-size: 19px;
+    position: absolute;
+    top: 10px;
+    bottom: 0px;
+    left: 60px;
+    right: 0px;
+    display: inline-block;
+    color: white;
+    height: 0px;
+    padding-bottom: 0px;
+    display: inline-block;
+}
+
+
+ .a1{
+    position: absolute;
+    left: 250px;
+    top: 20px;
+    font-size: 19px;
+    font-family: 'gotham black';
+    text-decoration: dotted;
+    color:white;
+    display: inline-block;
+}
+
+.a2{
+    position: absolute;
+    left: 460px;
+    top: 20px;
+    font-size: 19px;
+    font-family: 'gotham black';
+    text-decoration: dotted;
+    color:white;
+    display: inline-block;
+}
+
+.a3{
+    position: absolute;
+    left: 633px;
+    top: 20px;
+    font-size: 19px;
+    font-family: 'gotham black';
+    text-decoration: dotted;
+    color:white;
+    display: inline-block;
+}
+
+.a4{
+    position: absolute;
+    left: 813px;
+    top: 20px;
+    font-size: 19px;
+    font-family: 'gotham black';
+    text-decoration: dotted;
+    color: white;
+    display: inline-block;
+}
+
+.a5{
+    position: absolute;
+    left: 971px;
+    top: 20px;
+    font-size: 19px;
+    font-family: 'Gotham black';
+    text-decoration: dotted;
+    color: white;
+    display: inline-block;
+}
+
+.img1{
+    position: absolute;
+    top: 10px;
+    left: 1300px;
+    right: 0px;
+    bottom: 0px;
+    width: 41px;
+    height: 41px;
+    color: white;
+    display: inline-block;
+}
+
+.register1{
+    position: relative;
+    top: 0px;
+    left: 1160px;
+    right: 0px;
+    bottom: 0px;
+    font-size: 18px;
+    font-family: 'Gotham Black';
+    color: white;
+    display: inline-block;
+}
+
+body{
+    background-image: url('imagine1.jpg');
+}
+
+@keyframes freccianera {
+    from{ position: absolute;left: 1303px;}
+    to{ position: absolute;left: 1303px;}
+}
+
+.img1:hover{
+    animation-name: freccianera;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+
+.div1{
+    display: inline-block;
+}
+
+@keyframes hover-mouse {
+    0% { color: #91B221;}
+    10% { color: #d7f868;}
+    20% { color:#d8fd5d;}
+    30% { color:#d5e797;}
+}
+
+ a:hover{
+    animation-name: hover-mouse;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    color: rgb(98, 245, 98);
+}
+
+.register1:hover{
+    animation-name: hover-mouse;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+
+.paragrafo1 {
+    font-family: 'Gotham Light';
+    font-size: 40px;
+    display: inline-block;
+    position: absolute;
+    top: 70px;
+    left: 62px;
+    right: 0px;
+    bottom:0px;
+    color: rgb(255, 255, 255);
+}
+
+.titolo2 {
+    font-family: 'Gotham Medium';
+    font-size: 50px;
+    display: inline-block;
+    position: absolute;
+    top: 120px;
+    left: 55px;
+    right: 0px;
+    bottom: 0px;
+    color: white;
+}
+
+.paragrafo2{
+    font-family: 'Gotham light';
+    display: inline-block;
+    position: absolute;
+    top: 199px;
+    left: 60px;
+    right: 0px;
+    bottom: 0px;
+    font-size: 20px;
+    color: white;
+}
+
+#login{
+    color: rgb(167, 167, 255);
+    word-spacing: 1px;
+    position: absolute;
+    left: 201px;
+}
+
+#form1 {
+    text-align: left;
+    position: absolute;
+    display: inline-block;
+    top: 350px;
+    left: 50px;
+    right: 0px;
+    bottom:0px;
+}
+#firstname {
+    font-family: 'Gotham Black';
+    display: inline-block;
+    position: absolute;
+    top: -55px;
+    bottom: 0px;
+    left: 10px;
+    right: 0px;
+    font-size: 25px;
+    color: white;
+}
+
+#lastname{
+    font-family: 'Gotham Black';
+    display: inline-block;
+    position: absolute;
+    top: -55px;
+    bottom:0px;
+    left: 290px;
+    right: 0px;
+    font-size: 25px;
+    color: white;
+}
+
+#email{
+    font-family: 'Gotham Black';
+    display: inline-block;
+    position: absolute;
+    top: 38px;
+    bottom: 0px;
+    left: 9px;
+    right: 0px;
+    font-size: 25px;
+    color: white;
+}
+
+#password{
+    font-family: 'Gotham Black';
+    display: inline-block;
+    position: absolute;
+    top: 38px;
+    left: 290px;
+    right: 0px;
+    bottom: 0px;
+    font-size: 25px;
+    color: white;
+}
+
+.punto1{
+    position: absolute;
+    display: inline-block;
+    top: -140px;
+    left: 501px;
+    right: 0px;
+    bottom: 0px;
+    font-family: 'aloevera';
+    font-size: 100px;
+    color:aqua;
+}
+
+/*textbox*/
+
+.firstname{
+    display: inline-block;
+    position: relative;
+    top: -40px;
+    left: 9px;
+    right: 0px;
+    bottom: 0px;
+    width: 220px;
+    height: 30px;
+    border-radius: 10px;
+    border-style:solid;
+    border-color: rgb(61, 61, 61);
+    background-image: url(user\ icon.svg);
+    background-repeat: no-repeat;
+    background-position: 199px;
+    background-size: 19px;
+}
+
+.lastname{
+    display: inline-block;
+    position: relative;
+    top: -93px;
+    left: 289px;
+    right: 0px;
+    bottom: 0px;
+    width: 220px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(61, 61, 61);
+    background-image: url(user\ icon.svg);
+    background-repeat: no-repeat;
+    background-position: 199px;
+    background-size: 19px;
+}
+
+.email{
+    display: inline-block;
+    position: relative;
+    top: -59px;
+    left: 9px;
+    right: 0px;
+    bottom: 0px;
+    width: 220px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(61, 61, 61);
+    background-image: url(message\ icon.svg);
+    background-repeat: no-repeat;
+    background-position: 199px;
+    background-size: 19px;
+}
+
+.password{
+    display: inline-block;
+    position: relative;
+    top: -112px;
+    left: 290px;
+    right: 0px;
+    bottom: 0px;
+    width: 220px;
+    height: 30px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(61, 61, 61);
+    background-image: url(eyes\ icon.svg);
+    background-repeat: no-repeat;
+    background-position: 199px;
+    background-size: 19px;
+}
+
+/*forest image*/
+
+.forestimage1{
+    width: 600px;
+    height: 600px;
+    z-index: -1;
+    position: absolute;
+    top: -1px;
+    bottom: 0px;
+    left: 766px;
+    right: 0px;
+    mask-image: linear-gradient(black, transparent);
+    opacity: 70%;
+}
+
+#button1{
+    background-color: #0597F2;
+    position: absolute;
+    top: 120px;
+    right: 0px;
+    bottom: 0px;
+    left: 6px;
+    display: inline-block;
+    width: 230px;
+    height: 49px;
+    border-radius: 40px;
+    border: none;
+    font-size: 18px;
+    color: white;
+    font-family: 'Gotham Black';
+}
+
+#button2{
+    background-color: #0597F2;
+    position: absolute;
+    top: 121px;
+    right: 0px;
+    bottom: 0px;
+    left: 287px;
+    display: inline-block;
+    width: 230px;
+    height: 51px;
+    border-radius: 40px;
+    border: none;
+    font-size: 17px;
+    color: white;
+    font-family: 'Gotham Black';
+}
+
+@keyframes hover-botton {
+    0% { color:white; box-shadow: 0px 0px 50px aqua; text-shadow: 0px 10px 100px white;}
+    10%{ color:white; box-shadow: 0px 0px 50px aqua; text-shadow: 0px 10px 100px white;}
+    20%{ color:white; box-shadow: 0px 0px 50px aqua; text-shadow: 0px 10px 100px white;}
+    30%{ color:white; box-shadow: 0px 0px 50px aqua; text-shadow: 0px 10px 100px white;}
+}
+
+#button1:hover{
+    animation-name: hover-botton;
+    animation-duration: 3s;
+}
+
+#button2:hover{
+    animation-name: hover-botton;
+    animation-duration: 3s;
+}
+
+.svg1{
+    position: absolute;
+    display: inline-block;
+    left: 1140px;
+    right: 0px;
+    top: 420px;
+    bottom: 0px;
+    width: 210px;
+    height: 120px;
+}

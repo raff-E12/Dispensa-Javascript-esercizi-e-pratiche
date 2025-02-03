@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem Ipsum Gen.</title>
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="Css/css_reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&family=Quicksand:wght@446&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="body-form">
+        <div class="box-line"></div>
+        <div class="box-gen">
+            <div class="intestaction"><h2>Lorem Ipsum Generator</h2></div>
+            <div class="options-pr">
+                <div class="bar-sc"><h4>Paragraphs:</h4><div class="box-range"><div class="line"></div><input type="range" id="paragraphs"  min="1" max="50" value="0" class="range"></div><p id="paragraphsValue">1</p></div>
+                <div class="bar-sc"><h4>Words per Paragraph:</h4><div class="box-range"><div class="line"></div><input type="range" id="words"  min="1" max="261" value="0" class="range"></div><p id="wordsValue">1</p></div>
+                <div class="options-sc">
+                    <div class="options">
+                        <h4>Tags:</h4>
+                        <select id="tags">
+                        </select>
+                    </div>
+                    <div class="options">
+                        <h4>Include HTML:</h4>
+                        <select id="include">
+                            <option value="Yes">
+                               <p>Yes</p>
+                            </option>
+                            <option value="No">
+                                <p>No</p>
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <button id="generate">
+                    <p>Generate Text</p>
+                </button>
+                <div class="output">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Js/script.js"></script>
+</body>
+</html>

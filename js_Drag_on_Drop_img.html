@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop Img</title>
+    <link rel="stylesheet" href="js-css/css_reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,787;1,787&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            width: 100%;
+            background-color: #F2C230;
+        }
+
+        h2{
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 19px;
+        }
+
+        p{
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 17px;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        body{
+            background: #c8c8c8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column
+        }
+
+        .box-vl{
+            width: 60%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            flex-direction: column;
+            gap: 12px;
+            margin: 10%;
+        }
+
+        .btn-vl{
+            width: 50%;
+            height: 60px;
+            background-color: #F2C230;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            cursor: pointer;
+            color: black;
+        }
+
+        .btn-vl:active{
+            background-color: #f9ba00;
+            color: white;
+        }
+
+        input[type="file"]{
+            display: none;
+        }
+
+        .img-selector{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        #error-msg{
+            color: red;
+            text-transform: capitalize;
+        }
+
+        .img-selector figure{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 220px;
+            gap: 10px;
+            padding: 3px;
+        }
+
+        .img-selector figure figcaption{
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 14px;
+        }
+
+        .img-selector figure img{
+            width: 70%;
+        }
+
+        .box-vl.active{
+            border: 2px dotted #f9ba00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+   <div class="box-vl">
+    <div class="btn-vl">
+        <input type="file" name="file-img" id="file-upload" multiple accept="image/*">
+        <p>Carica il tuo file <i class="fa-solid fa-upload"></i></p>
+    </div>
+    <p id="error-msg"></p>
+    <div class="img-selector" id="img-gallery">
+    </div>
+   </div>
+   <script>
+let btn_export = document.getElementById('file-upload');
+const erro_msg = document.getElementById('error-msg');
+const gallery_img = document.getElementById('img-gallery');
+const box = document.querySelector('.box-vl');
+
+function File_Handler (file, name, type){
+    if (type.split('/')[0] !== 'image') {
+        erro_msg.textContent = "Per favore carica un'immagine valida";
+        return false;
+    }
+    
+    erro_msg.textContent = "";
+
+    //L'oggetto FileReader() è un metodo per leggere un file multimediale partendo da un array.
+    let reader = new FileReader();
+    //readasDataURL() è un di lettura multimediale per i file o blob.
+    reader.readAsDataURL(file);
+    //onloadend è un evento di lettura di successo del file.
+    reader.onloadend = () => {
+        let imageContainer = document.createElement('figure');
+        let img = document.createElement('img');
+        img.setAttribute('src', reader.result);
+        imageContainer.appendChild(img);
+        imageContainer.innerHTML += `<figcaption>${name}</figcaption>`;
+        gallery_img.appendChild(imageContainer);
+    };
+    console.log('Oggetto creato:',reader);
+};
+
+btn_export.addEventListener('change', () => {
+    gallery_img.innerHTML = '';
+    Array.from(btn_export).forEach((file) => {
+    //per ogni funzione presa dagli eventi basato sui seguenti file di selezione in un oggetto
+    //le proprietà prese in argomento fanno riferimento all'oggetto con le sue proprietà.
+        File_Handler(file, file.name, file.type);
+    });
+    console.log('Lista', btn_export);
+});
+
+let fileLabel = document.querySelector('.btn-vl');
+fileLabel.addEventListener('click', () => {
+   btn_export.click();
+});
+
+box.addEventListener('dragenter', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    box.classList.add('active');
+}, false);
+
+box.addEventListener('dragover', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    box.classList.add('active');
+}, false);
+
+box.addEventListener('dragleave', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    box.classList.remove('active');
+}, false);
+
+box.addEventListener('drop', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    box.classList.remove('active');
+    let dragdata = e.dataTransfer;
+    let dragfiles = dragdata.files;
+    gallery_img.innerHTML = ''; 
+    Array.from(dragfiles).forEach((file) => {
+        File_Handler(file, file.name, file.type);
+    });
+    console.log('Lista-files', dragfiles);
+}, false);
+
+</script>
+</body>
+</html>

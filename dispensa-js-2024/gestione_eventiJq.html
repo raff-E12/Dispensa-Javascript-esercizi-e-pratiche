@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gestione degli Eventi in jQuery</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#525fd6">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    
+    <header>
+        <h1>Guida jQuery<br> Gestione degli Eventi in jQuery</h1>
+        <nav id="mainMenu">
+            <ul>
+                <li><a href="index.html" title="javascript">Home</a></li>
+                <li><a href="dove-jx.html" title="Dove posizionare Javascript">Dove posizionare Javascript</a></li>
+                <li><a href="sintassi-jx.html" title="La sintassi">Sintassi js</a></li>
+                <li><a href="condizionali-e-cicli.html" title="Condizionali e cicli">Condizioni e cicli</a></li>
+                <li><a href="funzioni.html" title="Le funzioni">Le funzioni</a></li>
+                <li><a href="jQuery.html" title="jQuery">jQuery</a></li>
+                <li><a href="integrareJQ.html" title="Integrare jQuery nei progetti">Integrare jQuery</a></li>
+                <li><a href="sintassiJquery.html" title="Sintassi jQuery">Sintassi jQuery</a></li>
+                <li><a href="selezioneJquery.html" title="La selezione degli elementi in jQuery">La selezione degli elementi in jQuery</a></li>
+                <li><a href="gestione_eventiJq.html" title="La gestione degli eventi in jQuery">La gestione degli eventi in jQuery</a></li>
+                <li><a href="metodi-jQ.html" title="Metodi jQuery">Metodi jQuery</a></li>
+                <li><a href="Javascript-riassunto.html" title="Riassunto Javascript">Riassunto Javascript</a></li>
+                <li><a href="eventi-js.html" title="Eventi Javascript">Eventi in Javascript</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Introduzione alla Gestione degli Eventi in jQuery</h2>
+            <p>Uno dei punti di forza di jQuery è la sua capacità di gestire eventi in modo semplice e intuitivo. Gli eventi in jQuery sono simili a quelli in JavaScript, ma con una sintassi che rende il codice più conciso e leggibile.</p>
+            
+            <h2>Gestione degli Eventi di Base</h2>
+            <p>Per aggiungere un evento a un elemento, puoi usare i metodi di jQuery specifici per ogni tipo di evento. Ad esempio, per gestire un evento di click, usa il metodo <code>.click()</code>.</p>
+            <div class="code">
+                <pre><code>// Aggiungere un evento click a un bottone
+$('#mioBottone').click(function() {
+    alert('Bottone cliccato!');
+});</code></pre>
+            </div>
+
+            <h2>Eventi più Comuni in jQuery</h2>
+            <ul>
+                <li><code>click()</code>: Gestisce i click su un elemento.</li>
+                <li><code>dblclick()</code>: Gestisce il doppio click su un elemento.</li>
+                <li><code>mouseenter()</code>: Gestisce l'entrata del mouse su un elemento.</li>
+                <li><code>mouseleave()</code>: Gestisce l'uscita del mouse da un elemento.</li>
+                <li><code>focus()</code>: Gestisce l'acquisizione del focus su un campo input.</li>
+                <li><code>blur()</code>: Gestisce la perdita del focus su un campo input.</li>
+            </ul>
+
+            <h2>Metodo <code>.on()</code> per Eventi Multipli</h2>
+            <p>Il metodo <code>.on()</code> è estremamente versatile e permette di gestire più eventi con un singolo comando. È utile anche per eventi dinamici, che non esistono al momento del caricamento della pagina.</p>
+            <div class="code">
+                <pre><code>// Aggiungere più eventi a un elemento
+$('#mioElemento').on({
+    click: function() {
+        alert('Elemento cliccato!');
+    },
+    mouseenter: function() {
+        $(this).css('background-color', 'yellow');
+    },
+    mouseleave: function() {
+        $(this).css('background-color', '');
+    }
+});</code></pre>
+            </div>
+
+            <h2>Delegazione degli Eventi</h2>
+            <p>La delegazione degli eventi permette di gestire eventi su elementi generati dinamicamente o su elementi che esistono in futuro, assegnando l'evento a un elemento padre esistente.</p>
+            <div class="code">
+                <pre><code>// Delegazione di un evento click su elementi futuri
+$('#lista').on('click', 'li', function() {
+    alert('Elemento della lista cliccato: ' + $(this).text());
+});</code></pre>
+            </div>
+
+            <h2>Rimozione degli Eventi</h2>
+            <p>Puoi rimuovere eventi precedentemente assegnati usando il metodo <code>.off()</code>. Questo è utile quando vuoi disattivare temporaneamente o permanentemente l'interazione con un elemento.</p>
+            <div class="code">
+                <pre><code>// Rimuovere un evento click
+$('#mioBottone').off('click');</code></pre>
+            </div>
+
+            <h2>Prevenire il Comportamento Predefinito</h2>
+            <p>Alcuni eventi, come il click su un link, eseguono un'azione predefinita. Puoi prevenire questa azione usando il metodo <code>preventDefault()</code>.</p>
+            <div class="code">
+                <pre><code>// Prevenire il comportamento predefinito di un link
+$('a').click(function(event) {
+    event.preventDefault();
+    alert('Il link è stato cliccato, ma l\'azione predefinita è stata prevenuta.');
+});</code></pre>
+            </div>
+
+            <h2>Conclusione</h2>
+            <p>La gestione degli eventi in jQuery è semplice e potente, permettendo di creare interazioni dinamiche e reattive in modo conciso. Utilizzando i metodi e le tecniche di delegazione, è possibile gestire eventi su elementi statici e dinamici con facilità.</p>
+            <p>Questo è un esempio di pagina creata in con gli eventi in jQuery con solo selettore <a href="menu-scroll-jquery.html">Clicca!!</a></p>
+        </section>
+    </main>
+    
+    <footer>
+        &copy; Copyright 2024
+    </footer>
+    
+</body>
+</html>

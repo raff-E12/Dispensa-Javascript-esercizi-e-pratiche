@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Api and fetch</title>
+<link rel="stylesheet" href="js-css/css_reset.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,787;1,787&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+<style>
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    width: 100%;
+    background-color: #F2C230;
+}
+
+
+header img{
+    width: 4%;
+    height: 4%;
+    padding: 10px;
+}
+
+h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 19px;
+    text-transform: capitalize;
+}
+
+p{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 17px;
+}
+
+body{
+    background-color: #F2F2F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.box-script{
+    border: 2px solid red;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    top: 10px;
+    height: 450px;
+}
+
+.box-poke{
+    border: 2px solid red;
+    height: 450px;
+    width: 420px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
+.box-img{
+    border: 2px solid red;
+    height: 120px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.box-img img{
+    width: 100%;
+}
+
+.box-txt{
+    width: 320px;
+    height: 190px;
+    border: 2px solid red;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+<header>
+    <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+</header>
+<div class="box-script">
+    <h2 id="edit-text">Hello World!!</h2>
+</div>
+<script>
+setTimeout(()=>{
+function call_rename_text(){
+let text_h2 = document.getElementById('edit-text');
+text_h2.textContent = 'ciao mondo';
+}
+
+function while_loop(){
+return new Promise((resolve, reject) => {
+let condition = true;
+let index = 0;
+setTimeout(()=>{
+if (condition){ 
+while (index < 10){
+    const text_loop = document.createTextNode('Hello World!!');
+    let element = document.createElement('h2');
+    element.appendChild(text_loop);
+    let body = document.querySelector('.box-script');
+    body.appendChild(element);
+    index++;
+}
+resolve('loop andato a buon-fine.');
+} else {
+reject('loop non andato a buon-fine.');
+let box = document.querySelector('.box-script');
+let body = document.querySelector('body');
+body.removeChild(box);
+}
+}, 1200)
+})
+}
+
+async function loop_verified(){
+    try {
+    const While_loop_result = await while_loop();
+    window.alert(While_loop_result);
+    } catch (error) {
+        window.alert(error);
+    }
+    finally{
+        window.alert('Ora che sai la verità puoi skippare.');
+    }
+}
+call_rename_text();
+loop_verified();
+}, 2400)
+</script>
+<div class="box-poke" id="box-con">
+   <div class="box-img" id="img-box">
+    <img src="" alt="img" id="img-poke">
+   </div>
+    <div class="box-txt">
+        <h2 id="name-pk">random text.</h2>
+        <h2 id="name-pk-1">random text.</h2>
+        <h2 id="name-pk-2">random text.</h2>
+        <h2 id="name-pk-3">random text.</h2>
+    </div>
+</div>
+<script>
+    const box_poke = document.getElementById('box-con');
+    const box_img = document.getElementById('img-box');
+    let img_pok = document.getElementById('img-poke');
+    const text_box = document.getElementById('box-txt');
+    let text_h2 = document.getElementById('name-pk');
+    let text_h3 = document.getElementById('name-pk-1');
+    let text_h4 = document.getElementById('name-pk-2');
+    let text_h5 = document.getElementById('name-pk-3');
+    async function Api_working(){
+    const url_fetch = 'https://pokeapi.co/api/v2/pokemon/pikachu';
+        try {
+            const response_api = await fetch(url_fetch);
+            const data_json = await response_api.json();
+            data_ext(data_json);
+            console.log(data_json);
+        } catch (error) {
+            console.log(error);
+        }
+        finally{
+            window.alert('Api requisito e importato con successo.');
+        }
+    }
+
+    function data_ext(data) {
+        const img = data.sprites.front_default;
+        img_pok.setAttribute('src', img);
+        const name_pk = data.name;
+        const order_name = data.order;
+        text_h2.textContent = 'Nome:' + name_pk;
+        text_h3.textContent = 'Ordine:' + order_name;
+        const type_pk = data.types[0].type.name;
+        text_h4.textContent = 'Tipo:' + type_pk;
+        const id_pk = data.id;
+        text_h5.textContent = 'id:' + id_pk;
+    }
+    Api_working();
+</script>
+</body>
+</html>

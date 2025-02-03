@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Menu Es.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ubuntu&display=swap" rel="stylesheet">
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box; 
+    }
+    
+
+   h1{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 46.28px;
+   }
+
+   
+   h2{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 38.57px;
+   }
+
+   
+   h3{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 32.14px;
+   }
+   
+   h4{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 26.78px;
+   }
+
+   
+   h5{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22.32px;
+   }
+
+   
+   h6{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18.6px;
+   }
+
+  p{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15.5px;
+   }
+
+   a{
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+   }
+
+   body{
+    background-color: #8AA6A3;
+   }
+
+   .main-sc{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+   }
+
+   .main-sc nav{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: #BFBFBF;
+    padding: 20px;
+    width: 300px;
+    height: 100%;
+    gap: 190px;
+    left: -100%;
+    transition: all 0.3s ease-in-out;
+   }
+
+   .main-sc nav ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   }
+
+   .box-text{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    padding: 0px;
+    transition: all 0.3s ease-in-out;
+   }
+
+   .box-text section{
+    text-align: left;
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+    padding: 150px;
+   }
+
+   .box-text section h2{
+    text-transform: uppercase;
+    color: #1f1f1f;
+   }
+
+   .box-text h1{
+    text-transform: uppercase;
+    padding: 150px;
+   }
+
+   .box-text section h2::before{
+    content: "";
+    width: 300px;
+    height: 100px;
+    background-color: #5E8C5D;
+    position: relative;
+    padding: 2px;
+    margin-right: 10px;
+   }
+
+   .spacing{
+    width: 40px;
+    height: 100%;
+    transition:all 0.3s ease-in-out;
+   }
+
+   .main-sc nav ul li a.true::before{
+    content: '';
+    width: 100px;
+    height: 100px;
+    padding: 4px;
+    background-color: #5E8C5D;
+    margin-right: 4px;
+   }
+
+   .main-sc nav ul li a.false::before{
+    content: '';
+    display: none;
+   }
+
+   .icon-box{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+   }
+
+   .icon-box img{
+    cursor: pointer;
+   }
+
+   .spacing img{
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    cursor: pointer;
+   }
+    </style>
+</head>
+<body>
+    <main class="main-sc">
+        <nav id="navContent">
+          <div class="icon-box">
+            <img src="immagini/icon/cross icon.svg" alt="cross" id="cross">
+          </div>
+            <ul>
+            <li><a href="#intro">Intro</a></li>
+            <li> <a href="#first">First section</a> </li>
+            <li> <a href="#second">Second section</a> </li>
+            <li><a href="#third">Third section</a></li>
+            <li><a href="#fourth">Fourth section</a>
+            <li><a href="#fifth">Fifth section</a></li>
+            <li><a href="#sixth">Sixth section</a></li>
+            <li><a href="#seventh">Seventh section</a></li>
+            <li><a href="#eighth">Eighth section</a></li>
+            </ul>
+        </nav>
+        <div class="spacing" id="spacing">
+          <img src="immagini/icon/ham menu icon.svg" alt="ham" id="ham">
+        </div>
+        <article id="articleSection" class="box-text">
+          <h1>Clicca per sapere di più.</h1>
+          
+          <section id="intro">
+            <h2>Intro</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis tempore labore quo, dolorem sunt eligendi quaerat tempora quisquam neque minima reiciendis accusantium magni repellat quod vel maiores debitis optio sed.</p>
+          </section>
+          
+          <section id="first">
+            <h2>First section</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nisi nisl, pharetra et odio non, sollicitudin bibendum enim. Integer posuere, est et posuere feugiat, nisi nunc auctor nisi, eu tristique ipsum justo ut tellus. Phasellus molestie ultricies sodales. Nunc nec ligula placerat, vehicula orci a, tincidunt ante. Donec ac metus quis nunc cursus tincidunt.</p>
+          <p>Vivamus sed ullamcorper ex. Suspendisse potenti. Nam sodales hendrerit enim, non fringilla mauris gravida maximus. Sed pharetra purus eget quam auctor luctus. Aenean arcu nulla, aliquam ut consectetur non, tincidunt eget sem. Aliquam tristique mattis urna, a posuere justo dapibus nec. Aenean non lacinia nisl. Aenean ac bibendum eros. Integer posuere enim tempor auctor venenatis. Etiam convallis nunc at eros ultrices, et elementum erat ultrices.</p>
+          </section>
+          
+          <section id="second">
+            <h2>Second section</h2>
+            <p>Phasellus congue felis quis arcu dignissim, pulvinar mollis ante pretium. Sed ac auctor quam. Mauris ac tellus et quam porta mattis quis quis quam. Sed tristique gravida mauris, eget eleifend nunc accumsan in.</p>
+            <p>Donec consequat fringilla diam, sit amet aliquam magna faucibus vel. Sed sagittis id nisi et facilisis. Aliquam erat volutpat. Mauris arcu nunc, euismod at enim at, porttitor laoreet lorem. In molestie dui at augue aliquet, in tincidunt nisi dictum. Donec sagittis enim vestibulum est elementum, vel lobortis libero suscipit.</p>
+          <p>Vivamus sed ullamcorper ex. Suspendisse potenti. Nam sodales hendrerit enim, non fringilla mauris gravida maximus. Sed pharetra purus eget quam auctor luctus. Aenean arcu nulla, aliquam ut consectetur non, tincidunt eget sem. Aliquam tristique mattis urna, a posuere justo dapibus nec. Aenean non lacinia nisl. Aenean ac bibendum eros. Integer posuere enim tempor auctor venenatis. Etiam convallis nunc at eros ultrices, et elementum erat ultrices.</p>
+          </section>
+          
+          <section id="third">
+            <h2>Third section</h2>
+            <p>Etiam id ex dolor. Curabitur quis tellus vitae neque finibus suscipit. Donec vel nisl ac justo mattis molestie. Vivamus in interdum est. Fusce sed malesuada tellus. Suspendisse imperdiet condimentum sem in tristique. Donec faucibus dui non pharetra cursus. Praesent congue turpis leo, vitae porttitor elit fringilla vel. Phasellus ut aliquet augue. Donec egestas luctus placerat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nisi nisl, pharetra et odio non, sollicitudin bibendum enim. Integer posuere, est et posuere feugiat, nisi nunc auctor nisi, eu tristique ipsum justo ut tellus. Phasellus molestie ultricies sodales. Nunc nec ligula placerat, vehicula orci a, tincidunt ante. Donec ac metus quis nunc cursus tincidunt.</p>
+          </section>
+          
+          <section id="fourth">
+            <h2>Fourth section</h2>
+            <p>Aenean purus ex, auctor id dictum in, consequat ac lacus. Fusce aliquam tellus sed ante porttitor eleifend. Nam rutrum vulputate arcu sed euismod. Fusce diam nunc, cursus eget leo eget, interdum tempus arcu. Maecenas vestibulum faucibus dolor non fermentum. Donec tortor dui, aliquet vitae mauris id, condimentum eleifend felis.</p>
+            <p>In aliquam maximus dui, nec iaculis nunc gravida et. Cras dapibus porta est, sed finibus arcu viverra in. Vivamus volutpat placerat urna, non varius sapien tempor sit amet. Cras quis dictum enim. Vestibulum ac rhoncus diam, non venenatis dolor. Curabitur ut velit tincidunt, pulvinar dolor sit amet, tincidunt arcu. Integer at ipsum eu ex blandit consectetur.</p>
+          </section>
+          
+          <section id="fifth">
+            <h2>Fifth section</h2>
+            <p>Vivamus in elit non turpis eleifend egestas eget scelerisque turpis. Integer semper eget sem vel porttitor. Phasellus nec rhoncus elit. Donec feugiat mollis dui ac vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+            <p>In aliquam maximus dui, nec iaculis nunc gravida et. Cras dapibus porta est, sed finibus arcu viverra in. Vivamus volutpat placerat urna, non varius sapien tempor sit amet. Cras quis dictum enim. Vestibulum ac rhoncus diam, non venenatis dolor. Curabitur ut velit tincidunt, pulvinar dolor sit amet, tincidunt arcu. Integer at ipsum eu ex blandit consectetur.</p>
+          </section>
+          
+          <section id="sixth">
+            <h2>Sixth section</h2>
+            <p>Etiam id ex dolor. Curabitur quis tellus vitae neque finibus suscipit. Donec vel nisl ac justo mattis molestie. Vivamus in interdum est. Fusce sed malesuada tellus. Suspendisse imperdiet condimentum sem in tristique. Donec faucibus dui non pharetra cursus. Praesent congue turpis leo, vitae porttitor elit fringilla vel. Phasellus ut aliquet augue. Donec egestas luctus placerat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nisi nisl, pharetra et odio non, sollicitudin bibendum enim. Integer posuere, est et posuere feugiat, nisi nunc auctor nisi, eu tristique ipsum justo ut tellus. Phasellus molestie ultricies sodales. Nunc nec ligula placerat, vehicula orci a, tincidunt ante. Donec ac metus quis nunc cursus tincidunt.</p>
+          </section>
+          
+          <section id="seventh">
+            <h2>Seventh section</h2>
+            <p>Aenean purus ex, auctor id dictum in, consequat ac lacus. Fusce aliquam tellus sed ante porttitor eleifend. Nam rutrum vulputate arcu sed euismod. Fusce diam nunc, cursus eget leo eget, interdum tempus arcu. Maecenas vestibulum faucibus dolor non fermentum. Donec tortor dui, aliquet vitae mauris id, condimentum eleifend felis.</p>
+            <p>In aliquam maximus dui, nec iaculis nunc gravida et. Cras dapibus porta est, sed finibus arcu viverra in. Vivamus volutpat placerat urna, non varius sapien tempor sit amet. Cras quis dictum enim. Vestibulum ac rhoncus diam, non venenatis dolor. Curabitur ut velit tincidunt, pulvinar dolor sit amet, tincidunt arcu. Integer at ipsum eu ex blandit consectetur.</p>
+          </section>
+          
+          <section id="eighth">
+            <h2>Eighth section</h2>
+            <p>Vivamus in elit non turpis eleifend egestas eget scelerisque turpis. Integer semper eget sem vel porttitor. Phasellus nec rhoncus elit. Donec feugiat mollis dui ac vehicula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+            <p>Fusce quis rutrum turpis. Proin pulvinar, nisi id porttitor laoreet, neque diam finibus eros, a aliquam nibh libero quis nisi. Morbi vehicula tincidunt maximus.</p>
+          </section>
+          
+        </article>
+    </main>
+    <script>
+        var list_selected = document.getElementsByTagName('ul')[0];
+        var link_selected = list_selected.getElementsByTagName('a');
+        var nav = document.getElementById('navContent');
+        var cross_icon = document.getElementById('cross');
+        var spacing_bar = document.getElementById('spacing');
+        var ham_icon = document.getElementById('ham');
+        var article = document.getElementById('articleSection');
+        //console.log(link_selected[2].textContent);
+        /* link_selected[0].addEventListener('click', function(){
+            link_selected[0].setAttribute('class', 'click')
+        })
+
+        link_selected[1].addEventListener('click', function(){
+            link_selected[1].setAttribute('class', 'click');  
+            link_selected[0].removeAttribute('class');  
+        }) */
+       for (let i = 0; i < link_selected.length; i++) {
+        function Remove_Attribute(){
+         var link_loop = link_selected[i].getAttribute('class') === 'true';
+
+        for (let i = 0; i < link_selected.length; i++) {
+        link_selected[i].setAttribute('class', 'false');
+         }
+        if (!link_loop) {
+       link_selected[i].setAttribute('class', 'true');
+         }
+        }
+
+        link_selected[i].addEventListener('click', function(){
+          Remove_Attribute();
+        });
+       }
+
+       ham_icon.addEventListener('click', function(){
+           nav.style.left = '0%';
+           spacing_bar.style.width = '300px';
+           article.style.width = '70%';
+       })
+
+       cross_icon.addEventListener('click', function(){
+        nav.style.left = '-100%';
+        spacing_bar.style.width = '40px';
+        article.style.width = '100%';
+       })
+    </script>
+</body>
+</html>

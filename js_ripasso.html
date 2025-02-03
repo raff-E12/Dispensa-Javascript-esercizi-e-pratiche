@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ripasso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="immagini/favjs/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="immagini/favjs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="immagini/favjs/favicon-16x16.png">
+    <link rel="manifest" href="immagini/favjs/site.webmanifest">
+    <link rel="mask-icon" href="immagini/favjs/safari-pinned-tab.svg" color="#dfe300">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        *{
+            font-size: 1.1em;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body{
+            background-image: url(immagini/Grid\ 1.jpg);
+            backdrop-filter: blur(10px);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .box-1{
+            background-color: antiquewhite;
+            width: 60%;
+            margin: 20% 10%;
+            box-shadow: 1px 3px 10px 8px black;
+            border: 10px solid rgb(255, 226, 188);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .box-1 ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box-1 ul li{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        footer{
+            background-color: rgb(255, 250, 184);
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+        header{
+            width: 100%;
+            background-color: antiquewhite;
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+            border: 10px solid rgb(255, 226, 188);
+        }
+        button{
+            background-color: white;
+            border: 2px solid gray;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 200px;
+        }
+        button:hover{
+            background-color: rgb(168, 168, 168);
+            cursor: pointer;
+        }
+        .red{
+            color: red;
+            text-decoration:line-through;
+            font-style: italic;
+        }
+        .parola01{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 25px;
+            color: blue;
+            font-style: oblique;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body id="body">
+    <header>
+        <h1>Ripasso argomenti</h1>
+        <p>Box interattivi clicca per sapere le loro interazioni.</p>
+    </header>
+    <div class="box-1">
+        <h1>Conta da 1 a 10</h1>
+        <ul style="display: flex; flex-direction: column; gap: 10px;">
+            <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value">-</li>
+            <li><button id="button">Genera</button></li>
+        </ul>
+    </div>
+    <script>
+        var text_result = document.getElementById('text-value');
+        var button_result = document.getElementById('button');
+        function Counter(){
+            var text_counter = '';
+            for (let i = 0; i < 11; i++) {
+                    text_counter += i;
+            }
+            return text_counter;
+        }
+        button_result.addEventListener('click', function(){
+            text_result.textContent = Counter();
+            window.alert('Ho utilizzato un cicli');
+        });
+    </script>
+      <div class="box-1">
+        <h1>Somma fra Numeri</h1>
+        <ul style="display: flex; flex-direction: column; gap: 10px;">
+            <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-1">-</li>
+            <li><button id="button-1">Genera</button></li>
+        </ul>
+    </div>
+    <script>
+        var number_list = [1,2,3,4,5,6,7,8,9,10];
+        var text_result_1 = document.getElementById('text-value-1');
+        var btn_1 = document.getElementById('button-1');
+        function Add_Number(){
+            var text_op = 0;
+            var number_random = number_list[Math.floor(Math.random()*number_list.length)];
+            // Schema: number_random = number_list[] + number_list[];
+            for (let i = 0; i < 2; i++) {
+                var text_op_sm = number_random + i;
+                text_op += text_op_sm;
+            }
+            return text_op;
+        }
+        btn_1.addEventListener('click', function(){
+            text_result_1.textContent = Add_Number();
+            window.alert('ho utilizzato un ciclo e un array di numeri');
+        })
+
+        //il e.key dice a qual pulsante sto premento per l'outoput di javascript
+        text_result_1.addEventListener('keypress', function(e){
+            if (e.key === 'Enter') {
+                text_result_1.textContent = Add_Number();
+                window.alert('per ogni valore casuale del array vieni addizionato per ogni numero del ciclo');
+            }
+        })
+    </script>
+     <div class="box-1">
+        <h1>Stampa numeri Pari</h1>
+        <ul style="display: flex; flex-direction: column; gap: 10px;">
+            <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-2">-</li>
+            <li><button id="button-2">Genera</button></li>
+        </ul>
+    </div>
+    <script>
+        var text_result_4 = document.getElementById('text-value-2');
+        var btn_2 = document.getElementById('button-2');
+        function Calc_par(){
+            var calc_par = '.';
+            for (let i = 0; i < 20; i++) {
+                if (i % 2 == 0) {
+                    calc_par += i;
+                }
+            }
+            return calc_par;
+        }
+        btn_2.addEventListener('click', function(){
+            window.alert('ho utilizzato un ciclo e una condizione');
+            text_result_4.textContent = Calc_par();
+        })
+    </script>
+    <div class="box-1">
+        <h1>Stampa il titolo del documento</h1>
+        <ul style="display: flex; flex-direction: column; gap: 10px;">
+            <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-3">-</li>
+            <li><button id="button-3">Genera</button></li>
+        </ul>
+        <script>
+            var btn_3 = document.getElementById('button-3');
+            btn_3.addEventListener('click', function(){
+                var text_content = document.getElementById('text-value-3');
+                text_content.style.wordSpacing = '20px';
+                text_content.textContent = document.title +'modifica fatta' + document.lastModified;
+            })
+        </script>
+    </div>
+    <div class="box-1">
+        <h1>Verifica se il numero è corretto</h1>
+        <ul style="display: flex; flex-direction: column; gap: 10px;">
+            <li><input type="text" name="text" id="textNumber" style="text-align: center;"></li>
+            <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-4">-</li>
+            <li><button id="button-4">Genera</button></li>
+        </ul>
+    </div>
+    <script>
+        var text_input = document.getElementById('textNumber');
+        var text_result_5 = document.getElementById('text-value-4');
+        var btn_4 = document.getElementById('button-4');
+
+        function NaN_verify(){
+            var numero_print = text_input.value;
+            var text_rs = '';
+            if (!isNaN(numero_print) && numero_print !== '') {
+                text_rs = 'Si è proprio un numero';
+            } else {
+                    text_rs = 'Riprova';
+            }
+            text_result_5.textContent = text_rs;
+            return text_rs;
+        }
+        
+        btn_4.addEventListener('click', function(){
+            NaN_verify();
+        });
+    </script>
+    <div class="box-1">
+        <h1>Verifica verifica l'età</h1>
+        <ul style="display: flex; flex-direction: column; gap: 10px;">
+            <li><input type="text" name="text" id="textNumber1" style="text-align: center;"></li>
+            <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-5">-</li>
+            <li><button id="button-5">Genera</button></li>
+        </ul>
+    </div>
+    <script>
+        var text_input_1 = document.getElementById('textNumber1');
+        var text_result_6 = document.getElementById('text-value-5');
+        var btn_5 = document.getElementById('button-5');
+        btn_5.addEventListener('click', function(){
+            var text_value_input = text_input_1.value;
+
+           if(!isNaN(text_value_input) && text_value_input !== '' && text_value_input > 18) {
+                text_result_6.textContent = 'Sei Maggiorenne!!';
+            }
+            else {
+                text_result_6.textContent = 'Riprova!!';
+            }
+
+        })
+    </script>
+        <div class="box-1">
+            <h1>Verifica il voto</h1>
+            <ul style="display: flex; flex-direction: column; gap: 10px;">
+                <li><input type="text" name="text" id="textNumber2" style="text-align: center;"></li>
+                <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-6">-</li>
+                <li><button id="button-6">Genera</button></li>
+            </ul>
+        </div>
+        <script>
+            var text_value_1 = document.getElementById('textNumber2');
+            var text_result_7 = document.getElementById('text-value-6');
+            var btn_6 = document.getElementById('button-6');
+            function verfic_vote(){
+                var text_ver = text_value_1.value;
+                var text = '';
+                var tru = true;
+                //isNaN() - verifica se il valore è numero ma visto che si tratta di una condizione il valore di proprità si inverte.
+                if (!isNaN(text_ver) && text_ver !== '' && text_ver > 60) {
+                    tru = true;
+                    text = 'Sei Passato';
+                    window.alert('è un condizione che comprende se è un numero, e che il valore sia vuoto o sia maggiore di 60');
+                } else {
+                    tru = false;
+                    text = 'Riprova!!'
+                }
+
+                return text;
+            }
+
+            btn_6.addEventListener('click', function() {
+                text_result_7.textContent = verfic_vote();
+            })
+        </script>
+            <div class="box-1">
+                <h1>verifica fra due numeri</h1>
+                <ul style="display: flex; flex-direction: column; gap: 10px;">
+                    <li><input type="number" name="text" id="textNumber3" style="text-align: center;"></li>
+                    <li><input type="number" name="text" id="textNumber4" style="text-align: center;"></li>
+                    <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-7">-</li>
+                    <li><button id="button-7">Genera</button></li>
+                </ul>
+            </div>
+            <script>
+                var numb_1 = document.getElementById('textNumber3');
+                var numb_2 = document.getElementById('textNumber4');
+                var text_value_2 = document.getElementById('text-value-7');
+                var btn_7 = document.getElementById('button-7');
+
+                function verifica_valori(){
+                    var numb1 = numb_1.value;
+                    var numb2 = numb_2.value;
+                    var rs_txt ='';
+
+                    if (numb1 < numb2) {
+                        rs_txt = numb1 + '<' + numb2;
+                    }
+                    else if(numb1 > numb2){
+                        rs_txt = numb1 + '>' + numb2;
+                    }
+                    else if(numb1 == numb2){
+                        rs_txt = numb1 + '=' + numb2;
+                    }
+                    else {
+                        rs_txt = 'Riprova!!';
+                    }
+
+                    return rs_txt;
+                }
+
+                btn_7.addEventListener('click', function() {
+                text_value_2.textContent = verifica_valori();
+            })
+            </script>
+               <div class="box-1">
+                <h1>Verifica se il numero è pari</h1>
+                <ul style="display: flex; flex-direction: column; gap: 10px;">
+                    <li><input type="number" name="text" id="textNumber5" style="text-align: center;"></li>
+                    <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-8">-</li>
+                    <li><button id="button-8">Genera</button></li>
+                </ul>
+            </div>
+            <script>
+                var numb_3 = document.getElementById('textNumber5');
+                var text_value_3 = document.getElementById('text-value-8');
+                var btn_8 = document.getElementById('button-8');
+
+                function verifica_pari(){
+                    var numb = numb_3.value;
+                    var rs_txt ='';
+
+                    if (numb % 2 === 0 && numb !== '') {
+                        rs_txt = 'è un numero Pari';
+                    }
+                    else if(numb % 2 !== 0 && numb !== '') {
+                        rs_txt = 'non è un numero Pari';
+                    }
+                    else {
+                        rs_txt = 'Riprova!!';
+                    }
+
+                    return rs_txt;
+                }
+
+                btn_8.addEventListener('click', function() {
+                text_value_3.textContent = verifica_pari();
+            })
+            </script>
+              <div class="box-1">
+                <h1>Descrivi su come impostare l'evento</h1>
+                <ul style="display: flex; flex-direction: column; gap: 10px;">
+                    <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;overflow:hidden;" id="text-value-9">-</li>
+                    <li><button id="button-9">Genera</button></li>
+                </ul>
+            </div>
+            <script>
+                var txt_value = document.getElementById('text-value-9');
+                var btn_9 = document.getElementById('button-9');
+                function txt_out() {
+
+                    var txt = "Partendo dal buttone al testo.";
+                    txt_value.textContent = txt;
+                    return txt_value;
+                    
+                }
+                btn_9.addEventListener('click',txt_out, false);
+            </script>
+             <div class="box-1">
+                <h1>crea un calendario dei giorni della settimana</h1>
+                <ul style="display: flex; flex-direction: column; gap: 10px;">
+                    <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-10">-</li>
+                    <li><button id="button-10">Genera</button></li>
+                </ul>
+            </div>
+            <script>
+               var btn_10 = document.getElementById('button-10');
+               var txt_vr = document.getElementById('text-value-10');
+               btn_10.addEventListener('mousedown', function () {
+                var txt_cl ='';
+                var i = 0;
+                var giorni_settimanali = ['lunedi','martedi','mercoledi','giovedi','venerdi', 'sabato', 'domenica'];
+                for (let i = 0; i < 4; i++) {
+                    txt_cl += giorni_settimanali[i];
+                }
+                txt_vr.textContent = txt_cl;
+               })
+            </script>
+              <div class="box-1">
+                <h1>Dove la lettera 'A' è presente</h1>
+                <ul style="display: flex; flex-direction: column; gap: 10px;">
+                    <li><input type="text" name="text" id="textNumber7" style="text-align: center;"></li>
+                    <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-11">-</p></li>
+                    <li><button id="button-11">Genera</button></li>
+                </ul>
+            </div>
+            <script>
+                 var btn_11 = document.getElementById('button-11');
+                 var txt_vl = document.getElementById('text-value-11');
+                 var txt_v2 = document.getElementById('textNumber7');
+
+                 btn_11.addEventListener('click', function(){
+                    var text_index = txt_v2.value.trim();
+                    var text_vr = text_index.indexOf('a');
+                    var result = 0;
+                    
+                    if (text_vr !== -1 && text_index !== '') {
+                        result = "l'indice è:" + text_vr;
+                        window.alert('questa condizione trova la lettera corrispondente.')
+                    }else if(text_index < 4){
+                        result ='troppo lunga';
+                    }
+                    else{
+                        result = 'Riprova!!';
+                    }
+
+                    txt_vl.textContent = result;
+                 })
+            </script>
+             <div class="box-1">
+                <h1>indovina il numero il numero scelto nel codice</h1>
+                <ul style="display: flex; flex-direction: column; gap: 10px;">
+                    <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-12">-</li>
+                    <li><button id="button-12">Genera</button></li>
+                </ul>
+            </div>
+            <script>
+                var btn_12 = document.getElementById('button-12');
+                var txt_vrl = document.getElementById('text-value-12');
+
+                btn_12.addEventListener('click', function () {
+                    var numero_scelto = 20;
+                    var numero_casuale = Math.floor(Math.random()*100);
+                    if (numero_scelto > numero_casuale) {
+                        txt_vrl.textContent = 'Il numero scelto è maggiore';
+                    } else if(numero_scelto < numero_casuale){
+                        txt_vrl.textContent = 'il numero scelto è minore';
+                    }  else if(numero_scelto == numero_casuale){
+                        txt_vrl.textContent = 'il numero scelto è uguale';
+                    }  else{
+                        txt_vrl.textContent = 'Riprova!!';
+                    }
+                })
+            </script>
+            <div class="box-1">
+                <h1>Conto alla rovescia</h1>
+                <ul style="display: flex; flex-direction: column; gap: 10px;">
+                    <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-13">-</li>
+                    <li><button id="button-13">Genera</button></li>
+                </ul>
+            </div>
+            <script>
+                var btn_13 = document.getElementById('button-13');
+                var txt_vl_1 = document.getElementById('text-value-13');
+                    var counter = 0;
+                    btn_13.onclick = function () {
+                        if(counter < 10){
+                          counter++;
+                          txt_vl_1.textContent = counter;
+                        } else{
+                        window.alert('complimenti!!');
+                        txt_value.textContent = 'sei arrivato al limite';
+                        btn_13.setAttribute('disabled', 'disabled');
+                       }
+                    }
+            </script>
+              <div class="box-1">
+                <h1>Dove il mouse</h1>
+                <ul style="display: flex; flex-direction: column; gap: 10px;">
+                    <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black; margin: 20px;" id="text-value-14">-</li>
+                </ul>
+            </div>
+            <script>
+            var txt_vl_2 = document.getElementById('text-value-14');
+            var body = document.getElementById('body');
+            body.addEventListener('mousemove', function(e){
+                var clientX = e.clientX;
+                var clienty = e.clientY;
+                var number = 'X  '+ clientX + '  Y  ' + clienty;
+                txt_vl_2.textContent = number;
+            })
+            </script>
+              <div class="box-1">
+                <h1>Verifica Password nel codice</h1>
+                <ul style="display: flex; flex-direction: column; gap: 10px;">
+                    <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-15">-</li>
+                    <li><button id="button-14">Genera</button></li>
+                </ul>
+            </div>
+            <script>
+                   var btn_14 = document.getElementById('button-14');
+                   var txt_vl_3 = document.getElementById('text-value-15');
+                   var limit_1 = 0;
+
+                   btn_14.addEventListener('click', function(){
+                    var Password = 'Lolmario_14';
+                    var corispondenza = 'Lolmario_14';
+                        if (limit_1 < 2) {
+                            limit_1++;
+                            if (Password == corispondenza) {
+                            txt_vl_3.textContent = 'Accesso consentito';
+                            btn_14.setAttribute('disabled', 'disabled');
+                            window.alert('Accesso consito, grezie per aver aggiornato lo script!!');
+                            console.log('Ben fatto!!')
+                        } else{
+                            txt_vl_3.textContent = 'Mi discpiace riprova più tardi.';
+                            btn_14.setAttribute('disabled', 'disabled');
+                        }
+                        }
+                   }, true);
+            </script>
+             <div class="box-1">
+                <h1>Scrivi il giorno della settimana</h1>
+                <ul style="display: flex; flex-direction: column; gap: 10px;">
+                    <li><input type="number" name="text" id="textNumber8" style="text-align: center;"></li>
+                    <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-16">-</li>
+                    <li><button id="button-16">Genera</button></li>
+                </ul>
+            </div>
+            <script>
+               addEventListener('DOMContentLoaded', function(){
+                var btn_nb = document.getElementById('textNumber8');
+                 var txt_vl_4 = document.getElementById('text-value-16');
+                 var btn_15 = document.getElementById('button-16');
+
+                 btn_15.addEventListener('click', function(){
+                    var nb_index = btn_nb.value;
+                  switch (nb_index) {
+                    case '1':
+                    txt_vl_4.textContent = 'lunedi';
+                        break;
+
+                        case '2':
+                    txt_vl_4.textContent = 'martedi';
+                        break;
+
+                        case '3':
+                    txt_vl_4.textContent = 'mercoledi';
+                        break;
+
+                        case '4':
+                    txt_vl_4.textContent = 'giovedi';
+                        break;
+
+                        case '5':
+                    txt_vl_4.textContent = 'venerdi';
+                        break;
+
+                        case '6':
+                        txt_vl_4.textContent = 'sabato';
+                        break;
+
+                        case '7':
+                       txt_vl_4.textContent = 'domenica';
+                        break;
+
+                        case '':
+                        txt_vl_4.textContent = 'Digita il numero!!';
+                        break;
+                  
+                        default:
+                        txt_vl_4.textContent = 'sei andato troppo oltre!!';
+                        window.alert('sei andato troppo oltre, fermati!!');
+                        btn_15.setAttribute('disabled', 'disabled');
+                        //btn_15.setAttribute('attributo', 'valore');
+                        break;
+                  }
+                 })
+               })
+            </script>
+        <div class="box-1">
+             <h1>Correggi la parola</h1>
+                 <ul style="display: flex; flex-direction: column; gap: 10px;">
+                  <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-17">il gatto ruba un mais.</li>
+                   <li><button id="button-17">Genera</button></li>
+                 </ul>
+            </div>
+            <script>
+                  var txt_vl_7 = document.getElementById('text-value-17');
+                  var btn_17 = document.getElementById('button-17');
+                  btn_17.onclick = function(){
+                    var text_selected = txt_vl_7.textContent.replace('mais.', 'pesce.');
+                    txt_vl_7.textContent = text_selected;
+                    window.alert('fatto con il TextContent.');
+                    btn_17.setAttribute('disabled', 'disabled');
+                  };
+            </script>
+              <div class="box-1">
+                <h1>Correggi la parola</h1>
+                    <ul style="display: flex; flex-direction: column; gap: 10px;">
+                     <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-18">il cane insegue il topo.</li>
+                      <li><button id="button-18">Genera</button></li>
+                    </ul>
+               </div>
+               <script>
+                var txt_vl_8 = document.getElementById('text-value-18');
+                var btn_18 = document.getElementById('button-18');
+                btn_18.onclick = function () {
+                    var text_selected = txt_vl_8.lastChild.nodeValue;
+                    var text_selected_1 = text_selected.replace('topo.', 'gatto.');
+                    txt_vl_8.lastChild.nodeValue = text_selected_1;
+                    window.alert('fatto con il Nodevalue.');
+                    btn_18.setAttribute('disabled', 'disabled');
+                }
+               </script>
+               <div class="box-1">
+                <h1>Correggi la parola</h1>
+                    <ul style="display: flex; flex-direction: column; gap: 10px;">
+                     <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-19">Il topo mangia <p id="em">Errore</p> le verdure.</li>
+                      <li><button id="button-19">Genera</button></li>
+                    </ul>
+               </div>
+               <script>
+                 var txt_vl_9 = document.getElementById('text-value-19');
+                 var btn_19 = document.getElementById('button-19');
+                 btn_19.onclick = function(){
+                    var em_rv = document.getElementById('em');
+                    var rv = em_rv.parentNode;
+                    rv.removeChild(em_rv);
+                    var node = txt_vl_9.lastChild.nodeValue;
+                    var node_cg = node.replace('le verdure.', 'il formaggio.');
+                    txt_vl_9.lastChild.nodeValue = node_cg;
+                    window.alert('fatto con il removechild e nodevalue');
+                    btn_19.setAttribute('disabled', 'disabled');
+                 };
+               </script>
+                 <div class="box-1">
+                    <h1>Cambia lo stile</h1>
+                        <ul style="display: flex; flex-direction: column; gap: 10px;">
+                         <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-20">Cambia il colore del testo.</li>
+                          <li><button id="button-20">Genera</button></li>
+                        </ul>
+                   </div>
+                   <script>
+                     var txt_vl_10 = document.getElementById('text-value-20');
+                     var btn_20 = document.getElementById('button-20');
+                     btn_20.onclick = function (){
+                        //const get_err = txt_vl_10.setAttribute('class', 'red');
+                        /* if (txt_vl_10.hasAttribute('class') && txt_vl_10.className === '') {
+                            const get_err = txt_vl_10.setAttribute('class', 'red');
+                        } else {
+                            const get_err = txt_vl_10.removeAttribute('class', 'red');
+                        }  */
+                       //txt_vl_10.classList.contains('red')
+                       if (txt_vl_10.className === '') {
+                        //txt_vl_10.classList.add('red');
+                         txt_vl_10.setAttribute('class', 'red');
+                       } else {
+                        //txt_vl_10.classList.remove('red');
+                          txt_vl_10.removeAttribute('class', 'red');
+                       }
+                     };
+                   </script>
+                   <div class="box-1">
+                    <h1>Crea l'elemento</h1>
+                        <ul style="display: flex; flex-direction: column; gap: 10px;">
+                         <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-21"></li>
+                          <li><button id="button-21">Genera</button></li>
+                        </ul>
+                   </div>
+                   <script>
+                     var txt_vl_11 = document.getElementById('text-value-21');
+                     var btn_21 = document.getElementById('button-21');
+                     btn_21.addEventListener('click', function(){
+                        const get_element = document.createElement('p');
+                        const get_text = document.createTextNode('benvenuto nella mia piscina.');
+                        get_element.className = 'parola01';
+                        get_element.appendChild(get_text);
+                        txt_vl_11.appendChild(get_element);
+                        btn_21.setAttribute('disabled', 'disabled');
+                     })
+                   </script>
+                    <div class="box-1">
+                        <h1>Lancio dei Dadi</h1>
+                            <ul style="display: flex; flex-direction: column; gap: 10px;">
+                             <li style="background-color: white; width: 60%; display: flex; flex-direction: row; align-items: center; justify-content: center; height: 50px; border: 2px solid black;" id="text-value-22">-</li>
+                              <li><button id="button-22">Genera</button></li>
+                            </ul>
+                       </div>
+                       <script>
+                         var txt_vl_12 = document.getElementById('text-value-22');
+                         var btn_22 = document.getElementById('button-22');
+                         var list_nb = [1,2,3,4,6,7,8,9,10,11,12];
+                         var list_n = [1,2,3,4,6,7,8,9,10,11,12];
+                         var limit = 0;
+                         btn_22.onclick = function(){
+                           if (limit < 10) {
+                            limit++;
+                            var number = list_nb[Math.floor(Math.random()*list_nb.length)] + list_n[Math.floor(Math.random()*list_n.length)];
+                            if (number <= 2 || number <= 12) {
+                                txt_vl_12.textContent = 'Hai perso!!' + '  Numero  ' + number;
+                            } else {
+                                txt_vl_12.textContent = 'Hai vinto!!' + '  Numero  ' + number;
+                            }
+                           } else {
+                            btn_22.setAttribute('disabled', 'disabled');
+                            txt_vl_12.textContent = 'Mi dispiace, riprova più tardi';
+                           }
+                         }
+                       </script>
+    <footer>
+        <p>Tabella &copy; - valori espressi in <a href="index.html">Javascript</a></p>
+    </footer>
+    
+</body>
+</html>

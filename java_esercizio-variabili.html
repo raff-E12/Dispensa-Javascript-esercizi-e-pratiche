@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Variabili</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="immagini/favjs/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="immagini/favjs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="immagini/favjs/favicon-16x16.png">
+    <link rel="manifest" href="immagini/favjs/site.webmanifest">
+    <link rel="mask-icon" href="immagini/favjs/safari-pinned-tab.svg" color="#dfe300">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        *{
+            font-size: 1.1em;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body{
+            background-image: url(immagini/Grid\ 1.jpg);
+            backdrop-filter: blur(2px);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .box-1{
+            background-color: antiquewhite;
+            width: 700px;
+            margin: 15% 10%;
+            box-shadow: 1px 3px 10px 8px black;
+            border: 10px solid rgb(255, 226, 188);
+            text-align: center;
+        }
+        .box-1 ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box-1 ul li{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        footer{
+            background-color: rgb(255, 250, 184);
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+        header{
+            width: 100%;
+            background-color: antiquewhite;
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+            border: 10px solid rgb(255, 226, 188);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Esercizi sulle Variabili</h1>
+    </header>
+    <div class="box-1">
+        <h1>Calcola tabellina del 5</h1>
+        <ul>
+            <li><p>Opzione 1</p><span id="valore1">-</p></li>
+            <li><p>Opzione 2</p><span id="valore2">-</p></li>
+            <li><p>Opzione 3</p><span id="valore3">-</p></li>
+            <li><p>Opzione 4</p><span id="valore4">-</p></li>
+            <li><p>Opzione 5</p><span id="valore5">-</p></li>
+            <li><p>Espressione</p><span id="valore6">-</p></li>
+            <br>
+            <li><p id="multipli"></p></li>
+        </ul>
+    </div>
+    <script>
+        var primo_valore = 1;
+        var secondo_valore = 5;
+        //valori
+        var totale_valore = primo_valore * secondo_valore;
+        //espressione
+        var opzione = document.getElementById('valore1');
+        opzione.textContent = '1 X 5 =' + totale_valore;
+        var primo_valore = 2;
+        var secondo_valore = 5;
+        var totale_valore = primo_valore * secondo_valore;
+        var opzione = document.getElementById('valore2');
+        opzione.textContent = '2 x 5 =' + totale_valore;
+        var primo_valore = 3;
+        var secondo_valore = 5;
+        var totale_valore = primo_valore * secondo_valore;
+        var opzione = document.getElementById('valore3');
+        opzione.textContent = '3 x 5 =' + totale_valore;
+        var primo_valore = 4;
+        var secondo_valore = 5;
+        var totale_valore = primo_valore * secondo_valore;
+        var opzione = document.getElementById('valore4');
+        opzione.textContent = '4 x 5 =' + totale_valore;
+        //concatenazione
+        var primo_valore = 5;
+        var secondo_valore = 5;
+        var totale_valore = primo_valore * secondo_valore;
+        var opzione = document.getElementById('valore5');
+        opzione.textContent = '5 x 5 =' + totale_valore;
+        //epressione
+        var totale_valore = (1+6) * (1+4);
+        var opzione = document.getElementById('valore6');
+        opzione.textContent = '(1 + 6) X (1 + 4) =' + totale_valore;
+        //lista dei risultati
+        var multipli = [5, 10, 15, 20, 25];
+        var lista = document.getElementById('multipli');
+        lista.textContent = 'I risultati:' + multipli;
+        //variabile+proprietà = valore (oggetti o numeri)
+
+        window.onscroll = ()=>{
+            var scroll_up = this.scrollX;
+            console.log(scroll_up);
+        }
+    </script>
+    <footer>
+        <p>Tabella &copy; - valori espressi in <a href="index.html">Javascript</a></p>
+    </footer>
+</body>
+</html>

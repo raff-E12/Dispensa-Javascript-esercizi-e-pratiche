@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Integrare jQuery nei Progetti</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#525fd6">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    
+    <header>
+        <h1>Guida Javascript / jQuery<br> Integrare jQuery nei Progetti</h1>
+        <nav id="mainMenu">
+            <ul>
+                <li><a href="index.html" title="javascript">Home</a></li>
+                <li><a href="dove-jx.html" title="Dove posizionare Javascript">Dove posizionare Javascript</a></li>
+                <li><a href="sintassi-jx.html" title="La sintassi">Sintassi js</a></li>
+                <li><a href="condizionali-e-cicli.html" title="Condizionali e cicli">Condizioni e cicli</a></li>
+                <li><a href="funzioni.html" title="Le funzioni">Le funzioni</a></li>
+                <li><a href="jQuery.html" title="jQuery">jQuery</a></li>
+                <li><a href="integrareJQ.html" title="Integrare jQuery nei progetti">Integrare jQuery</a></li>
+                <li><a href="sintassiJquery.html" title="Sintassi jQuery">Sintassi jQuery</a></li>
+                <li><a href="selezioneJquery.html" title="La selezione degli elementi in jQuery">La selezione degli elementi in jQuery</a></li>
+                <li><a href="gestione_eventiJq.html" title="La gestione degli eventi in jQuery">La gestione degli eventi in jQuery</a></li>
+                <li><a href="metodi-jQ.html" title="Metodi jQuery">Metodi jQuery</a></li>
+                <li><a href="Javascript-riassunto.html" title="Riassunto Javascript">Riassunto Javascript</a></li>
+                <li><a href="eventi-js.html" title="Eventi Javascript">Eventi in Javascript</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Introduzione a jQuery</h2>
+            <p>jQuery è una libreria JavaScript rapida, leggera e ricca di funzionalità. Creata nel 2006, è progettata per semplificare la manipolazione del DOM, la gestione degli eventi, l'animazione e l'uso di AJAX.</p>
+            
+            <h2>Come Integrare jQuery</h2>
+            <p>Per includere jQuery nel tuo progetto web, puoi seguire uno dei seguenti metodi:</p>
+            <ol>
+                <li>
+                    <h3>Includere jQuery da un CDN</h3>
+                    <p>Il modo più comune e rapido per includere <a href="https://jquery.com/download/">jQuery</a> è attraverso un CDN (Content Delivery Network). Google e altri provider offrono jQuery attraverso CDN, il che permette di caricare la libreria più velocemente poiché potrebbe già essere memorizzata nella cache del browser dell'utente.</p>
+                    <div class="code">
+                        <pre><code>&lt;!-- Includere jQuery da Google CDN --&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;</code></pre>
+                    </div>
+                </li>
+                <li>
+                    <h3>Includere jQuery Localmente</h3>
+                    <p>Se preferisci ospitare jQuery direttamente nel tuo server, puoi scaricare la libreria dal sito ufficiale di jQuery e includerla nel tuo progetto.</p>
+                    <div class="code">
+                        <pre><code>&lt;!-- Includere jQuery dal file locale --&gt;
+&lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;</code></pre>
+                    </div>
+                </li>
+            </ol>
+            
+            <h2>Esempi Comuni di Utilizzo</h2>
+            <h3>1. Manipolazione del DOM</h3>
+            <p>Uno degli usi più comuni di jQuery è la manipolazione del DOM. Puoi selezionare elementi e modificarne il contenuto o gli attributi facilmente.</p>
+            <div class="code">
+                <pre><code>// Cambiare il contenuto di un elemento con id="esempio"
+$('#esempio').text('Nuovo testo con jQuery');</code></pre>
+            </div>
+
+            <h3>2. Gestione degli Eventi</h3>
+            <p>jQuery rende la gestione degli eventi semplice e cross-browser. Puoi aggiungere eventi come click, hover, e molto altro.</p>
+            <div class="code">
+                <pre><code>// Aggiungere un evento click a un pulsante
+$('#mioBottone').click(function() {
+    alert('Pulsante cliccato!');
+});</code></pre>
+            </div>
+
+            <h3>3. Effetti e Animazioni</h3>
+            <p>jQuery include una varietà di effetti e animazioni predefiniti, come fade in/out, slide up/down, ecc.</p>
+            <div class="code">
+                <pre><code>// Nascondere un elemento con effetto fade out
+$('#mioElemento').fadeOut();</code></pre>
+            </div>
+
+            <h3>4. AJAX</h3>
+            <p>jQuery facilita le richieste AJAX, rendendo semplice l'interazione con i server per caricare dati in modo asincrono.</p>
+            <div class="code">
+                <pre><code>// Eseguire una richiesta AJAX GET
+$.get('https://api.example.com/dati', function(data) {
+    console.log(data);
+});</code></pre>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        &copy; Copyright 2024
+    </footer>
+    
+</body>
+</html>

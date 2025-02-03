@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Text</title>
+    <link rel="stylesheet" href="js-css/css_reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,787;1,787&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            width: 100%;
+            background-color: #F2C230;
+        }
+
+        h2{
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 19px;
+        }
+
+        p{
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+            font-size: 17px;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        body{
+            background: #c8c8c8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column
+        }
+
+        .text-box{
+            width: 58%;
+            background-color: #E8EAEE;
+            position: relative;
+            top: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 12px;
+            padding: 20px;
+        }
+
+        .input-sr{
+            width: 70%;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .input-sr input{
+            flex-basis: 80%;
+            height: 40px;
+            padding: 12px;
+            font-size: 20px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 200;
+            font-style: normal;
+        }
+
+        .input-sr button{
+            flex-basis: 20%;
+            background-color: #191919;
+            color: white;
+            cursor: pointer;
+        }
+
+        .input-sr button:active{
+            background-color: #4e4d4d;
+        }
+
+        .text-sc p{
+            text-align: left;
+            text-transform: capitalize;
+            width: 660px;
+        }
+
+        .text-sc{
+            background-color: #4e4d4d;
+            padding: 7px;
+            border: 2px solid #191919;
+        }
+
+        mark{
+            background-color: #F2C230;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div class="text-box">
+        <div class="input-sr">
+            <input type="text" name="search" id="search-in" placeholder="Search...">
+            <button id="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="text-sc">
+            <p id="par-sc">He ordered his regular breakfast. Two eggs sunnyside up, hash browns, and two strips of bacon. He continued to look at the menu wondering if this would be the day he added something new. This was also part of the routine. A few seconds of hesitation to see if something else would be added to the order before demuring and saying that would be all. It was the same exact meal that he had ordered every day for the past two years.</p>
+        </div>
+    </div>
+<script>
+    const search_input = document.getElementById('search-in');
+    const btn_search = document.getElementById('btn-search');
+    let par_txt = document.getElementById('par-sc');
+
+    btn_search.addEventListener('click', ()=>{
+       Search_TxT();
+    })
+
+    search_input.addEventListener('keydown', (e)=>{
+        if (e.key === 'Enter') {
+            Search_TxT();
+        }
+    })
+
+    function Search_TxT(){
+        let search_input_txt = search_input.value;
+        if (search_input_txt !== '') {
+        search_input_txt = search_input_txt.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+        //console.log(search_input_txt);
+        let pattern = new RegExp(`${search_input_txt}`,"gi");
+        par_txt.innerHTML = par_txt.textContent.replace(pattern, match => `<mark>${match}</mark>`);
+        } else {
+            par_txt.textContent = 'He ordered his regular breakfast. Two eggs sunnyside up, hash browns, and two strips of bacon. He continued to look at the menu wondering if this would be the day he added something new. This was also part of the routine. A few seconds of hesitation to see if something else would be added to the order before demuring and saying that would be all. It was the same exact meal that he had ordered every day for the past two years.';
+        }
+        return par_txt;
+    }
+</script>
+</body>
+</html>

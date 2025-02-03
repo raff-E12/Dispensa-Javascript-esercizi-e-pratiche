@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galleria in slide</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+         *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            width: 100%;
+        }
+
+        header img{
+            width: 4%;
+            height: 4%;
+            padding: 10px;
+        }
+
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #A6A197;
+        }
+
+        .img-box{
+            width: auto;
+            margin: 8%;
+            align-items: center;
+            display: flex;
+            height: 279px;
+            justify-self: center;
+            border: 10px solid #002E37;
+            box-shadow: 20px 22px 0px 10px #107373;
+            overflow: hidden;
+        }
+
+        .img-box img{
+            width: 400px;
+        }
+
+        .arrow{
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            position: absolute;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .arrow.left{
+            transform: translate(-200px, 20px);
+        }
+
+        .arrow.right{
+            transform: translate(200px, 20px);
+        }
+
+        .arrow:active{
+            background-color: rgb(160, 160, 160);
+            color: white;
+        }
+
+        .circle{
+            background-color: white;
+            width: 6px;
+            height: 6px;
+            padding: 6px;
+            border-radius: 100px;
+        }
+
+        .dots{
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transform: translate(0px, 180px);
+            width: 100px;
+            padding: 10px;
+        }
+
+        .active{
+            border: 2px solid rgb(71, 71, 70);
+            background-color: white;
+            width: 6px;
+            height: 6px;
+            padding: 6px;
+            border-radius: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="immagini/icon/js_blank.svg" alt="logo"></a>
+    </header>
+    <div class="img-box">
+        <img src="immagini/thumb1.png" alt="thumb" class="visible" id="img-slider">
+    </div>
+    <p class="arrow right" id="right"><span class="material-symbols-outlined"> arrow_forward_ios</span></p>
+    <p class="arrow left" id="left"><span class="material-symbols-outlined">arrow_back_ios</span></p>
+    <div class="dots">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <script>
+        const arrow_left = document.getElementById('left');
+        const arrow_right = document.getElementById('right');
+        var img_slider = document.getElementById('img-slider');
+        var src_list = ['immagini/thumb1.png', 'immagini/thumb2.jpeg', 'immagini/thumb3.jpg', 'immagini/tigre-2-scaled.jpg'];
+        var dots = document.getElementsByClassName('circle');
+
+        var index_img = 0;
+        function Src_Img(){
+            img_slider.setAttribute('src', src_list[index_img]);
+            Dots_Update();
+        }
+
+        function Dots_Update(){
+            for (var i = 0; i < dots.length; i++) {
+                //utilizzo della DomTokenList.
+                if (i === index_img) {
+                    dots[i].classList.add('active');
+                } else {
+                    dots[i].classList.remove('active');
+                }
+            }
+        }
+
+        arrow_right.addEventListener('click', function(){
+            if(index_img < src_list.length-1){
+                //incremento e decremento del valore
+                index_img++;
+            }
+            else{
+                index_img = 0;
+            }
+            Src_Img();
+        })
+
+       arrow_left.addEventListener('click', function(){
+            if(index_img > 0){
+                index_img--;
+            }
+            else{
+                index_img = src_list.length-1;
+            }
+            Src_Img();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guida Javascript / jQuery</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="js/main.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#525fd6">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+	
+	<header id="pinco">
+		<h1>Guida Javascript / jQuery<br> Condizioni e cicli</h1>
+		<nav id="mainMenu">
+			<ul>
+				<li><a href="index.html" title="javascript">Home</a></li>
+				<li><a href="dove-jx.html" title="Dove posizionare Javascript">Dove posizionare Javascript</a></li>
+				<li><a href="sintassi-jx.html" title="La sintassi">Sintassi js</a></li>
+				<li><a href="condizionali-e-cicli.html" title="Condizionali e cicli">Condizioni e cicli</a></li>
+				<li><a href="funzioni.html" title="Le funzioni">Le funzioni</a></li>
+				<li><a href="jQuery.html" title="jQuery">jquery</a></li>
+				<li><a href="integrareJQ.html" title="Integrare jQuery nei progetti">Integrare jquery</a></li>
+				<li><a href="sintassiJquery.html" title="Sintassi jQuery ">Sintassi jquery</a></li>
+				<li><a href="selezioneJquery.html" title="La selezione degli elementi in jQuery ">La selezione degli elementi in jQuery</a></li>
+				<li><a href="gestione_eventiJq.html" title="La gestione degli eventi in jQuery ">La gestione degli eventi in jQuery</a></li>
+				<li><a href="metodi-jQ.html" title="Metodi jQuery ">La gestione degli eventi in jQuery</a></li>
+				
+			</ul>
+
+		</nav>
+		
+	</header>
+	
+	<main>
+		<section>
+			<h2>L'istruzione IF</h2>
+			<p>
+				A volte è necessario eseguire determinate azioni solo se sono soddisfatte specifiche condizioni. Per questo scopo, utilizziamo l'istruzione if.</p>
+				<p>
+					L'istruzione if(...) valuta una condizione (racchiusa tra parentesi); se la condizione risulta true, esegue il codice che segue l'if.
+					 if può essere seguito da un opzionale 'else'{ }, le istruzioni tra le parentesi graffe vengono eseguite quando la condizione è falsa.
+				</p>
+				<script>
+					let mese = prompt('in che mese entra l\'estate?')
+
+					if (mese == 'giugno'){
+						alert( 'Bravo!' )
+					}else{
+						alert('Hai sbagliato')
+					}
+
+					let condizione =(mese='giugno')
+					if(condizione){
+						alert('Bravo!!!')
+					}else{
+						alert('Hai sbagliato')
+					}
+				</script>
+				<h3>else if</h3>
+				<p>else if ci permette di controllare più condizioni</p>
+				<script>
+					let anni = prompt('Quanti anni hai?');
+
+					if (anni < 18) {
+					alert( 'Troppo giovane' );
+					} else if (anni > 50) {
+					alert( 'Troppo Vecchio' );
+					} else {
+					alert( 'ok questo sito fa per te!' );
+					}
+				</script>
+		</section>
+		<section>
+			<h2>while e for</h2>
+			<p>Spesso abbiamo la necessità di ripetere la stessa azione più volte consecutivamente.
+				I cicli sono un metodo per eseguire più volte una stessa parte di codice.</p>
+				<h3>while</h3>
+				<p>while(condizione){//istruzione //ciclo}</p>
+				<script>
+				let i = 0;
+				while (i < 10) { 
+				console.log( i );
+					i++;
+				}
+				//se non ci fosse i++, il ciclo si ripeterebbe per sempre
+				</script>
+
+				<h3>do while</h3>
+				<code>
+					do{
+
+					}while(condizione)
+				</code>
+				<p>Viene usato molto raramente, anche perchè esegue almeno una volta l'istruzione prima della verifica della condizione.</p>
+
+				<script>
+					let x = 0;
+					do {
+						console.log( x )
+						x++
+					} while (x < 6)
+				</script>
+				<h3>il ciclo for</h3>
+				<p>Uno dei cicli più usati, la cui sintassi è : for(let x=0; x&lt;5; x++){//istruzione da eseguire}</p>
+				<script>
+					let a = 0;
+					for(let a=0; a<5; a++){
+						console.log('ciclo for'. a)
+					}
+				</script>
+
+				
+		</section>
+	</main>
+	
+	<footer>
+		&copy; Copyright 2024
+	</footer>
+	
+</body>
+</html>

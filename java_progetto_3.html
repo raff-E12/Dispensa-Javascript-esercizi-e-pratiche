@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calcolatore di Età</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5c56a9a16.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="immagini/favjs/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="immagini/favjs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="immagini/favjs/favicon-16x16.png">
+    <link rel="manifest" href="immagini/favjs/site.webmanifest">
+    <link rel="mask-icon" href="immagini/favjs/safari-pinned-tab.svg" color="#dfe300">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        *{
+            font-size: 1.1em;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body{
+            background-image: url(immagini/Grid\ 1.jpg);
+            backdrop-filter: blur(10px);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .box-1{
+            background-color: antiquewhite;
+            width: 60%;
+            margin: 20% 10%;
+            box-shadow: 1px 3px 10px 8px black;
+            border: 10px solid rgb(255, 226, 188);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .box-1 ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .box-1 ul li{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        footer{
+            background-color: rgb(255, 250, 184);
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+        header{
+            width: 100%;
+            background-color: antiquewhite;
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+            border: 10px solid rgb(255, 226, 188);
+        }
+        button{
+            background-color: white;
+            border: 2px solid gray;
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 200px;
+        }
+        button:hover{
+            background-color: rgb(168, 168, 168);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calcolatore di Età</h1>
+    </header>
+    <div class="box-1">
+        <h1>Calcola la tua età</h1>
+        <ul style="display: flex; flex-direction: column; gap: 10px;">
+            <li><input type="date" id="date"></li>
+            <li><button id="button">Cliccami</button></li>
+            <li><p id="result-info"></p></li>
+        </ul>
+    </div>
+   <script>
+        var date_input = document.getElementById('date');
+        var btn_value = document.getElementById('button');
+        var result_text = document.getElementById('result-info');
+        result_text.textContent = '';
+
+        function Calc_years(){
+            var date_user = new Date(date_input.value);
+            var date_now = new Date();
+            var years = date_now.getFullYear() - date_user.getFullYear();
+            console.log('anni',years);
+            var mouth = date_now.getMonth() - date_user.getMonth();
+            console.log('mese',mouth);
+            var date = date_now.getDate() - date_user.getDate();
+            console.log('giorni',date);
+            //se il mese è negativo se aggiunge 12 mesi totali al numero per farlo diventare intero
+            if(mouth < 0){
+                date--;//decremento dei giorni
+                mouth += 12;// incremento dei mesi in 12 mesi
+            }
+            //utilizzati quando i giorni sono negativi e devi togliere un anno per avere il giorno intero
+            if(date < 0){
+             mouth++; //incremento dei mesi
+             var mese_precedente = new Date(date_now.getFullYear(), date_now.getMonth()-1,0);
+             date += mese_precedente.getDate();//incremento il giorno ottenuto dalla differenza con il mese precedente
+             console.log('Mese precedente:',mese_precedente);// prende il giorno del mese precedente dalla variabile mese_precedente
+            }
+
+            result_text.textContent = 'Hai' + years + 'anni,' + 'mese Rimasti:' + mouth + 'giorno Rimasti:' + date;
+            console.log('risultato', result_text.textContent);
+            return result_text;
+        }
+
+        btn_value.addEventListener('click', function(){
+            if(isNaN(date_input.value)){
+                result_text.style.padding = '10px';
+                Calc_years();
+            }
+        });
+    </script> 
+
+    <footer>
+        <p>Tabella &copy; - valori espressi in <a href="index.html">Javascript</a></p>
+    </footer>
+</body>
+</html>

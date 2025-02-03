@@ -1,0 +1,383 @@
+h1{
+    font-size: 47.78px;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+h2{
+    font-size: 39.81px;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 719;
+    font-style: normal;
+}
+
+h3{
+    font-size: 33.18px;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 702;
+    font-style: normal;  
+}
+
+h4{
+    font-size: 27.65px;
+    font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 622;
+  font-style: normal;
+}
+
+h5{
+    font-size: 23.04px;
+    font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 532;
+  font-style: normal;
+}
+
+h6{
+    font-size: 19.2px;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 466;
+    font-style: normal;
+}
+
+p{
+    font-size: 16px;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 186;
+    font-style: normal;
+    text-transform: capitalize;
+}
+
+a{
+    font-size: 16px;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 367;
+    font-style: normal;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.header-sc{
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 84%;
+    top: 0;
+    padding: 10px;
+    z-index: 10;
+    background-color: #E8EAEE;
+}
+
+.btn.lg{
+    width: 120px;
+    height: 40px;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 367;
+    font-style: normal;
+    font-size: 14px;
+    border-radius: 20px;
+    background-color: #000D02;
+    color: white;
+    cursor: pointer;
+}
+
+.video-hero{
+    width: 100%;
+    overflow: hidden;
+    height: 650px;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+}
+
+#video-hero{
+    width: 100%;
+    height: 400px;
+    transform: scale(4, 4);
+}
+
+::-webkit-scrollbar-thumb{
+    width: 30px;
+    background-color: #4C5157;
+}
+
+::-webkit-scrollbar{
+    width: 12px;
+}
+
+.aside-box{
+    width: 40%;
+    backdrop-filter: blur(30px);
+    position: relative;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    gap: 30px;
+    border-right:2px solid #E8EAEE;
+}
+
+.hero-sc{
+    overflow: hidden;
+    height: 607px;
+    position: absolute;
+    top: 0;
+    z-index: -2;
+}
+
+.par-box{
+    width: 100%;
+}
+
+.text-box{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.btn-aside{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.bottom{
+    width: 180px;
+    height: 40px;
+    background-color: #000D02;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 10px;
+}
+
+.btn:active{
+    background-color: #393E43;
+}
+
+.main-sc{
+    width: 100%;
+    margin-top: 520px;
+}
+
+.top-box{
+    width: 100%;
+    height: 170px;
+    background-color: transparent;
+    backdrop-filter: blur(50px);
+    clip-path: polygon(0 26%, 58% 26%, 75% 36%, 100% 36%, 100% 100%, 0% 100%);
+    border-bottom: 2px solid #E8EAEE;
+    box-shadow:inset -10px 70px 0px 2px #E8EAEE;
+}
+
+.passoword-box{
+    background-color: transparent;
+    backdrop-filter: blur(50px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 600px;
+}
+
+.box-pass{
+    background-color: #F2F2F2;
+    width: 80%;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 10px solid #E8EAEE;
+}
+
+.input-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#input-txt{
+    margin: 10px;
+    width: 700px;
+    height: 50px;
+    padding: 10px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 100;  
+    text-align: center;
+}
+
+.check-box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 19px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.range-box{
+    height: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.box-parm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#slider-length{
+    width: 100%;
+    appearance: none;
+    background-color: transparent;
+    pointer-events: none;
+    position: absolute;
+    cursor: pointer;
+}
+
+#slider-length::-webkit-slider-runnable-track{
+    pointer-events: none;
+    appearance: none;
+}
+
+#slider-length::-webkit-slider-thumb{
+    pointer-events: auto;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #172601;
+    border-radius: 10px;
+}
+
+.line{
+    width: 100%;
+    height: 6px;
+    background-color: #4C5157;
+    border-radius: 10px;
+}
+
+.boxes-ranges{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.value-num{
+    width: 100px;
+    height: 20px;
+    text-align: center;
+}
+
+input[type="checkbox"]{
+    cursor: pointer;
+}
+
+#btn-gen{
+    width: 100%;
+    background-color: #c9c9c9;
+    padding: 12px;
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-weight: 100;  
+    text-align: center;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+#btn-gen:active{
+    background-color: #4C5157;
+}
+
+.login-page{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 90;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tiles{
+    width: 100%;
+    background-color: #E8EAEE;
+    padding: 10px;
+    height: 100px;
+    transition: all 0.3s ease-in-out;
+}
+
+.load-box{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle{
+    border: 10px solid #4C5157;
+    width: 50px;
+    height: 50px;
+    border-bottom: 10px solid #000D02;
+    border-radius: 100%;
+    animation-name: rotate-login;
+    animation-duration: 1.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    opacity: 100;
+}
+
+.tiles.close{
+    width: 0%;
+    padding: 0px;
+    transition: all 0.3s ease-in-out;
+}
+
+@keyframes rotate-login {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
