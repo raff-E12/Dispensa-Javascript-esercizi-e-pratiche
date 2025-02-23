@@ -56,7 +56,7 @@ range_words.addEventListener('input', ()=>{
 
 btn_gen.addEventListener('click', lorem_text_gen);
 
-//quest parte di funzione prede un i valori input
+//questa parte di funzione prende dei valori input
 function lorem_text_gen() {
     let value_pars = range_paragraphs.value;
     let value_words = range_words.value;
