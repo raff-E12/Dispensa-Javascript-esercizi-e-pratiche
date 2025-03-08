@@ -66,7 +66,7 @@ function lorem_text_gen() {
     text_append(text_fun);
 }
 
-// questa parte serve a concatenare più di un array in base alla valore di paragrafo
+// questa parte serve a concatenare più di un array in base al valore di paragrafo
 function gen_text(paragraphs, tags, inclued, words) {
     let array_lorem = [];
     for (i = 0; i < paragraphs; i++) {
@@ -84,7 +84,7 @@ function words_gen(Numwords) {
     //lo spilt serve a trasformare una stringa in un array di valori suddivisi durante la conversione (Es: 'New Hello' = ['New', 'Hello'])
     let words = loremIpsumText.split(" ");
     //lo slice serve a creare ad estrarre dei valori di un array partendo dal inizio alla fine di un array
-    console.log(words.slice(0, Numwords).join(" "));
+    console.log(words);
     if (Numwords < words.length) {
         return words.slice(0, Numwords).join(" ");
     } else {
